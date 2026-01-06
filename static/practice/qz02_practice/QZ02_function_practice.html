@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Quiz 02 Function Writing Practice Problems - COMP110 - 25F</title>
+  <link rel="icon" type="image/png" href="/static/s25_brand.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/static/styles.css?v=1767731939.6790345">
+</head>
+
+
+<body id="body" class="absolute-page">
+    <script>
+        document.body.classList.remove('light-mode');
+        document.body.classList.remove('dark-mode');
+        document.body.classList.add(localStorage.getItem('mode'));
+    </script>
+  <script src="/static/scripts/nav-menu-esc.js"></script> 
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark py-1 fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/s25_brand.png"
+        alt="COMP110 - Spring - 2025"><img class="darkmode-element-only img-fluid logo" src="/static/s25_brand.png"
+        alt="COMP110 - Spring - 2025"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" onclick="esc_key()" data-bs-target="#navmenu" aria-label="Main Menu" aria-controls="#navmenu" role="navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link " href="/">agenda</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources" class="nav-link">resources</a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="/support" class="nav-link">support</a>
+          </li>
+         
+          <li class="nav-item">
+            <a href="/resources/syllabus.html" class="nav-link">syllabus</a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="/resources/team.html" class="nav-link">team110</a>
+          </li>
+         
+        </ul>
+      </div>
+      <div id='mode-switch' class="ms-auto form-check form-switch mode switches">
+              <div class="switches">
+                  <input type="checkbox" id="1" onclick="
+                      if (localStorage.getItem('mode') === 'dark-mode') {
+                          localStorage.setItem('userPref', 'light-mode');
+                          localStorage.setItem('mode', 'light-mode');
+                      } else {
+                          localStorage.setItem('userPref', 'dark-mode');
+                          localStorage.setItem('mode', 'dark-mode');
+                      }
+                      location.reload();">
+                  <label for="1">
+                      <span id="mode-label">Dark Mode</span>
+                      <span></span>
+                  </label>
+                  <script>if(localStorage.getItem('mode') === 'dark-mode'){document.getElementById("1").checked = true}</script>
+                  <script>if(localStorage.getItem('userPref') === null) {setTimeout(function(){location.reload();}, (timer * 3600000));}</script>
+              </div>
+          </div>
+    </div>
+  </nav>
+
+  <div class="cloud-container">
+    <div id="cloud-intro">
+  <div id="lessons-page" class="container">
+    <div class="row pt-4">
+      <div class="col-12">
+        <h1 id="page-title">Quiz 02 Function Writing Practice Problems</h1>
+      </div>
+    </div>
+    
+
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            <div>
+                <div id="menu-overview" class="link-page-overview horizon-box">
+                    <button id="overview-button" class="btn btn-ov" onclick="hideshow()" >Overview  <img id="button-img" alt="Overview" class="filter-icon" src="/static/components/Itinerary/arrow-up.svg" style="height:15px; padding-left: 4px;"></button>
+                    <div id="overview-links">
+                        <div id="TOC" role="doc-toc">
+                            <ul class="overview-item"><ul>
+<li><a href="#lists">Lists</a>
+<ul>
+<li><a href="#odd_and_even"><code>odd_and_even</code></a></li>
+<li><a href="#short_words"><code>short_words</code></a></li>
+<li><a href="#multiples"><code>multiples</code></a></li>
+<li><a href="#reverse_multiply"><code>reverse_multiply</code></a></li>
+<li><a href="#process_and_reverse_list"><code>process_and_reverse_list</code></a></li>
+<li><a href="#bubble_up_sort-and-insert"><code>bubble_up_sort</code> and <code>insert</code></a>
+<ul>
+<li><a href="#insert"><code>insert</code></a></li>
+<li><a href="#bubble_up_sort"><code>bubble_up_sort</code></a></li>
+</ul></li>
+</ul></li>
+<li><a href="#dictionaries">Dictionaries</a>
+<ul>
+<li><a href="#value_exists"><code>value_exists</code></a></li>
+<li><a href="#plus_or_minus_n"><code>plus_or_minus_n</code></a></li>
+<li><a href="#free_biscuits"><code>free_biscuits</code></a></li>
+<li><a href="#max_key"><code>max_key</code></a></li>
+<li><a href="#merge_lists"><code>merge_lists</code></a></li>
+</ul></li>
+<li><a href="#lists-solutions">Lists Solutions</a>
+<ul>
+<li><a href="#odd_and_even-solution"><code>odd_and_even</code> solution</a></li>
+<li><a href="#short_words-solution"><code>short_words</code> solution</a></li>
+<li><a href="#multiples-solution"><code>multiples</code> solution</a></li>
+<li><a href="#reverse_multiply-solution"><code>reverse_multiply</code> solution</a></li>
+<li><a href="#process_and_reverse_list-solution"><code>process_and_reverse_list</code> Solution</a></li>
+<li><a href="#bubble_up_sort-and-insert-solution"><code>bubble_up_sort</code> and <code>insert</code> Solution</a></li>
+</ul></li>
+<li><a href="#dictionaries-solutions">Dictionaries Solutions</a>
+<ul>
+<li><a href="#value_exists-solution"><code>value_exists</code> solution</a></li>
+<li><a href="#plus_or_minus_n-solution"><code>plus_or_minus_n</code> solution</a></li>
+<li><a href="#free_biscuits-solution"><code>free_biscuits</code> solution</a></li>
+<li><a href="#max_key-solution"><code>max_key</code> solution</a></li>
+<li><a href="#merge_lists-solution"><code>merge_lists</code> solution</a></li>
+</ul></li>
+</ul>
+</</ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><p>Note: Make sure to click the “Show Solutions” button to reveal the solutions before using one of the “Solution” links underneath each function’s description.</p>
+<h1 id="lists">Lists</h1>
+<h2 id="odd_and_even"><code>odd_and_even</code></h2>
+<ul>
+<li><p>The function name is <code>odd_and_even</code> and has a <code>list[int]</code> parameter.</p></li>
+<li><p>The function should return a <code>list[int]</code>.</p></li>
+<li><p>The function should return a new <code>list</code> containing the elements of the input list that are <em>odd</em> and have an <em>even</em> index.</p></li>
+<li><p>The function should not mutate (modify) the input list.</p></li>
+<li><p>Explicitly type variables, parameters, and return types.</p></li>
+<li><p>The following REPL examples demonstrate expected functionality of your <code>value_exists</code> function:</p>
+<pre>
+  <div class="terminal">
+  >>> odd_and_even([2,3,4,5])
+  []
+  >>> odd_and_even([7, 8, 10, 10, 5, 12, 3, 2, 11, 8])
+  [7, 5, 3, 11]
+  </div>
+  </pre></li>
+</ul>
+<p><a href="#odd_and_even-solution">Solution</a></p>
+<h2 id="short_words"><code>short_words</code></h2>
+<ul>
+<li><p>The function name is <code>short_words</code> and has a <code>list[str]</code> as a parameter.</p></li>
+<li><p>The function should return a new <code>list[str]</code> of the words from the input list that are shorter than 5 characters.</p></li>
+<li><p>If a word is not added to the new list because it is too long,the function should print a string stating that it was too long.</p></li>
+<li><p>The function should not mutate(modify) the input list.</p></li>
+<li><p>Explicitly type variables, parameters, andreturn types.</p></li>
+<li><p>Include a Docstring that says: Returns list of words that are shorter than 5 characters.</p></li>
+<li><p>The following REPL examples demonstrate expected functionality of your function:</p>
+<pre>
+  <div class="terminal">
+  >>> weather: list[str] = ["sun", "cloud", "sky"]
+  >>> short_words(weather)
+  cloud is too long!
+  ['sun', 'sky']
+  </div>
+  </pre></li>
+</ul>
+<p><a href="#short_words-solution">Solution</a></p>
+<h2 id="multiples"><code>multiples</code></h2>
+<p>Write a function called <code>multiples</code>. Given a <code>list[int]</code>, <code>multiples</code> should return a <code>list[bool]</code> that tells whether each <code>int</code> value is a multiple of the previous value. For the first number in the list, you should wrap around the list and compare this <code>int</code> to the last number in the list.<br />
+Example: <code>multiples([2, 3, 4, 8, 16, 2, 4, 2])</code> should return <code>[True, False, False, True, True, False, True, False]</code>.</p>
+<p><a href="#multiples-solution">Solution</a></p>
+<h2 id="reverse_multiply"><code>reverse_multiply</code></h2>
+<p>Write a function called <code>reverse_multiply</code>. Given a <code>list[int]</code>, <code>reverse_multiply</code> should return a <code>list[int]</code> with the values from the original list doubled and in reverse order.<br />
+Example: <code>reverse_multiply([1, 2, 3])</code> should return <code>[6, 4, 2]</code>.</p>
+<p><a href="#reverse_multiply-solution">Solution</a></p>
+<h2 id="process_and_reverse_list"><code>process_and_reverse_list</code></h2>
+<p>Your function, <code>process_and_reverse_list</code>, should follow a structured approach to transform the input list. Given a <code>list[int]</code>, <code>process_and_reverse_list</code> should firstly square each element in the list, effectively calculating the square of every integer present. Following this, you must compute the sum of each pair of adjacent squared integers and store these sums in a new list. In cases where the input list contains an odd number of elements, the last element should remain unchanged, as it does not have a pair. Finally, the function should reverse the order of this new list of summed pairs, ensuring that the reversed list is returned as the final output.</p>
+<p><a href="#process_and_reverse_list-solution">Solution</a></p>
+<h2 id="bubble_up_sort-and-insert"><code>bubble_up_sort</code> and <code>insert</code></h2>
+<h3 id="insert"><code>insert</code></h3>
+<ul>
+<li>The function name is <code>insert</code> and has two parameters: a <code>list[int]</code> and an <code>int</code> to be inserted.</li>
+<li>The function inserts the given integer into the list.</li>
+<li>After inserting, the function calls another helper function <code>bubble_up_sort</code> to sort the list in ascending order using a “bubble up” method.</li>
+<li>The function mutates the input list by modifying it in place (no return value).</li>
+<li>Explicitly type variables, parameters, and return types.</li>
+<li>There is no need for a return statement since the list is modified directly.</li>
+</ul>
+<h3 id="bubble_up_sort"><code>bubble_up_sort</code></h3>
+<ul>
+<li><p>The function name is <code>bubble_up_sort</code> and has a <code>list[int]</code> as a parameter.</p></li>
+<li><p>The function iterates through the list, starting from the last element and comparing it to the second-to-last element.</p></li>
+<li><p>If the second-to-last element is larger than the last element, the two elements are swapped to move the smaller value upward.</p></li>
+<li><p>This process is repeated by shifting both indices (second-to-last and last) toward the beginning of the list until the entire list is sorted in ascending order.</p></li>
+<li><p>Explicitly type variables, parameters, and return types.</p></li>
+<li><p>The function mutates the list by sorting it in place and does not return anything.</p></li>
+<li><p>The following REPL examples demonstrate expected functionality of your function:</p>
+<pre>
+  <div class="terminal">
+  >>> a: list[int] = []
+  >>> insert(a, 10)
+  >>> insert(a, 19)
+  >>> insert(a, 5)
+  >>> insert(a, 2)
+  >>> insert(a, 1)
+  >>> insert(a, 0)
+  >>> insert(a, 14)
+  >>> insert(a, -4)
+  >>> insert(a, 9)
+  >>> print(a)
+  [-4, 0, 1, 2, 5, 9, 10, 14, 19]
+  </div>
+  </pre></li>
+</ul>
+<p><a href="#bubble_up_sort_and_insert-solution">Solution</a></p>
+<h1 id="dictionaries">Dictionaries</h1>
+<h2 id="value_exists"><code>value_exists</code></h2>
+<ul>
+<li><p>The function name is value_exists and is called with a <code>dict[str,int]</code> and an <code>int</code> as an argument.</p></li>
+<li><p>The function should return a <code>bool</code>.</p></li>
+<li><p>The function should return <code>True</code> if the <code>int</code> exists as a value in the dictionary, and <code>False</code> otherwise.</p></li>
+<li><p>The function should not mutate (modify) the input dict.</p></li>
+<li><p>Explicitly type variables, parameters, and return types.</p></li>
+<li><p>The following REPL examples demonstrate expected functionality of your <code>value\_exists</code> function:</p>
+<pre>
+  <div class="terminal">
+  >>> test_dict: dict[str,int] = {"a": 2, "b": 4, "c": 7, "d": 1}
+  >>> test_val: int = 4
+  >>> value_exists(test_dict, test_val)
+  True
+  >>> value_exists(test_dict, 5)
+  False
+  </div>
+  </pre></li>
+</ul>
+<p><a href="#value_exists-solution">Solution</a></p>
+<h2 id="plus_or_minus_n"><code>plus_or_minus_n</code></h2>
+<ul>
+<li>The function name is <code>plus_or_minus_n</code> and is called with <code>inp: dict[str,int]</code> and <code>n: int</code> as an argument.</li>
+<li>The function should return <code>None</code>. It instead <em>mutates</em> the input dictionary <code>inp</code>.</li>
+<li>The function should check if each <em>value</em> in <code>inp</code> is even or odd. If it is even, add <code>n</code> to that value. If it is odd, subtract <code>n</code>.</li>
+<li>Explicitly type variables, parameters, and return types.</li>
+<li>The following REPL examples demonstrate expected functionality of your function:</li>
+</ul>
+<p><a href="#plus_or_minus_n-solution">Solution</a></p>
+<h2 id="free_biscuits"><code>free_biscuits</code></h2>
+Write a function called <code>free_biscuits</code>. Given a dictionary with <code>str</code> keys (representing basketball games) and <code>list[int]</code> values (representing points scored by players), <code>free_biscuits</code> should return a new dictionary of type <code>dict[str, bool]</code> that maps each game to a boolean value for free biscuits. (<code>True</code> if the points add up to 100+, <code>False</code> if otherwise)<br />
+Example: <code>free_biscuits({ “UNCvsDuke”: [38, 20, 42] , “UNCvsState”: [9, 51, 16, 23] })</code> should return <code>{ “UNCvsDuke”: True, “UNCvsState”: False }</code>.
+<pre>
+    <div class="terminal">
+    >>> test_dict: dict[str,int] = {"a": 2, "b": 4, "c": 7, "d": 1}
+    >>> test_val: int = 4
+    >>> plus_or_minus_n(test_dict, test_val)
+    >>> test_dict
+    {"a": 6, "b": 8, "c": 3, "d": -3}
+    </div>
+    </pre>
+<p><a href="#free_biscuits-solution">Solution</a></p>
+<h2 id="max_key"><code>max_key</code></h2>
+<p>Write a function called <code>max_key</code>. Given a dictionary with <code>str</code> keys and <code>list[int]</code> values, return a <code>str</code> with the name of the key whose list has the highest <em>sum</em> of values. Example: <code>max_key({"a": [1,2,3], "b": [4,5,6]})</code> should return <code>"b"</code> because the sum of <code>a</code>’s elements is 1 + 2 + 3 = 6 and the sum of <code>b</code>’s elements is 4 + 5 + 6 = 15, and 15 &gt; 6.</p>
+<p><a href="#max_key-solution">Solution</a></p>
+<h2 id="merge_lists"><code>merge_lists</code></h2>
+<p>Write a function called <code>merge_lists</code>. Given a <code>list[str]</code> and a <code>list[int]</code>, <code>merge_lists</code> should return a <code>dict[str, int]</code> that maps each item in the first list to its corresponding item in the second (based on index). If the lists are not the same size, the function should return an empty dictionary.<br />
+Example: <code>merge_lists([“blue”, “yellow”, “red”], [5, 2, 4])</code> should return <code>{"blue": 5, "yellow": 2, "red": 4}</code>.</p>
+<p><a href="#merge_lists-solution">Solution</a></p>
+<details>
+<p><summary>SHOW SOLUTIONS</summary></p>
+<p>Note: Your solution does not need to be identical to these, these are just examples of one of many possible solutions!</p>
+<h1 id="lists-solutions">Lists Solutions</h1>
+<h2 id="odd_and_even-solution"><code>odd_and_even</code> solution</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>    <span class="kw">def</span> odd_and_even(list1: <span class="bu">list</span>[<span class="bu">int</span>]) <span class="op">-&gt;</span> <span class="bu">list</span>[<span class="bu">int</span>]:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>        <span class="co">&quot;&quot;&quot;Find the odd elements with even indexes.&quot;&quot;&quot;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>        i: <span class="bu">int</span> <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>        list2: <span class="bu">list</span>[<span class="bu">int</span>] <span class="op">=</span> []</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>        <span class="cf">while</span> i <span class="op">&lt;</span> <span class="bu">len</span>(list1):</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>            <span class="cf">if</span> list1[i] <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">1</span> <span class="kw">and</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>                list2.append(list1[i])</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a>            i <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a>        <span class="cf">return</span> list2</span></code></pre></div>
+<h2 id="short_words-solution"><code>short_words</code> solution</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a>    <span class="kw">def</span> short_words(inp_list: <span class="bu">list</span>[<span class="bu">str</span>]) <span class="op">-&gt;</span> <span class="bu">list</span>[<span class="bu">str</span>]:</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>        <span class="co">&quot;&quot;&quot;Filter out the shorter words&quot;&quot;&quot;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>        ret_list: <span class="bu">list</span>[<span class="bu">str</span>] <span class="op">=</span> []</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a>        <span class="cf">for</span> x <span class="kw">in</span> inp_list:</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a>            <span class="cf">if</span> <span class="bu">len</span>(x) <span class="op">&lt;</span> <span class="dv">5</span>:</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a>                ret_list.append(x)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a>            <span class="cf">else</span>:</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true"></a>                <span class="bu">print</span>(<span class="ss">f&quot;</span><span class="sc">{x}</span><span class="ss"> is too long!&quot;</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true"></a>        <span class="cf">return</span> ret_list</span></code></pre></div>
+<h2 id="multiples-solution"><code>multiples</code> solution</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a>    <span class="kw">def</span> multiples(vals: <span class="bu">list</span>[<span class="bu">int</span>]) <span class="op">-&gt;</span> <span class="bu">list</span>[<span class="bu">bool</span>]:</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>        mults: <span class="bu">list</span>[<span class="bu">bool</span>] <span class="op">=</span> []</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>        <span class="co"># check first value against last value</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>        <span class="co"># a is a multiple of b means a % b == 0</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>        mults.append(vals[<span class="dv">0</span>] <span class="op">%</span> vals[<span class="bu">len</span>(vals) <span class="op">-</span> <span class="dv">1</span>] <span class="op">==</span> <span class="dv">0</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a>        <span class="co"># start idx at 1 since we already checked idx 0</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a>        idx: <span class="bu">int</span> <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a>        <span class="cf">while</span> idx <span class="op">&lt;</span> <span class="bu">len</span>(vals):</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true"></a>            <span class="co"># a is a multiple of b means a % b == 0</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true"></a>            mults.append(vals[idx] <span class="op">%</span> vals[idx <span class="op">-</span> <span class="dv">1</span>] <span class="op">==</span> <span class="dv">0</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true"></a>            idx <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true"></a>        <span class="cf">return</span> mults</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a>    <span class="kw">def</span> multiples(vals: <span class="bu">list</span>[<span class="bu">int</span>]) <span class="op">-&gt;</span> <span class="bu">list</span>[<span class="bu">bool</span>]:</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>        mults: <span class="bu">list</span>[<span class="bu">bool</span>] <span class="op">=</span> []</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>        <span class="co"># check first value against last value</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a>        <span class="co"># a is a multiple of b means a % b == 0</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a>        <span class="cf">if</span> vals[<span class="dv">0</span>] <span class="op">%</span> vals[<span class="bu">len</span>(vals) <span class="op">-</span> <span class="dv">1</span>] <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a>            mults.append(<span class="va">True</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a>        <span class="cf">else</span>:</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true"></a>            mults.append(<span class="va">False</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true"></a>        <span class="co"># start idx at 1 since we already checked idx 0</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true"></a>        idx: <span class="bu">int</span> <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true"></a>        <span class="cf">while</span> idx <span class="op">&lt;</span> <span class="bu">len</span>(vals):</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true"></a>            <span class="co"># a is a multiple of b means a % b == 0</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true"></a>            <span class="cf">if</span> vals[idx] <span class="op">%</span> vals[idx <span class="op">-</span> <span class="dv">1</span>] <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true"></a>                mults.append(<span class="va">True</span>)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true"></a>            <span class="cf">else</span>:</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true"></a>                mults.append(<span class="va">False</span>)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true"></a>            idx <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true"></a>        <span class="cf">return</span> mults</span></code></pre></div>
+<h2 id="reverse_multiply-solution"><code>reverse_multiply</code> solution</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a>    <span class="kw">def</span> reverse_multiply(vals: <span class="bu">list</span>[<span class="bu">int</span>]) <span class="op">-&gt;</span> <span class="bu">list</span>[<span class="bu">int</span>]:</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a>        <span class="co">&quot;&quot;&quot;Reverse the list and double all elements.&quot;&quot;&quot;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a>        <span class="co"># iterate through the list backwards</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a>        idx: <span class="bu">int</span> <span class="op">=</span> <span class="bu">len</span>(vals) <span class="op">-</span> <span class="dv">1</span> <span class="co"># index of last element</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a>        new_vals: <span class="bu">list</span>[<span class="bu">int</span>] <span class="op">=</span> []</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a>        <span class="cf">while</span> idx <span class="op">&gt;=</span> <span class="dv">0</span>:</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true"></a>            new_vals.append(vals[idx] <span class="op">*</span> <span class="dv">2</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true"></a>            idx <span class="op">-=</span> <span class="dv">1</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true"></a>        <span class="cf">return</span> new_vals</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a>    <span class="kw">def</span> reverse_multiply(vals: <span class="bu">list</span>[<span class="bu">int</span>]) <span class="op">-&gt;</span> <span class="bu">list</span>[<span class="bu">int</span>]:</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a>        <span class="co">&quot;&quot;&quot;Reverse the list and double all elements.&quot;&quot;&quot;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a>        <span class="co"># iterate through the list forwards, but get index of the &quot;opposite&quot; element </span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a>        idx: <span class="bu">int</span> <span class="op">=</span> <span class="dv">0</span> <span class="co"># index of last element</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a>        new_vals: <span class="bu">list</span>[<span class="bu">int</span>] <span class="op">=</span> []</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a>        <span class="cf">while</span> idx <span class="op">&lt;</span> <span class="bu">len</span>(vals):</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true"></a>            idx_of_opposite: <span class="bu">int</span> <span class="op">=</span> <span class="bu">len</span>(vals) <span class="op">-</span> <span class="dv">1</span> <span class="op">-</span> idx</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true"></a>            new_vals.append(vals[idx_of_opposite] <span class="op">*</span> <span class="dv">2</span>)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true"></a>            idx <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true"></a>        <span class="cf">return</span> new_vals</span></code></pre></div>
+<h2 id="process_and_reverse_list-solution"><code>process_and_reverse_list</code> Solution</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a>    <span class="kw">def</span> process_and_reverse_list(lst):</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a>    <span class="co"># Initialize a list to hold squared elements</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a>    squared_list <span class="op">=</span> []</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true"></a>    <span class="co"># Squaring each element using a while loop</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true"></a>    index <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true"></a>    <span class="cf">while</span> index <span class="op">&lt;</span> <span class="bu">len</span>(lst):</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true"></a>        squared_value <span class="op">=</span> lst[index] <span class="op">*</span> lst[index]</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true"></a>        squared_list.append(squared_value)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true"></a>        index <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true"></a>    <span class="co"># Initialize a list to hold the sum of adjacent pairs</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true"></a>    summed_pairs <span class="op">=</span> []</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true"></a></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true"></a></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true"></a>    <span class="co"># Sum adjacent pairs using a while loop</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true"></a>    index <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true"></a>    <span class="cf">while</span> index <span class="op">&lt;</span> <span class="bu">len</span>(squared_list) <span class="op">-</span> <span class="dv">1</span>:</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true"></a>        pair_sum <span class="op">=</span> squared_list[index] <span class="op">+</span> squared_list[index <span class="op">+</span> <span class="dv">1</span>]</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true"></a>        summed_pairs.append(pair_sum)</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true"></a>        index <span class="op">+=</span> <span class="dv">2</span>  <span class="co"># Move by two to get pairs</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true"></a></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true"></a></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true"></a>    <span class="co"># Handle odd number of elements by adding the last squared element</span></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true"></a>    <span class="cf">if</span> <span class="bu">len</span>(squared_list) <span class="op">%</span> <span class="dv">2</span> <span class="op">!=</span> <span class="dv">0</span>:</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true"></a>        summed_pairs.append(squared_list[<span class="op">-</span><span class="dv">1</span>])</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true"></a></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true"></a></span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true"></a>    <span class="co"># Reverse the summed_pairs list using a while loop</span></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true"></a>    reversed_list <span class="op">=</span> []</span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true"></a>    index <span class="op">=</span> <span class="bu">len</span>(summed_pairs) <span class="op">-</span> <span class="dv">1</span></span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true"></a></span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true"></a></span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true"></a>    <span class="cf">while</span> index <span class="op">&gt;=</span> <span class="dv">0</span>:</span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true"></a>        reversed_list.append(summed_pairs[index])</span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true"></a>        index <span class="op">-=</span> <span class="dv">1</span></span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true"></a></span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true"></a></span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true"></a>    <span class="cf">return</span> reversed_list</span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true"></a></span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true"></a>    <span class="co"># Test Cases</span></span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true"></a>    <span class="bu">print</span>(process_and_reverse_list([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]))  <span class="co"># Output: [25, 5]</span></span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true"></a>    <span class="bu">print</span>(process_and_reverse_list([<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>]))  <span class="co"># Output: [900, 500]</span></span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true"></a>    <span class="bu">print</span>(process_and_reverse_list([<span class="dv">5</span>]))           <span class="co"># Output: [25]</span></span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true"></a>    <span class="bu">print</span>(process_and_reverse_list([<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>]))     <span class="co"># Output: [81, 113]</span></span></code></pre></div>
+<h2 id="bubble_up_sort-and-insert-solution"><code>bubble_up_sort</code> and <code>insert</code> Solution</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a>    <span class="kw">def</span> insert(<span class="bu">list</span>: <span class="bu">list</span>[<span class="bu">int</span>], num_to_insert: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a>        <span class="bu">list</span>.append(num_to_insert)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a>        bubble_up_sort(<span class="bu">list</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true"></a>    <span class="kw">def</span> bubble_up_sort(<span class="bu">list</span>: <span class="bu">list</span>[<span class="bu">int</span>]) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true"></a>        second_to_last_idx: <span class="bu">int</span> <span class="op">=</span> <span class="bu">len</span>(<span class="bu">list</span>) <span class="op">-</span> <span class="dv">2</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true"></a>        last_idx: <span class="bu">int</span> <span class="op">=</span> <span class="bu">len</span>(<span class="bu">list</span>) <span class="op">-</span> <span class="dv">1</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true"></a>        <span class="cf">while</span> last_idx <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true"></a>            val_sec_to_last: <span class="bu">int</span> <span class="op">=</span> <span class="bu">list</span>[second_to_last_idx]</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true"></a>            val_last: <span class="bu">int</span> <span class="op">=</span> <span class="bu">list</span>[last_idx]</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true"></a>            <span class="cf">if</span> <span class="bu">list</span>[second_to_last_idx] <span class="op">&gt;</span> <span class="bu">list</span>[last_idx]:</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true"></a>                <span class="co"># swap</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true"></a>                <span class="bu">list</span>[last_idx] <span class="op">=</span> val_sec_to_last</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true"></a>                <span class="bu">list</span>[second_to_last_idx] <span class="op">=</span> val_last</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true"></a></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true"></a></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true"></a>            last_idx <span class="op">-=</span> <span class="dv">1</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true"></a>            second_to_last_idx <span class="op">-=</span> <span class="dv">1</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true"></a></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true"></a>    <span class="co"># example</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true"></a>    a: <span class="bu">list</span>[<span class="bu">int</span>] <span class="op">=</span> []</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true"></a>    insert(a, <span class="dv">10</span>)</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true"></a>    insert(a, <span class="dv">19</span>)</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true"></a>    insert(a, <span class="dv">5</span>)</span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true"></a>    insert(a, <span class="dv">2</span>)</span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true"></a>    insert(a, <span class="dv">1</span>)</span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true"></a>    insert(a, <span class="dv">0</span>)</span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true"></a>    insert(a, <span class="dv">14</span>)</span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true"></a>    insert(a, <span class="op">-</span><span class="dv">4</span>)</span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true"></a>    insert(a, <span class="dv">9</span>)</span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true"></a>    <span class="bu">print</span>(a)  <span class="co"># expected [-4, 0, 1, 2, 5, 9, 10, 14, 19]</span></span></code></pre></div>
+<h1 id="dictionaries-solutions">Dictionaries Solutions</h1>
+<h2 id="value_exists-solution"><code>value_exists</code> solution</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a>    <span class="kw">def</span> value_exists(d: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">int</span>], num: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a>        <span class="cf">for</span> key <span class="kw">in</span> d:</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true"></a>            <span class="cf">if</span> d[key] <span class="op">==</span> num:</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true"></a>                <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true"></a>        <span class="cf">return</span> <span class="va">False</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a>    <span class="kw">def</span> value_exists(d: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">int</span>], num: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true"></a>        exists: <span class="bu">bool</span> <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true"></a>        <span class="cf">for</span> key <span class="kw">in</span> d:</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true"></a>            <span class="cf">if</span> d[key] <span class="op">==</span> num:</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true"></a>                exists <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true"></a>        <span class="cf">return</span> exists</span></code></pre></div>
+<h2 id="plus_or_minus_n-solution"><code>plus_or_minus_n</code> solution</h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true"></a>    <span class="kw">def</span> plus_or_minus_n(inp: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">int</span>], n: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true"></a>        <span class="cf">for</span> key <span class="kw">in</span> inp:</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true"></a>            <span class="cf">if</span> inp[key] <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true"></a>                inp[key] <span class="op">=</span> inp[key] <span class="op">+</span> n</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true"></a>            <span class="cf">else</span>: <span class="co"># element is odd</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true"></a>                inp[key] <span class="op">=</span> inp[key] <span class="op">-</span> n</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true"></a>    <span class="kw">def</span> plus_or_minus_n(inp: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">int</span>], n: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true"></a>        <span class="cf">for</span> key <span class="kw">in</span> inp:</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true"></a>            <span class="cf">if</span> inp[key] <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true"></a>                inp[key] <span class="op">+=</span> n</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true"></a>            <span class="cf">else</span>: <span class="co"># element is odd</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true"></a>                inp[key] <span class="op">-=</span> n</span></code></pre></div>
+<h2 id="free_biscuits-solution"><code>free_biscuits</code> solution</h2>
+<div class="sourceCode" id="cb13"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true"></a>    <span class="kw">def</span> free_biscuits(<span class="bu">input</span>: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">list</span>[<span class="bu">int</span>]]) <span class="op">-&gt;</span> <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">bool</span>]:</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true"></a>        <span class="co">&quot;&quot;&quot;Check each game to see if we get free biscuits.&quot;&quot;&quot;</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true"></a>        result: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">bool</span>] <span class="op">=</span> {}</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true"></a>        <span class="co"># loop over each key in my input dictionary</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true"></a>        <span class="cf">for</span> key <span class="kw">in</span> <span class="bu">input</span>:</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true"></a>            <span class="co"># for each element of the dictionary, sum up its values</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true"></a>            list_to_sum: <span class="bu">list</span>[<span class="bu">int</span>] <span class="op">=</span> <span class="bu">input</span>[key]</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true"></a>            <span class="bu">sum</span>: <span class="bu">int</span> <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true"></a>            <span class="co"># loop through list and add each value to sum</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true"></a>            <span class="cf">for</span> element <span class="kw">in</span> list_to_sum:</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true"></a>                <span class="bu">sum</span> <span class="op">+=</span> element</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true"></a>            <span class="co"># if sum &gt;= 100, store in result under key &quot;key&quot; with value True</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true"></a>            <span class="cf">if</span> <span class="bu">sum</span> <span class="op">&gt;=</span> <span class="dv">100</span>:</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true"></a>                result[key] <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true"></a>            <span class="cf">else</span>: <span class="co"># if not, store as False</span></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true"></a>                result[key] <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true"></a>        <span class="cf">return</span> result</span></code></pre></div>
+<h2 id="max_key-solution"><code>max_key</code> solution</h2>
+<div class="sourceCode" id="cb14"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true"></a>    <span class="kw">def</span> max_key(<span class="bu">input</span>: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">int</span>]) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true"></a>        <span class="co"># Create variables to store max key and max val sum</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true"></a>        max_key: <span class="bu">str</span> <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true"></a>        max_val_sum: <span class="bu">int</span> <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true"></a>        <span class="co"># Loop through each key of the dictionary</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true"></a>        <span class="cf">for</span> key <span class="kw">in</span> <span class="bu">input</span>:</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true"></a>            <span class="co"># Sum up the values of that key&#39;s corresponding list</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true"></a>            val_sum: <span class="bu">int</span> <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true"></a>            <span class="cf">for</span> value <span class="kw">in</span> <span class="bu">input</span>[key]:</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true"></a>                val_sum <span class="op">+=</span> value</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true"></a>            <span class="co"># If the sum is the max so far, update the max_key and max_val_sum</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true"></a>            <span class="cf">if</span> val_sum <span class="op">&gt;</span> max_val_sum:</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true"></a>                max_val_sum <span class="op">=</span> val_sum</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true"></a>                max_key <span class="op">=</span> key </span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true"></a>        <span class="cf">return</span> max_key</span></code></pre></div>
+<h2 id="merge_lists-solution"><code>merge_lists</code> solution</h2>
+<div class="sourceCode" id="cb15"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true"></a>    <span class="kw">def</span> merge_lists(words: <span class="bu">list</span>[<span class="bu">str</span>], vals: <span class="bu">list</span>[<span class="bu">int</span>]) <span class="op">-&gt;</span> <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">int</span>]:</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true"></a>        <span class="co"># If the lists are not same size return empty dict</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true"></a>        <span class="cf">if</span> <span class="bu">len</span>(words) <span class="op">!=</span> <span class="bu">len</span>(vals):</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true"></a>            <span class="cf">return</span> {}</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true"></a>        idx: <span class="bu">int</span> <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true"></a>        merged: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">int</span>] <span class="op">=</span> {}</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true"></a>        <span class="cf">while</span> idx <span class="op">&lt;</span> <span class="bu">len</span>(words):</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true"></a>            <span class="co"># at key words[idx] store the number at vals[idx]</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true"></a>            merged[words[idx]] <span class="op">=</span> vals[idx]</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true"></a>            idx <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true"></a>        <span class="cf">return</span> merged</span></code></pre></div>
+</details>
+</div>
+
+       
+
+    </div> 
+    </div>
+    </div>
+    <div class="authors-box bg-dark mt-4 py-3 ps-4">
+      <span> Contributor(s):        Alyssa Lytle,        Megan Zhang,        David Karash,        Coralee Vickers,        Carolyn Pierce,        Viktorya Hunanyan, Benjamin Eldridge</span>
+    </div>
+
+  </div>
+  <div class='link-page mt-3 container'>
+    <footer>
+      <h3 class="text-center align-middle footer-text">&copy; 2025 <a href="https://krisjordan.com">Kris Jordan</a>
+        - <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSenaJ2uZ_n2FfAb2PWL6YPG4AUT-G2-xVJP6HIwMr6cd6nSYA/viewform?usp=sf_link">Feedback
+          Form</a>
+        - Made with 💛 in <a href="https://cs.unc.edu/">Chapel Hill</a></h3>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <!-- Code Block Formatting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  
+</body>
+
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Workspace Repository Setup - COMP110 - 25F</title>
+  <link rel="icon" type="image/png" href="/static/s25_brand.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/static/styles.css?v=1767731941.8025439">
+</head>
+
+
+<body id="body" class="absolute-page">
+    <script>
+        document.body.classList.remove('light-mode');
+        document.body.classList.remove('dark-mode');
+        document.body.classList.add(localStorage.getItem('mode'));
+    </script>
+  <script src="/static/scripts/nav-menu-esc.js"></script> 
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark py-1 fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/s25_brand.png"
+        alt="COMP110 - Spring - 2025"><img class="darkmode-element-only img-fluid logo" src="/static/s25_brand.png"
+        alt="COMP110 - Spring - 2025"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" onclick="esc_key()" data-bs-target="#navmenu" aria-label="Main Menu" aria-controls="#navmenu" role="navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link " href="/">agenda</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources" class="nav-link">resources</a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="/support" class="nav-link">support</a>
+          </li>
+         
+          <li class="nav-item">
+            <a href="/resources/syllabus.html" class="nav-link">syllabus</a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="/resources/team.html" class="nav-link">team110</a>
+          </li>
+         
+        </ul>
+      </div>
+      <div id='mode-switch' class="ms-auto form-check form-switch mode switches">
+              <div class="switches">
+                  <input type="checkbox" id="1" onclick="
+                      if (localStorage.getItem('mode') === 'dark-mode') {
+                          localStorage.setItem('userPref', 'light-mode');
+                          localStorage.setItem('mode', 'light-mode');
+                      } else {
+                          localStorage.setItem('userPref', 'dark-mode');
+                          localStorage.setItem('mode', 'dark-mode');
+                      }
+                      location.reload();">
+                  <label for="1">
+                      <span id="mode-label">Dark Mode</span>
+                      <span></span>
+                  </label>
+                  <script>if(localStorage.getItem('mode') === 'dark-mode'){document.getElementById("1").checked = true}</script>
+                  <script>if(localStorage.getItem('userPref') === null) {setTimeout(function(){location.reload();}, (timer * 3600000));}</script>
+              </div>
+          </div>
+    </div>
+  </nav>
+
+  <div class="cloud-container">
+    <div id="cloud-intro">
+  <div id="resource-page" class="container">
+    <div class="row pt-4">
+      <div class="col-12">
+        <h1 id="page-title">Workspace Repository Setup</h1>
+      </div>
+    </div>
+    
+
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            <div>
+                <div id="menu-overview" class="link-page-overview horizon-box">
+                    <button id="overview-button" class="btn btn-ov" onclick="hideshow()" >Overview  <img id="button-img" alt="Overview" class="filter-icon" src="/static/components/Itinerary/arrow-up.svg" style="height:15px; padding-left: 4px;"></button>
+                    <div id="overview-links">
+                        <div id="TOC" role="doc-toc">
+                            <ul class="overview-item"><ul>
+<li><a href="#find-your-canvas-unc-e-mail-address">0. Find Your Canvas UNC E-mail Address</a></li>
+<li><a href="#register-for-github">1. Register for GitHub</a></li>
+<li><a href="#login-to-github-in-vscode">2. Login to Github in VSCode</a></li>
+<li><a href="#installing-vscode-dev-container-extension">3. Installing VSCode Dev Container Extension</a></li>
+<li><a href="#setup-your-workspace-in-visual-studio-code">4. Setup your Workspace in Visual Studio Code</a></li>
+<li><a href="#setup-your-backup-workspace-on-github">5. Setup your Backup Workspace on GitHub</a>
+<ul>
+<li><a href="#if-you-are-asked-to-configure-your-github-user-information">If You are Asked to Configure Your Github User Information</a></li>
+</ul></li>
+<li><a href="#confirm-everything-is-good-to-go">6. Confirm Everything is Good to Go</a></li>
+<li><a href="#get-started-on-ex00---hello-world">7. Get Started on EX00 - Hello World</a></li>
+</ul>
+</</ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><p>Before beginning these instructions you should have first <a href="/resources/setup/os-update.html">updated your operating system</a> and then <a href="/resources/setup/software.html">installed the required software (Docker Desktop and Visual Studio Code)</a>.</p>
+<h2 id="find-your-canvas-unc-e-mail-address">0. Find Your Canvas UNC E-mail Address</h2>
+<p><em><strong>Canvas UNC e-mail addresses typically end in <span class="citation" data-cites="live.unc.edu">@live.unc.edu</span> or <span class="citation" data-cites="email.unc.edu">@email.unc.edu</span></strong>!</em></p>
+<p>Find your Canvas e-mail address by logging into Canvas, clicking on “Account” in the top right corner, selecting “Settings”, and looking under the Email field on the right.</p>
+<p>Use your Canvas e-mail address when you login to Gradescope and register for GitHub.</p>
+<h2 id="register-for-github">1. Register for GitHub</h2>
+<p>GitHub is for backing up your course Workspace Repository and for downloading course materials.</p>
+<p>You can think of GitHub as a social network where people and organizations share and collaborate on code with one another. Organizations like NASA, NOAA, Peace Corps, Washington Post, New York Times, and so on, host projects publicly (and privately) on GitHub. It’s a valuable service for software engineers, data scientists, research teams, and more.</p>
+<p>Your coursework will have its own private “git repository”. The technology we use for backing up versions of our projects and transmitting them to or from the internet, hosted on GitHub, is called <em>git</em>. Visual Studio Code has git support built into it. Git is a professional <em>version control</em> tool we use in limited ways in COMP110, but if you continue on in a field that involves programming and data you’ll likely encounter it again.</p>
+<ol type="1">
+<li>Register for a GitHub account with your primary UNC address: <a href="https://github.com/" target="_blank">https://github.com/</a>
+<ul>
+<li>You are encouraged to choose your ONYEN as your username, if it is available (not required)</li>
+</ul></li>
+<li>After registering, edit your profile from this page: <a href="https://github.com/settings/profile" target="_blank">https://github.com/settings/profile</a>
+<ul>
+<li>Be sure your name and email match what is in Canvas</li>
+<li>Fill out the rest of your GitHub profile with a high quality photo of yourself, a brief bio, UNC Chapel Hill as your “company”, and Chapel Hill (or home) as your location if you are going to continue in a field that involves programming (computer science, data science, information science, and so on). Think of this as a secondary LinkedIn when it comes to future opportunities, because that’s often how employers and graduate schools look at it.</li>
+</ul></li>
+</ol>
+<h2 id="login-to-github-in-vscode">2. Login to Github in VSCode</h2>
+<ol type="1">
+<li>Open the VSCode application on your computer.</li>
+<li>In the bottom left corner, look for a user/profile icon above a settings gear icon. Click it.</li>
+<li>Click “Sign in” or “Sign in to sync settings”</li>
+<li>This will open a browser window. If you are not already logged into GitHub, you will be prompted to login. If you are logged in, you may get redirected back to VSCode. Follow the prompts until you are taken back to VSCode.</li>
+<li>Confirm you are logged in by clicking the user/profile icon in the bottom left corner of VSCode. You should see your GitHub username followed by (GitHub).</li>
+</ol>
+<h2 id="installing-vscode-dev-container-extension">3. Installing VSCode Dev Container Extension</h2>
+<p>VSCode can be customized with extensions specific to the types of work you use it for. We need a specific extension to enable a feature called “DevContainers” short for Development Containers. This feature of VSCode, combined with Docker, is what will ensure you and all of your peers in the course have exactly the same software setup.</p>
+<ol type="1">
+<li>From the View menu, select Extensions</li>
+<li>In the search box, type: “Dev Containers”.</li>
+<li>Click the top result that is verified as published by Microsoft.</li>
+<li>Click the Install button to install the extension.</li>
+<li>If prompted to reload the VSCode window, accept.</li>
+</ol>
+<!-- 
+## 4. Setup your Course Workspace on GitHub
+
+1. Navigate a web browser to <a href="https://classroom.github.com/a/YZrjn2no" target="_blank">https://classroom.github.com/a/YZrjn2no</a>
+2. Click "Skip to the next step" if prompted to select your user / identification
+3. Click "Accept this Assignment"
+4. When the workspace is getting set up, you may need to refresh until it tells you you're ready to go!
+5. Click the link to your personal backup repository that looks something like this `https://github.com/comp110-25s/comp110-workspace-iHinks` (except instead of `iHinks` you will see your GitHub username).
+
+## 5. Setup your Workspace in Visual Studio Code
+
+1. In VSCode, from the _View_ menu select _Command Palette_
+   - You'll use the Command Palette a lot so it's worth trying to remember its shortcut!
+   - Windows: `Control+Shift+P`
+   - Mac: `Command+Shift+P`
+2. Type in "Git: Clone" (without the quotes) and press `Enter`.
+3. Select "Clone from GitHub"
+4. Under Repository Name, look for `comp110-...` where the your GitHub username is found at the end of a workspace repository. Select your workspace.
+   * If you do not see your repository, be sure you are logged into VSCode with your GitHub account per part 2 above.
+5. You will be asked where you want your course workspace repository to be saved on your computer. Accepting the default suggestion is OK, but if you have a folder you would prefer to keep the course work go ahead and select it. **Moving your workspace after this step and should be avoided until the semester ends.**
+6. Press OK when asked if you would like to Open the repository after it downloads.
+7. After a second or two, you should see a popup telling you "Folder contains a DevContainer configuration file." Click the blue button **Reopen in Container**. This step will take a few minutes to complete.
+8. If you accidentally close this pop-up, you can open the Command Palette once more (step 1) and type in: **Reopen in Container** and press enter. -->
+<h2 id="setup-your-workspace-in-visual-studio-code">4. Setup your Workspace in Visual Studio Code</h2>
+<ol start="2" type="1">
+<li>In VSCode, from the <em>View</em> menu and select <em>Command Palette</em>
+<ul>
+<li>You’ll use the Command Palette a lot so it’s worth trying to remember its shortcut!</li>
+<li>Windows: <code>Control+Shift+P</code></li>
+<li>Mac: <code>Command+Shift+P</code></li>
+</ul></li>
+<li>Type in “Git: Clone” (without the quotes) and press <code>Enter</code>.
+<ul>
+<li>If you do not see this option after installing course software previously, try rebooting your computer.</li>
+</ul></li>
+<li>Copy the following URL: <code>https://github.com/comp110-25f/comp110-25f-workspace.git</code>
+<ul>
+<li>Right Click and Paste the copied URL into the text box that appeared in VS Code after the previous step.</li>
+<li>Or use the Paste keyboard shortcut: <code>Control+V</code> Windows / <code>Command+V</code> Mac</li>
+</ul></li>
+<li>Press Enter and you will be asked where you want your course workspace repository to be saved on your computer. Accepting the default suggestion is OK, but if you have a folder you would prefer to keep the course work go ahead and select it. <strong>Please don’t move this workspace until after the semester has ended.</strong></li>
+<li>Press OK when asked if you would like to open the repository after it downloads.</li>
+</ol>
+<h2 id="setup-your-backup-workspace-on-github">5. Setup your Backup Workspace on GitHub</h2>
+<ol type="1">
+<li>Navigate a web browser to <a href="https://classroom.github.com/a/TgRfEztd" target="_blank">https://classroom.github.com/a/TgRfEztd</a></li>
+<li>Click “Skip to the next step” when prompted to select your user / identification</li>
+<li>Click “Accept this Assignment”</li>
+<li>When the workspace is getting setup, you may need to refresh until it tells you you’re ready to go!</li>
+<li>Click the link to your personal backup repository that looks something like this <code>https://github.com/comp110-25f/comp110-workspace-iHinks</code> (except instead of <code>iHinks</code> you will see your GitHub username).</li>
+<li>Look for the “Quick setup- if you’ve done this kind of thing before” box. You will see the same link that you clicked on to get here in step 5. Copy that text or click the copy to clipboard (overlapping squares) button.</li>
+<li>In VSCode, open the <em>View</em> menu and select <em>Command Palette</em>, the shortcut for this menu is:
+<ul>
+<li>Windows: <code>Control+Shift+P</code></li>
+<li>Mac: <code>Command+Shift+P</code></li>
+</ul></li>
+<li>In VSCode, type in <em>Git: Add Remote</em> and press enter with the option selected.</li>
+<li>In the blank text box that appears, paste in the URL to your backup repository that you just copied. Press enter.</li>
+<li>When asked for “Remote name” type in: <code>backup</code></li>
+<li>Open a new terminal tab, from the <em>Command Palette</em> select “Terminal: Create New Terminal”</li>
+<li>In the terminal that pops up, type: <code>git push --set-upstream backup main</code> then press enter (two dashes in the of <code>--set-upstream</code>). This command backs your work up to your GitHub repository.</li>
+</ol>
+<h3 id="if-you-are-asked-to-configure-your-github-user-information">If You are Asked to Configure Your Github User Information</h3>
+<p>You may receive an error message when you try to push to git (step 12). If so, try these steps and try again.</p>
+<ol type="1">
+<li>If your <em>Terminal</em> window from above is still open, great! If not, open a new <em>Terminal</em> pane in VS Code.</li>
+<li>At the prompt, type the following command and press enter with your primary e-mail address inside the double quotes:</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">git</span> config --global user.email <span class="st">&quot;your@primary.email&quot;</span></span></code></pre></div>
+<ol start="3" type="1">
+<li>Then, type tye following command and press enter with your first and last name inside the double quotes:</li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="fu">git</span> config --global user.name <span class="st">&quot;Your Name&quot;</span></span></code></pre></div>
+<p>After doing this, when you make backup commits in <code>git</code> they’ll be correctly attributed to you.</p>
+<h2 id="confirm-everything-is-good-to-go">6. Confirm Everything is Good to Go</h2>
+<p>Phew, you’re almost to the end of setup! Hang in there!</p>
+<p>Now, let’s try opening your workspace in a Dev Container. The Dev Container mode is what you will use throughout the rest of the course.</p>
+<p>First, make sure Docker is open in the background. Click “Accept”, and do not sign in to Docker.</p>
+<p>Next, in VSCode, open the Command Palette once more and type “Reopen in Container”. This step will take a few minutes.</p>
+<p>VSCode should now be running in what is called a “Dev Container.” To confirm this, look in the lower left corner of VSCode, in the blue box, you should see “Dev Container: comp110-…”.</p>
+<p>Once it’s done, in the Explorer pane, you should see <code>.devcontainer</code>, <code>README.md</code>, and <code>welcome.py</code>. You will notice some of the other files are now hidden; they are hidden because they are not relevant to your work in the course.</p>
+<p>Let’s run the welcome program! Open the terminal by going to the Terminal menu and selecting New Terminal. You should see a terminal window open at the bottom of VSCode. In the terminal, type <code>python -m welcome</code> and press enter. You should see a welcome message printed to the terminal!</p>
+<p>Let’s be sure you are able to exit out of VSCode and find your work again. Go ahead and close VSCode. It will take a few seconds for your DevContainer to fully shut down in the background, so count to ten, take a few deep breaths, and be proud of setting up a modern, professional software development environment on your personal laptop! Then open VS Code again. If you see the same files in the left-hand sidebar, and “Dev Container: comp110-25f” in the bottom left corner: great! Keep reading, though, so you know what to do in the future if you do not see your workspace.</p>
+<p>If you do not see your workspace files in the Explorer sidebar, go to File, select Open Recent, and look for the topmost entry that has <code>comp110-</code> in it and ends in <code>[Dev Container]</code> and select it. This is how you can get back to your workspace most easily in the future.</p>
+<h2 id="get-started-on-ex00---hello-world">7. Get Started on EX00 - Hello World</h2>
+<p>You are now ready to begin the first exercise of the course, “Hello, world!”. Get started here: <a href="/exercises/ex00_hello_world.html">EX00 - Hello World</a></p>
+</div>
+
+       
+
+    </div> 
+    </div>
+    </div>
+    <div class="authors-box bg-dark mt-4 py-3 ps-4">
+      <span> Contributor(s):        Kris Jordan, Izzi Hinks</span>
+    </div>
+
+  </div>
+  <div class='link-page mt-3 container'>
+    <footer>
+      <h3 class="text-center align-middle footer-text">&copy; 2025 <a href="https://krisjordan.com">Kris Jordan</a>
+        - <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSenaJ2uZ_n2FfAb2PWL6YPG4AUT-G2-xVJP6HIwMr6cd6nSYA/viewform?usp=sf_link">Feedback
+          Form</a>
+        - Made with 💛 in <a href="https://cs.unc.edu/">Chapel Hill</a></h3>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <!-- Code Block Formatting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  
+</body>
+
+</html>

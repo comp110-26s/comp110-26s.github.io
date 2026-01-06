@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Practice Problems - COMP110 - 25F</title>
+  <link rel="icon" type="image/png" href="/static/s25_brand.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/static/styles.css?v=1767731937.9528205">
+</head>
+
+
+<body id="body" class="absolute-page">
+    <script>
+        document.body.classList.remove('light-mode');
+        document.body.classList.remove('dark-mode');
+        document.body.classList.add(localStorage.getItem('mode'));
+    </script>
+  <script src="/static/scripts/nav-menu-esc.js"></script> 
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark py-1 fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/s25_brand.png"
+        alt="COMP110 - Spring - 2025"><img class="darkmode-element-only img-fluid logo" src="/static/s25_brand.png"
+        alt="COMP110 - Spring - 2025"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" onclick="esc_key()" data-bs-target="#navmenu" aria-label="Main Menu" aria-controls="#navmenu" role="navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link " href="/">agenda</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources" class="nav-link">resources</a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="/support" class="nav-link">support</a>
+          </li>
+         
+          <li class="nav-item">
+            <a href="/resources/syllabus.html" class="nav-link">syllabus</a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="/resources/team.html" class="nav-link">team110</a>
+          </li>
+         
+        </ul>
+      </div>
+      <div id='mode-switch' class="ms-auto form-check form-switch mode switches">
+              <div class="switches">
+                  <input type="checkbox" id="1" onclick="
+                      if (localStorage.getItem('mode') === 'dark-mode') {
+                          localStorage.setItem('userPref', 'light-mode');
+                          localStorage.setItem('mode', 'light-mode');
+                      } else {
+                          localStorage.setItem('userPref', 'dark-mode');
+                          localStorage.setItem('mode', 'dark-mode');
+                      }
+                      location.reload();">
+                  <label for="1">
+                      <span id="mode-label">Dark Mode</span>
+                      <span></span>
+                  </label>
+                  <script>if(localStorage.getItem('mode') === 'dark-mode'){document.getElementById("1").checked = true}</script>
+                  <script>if(localStorage.getItem('userPref') === null) {setTimeout(function(){location.reload();}, (timer * 3600000));}</script>
+              </div>
+          </div>
+    </div>
+  </nav>
+
+  <div class="cloud-container">
+    <div id="cloud-intro">
+  <div id="lessons-page" class="container">
+    <div class="row pt-4">
+      <div class="col-12">
+        <h1 id="page-title">Practice Problems</h1>
+      </div>
+    </div>
+    
+
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            <div>
+                <div id="menu-overview" class="link-page-overview horizon-box">
+                    <button id="overview-button" class="btn btn-ov" onclick="hideshow()" >Overview  <img id="button-img" alt="Overview" class="filter-icon" src="/static/components/Itinerary/arrow-up.svg" style="height:15px; padding-left: 4px;"></button>
+                    <div id="overview-links">
+                        <div id="TOC" role="doc-toc">
+                            <ul class="overview-item"><ul>
+<li><a href="#changelog">Changelog</a></li>
+<li><a href="#quiz-00-practice-problems">Quiz 00 Practice Problems</a>
+<ul>
+<li><a href="#multiple-choice-and-truefalse">Multiple Choice and True/False</a></li>
+<li><a href="#expressions">Expressions</a></li>
+<li><a href="#functions">Functions</a></li>
+<li><a href="#function-signatures">Function Signatures</a></li>
+<li><a href="#memory-diagrams">Memory Diagrams</a></li>
+</ul></li>
+<li><a href="#solutions">Solutions</a>
+<ul>
+<li><a href="#multiple-choice-and-truefalse-1">Multiple Choice and True/False</a></li>
+<li><a href="#expressions-1">Expressions</a></li>
+<li><a href="#functions-1">Functions</a></li>
+<li><a href="#function-signatures-1">Function Signatures</a></li>
+<li><a href="#memory-diagrams-1">Memory Diagrams</a></li>
+</ul></li>
+</ul>
+</</ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h2 id="changelog">Changelog</h2>
+<p>Dec 2: Memory diagram 2 subquestions had some small errors/typos for what lines had docstrings and expressions. Before, line 1 was erroneously not included as having a docstring and line 8 was erroneously counted as including an expression.</p>
+<h1 id="quiz-00-practice-problems">Quiz 00 Practice Problems</h1>
+<p>The following questions will help solidify concepts learned in class, as well as prepare you for the quizzes and final!</p>
+<p>The quiz itself will be similar in difficulty to these practice questions. In addition to these questions, you should review all of your lesson responses and challenge questions on Gradescope.</p>
+<!-- It is also recommended to complete the [practice memory diagrams](/resources/practice/MemDiagrams.html). -->
+<p>If you find yourself feeling lost, please ask for help in <a href="/support">office hours or tutoring</a>.</p>
+<h2 id="multiple-choice-and-truefalse">Multiple Choice and True/False</h2>
+<ol type="1">
+<li><p>What is a <code>bool</code> data type in Python?</p>
+<ol type="a">
+<li><p>Data type for storing text</p></li>
+<li><p>Data type for storing whole numbers such as <code>-10</code>, <code>3</code>, or <code>100</code></p></li>
+<li><p>Data type for storing True/False values</p></li>
+<li><p>Data type for storing any type of information</p></li>
+<li><p>Data type for storing numbers with a decimal point such as <code>1.0</code>, <code>3.14</code>, or <code>-0.1</code></p></li>
+</ol></li>
+</ol>
+<details>
+<p><summary><b>SHOW SOLUTION</b></summary></p>
+<p>The correct answer is <code>C</code>.</p>
+</details>
+<p> </p>
+<ol start="2" type="1">
+<li><p>What is an <code>int</code> data type in Python?</p>
+<ol type="a">
+<li><p>Data type for storing text</p></li>
+<li><p>Data type for storing whole numbers such as <code>-10</code>, <code>3</code>, or <code>100</code></p></li>
+<li><p>Data type for storing True/False values</p></li>
+<li><p>Data type for storing any type of information</p></li>
+<li><p>Data type for storing numbers with a decimal point such as <code>1.0</code>, <code>3.14</code>, or <code>-0.1</code></p></li>
+</ol></li>
+</ol>
+<details>
+<p><summary><b>SHOW SOLUTION</b></summary></p>
+<p>The correct answer is <code>B</code>.</p>
+</details>
+<p> </p>
+<ol start="3" type="1">
+<li><p>What is a <code>str</code> data type in Python?</p>
+<ol type="a">
+<li><p>Data type for storing text</p></li>
+<li><p>Data type for storing whole numbers such as <code>-10</code>, <code>3</code>, or <code>100</code></p></li>
+<li><p>Data type for storing True/False values</p></li>
+<li><p>Data type for storing any type of information</p></li>
+<li><p>Data type for storing numbers with a decimal point such as <code>1.0</code>, <code>3.14</code>, or <code>-0.1</code></p></li>
+</ol></li>
+</ol>
+<details>
+<p><summary><b>SHOW SOLUTION</b></summary></p>
+<p>The correct answer is <code>A</code>.</p>
+</details>
+<p> </p>
+<ol start="4" type="1">
+<li><p>An <code>int</code> literal can begin with any number of zeroes.</p>
+<ol type="a">
+<li><p>True</p></li>
+<li><p>False</p></li>
+</ol></li>
+</ol>
+<details>
+<p><summary><b>SHOW SOLUTION</b></summary></p>
+<p>The correct answer is <code>B</code>.</p>
+</details>
+<p> </p>
+<ol start="5" type="1">
+<li><p>Which of the following literals are a <code>float</code>?</p>
+<ol type="a">
+<li><p><code>4</code></p></li>
+<li><p><code>"4"</code></p></li>
+<li><p><code>4.0</code></p></li>
+<li><p><code>"4.0"</code></p></li>
+</ol></li>
+</ol>
+<details>
+<p><summary><b>SHOW SOLUTION</b></summary></p>
+<p>The correct answer is <code>C</code>.</p>
+</details>
+<p> </p>
+<ol start="6" type="1">
+<li><p>What function can you use to determine the type of an object in Python?</p>
+<ol type="a">
+<li><p><code>print()</code></p></li>
+<li><p><code>str()</code></p></li>
+<li><p><code>len()</code></p></li>
+<li><p><code>type()</code></p></li>
+</ol></li>
+</ol>
+<details>
+<p><summary><b>SHOW SOLUTION</b></summary></p>
+<p>The correct answer is <code>D</code>.</p>
+</details>
+<p> </p>
+<ol start="7" type="1">
+<li><p>What is the <em>type</em> of the following expression?</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fl">1.5</span> <span class="op">+</span> <span class="dv">2</span></span></code></pre></div>
+<ol type="a">
+<li><p><code>int</code></p></li>
+<li><p><code>float</code></p></li>
+<li><p><code>str</code></p></li>
+<li><p><code>bool</code></p></li>
+<li><p><code>TypeError</code></p></li>
+</ol></li>
+</ol>
+<details>
+<p><summary><b>SHOW SOLUTION</b></summary></p>
+<p>The correct answer is <code>B</code>.</p>
+</details>
+<p> </p>
+<ol start="8" type="1">
+<li><p>What is the <em>type</em> of the following expression?</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="bu">len</span>(<span class="st">&quot;cottage&quot;</span>)</span></code></pre></div>
+<ol type="a">
+<li><p><code>int</code></p></li>
+<li><p><code>float</code></p></li>
+<li><p><code>str</code></p></li>
+<li><p><code>bool</code></p></li>
+<li><p><code>TypeError</code></p></li>
+</ol></li>
+</ol>
+<details>
+<p><summary><b>SHOW SOLUTION</b></summary></p>
+<p>The correct answer is <code>A</code>.</p>
+</details>
+<p> </p>
+<ol start="9" type="1">
+<li><p>What is the result of the following expression?</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="co">&quot;110&quot;</span> <span class="op">+</span> <span class="st">&quot;110&quot;</span></span></code></pre></div>
+<ol type="a">
+<li><p><code>220</code></p></li>
+<li><p><code>"110110"</code></p></li>
+<li><p><code>TypeError</code></p></li>
+<li><p><code>"220"</code></p></li>
+<li><p><code>"110""110"</code></p></li>
+</ol></li>
+</ol>
+<details>
+<p><summary><b>SHOW SOLUTION</b></summary></p>
+<p>The correct answer is <code>B</code>.</p>
+</details>
+<p> </p>
+<ol start="10" type="1">
+<li><p>What is the result of the following expression?</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="dv">102</span> <span class="op">//</span> <span class="dv">5</span></span></code></pre></div>
+<ol type="a">
+<li><p><code>20</code></p></li>
+<li><p><code>20.4"</code></p></li>
+<li><p><code>"20"</code></p></li>
+<li><p><code>TypeError</code></p></li>
+<li><p><code>21</code></p></li>
+</ol></li>
+</ol>
+<details>
+<p><summary><b>SHOW SOLUTION</b></summary></p>
+<p>The correct answer is <code>A</code>.</p>
+</details>
+<p> </p>
+<ol start="11" type="1">
+<li><p>What is the <em>type</em> of this value in Python?</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="co">&quot;True&quot;</span></span></code></pre></div>
+<ol type="a">
+<li><p><code>bool</code></p></li>
+<li><p><code>str</code></p></li>
+<li><p><code>TypeError</code></p></li>
+<li><p><code>int</code></p></li>
+<li><p><code>float</code></p></li>
+</ol></li>
+</ol>
+<details>
+<p><summary><b>SHOW SOLUTION</b></summary></p>
+<p>The correct answer is <code>B</code>.</p>
+</details>
+<p> </p>
+<ol start="12" type="1">
+<li><p>What <em>value</em> will the following expression evaluate to?</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="co">&quot;map&quot;</span>[<span class="dv">1</span>]</span></code></pre></div>
+<ol type="a">
+<li><p><code>m</code></p></li>
+<li><p><code>"m"</code></p></li>
+<li><p><code>a</code></p></li>
+<li><p><code>"a"</code></p></li>
+<li><p><code>TypeError</code></p></li>
+</ol></li>
+</ol>
+<details>
+<p><summary><b>SHOW SOLUTION</b></summary></p>
+<p>The correct answer is <code>D</code>.</p>
+</details>
+<p> </p>
+<ol start="13" type="1">
+<li><p>What will the following expression evaluate to?</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="bu">int</span>(<span class="fl">3.8</span> <span class="op">+</span> <span class="dv">1</span>)</span></code></pre></div>
+<ol type="a">
+<li><p><code>4.8</code></p></li>
+<li><p><code>5</code></p></li>
+<li><p><code>3.81</code></p></li>
+<li><p><code>4</code></p></li>
+<li><p><code>TypeError</code></p></li>
+</ol></li>
+</ol>
+<details>
+<p><summary><b>SHOW SOLUTION</b></summary></p>
+<p>The correct answer is <code>D</code>.</p>
+</details>
+<p> </p>
+<h2 id="expressions">Expressions</h2>
+<ol type="1">
+<li><p>What are the <em>types</em> of the following expressions and what <em>values</em> do they evaluate to? If a <code>TypeError</code> occurs, just write <code>TypeError</code>.</p>
+<p>1.1. <code>1.5 + 2</code></p>
+<p>1.2. <code>"hehe" * 2</code></p>
+<p>1.3. <code>len("110") ** 2</code></p>
+<p>1.4. <code>str(110) * 2.1</code></p>
+<p>1.5. <code>float("100.0") / 20</code></p>
+<p>1.6. <code>21 // 2 ** 2 + 3</code></p>
+<p>1.7. <code>float("220") &gt;= float("100" + "100")</code></p>
+<p>1.8. <code>int("COMP 110"[5]) + 99.0</code></p>
+<p>1.9. <code>(42 % 4) == (79 % 11)</code></p>
+<p>1.10. <code>int(4.99)</code></p></li>
+</ol>
+<details>
+<p><summary><b>SHOW SOLUTION</b></summary></p>
+<p>The correct answers are:</p>
+<p>1.1. Type: <code>float</code> Value: <code>3.5</code></p>
+<p>1.2. Type: <code>str</code> Value: <code>"hehehehe"</code></p>
+<p>1.3. Type: <code>int</code> Value: <code>9</code></p>
+<p>1.4. <code>TypeError</code></p>
+<p>1.5. Type: <code>float</code> Value: <code>5.0</code></p>
+<p>1.6. Type: <code>int</code> Value: <code>8</code></p>
+<p>1.7. Type: <code>bool</code> Value: <code>False</code></p>
+<p>1.8. Type: <code>float</code> Value: <code>100.0</code></p>
+<p>1.9. Type: <code>bool</code> Value: <code>True</code></p>
+<p>1.10. Type: <code>int</code> Value: <code>4</code></p>
+</details>
+<p> </p>
+<ol start="2" type="1">
+<li><p>Which of the following expressions correctly <em>concatenates</em> two strings together?</p>
+<ol type="a">
+<li><p><code>"clam" * "chowder"</code></p></li>
+<li><p><code>"clam" + "chowder"</code></p></li>
+<li><p><code>"clam" , "chowder"</code></p></li>
+<li><p><code>"clam" : "chowder"</code></p></li>
+</ol></li>
+</ol>
+<details>
+<p><summary><b>SHOW SOLUTION</b></summary></p>
+<p>The correct answer is <code>B</code>.</p>
+</details>
+<p> </p>
+<ol start="3" type="1">
+<li><p>When using subscription syntax, what <em>index</em> does Python start with?</p>
+<ol type="a">
+<li><p><code>-1</code></p></li>
+<li><p><code>0</code></p></li>
+<li><p><code>1</code></p></li>
+<li><p><code>""</code></p></li>
+<li><p><code>True</code></p></li>
+</ol></li>
+</ol>
+<details>
+<p><summary><b>SHOW SOLUTION</b></summary></p>
+<p>The correct answer is <code>B</code>.</p>
+</details>
+<p> </p>
+<ol start="4" type="1">
+<li>What value would you substitute for <code>x</code> to make the following expression True?</li>
+</ol>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a>(<span class="dv">3</span> <span class="op">+</span> x) <span class="op">==</span> ((<span class="dv">55</span> <span class="op">//</span> <span class="dv">11</span>) <span class="op">**</span> <span class="dv">2</span>)</span></code></pre></div>
+<details>
+<p><summary><b>SHOW SOLUTION</b></summary></p>
+<p>The correct answer is <code>22</code>.</p>
+</details>
+<p> </p>
+<ol start="5" type="1">
+<li>Use subscription notation, string concatenation, and the string <code>"nevermind"</code> to write an expression that evaluates to <code>"nvm"</code>.</li>
+</ol>
+<details>
+<p><summary><b>SHOW SOLUTION</b></summary></p>
+<p>The correct answer is <code>"nevermind"[0] + "nevermind"[2] + "nevermind"[5]</code>.</p>
+</details>
+<p> </p>
+<h2 id="functions">Functions</h2>
+<ol type="1">
+<li>What is a function call, and how does it differ from a function definition?</li>
+</ol>
+<details>
+<p><summary><b>SHOW SOLUTION</b></summary></p>
+<p>A function definition is where you create the function and specify what it does. It includes the function signature and everything indented below it. The signature consists of the function name, parameters, the types of the parameters, and the return type. The function body contains the code block that executes when the function is called. A function call occurs when you invoke or execute the function by writing the function name followed by parentheses. If the function accepts inputs, the parentheses will contain the values assigned to the parameters, also known as arguments. When a function definition is encountered, the function body is not executed; it is bypassed until the function is called. To call a function, you must first define it.</p>
+</details>
+<p> </p>
+<ol start="2" type="1">
+<li>What is the difference between parameters and arguments in the context of functions?</li>
+</ol>
+<details>
+<p><summary><b>SHOW SOLUTION</b></summary></p>
+<p>Parameters are the variables listed in the function signature that define the expected inputs. Your parameters will hold the values passed into the function when the function is called. These values that are assigned to the parameters are called arguments. Arguments are the actual values passed to the function when it is called.</p>
+</details>
+<p> </p>
+<ol start="3" type="1">
+<li>When you call a function, once the function is executed, where do you return back to?</li>
+</ol>
+<details>
+<p><summary><b>SHOW SOLUTION</b></summary></p>
+<p>After the function is executed, you will return back to the point in the code where the function was called.</p>
+</details>
+<p> </p>
+<ol start="4" type="1">
+<li>If you never encounter a return statement in your function, what is your return value?</li>
+</ol>
+<details>
+<p><summary><b>SHOW SOLUTION</b></summary></p>
+<p>If there is no return statement in a function, it returns None by default.</p>
+</details>
+<p> </p>
+<ol start="5" type="1">
+<li><p>What does the <code>len()</code> function do in Python?</p>
+<ol type="a">
+<li><p>Converts a value to a string</p></li>
+<li><p>Rounds a number to the nearest whole number</p></li>
+<li><p>Returns the length of a sequence, such as a <code>str</code></p></li>
+<li><p>Converts a string to a number</p></li>
+<li><p>Counts the digits in an int</p></li>
+</ol></li>
+</ol>
+<details>
+<p><summary><b>SHOW SOLUTION</b></summary></p>
+<p>The correct answer is <code>C</code>.</p>
+</details>
+<p> </p>
+<ol start="6" type="1">
+<li><p>Given the following function definition, answer the following questions.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a><span class="kw">def</span> evaluate_length(name: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a>    <span class="co">&quot;&quot;&quot;This function returns the length of the name.&quot;&quot;&quot;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true"></a>    <span class="cf">return</span> <span class="bu">len</span>(name)</span></code></pre></div>
+<p>6.1. What is the result of the following function call? <code>evaluate_length("airplane")</code></p>
+<p>6.2. What is the <em>type</em> of the parameter <code>name</code>? What is the <em>return type</em> of this function?</p></li>
+</ol>
+<details>
+<p><summary><b>SHOW SOLUTION</b></summary></p>
+<p>The correct answers are:</p>
+<p>6.1. <code>8</code></p>
+<p>6.2. The type of <code>name</code> is <code>str</code> and the return type of the function is <code>int</code>.</p>
+</details>
+<p> </p>
+<ol start="7" type="1">
+<li><p>Given the following function definition, answer the following questions.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a><span class="kw">def</span> tablespoons_to_teaspoons(tablespoons: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true"></a>    <span class="co">&quot;&quot;&quot;This functions tells you how many teaspoons are in the given number of tablespoons.&quot;&quot;&quot;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true"></a>    <span class="cf">return</span> <span class="bu">str</span>(tablespoons <span class="op">*</span> <span class="dv">3</span>) <span class="op">+</span> <span class="st">&quot; teaspoons&quot;</span></span></code></pre></div>
+<p>7.1. Write a function call to <code>tablespoons_to_teaspoons</code> that returns the string <code>"9 teaspoons"</code>.</p>
+<p>7.2. What is the <em>type</em> of the parameter <code>tablespoons</code>? What is the <em>return type</em> of this function?</p></li>
+</ol>
+<details>
+<p><summary><b>SHOW SOLUTION</b></summary></p>
+<p>The correct answers are:</p>
+<p>7.1. <code>tablespoons_to_teaspoons(tablespoons=3)</code></p>
+<p>7.2. The type of <code>tablespoons</code> is <code>int</code> and the return type of the function is <code>str</code>.</p>
+</details>
+<p> </p>
+<h2 id="function-signatures">Function Signatures</h2>
+<ol type="1">
+<li>What is a function signature, and why is it significant?</li>
+</ol>
+<details>
+<p><summary><b>SHOW SOLUTION</b></summary></p>
+<p>A function signature refers to the first line of a function definition, where the def keyword is used. Following the def keyword is the function name, and after the function name is a set of parentheses that enclose the parameter list. After the parameter list comes the return type. The function signature is important because it defines how the function can be called and what kinds of inputs and outputs are expected. Without a signature, you wouldn’t know what parameters to provide or even how to call the function, since the function name would be missing.</p>
+</details>
+<p> </p>
+<ol start="2" type="1">
+<li>Write the function signature for a function called <code>pos_or_neg</code> that takes as input an integer and returns <code>"Positive"</code> if the integer is positive and returns <code>"Negative"</code> if the integer is negative. Use <code>number</code> as the name of the parameter.</li>
+</ol>
+<details>
+<p><summary><b>SHOW SOLUTION</b></summary></p>
+<p>The correct answer is:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true"></a>  <span class="kw">def</span> pos_or_neg(number: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span></code></pre></div>
+</details>
+<p> </p>
+<ol start="3" type="1">
+<li>Write the function signature for a function called <code>gcd</code> that takes two integers as input and returns the integer that is their greatest common divisor. Use <code>num_one</code> and <code>num_two</code> as your parameter names.</li>
+</ol>
+<details>
+<p><summary><b>SHOW SOLUTION</b></summary></p>
+<p>The correct answer is:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true"></a>  <span class="kw">def</span> gcd(num_one: <span class="bu">int</span>, num_two: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span></code></pre></div>
+</details>
+<p> </p>
+<h2 id="memory-diagrams">Memory Diagrams</h2>
+<ol type="1">
+<li><p>Trace a memory diagram of the following code listing and answer the following subquestions.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true"></a><span class="dv">1</span>  <span class="kw">def</span> total_price(calzones: <span class="bu">int</span>, strombolis: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true"></a><span class="dv">2</span>      <span class="st">&quot;&quot;&quot;Returns the total price for the order of food, including a service fee of $3.&quot;&quot;&quot;</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true"></a><span class="dv">3</span>      <span class="cf">return</span> calzones_price(calzones<span class="op">=</span>calzones) <span class="op">+</span> strombolis_price(strombolis<span class="op">=</span>strombolis) <span class="op">+</span> <span class="dv">3</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true"></a><span class="dv">4</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true"></a><span class="dv">5</span>  <span class="kw">def</span> calzones_price(calzones: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true"></a><span class="dv">6</span>      <span class="st">&quot;&quot;&quot;Returns the price of the given number of calzones.&quot;&quot;&quot;</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true"></a><span class="dv">7</span>      <span class="cf">return</span> <span class="dv">7</span> <span class="op">*</span> calzones</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true"></a><span class="dv">8</span>  </span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true"></a><span class="dv">9</span>  <span class="kw">def</span> strombolis_price(strombolis: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true"></a><span class="dv">10</span>     <span class="st">&quot;&quot;&quot;Returns the price of the given number of strombolis.&quot;&quot;&quot;</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true"></a><span class="dv">11</span>     <span class="cf">return</span> <span class="dv">8</span> <span class="op">*</span> strombolis</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true"></a><span class="dv">12</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true"></a><span class="dv">13</span> <span class="bu">print</span>(total_price(calzones<span class="op">=</span><span class="dv">4</span>, strombolis<span class="op">=</span><span class="dv">2</span>))</span></code></pre></div>
+<p>1.1. What line(s) do <em>function definition signatures</em> appear on?</p>
+<p>1.2. What line(s) do <em>docstrings</em> appear on?</p>
+<p>1.3. What line(s) do <em>expressions</em> appear on?</p>
+<p>1.4. What line(s) do <em>function calls</em> appear on?</p>
+<p>1.5. Write a function call to <code>calzones_price</code> that would evaluate to <code>28</code>.</p></li>
+</ol>
+<details>
+<p><summary><b>SHOW SOLUTION</b></summary></p>
+<p><img class="img-fluid" src="/static/practice/qz00_practice/calzones_mem_diag.jpg" alt="Memory diagram of calzones and strombolis"  /></p>
+<p>The correct answers are:</p>
+<p>1.1. Lines 1, 5, and 9</p>
+<p>1.2. Lines 2, 6, and 10</p>
+<p>1.3. Lines 3, 7, 11, 13</p>
+<p>1.4. Lines 3 and 13</p>
+<p>1.5. <code>calzones_price(calzones=4)</code></p>
+</details>
+<p> </p>
+<ol start="2" type="1">
+<li><p>Trace a memory diagram of the following code listing and answer the following subquestions.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true"></a><span class="dv">1</span>  <span class="st">&quot;&quot;&quot;Functions of a circle...&quot;&quot;&quot;</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true"></a><span class="dv">2</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true"></a><span class="dv">3</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true"></a><span class="dv">4</span>  <span class="kw">def</span> main() <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true"></a><span class="dv">5</span>      <span class="st">&quot;&quot;&quot;Entrypoint of Program&quot;&quot;&quot;</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true"></a><span class="dv">6</span>      <span class="bu">print</span>(circumference(radius<span class="op">=</span><span class="fl">1.0</span>))</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true"></a><span class="dv">7</span>      <span class="bu">print</span>(area(radius<span class="op">=</span><span class="fl">1.0</span>))</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true"></a><span class="dv">8</span>      <span class="cf">return</span> <span class="va">None</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true"></a><span class="dv">9</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true"></a><span class="dv">10</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true"></a><span class="dv">11</span> <span class="kw">def</span> area(radius: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true"></a><span class="dv">12</span>     <span class="st">&quot;&quot;&quot;Calculate area of a circle&quot;&quot;&quot;</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true"></a><span class="dv">13</span>     <span class="cf">return</span> <span class="fl">3.14</span> <span class="op">*</span> radius <span class="op">**</span> <span class="dv">2</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true"></a><span class="dv">14</span></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true"></a><span class="dv">15</span></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true"></a><span class="dv">16</span> <span class="kw">def</span> circumference(radius: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true"></a><span class="dv">17</span>     <span class="st">&quot;&quot;&quot;Calculate circumference&quot;&quot;&quot;</span></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true"></a><span class="dv">18</span>     <span class="cf">return</span> <span class="dv">2</span> <span class="op">*</span> <span class="fl">3.14</span> <span class="op">*</span> radius</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true"></a><span class="dv">19</span></span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true"></a><span class="dv">20</span></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true"></a><span class="dv">21</span> main()</span></code></pre></div>
+<p>2.1. What line(s) do <em>function definition signatures</em> appear on?</p>
+<p>2.2. What line(s) do <em>docstrings</em> appear on?</p>
+<p>2.3. What line(s) do <em>expressions</em> appear on?</p>
+<p>2.4. What line(s) do <em>function calls</em> appear on?</p>
+<p>2.5. What is the return type of <code>area</code>? What is the return type of <code>main</code>?</p></li>
+</ol>
+<details>
+<p><summary><b>SHOW SOLUTION</b></summary></p>
+<p><img class="img-fluid" src="/static/practice/qz00_practice/circumference_area_mem_diag.jpg" alt="Memory diagram of circumference and area"  /></p>
+<p>The correct answers are:</p>
+<p>2.1. Lines 1, 4, 11, and 16</p>
+<p>2.2. Lines 5, 12, and 17</p>
+<p>2.3. Lines 6, 7, 13, 18, 21</p>
+<p>2.4. Lines 6, 7, and 21</p>
+<p>2.5. <code>area</code> has a return type of <code>float</code> and <code>main</code> has a return type of <code>None</code>.</p>
+</details>
+<p> </p>
+<h1 id="solutions">Solutions</h1>
+<h2 id="multiple-choice-and-truefalse-1">Multiple Choice and True/False</h2>
+<ol type="1">
+<li>C</li>
+<li>B</li>
+<li>A</li>
+<li>B</li>
+<li>C</li>
+<li>D</li>
+<li>B</li>
+<li>A</li>
+<li>B</li>
+<li>A</li>
+<li>B</li>
+<li>D</li>
+<li>D</li>
+</ol>
+<h2 id="expressions-1">Expressions</h2>
+<p>1.1. Type: <code>float</code> Value: <code>3.5</code></p>
+<p>1.2. Type: <code>str</code> Value: <code>"hehehehe"</code></p>
+<p>1.3. Type: <code>int</code> Value: <code>9</code></p>
+<p>1.4. <code>TypeError</code></p>
+<p>1.5. Type: <code>float</code> Value: <code>5.0</code></p>
+<p>1.6. Type: <code>int</code> Value: <code>8</code></p>
+<p>1.7. Type: <code>bool</code> Value: <code>False</code></p>
+<p>1.8. Type: <code>float</code> Value: <code>100.0</code></p>
+<p>1.9. Type: <code>bool</code> Value: <code>True</code></p>
+<p>1.10. Type: <code>int</code> Value: <code>4</code></p>
+<ol start="2" type="1">
+<li><p>B</p></li>
+<li><p>B</p></li>
+<li><p><code>22</code></p></li>
+<li><p><code>"nevermind"[0] + "nevermind"[2] + "nevermind"[5]</code></p></li>
+</ol>
+<h2 id="functions-1">Functions</h2>
+<ol type="1">
+<li><p>A function definition is where you create the function and specify what it does. It includes the function signature and everything indented below it. The signature consists of the function name, parameters, the types of the parameters, and the return type. The function body contains the code block that executes when the function is called. A function call occurs when you invoke or execute the function by writing the function name followed by parentheses. If the function accepts inputs, the parentheses will contain the values assigned to the parameters, also known as arguments. When a function definition is encountered, the function body is not executed; it is bypassed until the function is called. To call a function, you must first define it.</p></li>
+<li><p>Parameters are the variables listed in the function signature that define the expected inputs. Your parameters will hold the values passed into the function when the function is called. These values that are assigned to the parameters are called arguments. Arguments are the actual values passed to the function when it is called.</p></li>
+<li><p>After the function is executed, you will return back to the point in the code where the function was called.</p></li>
+<li><p>If there is no return statement in a function, it returns None by default.</p></li>
+<li><p>C</p></li>
+</ol>
+<p>6.1. <code>8</code></p>
+<p>6.2. The type of <code>name</code> is <code>str</code> and the return type of the function is <code>int</code>.</p>
+<p>7.1. <code>tablespoons_to_teaspoons(tablespoons=3)</code></p>
+<p>7.2. The type of <code>tablespoons</code> is <code>int</code> and the return type of the function is <code>str</code>.</p>
+<h2 id="function-signatures-1">Function Signatures</h2>
+<ol type="1">
+<li><p>A function signature refers to the first line of a function definition, where the def keyword is used. Following the def keyword is the function name, and after the function name is a set of parentheses that enclose the parameter list. After the parameter list comes the return type. The function signature is important because it defines how the function can be called and what kinds of inputs and outputs are expected. Without a signature, you wouldn’t know what parameters to provide or even how to call the function, since the function name would be missing.</p></li>
+<li></li>
+</ol>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true"></a><span class="kw">def</span> pos_or_neg(number: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span></code></pre></div>
+<ol start="3" type="1">
+<li></li>
+</ol>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true"></a><span class="kw">def</span> gcd(num_one: <span class="bu">int</span>, num_two: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span></code></pre></div>
+<h2 id="memory-diagrams-1">Memory Diagrams</h2>
+<ol type="1">
+<li></li>
+</ol>
+<p><img class="img-fluid" src="/static/practice/qz00_practice/calzones_mem_diag.jpg" alt="Memory diagram of calzones and strombolis"  /></p>
+<pre><code>1.1. Lines 1, 5, and 9
+
+1.2. Lines 2, 6, and 10
+
+1.3. Lines 3, 7, 11, 13
+
+1.4. Lines 3 and 13
+
+1.5. `calzones_price(calzones=4)`</code></pre>
+<ol start="2" type="1">
+<li></li>
+</ol>
+<p><img class="img-fluid" src="/static/practice/qz00_practice/circumference_area_mem_diag.jpg" alt="Memory diagram of circumference and area"  /></p>
+<pre><code>2.1. Lines 4, 11, and 16
+
+2.2. Lines 5, 12, and 17
+
+2.3. Lines 6, 7, 8, 13, 18, 21
+
+2.4. Lines 21, 6, and 7
+
+2.5. `area` has a return type of `float` and `main` has a return type of `None`.</code></pre>
+</div>
+
+       
+
+    </div> 
+    </div>
+    </div>
+    <div class="authors-box bg-dark mt-4 py-3 ps-4">
+      <span> Contributor(s):        Alyssa Lytle,        Team 110,        Izzi Hinks, Benjamin Eldridge</span>
+    </div>
+
+  </div>
+  <div class='link-page mt-3 container'>
+    <footer>
+      <h3 class="text-center align-middle footer-text">&copy; 2025 <a href="https://krisjordan.com">Kris Jordan</a>
+        - <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSenaJ2uZ_n2FfAb2PWL6YPG4AUT-G2-xVJP6HIwMr6cd6nSYA/viewform?usp=sf_link">Feedback
+          Form</a>
+        - Made with 💛 in <a href="https://cs.unc.edu/">Chapel Hill</a></h3>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <!-- Code Block Formatting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  
+</body>
+
+</html>

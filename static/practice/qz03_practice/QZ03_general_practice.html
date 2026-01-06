@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Quiz 03 Practice Problems - COMP110 - 25F</title>
+  <link rel="icon" type="image/png" href="/static/s25_brand.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/static/styles.css?v=1767731940.5246284">
+</head>
+
+
+<body id="body" class="absolute-page">
+    <script>
+        document.body.classList.remove('light-mode');
+        document.body.classList.remove('dark-mode');
+        document.body.classList.add(localStorage.getItem('mode'));
+    </script>
+  <script src="/static/scripts/nav-menu-esc.js"></script> 
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark py-1 fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/s25_brand.png"
+        alt="COMP110 - Spring - 2025"><img class="darkmode-element-only img-fluid logo" src="/static/s25_brand.png"
+        alt="COMP110 - Spring - 2025"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" onclick="esc_key()" data-bs-target="#navmenu" aria-label="Main Menu" aria-controls="#navmenu" role="navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link " href="/">agenda</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources" class="nav-link">resources</a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="/support" class="nav-link">support</a>
+          </li>
+         
+          <li class="nav-item">
+            <a href="/resources/syllabus.html" class="nav-link">syllabus</a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="/resources/team.html" class="nav-link">team110</a>
+          </li>
+         
+        </ul>
+      </div>
+      <div id='mode-switch' class="ms-auto form-check form-switch mode switches">
+              <div class="switches">
+                  <input type="checkbox" id="1" onclick="
+                      if (localStorage.getItem('mode') === 'dark-mode') {
+                          localStorage.setItem('userPref', 'light-mode');
+                          localStorage.setItem('mode', 'light-mode');
+                      } else {
+                          localStorage.setItem('userPref', 'dark-mode');
+                          localStorage.setItem('mode', 'dark-mode');
+                      }
+                      location.reload();">
+                  <label for="1">
+                      <span id="mode-label">Dark Mode</span>
+                      <span></span>
+                  </label>
+                  <script>if(localStorage.getItem('mode') === 'dark-mode'){document.getElementById("1").checked = true}</script>
+                  <script>if(localStorage.getItem('userPref') === null) {setTimeout(function(){location.reload();}, (timer * 3600000));}</script>
+              </div>
+          </div>
+    </div>
+  </nav>
+
+  <div class="cloud-container">
+    <div id="cloud-intro">
+  <div id="lessons-page" class="container">
+    <div class="row pt-4">
+      <div class="col-12">
+        <h1 id="page-title">Quiz 03 Practice Problems</h1>
+      </div>
+    </div>
+    
+
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            <div>
+                <div id="menu-overview" class="link-page-overview horizon-box">
+                    <button id="overview-button" class="btn btn-ov" onclick="hideshow()" >Overview  <img id="button-img" alt="Overview" class="filter-icon" src="/static/components/Itinerary/arrow-up.svg" style="height:15px; padding-left: 4px;"></button>
+                    <div id="overview-links">
+                        <div id="TOC" role="doc-toc">
+                            <ul class="overview-item"><ul>
+<li><a href="#algorithmic-complexity">Algorithmic Complexity</a></li>
+<li><a href="#unit-tests">Unit Tests</a></li>
+<li><a href="#object-oriented-programming">Object-Oriented Programming</a>
+<ul>
+<li><a href="#multiple-choice">Multiple Choice</a></li>
+<li><a href="#select-all-that-apply">Select All That Apply</a></li>
+<li><a href="#short-answer">Short Answer</a></li>
+<li><a href="#memory-diagrams">Memory Diagrams</a></li>
+</ul></li>
+</ul>
+</</ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="algorithmic-complexity">Algorithmic Complexity</h1>
+<ol type="1">
+<li><p>True or False: A function with a big-O notation of <span class="math inline"><em>O</em>(<em>n</em>)</span> will always run faster than a function with a big-O notation of <span class="math inline"><em>O</em>(<em>n</em><sup>2</sup>)</span> for all inputs.</p></li>
+<li><p>What type of input does Big-O notation consider?</p>
+<ol type="a">
+<li><p>Best Case</p></li>
+<li><p>Worst Case</p></li>
+<li><p>Average Case</p></li>
+</ol></li>
+<li><p>True or False: Big-O notation provides a precise measurement of the actual runtime of an algorithm on a specific machine.</p></li>
+<li><p>If an algorithm has a time complexity of <span class="math inline"><em>O</em>(1)</span>, it means its runtime is:</p>
+<ol type="a">
+<li><p>Linear</p></li>
+<li><p>Constant</p></li>
+<li><p>Quadratic</p></li>
+<li><p>Exponential</p></li>
+</ol></li>
+<li><p>If an algorithm has a time complexity of <span class="math inline"><em>O</em>(<em>n</em>)</span>, it means its runtime is:</p>
+<ol type="a">
+<li><p>Linear</p></li>
+<li><p>Constant</p></li>
+<li><p>Quadratic</p></li>
+<li><p>Exponential</p></li>
+</ol></li>
+<li><p>If an algorithm has a time complexity of <span class="math inline"><em>O</em>(<em>n</em><sup>2</sup>)</span>, it means its runtime is:</p>
+<ol type="a">
+<li><p>Linear</p></li>
+<li><p>Constant</p></li>
+<li><p>Quadratic</p></li>
+<li><p>Exponential</p></li>
+</ol></li>
+<li><p>If an algorithm has a time complexity of <span class="math inline"><em>O</em>(2<sup><em>n</em></sup>)</span>, it means its runtime is:</p>
+<ol type="a">
+<li><p>Linear</p></li>
+<li><p>Constant</p></li>
+<li><p>Quadratic</p></li>
+<li><p>Exponential</p></li>
+</ol></li>
+<li><p>Consider the following function:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw">def</span> foo(outer_input: <span class="bu">list</span>[<span class="bu">str</span>], inner_input: <span class="bu">list</span>[<span class="bu">str</span>]) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>    <span class="co">&quot;&quot;&quot;Nested loop!&quot;&quot;&quot;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>    <span class="cf">for</span> x <span class="kw">in</span> outer_input:</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>        <span class="cf">for</span> y <span class="kw">in</span> inner_input:</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>            <span class="bu">print</span>(<span class="ss">f&quot;</span><span class="sc">{x}</span><span class="ss"> and </span><span class="sc">{y}</span><span class="ss">!&quot;</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>    <span class="cf">return</span> <span class="va">None</span></span></code></pre></div>
+<p>8.1. Assuming <code>outer_input</code> and <code>inner_input</code> both have length <span class="math inline"><em>n</em></span>, what is the big-O runtime of the function <code>foo</code>?</p>
+<p>8.2. If <code>outer_input</code> has length <span class="math inline"><em>n</em><sup>2</sup></span> and <code>inner_input</code> has length <span class="math inline"><em>n</em></span>, what would be the big-O runtime of the function <code>foo</code>?</p></li>
+<li><p>Which of the following is true about algorithms?</p>
+<ol type="a">
+<li><p>The result of an algorithm is only affected by its inputs.</p></li>
+<li><p>An algorithm can have side effects which affect its environment.</p></li>
+<li><p>An algorithm can take an infinite number of steps to complete.</p></li>
+<li><p>The only effect that an algorithm can have is on its result.</p></li>
+</ol></li>
+<li><p>Consider the following code snippets:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a>unc_pid_range: <span class="bu">dict</span>[<span class="bu">int</span>, <span class="bu">bool</span>] <span class="op">=</span> {<span class="dv">730000000</span>: <span class="va">False</span>, <span class="dv">730000001</span>: <span class="va">False</span>, ..., <span class="dv">730999999</span>: <span class="va">False</span>}</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>prime_numbers: <span class="bu">list</span>[<span class="bu">int</span>] <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, ..., <span class="dv">1000000007</span>]</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a><span class="cf">for</span> pid <span class="kw">in</span> unc_pid_range:</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a>    <span class="cf">if</span> pid <span class="kw">in</span> prime_numbers:</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a>        unc_pid_range[pid] <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a>        <span class="bu">print</span>(<span class="ss">f&quot;Prime PID found: </span><span class="sc">{</span>pid<span class="sc">}</span><span class="ss">!&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a>unc_pid_range: <span class="bu">list</span>[<span class="bu">int</span>] <span class="op">=</span> [<span class="dv">730000000</span>, <span class="dv">730000001</span>, ..., <span class="dv">730999999</span>]</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>prime_numbers: <span class="bu">dict</span>[<span class="bu">int</span>, <span class="bu">bool</span>] <span class="op">=</span> {<span class="dv">2</span>: <span class="va">False</span>, <span class="dv">3</span>: <span class="va">False</span>, <span class="dv">5</span>: <span class="va">False</span>, <span class="dv">7</span>: <span class="va">False</span>, ..., <span class="dv">1000000007</span>: <span class="va">False</span>}</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a><span class="cf">for</span> pid <span class="kw">in</span> unc_pid_range:</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>    <span class="cf">if</span> pid <span class="kw">in</span> prime_numbers:</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a>        prime_numbers[pid] <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a>        <span class="bu">print</span>(<span class="ss">f&quot;Prime PID found: </span><span class="sc">{</span>pid<span class="sc">}</span><span class="ss">!&quot;</span>)</span></code></pre></div>
+<p>Let <span class="math inline"><em>n</em></span> be the size of the <code>unc_pid_range</code> and let <span class="math inline"><em>m</em></span> be the size of both the <code>prime_numbers</code> in both code snippets. What are the runtimes of the two code snippets in big-O notation in terms of <span class="math inline"><em>m</em></span> and <span class="math inline"><em>n</em></span>? Which would you choose to use if you cared the most about speed?</p></li>
+</ol>
+<details>
+<p><summary>SOLUTIONS</summary></p>
+<ol type="1">
+<li><p>This is False. A function with big-O notation of <span class="math inline"><em>O</em>(<em>n</em>)</span> will theoretically run faster than a function with a big-O notation of <span class="math inline"><em>O</em>(<em>n</em><sup>2</sup>)</span> on a <em>worst case</em> input.</p></li>
+<li><p>Worst Case.</p></li>
+<li><p>False.</p></li>
+<li><p>Constant</p></li>
+<li><p>Linear</p></li>
+<li><p>Quadratic</p></li>
+<li><p>Exponential</p></li>
+<li><p>8.1. <span class="math inline"><em>O</em>(<em>n</em><sup>2</sup>)</span></p>
+<p>8.2. <span class="math inline"><em>O</em>(<em>n</em><sup>3</sup>)</span></p></li>
+<li><p>The answer is b, since algorithms are a finite series of steps (eliminating c) and can be affected by and have an effect on their environment (eliminating a and d, and showing that b is true).</p></li>
+<li><p>The first code snippet runs in time <span class="math inline"><em>O</em>(<em>m</em> ⋅ <em>n</em>)</span> and the second runs in time <span class="math inline"><em>O</em>(<em>n</em>)</span>. This is because the lookup time (the <code>in</code> operator) takes constant time on a dictionary and linear time on a list, so in the first snippet you do an <span class="math inline"><em>O</em>(<em>m</em>)</span> operation <span class="math inline"><em>n</em></span> times so $O(m n), but in the second you do an <span class="math inline"><em>O</em>(1)</span> operation <span class="math inline"><em>n</em></span> times so <span class="math inline"><em>O</em>(<em>n</em>)</span>. Thus if you care about speed the most you would use the second method.</p></li>
+</ol>
+</details>
+<h1 id="unit-tests">Unit Tests</h1>
+<ol type="1">
+<li><p>Testing Syntax:</p>
+<p>1.1. What key word do we use within a test function to ensure that a boolean expression is true?</p>
+<p>1.2. What does each test function’s name have to begin with?</p>
+<p>1.3. What does each test file’s name have to end with?</p></li>
+<li><p>If a function passes all of its associated unit tests, then the function is implemented correctly for all possible inputs (True/False).</p></li>
+<li><p>Consider the following code snippet:</p></li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="kw">def</span> fill_list(num: <span class="bu">int</span>, length: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">list</span>[<span class="bu">int</span>]:</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>    <span class="co">&quot;&quot;&quot;Fill a list with a single value.&quot;&quot;&quot;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>    result: <span class="bu">list</span>[<span class="bu">int</span>] <span class="op">=</span> []</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a>    i: <span class="bu">int</span> <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a>    <span class="cf">while</span> i <span class="op">&lt;</span> length:</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a>        result.append[num]</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true"></a>        i <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true"></a>    <span class="cf">return</span> result</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true"></a>list_A: <span class="bu">list</span>[<span class="bu">int</span>] <span class="op">=</span> fill_list(<span class="dv">4</span>, <span class="dv">19</span>) </span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true"></a>list_B: <span class="bu">list</span>[<span class="bu">int</span>] <span class="op">=</span> fill_list(<span class="dv">55</span>, <span class="op">-</span><span class="dv">2</span>)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true"></a>list_C: <span class="bu">list</span>[<span class="bu">int</span>] <span class="op">=</span> fill_list(<span class="dv">1</span>, <span class="dv">110</span>)</span></code></pre></div>
+<p>Which function calls would be considered a use case of this function (list the associated variable name e.g. <code>list_A</code>)? Which would be considered edge cases? If there are any edge cases, what result would you get in the associated variable(s)?</p>
+<ol start="4" type="1">
+<li>Write three unit tests for the following function, two testing use cases and one testing an edge case.</li>
+</ol>
+<div class="sourceCode" id="cb5"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="kw">def</span> divide_list(input_list: <span class="bu">list</span>[<span class="bu">int</span>], divisor: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">list</span>[<span class="bu">float</span>]:</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a>    <span class="co">&quot;&quot;&quot;Returns a new list where each value is the value from input_list divided by divisor&quot;&quot;&quot;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a>    result: <span class="bu">list</span>[<span class="bu">int</span>] <span class="op">=</span> []</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a>    <span class="cf">for</span> num <span class="kw">in</span> input_list:</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a>        result.append(num <span class="op">/</span> divisor)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true"></a>    <span class="cf">return</span> result</span></code></pre></div>
+<details>
+<p><summary>SOLUTIONS</summary></p>
+<ol type="1">
+<li><p>Question 1 Answers:</p>
+<p>1.1. <code>assert</code></p>
+<p>1.2. <code>test_</code></p>
+<p>1.3. <code>_test.py</code></p></li>
+<li><p>This is False, as unit tests themselves can be incorrect so all tests passing is no guarantee of correctness even for the inputs the unit tests are testing for. Even if the unit tests are correct, there can still be certain inputs that they do not test for and therefore the unit tests cannot assure you that a function will always work properly. Unit tests are a helpful tool that can work well when implemented over a wide range of test inputs, but they must be accompanied by thoughtful implementation of the original function.</p></li>
+<li><p><code>list_A</code> and <code>list_C</code> would be use cases since this is how we would expect this function to be used and <code>list_B</code> would be an edge case as this is essentially attempting to make a function call that would construct a list of negative length since our <code>length</code> argument is -2. In this edge case the result would be an empty list since we would never enter the <code>while</code> loop.</p></li>
+<li><p>Note: These are just some examples of what you could test for, but they will likely not be the same as what you wrote as there are many correct answers.</p>
+<p>The most straightforward use case test would be ensuring that on a normal input that the output is what you expect:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="kw">def</span> test_normal_divide_list() <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a>    classes: <span class="bu">list</span>[<span class="bu">int</span>] <span class="op">=</span> [<span class="dv">110</span>, <span class="dv">210</span>, <span class="dv">301</span>, <span class="dv">455</span>]</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a>    <span class="cf">assert</span> divide_list(classes, <span class="dv">10</span>) <span class="op">==</span> [<span class="fl">11.0</span>, <span class="fl">21.0</span>, <span class="fl">30.1</span>, <span class="fl">45.5</span>]</span></code></pre></div>
+<p>We could write another unit test to ensure that the original list was not mutated:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="kw">def</span> test_no_mutate_divide_list() <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a>    classes: <span class="bu">list</span>[<span class="bu">int</span>] <span class="op">=</span> [<span class="dv">110</span>, <span class="dv">210</span>, <span class="dv">301</span>, <span class="dv">455</span>]</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a>    divide_list(classes, <span class="dv">10</span>) <span class="co"># We don&#39;t need to store the result</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a>    <span class="cf">assert</span> classes <span class="op">==</span> [<span class="dv">110</span>, <span class="dv">210</span>, <span class="dv">301</span>, <span class="dv">455</span>]</span></code></pre></div>
+<p>Finally, an example of an edge case for this function would be a divisor of zero, which we should expect to result in an error. We can test to ensure that an error occurs like this:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="kw">def</span> test_div_zero_error_divide_list() <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a>    classes: <span class="bu">list</span>[<span class="bu">int</span>] <span class="op">=</span> [<span class="dv">110</span>, <span class="dv">210</span>, <span class="dv">301</span>, <span class="dv">455</span>]</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a>    <span class="cf">with</span> pytest.raises(<span class="pp">ZeroDivisionError</span>):</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a>        divide_list(classes, <span class="dv">0</span>)</span></code></pre></div></li>
+</ol>
+</details>
+<h1 id="object-oriented-programming">Object-Oriented Programming</h1>
+<h2 id="multiple-choice">Multiple Choice</h2>
+<ol type="1">
+<li><p>True or False: All instances of a class have the same attribute values.</p>
+<ol type="a">
+<li><p>True</p></li>
+<li><p>False</p></li>
+</ol></li>
+<li><p>True or False: An object’s attribute values cannot be accessed from outside the class.</p>
+<ol type="a">
+<li><p>True</p></li>
+<li><p>False</p></li>
+</ol></li>
+<li><p>What is the difference between a class and an object?</p>
+<ol type="a">
+<li><p>A class is a collection of objects</p></li>
+<li><p>A class is a blueprint; an object is a specific instance of that blueprint</p></li>
+<li><p>They are the same in Python</p></li>
+<li><p>An object can contain classes, but not the other way around</p></li>
+</ol></li>
+<li><p>True or False: Because class definitions have attributes, local variables are not allowed inside method definitions.</p>
+<ol type="a">
+<li><p>True</p></li>
+<li><p>False</p></li>
+</ol></li>
+<li><p>What does it mean to “instantiate” a class?</p>
+<ol type="a">
+<li><p>Define the class</p></li>
+<li><p>Import a module</p></li>
+<li><p>Create an object from a class</p></li>
+<li><p>Define attributes</p></li>
+</ol></li>
+<li><p>True or False: The constructor of a class is only called once in a program, no matter how many objects of that class are constructed.</p>
+<ol type="a">
+<li><p>True</p></li>
+<li><p>False</p></li>
+</ol></li>
+<li><p>The first parameter of any method is _____ and it is given a reference to the object the method was called on.</p>
+<ol type="a">
+<li><p>me</p></li>
+<li><p>self</p></li>
+<li><p>init</p></li>
+<li><p>this</p></li>
+<li><p>current</p></li>
+</ol></li>
+<li><p>An instance of a class is stored in the:</p>
+<ol type="a">
+<li><p>stack</p></li>
+<li><p>heap</p></li>
+<li><p>output</p></li>
+</ol></li>
+<li><p>True or False: Once attributes are initialized in the initializer/constructor, the values cannot be changed.</p>
+<ol type="a">
+<li><p>True</p></li>
+<li><p>False</p></li>
+</ol></li>
+<li><p>True or False: A class definition introduces a new data type, or type of object, in your program.</p>
+<ol type="a">
+<li><p>True</p></li>
+<li><p>False</p></li>
+</ol></li>
+</ol>
+<details>
+<p><summary>SOLUTIONS</summary></p>
+<ol type="1">
+<li><p>False</p></li>
+<li><p>False</p></li>
+<li><p>A class is a blueprint; an object is a specific instance of that blueprint</p></li>
+<li><p>False</p></li>
+<li><p>Create an object from a class</p></li>
+<li><p>False</p></li>
+<li><p>self</p></li>
+<li><p>heap</p></li>
+<li><p>False</p></li>
+<li><p>True</p></li>
+</ol>
+</details>
+<h2 id="select-all-that-apply">Select All That Apply</h2>
+<p>Consider the following code listing. Select all lines on which any of the concepts below are found. Select  if the concept is not in the code listing.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a><span class="dv">1</span> <span class="kw">class</span> Point:</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a><span class="dv">2</span>     x: <span class="bu">float</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true"></a><span class="dv">3</span>     y: <span class="bu">float</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true"></a><span class="dv">4</span> </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true"></a><span class="dv">5</span>     <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, x: <span class="bu">float</span>, y: <span class="bu">float</span>):</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true"></a><span class="dv">6</span>         <span class="va">self</span>.x <span class="op">=</span> x</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true"></a><span class="dv">7</span>         <span class="va">self</span>.y <span class="op">=</span> y</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true"></a><span class="dv">8</span> </span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true"></a><span class="dv">9</span>     <span class="kw">def</span> flip(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true"></a><span class="dv">10</span>        temp: <span class="bu">float</span> <span class="op">=</span> <span class="va">self</span>.x</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true"></a><span class="dv">11</span>        <span class="va">self</span>.x <span class="op">=</span> <span class="va">self</span>.y</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true"></a><span class="dv">12</span>        <span class="va">self</span>.y <span class="op">=</span> temp</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true"></a><span class="dv">13</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true"></a><span class="dv">14</span>    <span class="kw">def</span> shift_y(<span class="va">self</span>, dy: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true"></a><span class="dv">15</span>        <span class="va">self</span>.y <span class="op">+=</span> dy</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true"></a><span class="dv">16</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true"></a><span class="dv">17</span>    <span class="kw">def</span> diff(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true"></a><span class="dv">18</span>        <span class="cf">return</span> <span class="va">self</span>.x <span class="op">-</span> <span class="va">self</span>.y</span></code></pre></div>
+<ol type="1">
+<li><p>Constructor Declaration</p>
+<ol type="a">
+<li><p>1</p></li>
+<li><p>2</p></li>
+<li><p>5</p></li>
+<li><p>9</p></li>
+<li><p>11</p></li>
+</ol></li>
+<li><p>Attribute Declaration</p>
+<ol type="a">
+<li><p>2</p></li>
+<li><p>3</p></li>
+<li><p>6</p></li>
+<li><p>7</p></li>
+<li><p>10</p></li>
+</ol></li>
+<li><p>Attribute Initialization</p>
+<ol type="a">
+<li><p>2</p></li>
+<li><p>3</p></li>
+<li><p>6</p></li>
+<li><p>7</p></li>
+<li><p>10</p></li>
+</ol></li>
+<li><p>Method Declaration</p>
+<ol type="a">
+<li><p>1</p></li>
+<li><p>9</p></li>
+<li><p>10</p></li>
+<li><p>14</p></li>
+<li><p>17</p></li>
+</ol></li>
+<li><p>Local Variable Declaration</p>
+<ol type="a">
+<li><p>2</p></li>
+<li><p>3</p></li>
+<li><p>6</p></li>
+<li><p>7</p></li>
+<li><p>10</p></li>
+</ol></li>
+<li><p>Instantiation</p>
+<ol type="a">
+<li><p>1</p></li>
+<li><p>5</p></li>
+<li><p>9</p></li>
+<li><p>10</p></li>
+<li><p>N/A</p></li>
+</ol></li>
+</ol>
+<details>
+<p><summary>SOLUTIONS</summary></p>
+<ol type="1">
+<li><p>Line 5 only</p></li>
+<li><p>Lines 2 and 3</p></li>
+<li><p>Lines 6 and 7</p></li>
+<li><p>Lines 9, 14, and 17</p></li>
+<li><p>Line 10</p></li>
+<li><p>N/A</p></li>
+</ol>
+</details>
+<h2 id="short-answer">Short Answer</h2>
+<p>Use the following point class to answer the questions.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a><span class="dv">1</span> <span class="kw">class</span> Point:</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true"></a><span class="dv">2</span>     x: <span class="bu">float</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true"></a><span class="dv">3</span>     y: <span class="bu">float</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true"></a><span class="dv">4</span> </span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true"></a><span class="dv">5</span>     <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, x: <span class="bu">float</span>, y: <span class="bu">float</span>):</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true"></a><span class="dv">6</span>         <span class="va">self</span>.x <span class="op">=</span> x</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true"></a><span class="dv">7</span>         <span class="va">self</span>.y <span class="op">=</span> y</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true"></a><span class="dv">8</span> </span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true"></a><span class="dv">9</span>     <span class="kw">def</span> flip(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true"></a><span class="dv">10</span>        temp: <span class="bu">float</span> <span class="op">=</span> <span class="va">self</span>.x</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true"></a><span class="dv">11</span>        <span class="va">self</span>.x <span class="op">=</span> <span class="va">self</span>.y</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true"></a><span class="dv">12</span>        <span class="va">self</span>.y <span class="op">=</span> temp</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true"></a><span class="dv">13</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true"></a><span class="dv">14</span>    <span class="kw">def</span> shift_y(<span class="va">self</span>, dy: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true"></a><span class="dv">15</span>        <span class="va">self</span>.y <span class="op">+=</span> dy</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true"></a><span class="dv">16</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true"></a><span class="dv">17</span>    <span class="kw">def</span> diff(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true"></a><span class="dv">18</span>        <span class="cf">return</span> <span class="va">self</span>.x <span class="op">-</span> <span class="va">self</span>.y</span></code></pre></div>
+<ol type="1">
+<li><p>Write a line of code to create an explicitly typed instance of the Point class called my_point with an x of 3.7 and y of 2.3.</p></li>
+<li><p>Write a line of code to change the value of the my_point variable’s x attribute to 2.0.</p></li>
+<li><p>Write a line of code to cause the my_point variable’s y attribute to increase by 1.0 using a method call.</p></li>
+<li><p>Write a line of code to declare an explicitly typed variable named x. Initialize x to the result of calling the diff method on my_point.</p></li>
+</ol>
+<details>
+<p><summary>SOLUTIONS</summary></p>
+<ol type="1">
+<li><p><code>my_point: Point = Point(x=3.7, y=2.3)</code></p></li>
+<li><p><code>my_point.x = 2.0</code></p></li>
+<li><p><code>my_point.shift_y(1.0)</code></p></li>
+<li><p><code>x: float = my_point.diff()</code></p></li>
+</ol>
+</details>
+<h2 id="memory-diagrams">Memory Diagrams</h2>
+<ol type="1">
+<li>Complete a memory diagram for the following code listing.</li>
+</ol>
+<div class="sourceCode" id="cb11"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true"></a><span class="dv">1</span> <span class="kw">class</span> Dog:</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true"></a><span class="dv">2</span>     name: <span class="bu">str</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true"></a><span class="dv">3</span>     age: <span class="bu">int</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true"></a><span class="dv">4</span>     </span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true"></a><span class="dv">5</span>     <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, n: <span class="bu">str</span>, a:<span class="bu">int</span>):</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true"></a><span class="dv">6</span>         <span class="va">self</span>.name <span class="op">=</span> n</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true"></a><span class="dv">7</span>         <span class="va">self</span>.age <span class="op">=</span> a</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true"></a><span class="dv">8</span>         </span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true"></a><span class="dv">9</span>     <span class="kw">def</span> speak(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="va">None</span>: </span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true"></a><span class="dv">10</span>        <span class="bu">print</span>(<span class="va">self</span>.name <span class="op">+</span> <span class="st">&quot; says woof!&quot;</span>)</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true"></a><span class="dv">11</span>        </span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true"></a><span class="dv">12</span>    <span class="kw">def</span> birthday(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true"></a><span class="dv">13</span>        <span class="va">self</span>.age <span class="op">+=</span> <span class="dv">1</span> </span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true"></a><span class="dv">14</span>        <span class="cf">return</span> <span class="va">self</span>.age</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true"></a><span class="dv">15</span>        </span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true"></a><span class="dv">16</span> <span class="kw">class</span> Cat:</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true"></a><span class="dv">17</span>    name: <span class="bu">str</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true"></a><span class="dv">18</span>    age: <span class="bu">int</span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true"></a><span class="dv">19</span>    </span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true"></a><span class="dv">20</span>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, n: <span class="bu">str</span>, a:<span class="bu">int</span>):</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true"></a><span class="dv">21</span>        <span class="va">self</span>.name <span class="op">=</span> n</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true"></a><span class="dv">22</span>        <span class="va">self</span>.age <span class="op">=</span> a</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true"></a><span class="dv">23</span>        </span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true"></a><span class="dv">24</span>    <span class="kw">def</span> speak(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="va">None</span>: </span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true"></a><span class="dv">25</span>        <span class="bu">print</span>(<span class="va">self</span>.name <span class="op">+</span> <span class="st">&quot; says meow!&quot;</span>)</span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true"></a><span class="dv">26</span>        </span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true"></a><span class="dv">27</span>    <span class="kw">def</span> birthday(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true"></a><span class="dv">28</span>        <span class="va">self</span>.age <span class="op">+=</span> <span class="dv">1</span> </span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true"></a><span class="dv">29</span>        <span class="cf">return</span> <span class="va">self</span>.age</span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true"></a><span class="dv">30</span>    </span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true"></a><span class="dv">31</span> rory: Dog <span class="op">=</span> Dog(n <span class="op">=</span> <span class="st">&quot;Rory&quot;</span>, a <span class="op">=</span> <span class="dv">4</span>)</span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true"></a><span class="dv">32</span> <span class="bu">print</span>(rory.birthday())</span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true"></a><span class="dv">33</span> miso: Cat <span class="op">=</span> Cat(<span class="st">&quot;Miso&quot;</span>, <span class="dv">2</span>)</span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true"></a><span class="dv">34</span> miso.speak()</span></code></pre></div>
+<ol start="2" type="1">
+<li>Complete a memory diagram for the following code listing.</li>
+</ol>
+<div class="sourceCode" id="cb12"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true"></a><span class="dv">1</span>  <span class="kw">class</span> Concert:</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true"></a><span class="dv">2</span>      artist: <span class="bu">str</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true"></a><span class="dv">3</span>      seats: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">bool</span>]</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true"></a><span class="dv">4</span>  </span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true"></a><span class="dv">5</span>      <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, a: <span class="bu">str</span>, s: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">bool</span>]):</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true"></a><span class="dv">6</span>          <span class="va">self</span>.artist <span class="op">=</span> a</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true"></a><span class="dv">7</span>          <span class="va">self</span>.seats <span class="op">=</span> s</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true"></a><span class="dv">8</span>  </span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true"></a><span class="dv">9</span>      <span class="kw">def</span> assign_seats(<span class="va">self</span>, wanted_seats: <span class="bu">list</span>[<span class="bu">str</span>], name: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true"></a><span class="dv">10</span>         <span class="cf">for</span> seat <span class="kw">in</span> wanted_seats:</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true"></a><span class="dv">11</span>             <span class="cf">if</span> seat <span class="kw">in</span> <span class="va">self</span>.seats:</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true"></a><span class="dv">12</span>                 available: <span class="bu">bool</span> <span class="op">=</span> <span class="va">self</span>.seats[seat]</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true"></a><span class="dv">13</span>                 <span class="cf">if</span> available:</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true"></a><span class="dv">14</span>                     <span class="bu">print</span>(<span class="ss">f&quot;</span><span class="sc">{</span>name<span class="sc">}</span><span class="ss"> bought seat </span><span class="sc">{</span>seat<span class="sc">}</span><span class="ss"> to see </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>artist<span class="sc">}</span><span class="ss">!&quot;</span>)</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true"></a><span class="dv">15</span>                     <span class="va">self</span>.seats[seat] <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true"></a><span class="dv">16</span>                 <span class="cf">else</span>: </span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true"></a><span class="dv">17</span>                    <span class="bu">print</span>(<span class="ss">f&quot;Seat </span><span class="sc">{</span>seat<span class="sc">}</span><span class="ss"> is unavailable :(&quot;</span>)</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true"></a><span class="dv">18</span> </span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true"></a><span class="dv">19</span> lenovo_seats: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">bool</span>] <span class="op">=</span> {<span class="st">&quot;K1&quot;</span>: <span class="va">True</span>, <span class="st">&quot;K2&quot;</span>: <span class="va">True</span>, <span class="st">&quot;K3&quot;</span>: <span class="va">False</span>}</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true"></a><span class="dv">20</span> show: Concert <span class="op">=</span> Concert(a <span class="op">=</span> <span class="st">&quot;Travisty&quot;</span>, s <span class="op">=</span> lenovo_seats)</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true"></a><span class="dv">21</span> show.assign_seats(wanted_seats <span class="op">=</span> [<span class="st">&quot;K2&quot;</span>, <span class="st">&quot;K3&quot;</span>], name <span class="op">=</span> <span class="st">&quot;Kay&quot;</span>)</span></code></pre></div>
+<details>
+<p><summary>SOLUTIONS</summary></p>
+<ol type="1">
+<li>Dog and Cat memory diagram solution (see the solution video <a href="https://youtu.be/_S1ISCVHdic">here</a>!).</li>
+</ol>
+<p><img class="img-fluid" src="/static/practice/qz03_practice/dog_cat.png" alt="Memory diagram of code listing with Dog and Cat classes."  /></p>
+<ol start="2" type="1">
+<li>Concert memory diagram solution (see the solution video <a href="https://youtu.be/Fr0lF3o9u5o">here</a>!).</li>
+</ol>
+<p><img class="img-fluid" src="/static/practice/qz03_practice/concert.png" alt="Memory diagram of code listing with Concert classes."  /></p>
+</details>
+</div>
+
+       
+
+    </div> 
+    </div>
+    </div>
+    <div class="authors-box bg-dark mt-4 py-3 ps-4">
+      <span> Contributor(s):        Alyssa Lytle,        Benjamin Eldridge, Izzi Hinks</span>
+    </div>
+
+  </div>
+  <div class='link-page mt-3 container'>
+    <footer>
+      <h3 class="text-center align-middle footer-text">&copy; 2025 <a href="https://krisjordan.com">Kris Jordan</a>
+        - <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSenaJ2uZ_n2FfAb2PWL6YPG4AUT-G2-xVJP6HIwMr6cd6nSYA/viewform?usp=sf_link">Feedback
+          Form</a>
+        - Made with 💛 in <a href="https://cs.unc.edu/">Chapel Hill</a></h3>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <!-- Code Block Formatting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  
+</body>
+
+</html>

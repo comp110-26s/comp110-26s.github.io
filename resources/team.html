@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Team 110 - COMP110 - 25F</title>
+  <link rel="icon" type="image/png" href="/static/s25_brand.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/static/styles.css?v=1767731942.5953662">
+</head>
+
+
+<body id="body" class="absolute-page">
+    <script>
+        document.body.classList.remove('light-mode');
+        document.body.classList.remove('dark-mode');
+        document.body.classList.add(localStorage.getItem('mode'));
+    </script>
+  <script src="/static/scripts/nav-menu-esc.js"></script> 
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark py-1 fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/s25_brand.png"
+        alt="COMP110 - Spring - 2025"><img class="darkmode-element-only img-fluid logo" src="/static/s25_brand.png"
+        alt="COMP110 - Spring - 2025"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" onclick="esc_key()" data-bs-target="#navmenu" aria-label="Main Menu" aria-controls="#navmenu" role="navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link " href="/">agenda</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources" class="nav-link">resources</a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="/support" class="nav-link">support</a>
+          </li>
+         
+          <li class="nav-item">
+            <a href="/resources/syllabus.html" class="nav-link">syllabus</a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="/resources/team.html" class="nav-link">team110</a>
+          </li>
+         
+        </ul>
+      </div>
+      <div id='mode-switch' class="ms-auto form-check form-switch mode switches">
+              <div class="switches">
+                  <input type="checkbox" id="1" onclick="
+                      if (localStorage.getItem('mode') === 'dark-mode') {
+                          localStorage.setItem('userPref', 'light-mode');
+                          localStorage.setItem('mode', 'light-mode');
+                      } else {
+                          localStorage.setItem('userPref', 'dark-mode');
+                          localStorage.setItem('mode', 'dark-mode');
+                      }
+                      location.reload();">
+                  <label for="1">
+                      <span id="mode-label">Dark Mode</span>
+                      <span></span>
+                  </label>
+                  <script>if(localStorage.getItem('mode') === 'dark-mode'){document.getElementById("1").checked = true}</script>
+                  <script>if(localStorage.getItem('userPref') === null) {setTimeout(function(){location.reload();}, (timer * 3600000));}</script>
+              </div>
+          </div>
+    </div>
+  </nav>
+
+  <div class="cloud-container">
+    <div id="cloud-intro">
+  <div id="resource-page" class="container">
+    <div class="row pt-4">
+      <div class="col-12">
+        <h1 id="page-title">Team 110</h1>
+      </div>
+    </div>
+    
+
+    <div class="container">
+                <div class="content"><div class="container">
+<div class="row justify-content-center">
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/admo.html"><img src="/static/profile-photos/admo.jpg" class="profile-image"></a>
+<figcaption>
+Aditya More
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/frat.html"><img src="/static/profile-photos/frat.jpg" class="profile-image"></a>
+<figcaption>
+Alexander Toney
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/oxiao.html"><img src="/static/profile-photos/oxiao.jpg" class="profile-image"></a>
+<figcaption>
+Alex Xiao
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/aqyang.html"><img src="/static/profile-photos/aqyang.jpg" class="profile-image"></a>
+<figcaption>
+Alex Yang
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/ayev.html"><img src="/static/profile-photos/ayev.jpg" class="profile-image"></a>
+<figcaption>
+Alexander Yevchenko
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/dillarda.html"><img src="/static/profile-photos/dillarda.jpg" class="profile-image"></a>
+<figcaption>
+Amir Dillard
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/akhanal2.html"><img src="/static/profile-photos/akhanal2.jpg" class="profile-image"></a>
+<figcaption>
+Amit Khanal
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/athill.html"><img src="/static/profile-photos/athill.jpg" class="profile-image"></a>
+<figcaption>
+Austin Hill
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/benjaben.html"><img src="/static/profile-photos/benjaben.jpg" class="profile-image"></a>
+<figcaption>
+Benjamin Eldridge
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/gobetti.html"><img src="/static/profile-photos/gobetti.jpg" class="profile-image"></a>
+<figcaption>
+Bettina George
+</figcaption>
+</figure>
+<!-- <figure class="profile col-xs-12 col-sm-6 col-md-3"><a href="/resources/profiles/caitlie.html"><img src="/static/profile-photos/caitlie.png" class="profile-image"></a> <figcaption>Caitlin Estrada</figcaption></figure> -->
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/cgbryan.html"><img src="/static/profile-photos/cgbryan.jpg" class="profile-image"></a>
+<figcaption>
+Caroline Bryan
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/celismad.html"><img src="/static/profile-photos/celismad.jpg" class="profile-image"></a>
+<figcaption>
+Claire Madsen
+</figcaption>
+</figure>
+<!-- <figure class="profile col-xs-12 col-sm-6 col-md-3"><a href="/resources/profiles/conjon.html"><img src="/static/profile-photos/conjon.jpg" class="profile-image"></a> <figcaption>Conor Jones</figcaption></figure> -->
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/dalbertw.html"><img src="/static/profile-photos/dalbertw.jpg" class="profile-image"></a>
+<figcaption>
+Daniel Wang
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/enci.html"><img src="/static/profile-photos/enci.jpg" class="profile-image"></a>
+<figcaption>
+Enci Zhang
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/esevim.html"><img src="/static/profile-photos/esevim.jpg" class="profile-image"></a>
+<figcaption>
+Enis Sevim
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/eraikwar.html"><img src="/static/profile-photos/eraikwar.jpg" class="profile-image"></a>
+<figcaption>
+Esha Raikwar
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/etctran.html"><img src="/static/profile-photos/etctran.jpg" class="profile-image"></a>
+<figcaption>
+Ethan Tran
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/godondi.html"><img src="/static/profile-photos/godondi.jpg" class="profile-image"></a>
+<figcaption>
+Grace Odondi
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/hjkoch.html"><img src="/static/profile-photos/hjkoch.jpg" class="profile-image"></a>
+<figcaption>
+Harley Koch
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/hrowen.html"><img src="/static/profile-photos/hrowen.jpg" class="profile-image"></a>
+<figcaption>
+Henry Rowen
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/ivyn.html"><img src="/static/profile-photos/ivyn.jpg" class="profile-image"></a>
+<figcaption>
+Ivy Nangalia
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/ihinks.html"><img src="/static/profile-photos/ihinks.png" class="profile-image"></a>
+<figcaption>
+Izzi Hinks
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/jcoury.html"><img src="/static/profile-photos/jcoury.jpg" class="profile-image"></a>
+<figcaption>
+Jack Coury
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/jaylim.html"><img src="/static/profile-photos/jaylim.jpg" class="profile-image"></a>
+<figcaption>
+Jayden Lim
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/jimena1.html"><img src="/static/profile-photos/jimena1.jpg" class="profile-image"></a>
+<figcaption>
+Jimena Rivera
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/nwokejij.html"><img src="/static/profile-photos/nwokejij.jpg" class="profile-image"></a>
+<figcaption>
+Jonathan Nwokeji
+</figcaption>
+</figure>
+<!-- <figure class="profile col-xs-12 col-sm-6 col-md-3"><a href="/resources/profiles/ktbailey.html"><img src="/static/profile-photos/ktbailey.jpg" class="profile-image"></a> <figcaption>Kate Bailey</figcaption></figure> -->
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/kgbro.html"><img src="/static/profile-photos/kgbro.jpg" class="profile-image"></a>
+<figcaption>
+Katie Brown
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/kjli.html"><img src="/static/profile-photos/kjli.jpg" class="profile-image"></a>
+<figcaption>
+Katun Li
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/kautchop.html"><img src="/static/profile-photos/kautchop.jpg" class="profile-image"></a>
+<figcaption>
+Kautilya Chopra
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/kjperez.html"><img src="/static/profile-photos/kjperez.jpg" class="profile-image"></a>
+<figcaption>
+Keith Perez
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/lanafi.html"><img src="/static/profile-photos/lanafi.jpg" class="profile-image"></a>
+<figcaption>
+Lila Anafi
+</figcaption>
+</figure>
+<!-- <figure class="profile col-xs-12 col-sm-6 col-md-3"><a href="/resources/profiles/escoats.html"><img src="/static/profile-photos/escoats.jpg" class="profile-image"></a> <figcaption>Lizzie Coats</figcaption></figure> -->
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/ldsharpe.html"><img src="/static/profile-photos/ldsharpe.jpg" class="profile-image"></a>
+<figcaption>
+Lucas Sharpe
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/lkbriden.html"><img src="/static/profile-photos/lkbriden.jpg" class="profile-image"></a>
+<figcaption>
+Luke Briden
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/laiello.html"><img src="/static/profile-photos/laiello.jpg" class="profile-image"></a>
+<figcaption>
+Luke Aiello
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/smalak.html"><img src="/static/profile-photos/smalak.jpg" class="profile-image"></a>
+<figcaption>
+Malak Soubai
+</figcaption>
+</figure>
+<!-- <figure class="profile col-xs-12 col-sm-6 col-md-3"><a href="/resources/profiles/mrodriguez.html"><img src="/static/profile-photos/mrodriguez.JPG" class="profile-image"></a> <figcaption>Mariana Rodriguez</figcaption></figure> -->
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/nandanpu.html"><img src="/static/profile-photos/nandanpu.jpg" class="profile-image"></a>
+<figcaption>
+Nandan Pullakandam
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/nehab4.html"><img src="/static/profile-photos/nehab4.jpg" class="profile-image"></a>
+<figcaption>
+Neha Bharadwaj
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/igtricia.html"><img src="/static/profile-photos/igtricia.jpg" class="profile-image"></a>
+<figcaption>
+Onyi Igwe
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/ppan1229.html"><img src="/static/profile-photos/ppan1229.jpg" class="profile-image"></a>
+<figcaption>
+Paige Pan
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/pkc.html"><img src="/static/profile-photos/pkc.jpg" class="profile-image"></a>
+<figcaption>
+Phoebe Chen
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/prachj.html"><img src="/static/profile-photos/prachj.jpg" class="profile-image"></a>
+<figcaption>
+Prachi Joshi
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/rebhen.html"><img src="/static/profile-photos/rebhen.jpg" class="profile-image"></a>
+<figcaption>
+Rebecca Henriques
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/rlin.html"><img src="/static/profile-photos/rlin.jpg" class="profile-image"></a>
+<figcaption>
+Richard Lin
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/rkras.html"><img src="/static/profile-photos/rkras.jpg" class="profile-image"></a>
+<figcaption>
+Ryan Krasinski
+</figcaption>
+</figure>
+<!-- 
+<figure class="profile col-xs-12 col-sm-6 col-md-3"><a href="/resources/profiles/sgopal.html"><img src="/static/profile-photos/sgopal.png" class="profile-image"></a> <figcaption>Sanjana Gopalswamy</figcaption></figure> -->
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/vytran.html"><img src="/static/profile-photos/vytran.jpg" class="profile-image"></a>
+<figcaption>
+Shana Tran
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/shaynap.html"><img src="/static/profile-photos/shaynap.jpg" class="profile-image"></a>
+<figcaption>
+Shayna Patel
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/shruthir.html"><img src="/static/profile-photos/shruthir.jpg" class="profile-image"></a>
+<figcaption>
+Shruthi Ramireddy
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/pshruti.html"><img src="/static/profile-photos/pshruti.jpg" class="profile-image"></a>
+<figcaption>
+Shruti Patel
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/stailor.html"><img src="/static/profile-photos/stailor.jpg" class="profile-image"></a>
+<figcaption>
+Suhani Tailor
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/tjokoli.html"><img src="/static/profile-photos/tjokoli.jpg" class="profile-image"></a>
+<figcaption>
+Tobenna Okoli
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/tdang27.html"><img src="/static/profile-photos/tdang27.jpg" class="profile-image"></a>
+<figcaption>
+Tracy Dang
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/vhingoo.html"><img src="/static/profile-photos/vhingoo.jpg" class="profile-image"></a>
+<figcaption>
+Vraj Hingoo
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/wjian.html"><img src="/static/profile-photos/wjian.jpg" class="profile-image"></a>
+<figcaption>
+Wei Jiang
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/yewons.html"><img src="/static/profile-photos/yewons.jpg" class="profile-image"></a>
+<figcaption>
+Yewon Song
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/zfick.html"><img src="/static/profile-photos/zfick.jpg" class="profile-image"></a>
+<figcaption>
+Zack Fick
+</figcaption>
+</figure>
+<figure class="profile col-xs-12 col-sm-6 col-md-3">
+<a href="/resources/profiles/zaratek.html"><img src="/static/profile-photos/zaratek.jpg" class="profile-image"></a>
+<figcaption>
+Zara Tekmen
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+            </div>
+    </div>
+    </div>
+    <div class="authors-box bg-dark mt-4 py-3 ps-4">
+      <span> Contributor(s):        Kris Jordan,        Meghan Sun,        Jessica Bring,        Vitor Inserra,        Madeleine Genova, Izzi Hinks</span>
+    </div>
+
+  </div>
+  <div class='link-page mt-3 container'>
+    <footer>
+      <h3 class="text-center align-middle footer-text">&copy; 2025 <a href="https://krisjordan.com">Kris Jordan</a>
+        - <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSenaJ2uZ_n2FfAb2PWL6YPG4AUT-G2-xVJP6HIwMr6cd6nSYA/viewform?usp=sf_link">Feedback
+          Form</a>
+        - Made with 💛 in <a href="https://cs.unc.edu/">Chapel Hill</a></h3>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <!-- Code Block Formatting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  
+</body>
+
+</html>

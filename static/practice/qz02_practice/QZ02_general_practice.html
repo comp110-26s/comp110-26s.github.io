@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Quiz 02 Practice Problems - COMP110 - 25F</title>
+  <link rel="icon" type="image/png" href="/static/s25_brand.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/static/styles.css?v=1767731939.169009">
+</head>
+
+
+<body id="body" class="absolute-page">
+    <script>
+        document.body.classList.remove('light-mode');
+        document.body.classList.remove('dark-mode');
+        document.body.classList.add(localStorage.getItem('mode'));
+    </script>
+  <script src="/static/scripts/nav-menu-esc.js"></script> 
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark py-1 fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/s25_brand.png"
+        alt="COMP110 - Spring - 2025"><img class="darkmode-element-only img-fluid logo" src="/static/s25_brand.png"
+        alt="COMP110 - Spring - 2025"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" onclick="esc_key()" data-bs-target="#navmenu" aria-label="Main Menu" aria-controls="#navmenu" role="navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link " href="/">agenda</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources" class="nav-link">resources</a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="/support" class="nav-link">support</a>
+          </li>
+         
+          <li class="nav-item">
+            <a href="/resources/syllabus.html" class="nav-link">syllabus</a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="/resources/team.html" class="nav-link">team110</a>
+          </li>
+         
+        </ul>
+      </div>
+      <div id='mode-switch' class="ms-auto form-check form-switch mode switches">
+              <div class="switches">
+                  <input type="checkbox" id="1" onclick="
+                      if (localStorage.getItem('mode') === 'dark-mode') {
+                          localStorage.setItem('userPref', 'light-mode');
+                          localStorage.setItem('mode', 'light-mode');
+                      } else {
+                          localStorage.setItem('userPref', 'dark-mode');
+                          localStorage.setItem('mode', 'dark-mode');
+                      }
+                      location.reload();">
+                  <label for="1">
+                      <span id="mode-label">Dark Mode</span>
+                      <span></span>
+                  </label>
+                  <script>if(localStorage.getItem('mode') === 'dark-mode'){document.getElementById("1").checked = true}</script>
+                  <script>if(localStorage.getItem('userPref') === null) {setTimeout(function(){location.reload();}, (timer * 3600000));}</script>
+              </div>
+          </div>
+    </div>
+  </nav>
+
+  <div class="cloud-container">
+    <div id="cloud-intro">
+  <div id="lessons-page" class="container">
+    <div class="row pt-4">
+      <div class="col-12">
+        <h1 id="page-title">Quiz 02 Practice Problems</h1>
+      </div>
+    </div>
+    
+
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            <div>
+                <div id="menu-overview" class="link-page-overview horizon-box">
+                    <button id="overview-button" class="btn btn-ov" onclick="hideshow()" >Overview  <img id="button-img" alt="Overview" class="filter-icon" src="/static/components/Itinerary/arrow-up.svg" style="height:15px; padding-left: 4px;"></button>
+                    <div id="overview-links">
+                        <div id="TOC" role="doc-toc">
+                            <ul class="overview-item"><ul>
+<li><a href="#relative-reassignment-operators">Relative Reassignment Operators</a></li>
+<li><a href="#lists">Lists</a></li>
+<li><a href="#for-loops"><code>for</code> loops</a></li>
+<li><a href="#sets-and-dictionaries">Sets and Dictionaries</a>
+<ul>
+<li><a href="#sets-conceptual-questions">Sets Conceptual Questions</a></li>
+<li><a href="#dictionaries-conceptual-questions">Dictionaries Conceptual Questions</a></li>
+<li><a href="#dictionaries-practice-questions">Dictionaries Practice Questions</a></li>
+</ul></li>
+<li><a href="#extra-practice-lists-dictionaries-for-loops">Extra Practice (Lists, Dictionaries, <code>for</code> loops)</a></li>
+</ul>
+</</ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="relative-reassignment-operators">Relative Reassignment Operators</h1>
+<ol type="1">
+<li><p>Refer to the following code snippet to answer the questions below.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>    <span class="kw">def</span> change_number(number: <span class="bu">int</span>, modifier: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>        idx: <span class="bu">int</span> <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>        end: <span class="bu">int</span> <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>        <span class="cf">while</span> idx <span class="op">&lt;</span> end:</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>            number __ modifier</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>            idx <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>        <span class="cf">return</span> number</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a>    <span class="bu">print</span>(change_number(<span class="dv">16</span>, <span class="dv">3</span>))</span></code></pre></div>
+<p>1.1. What would be the output if we ran this code and <code>__</code> was replaced with <code>+=</code>?</p>
+<p>1.2. What would be the output if we ran this code and <code>__</code> was replaced with <code>-=</code>?</p>
+<p>1.3. What would be the output if we ran this code and <code>__</code> was replaced with <code>*=</code>?</p>
+<p>1.4. What would be the output if we ran this code and <code>__</code> was replaced with <code>//=</code>?</p></li>
+<li><p>What would you put in the blank spaces (marked with <code>_</code>’s) in the code snippet below to make this a <code>while</code> loop that prints the powers of three (1, 3, 9, …) less than 1000? (Your answer should fit in the blanks)</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a>idx: <span class="bu">int</span> <span class="op">=</span> _</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>end: <span class="bu">int</span> <span class="op">=</span> <span class="dv">1000</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a><span class="cf">while</span> idx <span class="op">&lt;</span> end:</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a>    <span class="bu">print</span>(idx)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a>    idx __ _</span></code></pre></div></li>
+</ol>
+<details>
+<p><summary>SHOW SOLUTIONS</summary></p>
+<ol type="1">
+<li><p>Answers:</p>
+<p>1.1. <code>25</code></p>
+<p>1.2. <code>7</code></p>
+<p>1.3. <code>432</code></p>
+<p>1.4. <code>0</code></p></li>
+<li><p>Here is the completed code snippet:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a>    idx: <span class="bu">int</span> <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>    end: <span class="bu">int</span> <span class="op">=</span> <span class="dv">1000</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>    <span class="cf">while</span> idx <span class="op">&lt;</span> end:</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>        <span class="bu">print</span>(idx)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>        idx <span class="op">*=</span> <span class="dv">3</span></span></code></pre></div></li>
+</ol>
+</details>
+<h1 id="lists">Lists</h1>
+<ol type="1">
+<li><p>Explain in words how you modify elements in a list? How would you do this in python? Give an example.</p></li>
+<li><p>Write the general formula of how you call a method on an object (such as a list or dictionary) using the following. You might not need to use all and can use any multiple times: <code>&lt;method_name&gt;</code>, <code>()</code>, <code>&lt;object_variable&gt;</code>, <code>.</code> , <code>&lt;arg&gt;</code>. Give examples.</p></li>
+<li><p>Give two ways of instantiating an empty list. What are the components you need and what does each part do? Give an example for each. Your explanation should include the words ‘function’, ‘constructor’, ‘variable’, ‘instantiate’, ‘assign’, and ‘reference’.</p></li>
+</ol>
+<details>
+<p><summary>SHOW SOLUTIONS</summary></p>
+<ol type="1">
+<li><p>In order to modify elements in a list, you first need to identify the element you want to change. Then you must find where the element is within your object. Once you have access to the element’s position, you then want to assign at that position in the list to the desired value. Lists in Python are ordered collections, which means each element has a specific index that starts from 0. You can access elements in a list using these indices.</p>
+<p>To access an element, use the index inside square brackets <code>[]</code>. To modify an element, you use the assignment operator <code>=</code>.</p>
+<p>For example:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a>    <span class="co"># example</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>    my_list: <span class="bu">list</span>[“bark”, “meow”, “tweet”] <span class="co"># Change “meow” to “moo”</span></span></code></pre></div>
+<p>In this example, we want to change “meow”, which is at index 1, to “moo”. Using the square brackets for subscription notation, we assign a new value at that index like this:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a>    my_list[<span class="dv">1</span>] <span class="op">=</span> “moo”</span></code></pre></div></li>
+<li><p><code>&lt;object_variable&gt;</code>.<code>&lt;method_name&gt;</code>(<code>&lt;arg&gt;</code>)</p>
+<p>For more arguments, you’d have</p>
+<p><code>&lt;object_variable&gt;</code>.<code>&lt;method_name&gt;</code>(<code>&lt;arg&gt;, &lt;arg&gt;</code>)</p>
+<p>And so on.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a>    <span class="co"># example</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a>    my_list.pop(<span class="dv">0</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a>    my_list.append(“Hello”)</span></code></pre></div></li>
+<li><p>Two ways of instantiating an empty list:</p>
+<ul>
+<li><em>Using the list constructor:</em> The <code>list()</code> function is a constructor that instantiates an empty list object. The constructor belongs to the <code>List</code> class. The constructor doesn’t take any arguments for creating an empty list. You assign the result of this function to a variable, which will reference the newly created empty list.</li>
+</ul>
+<p>Example: <code>python      empty_list: list[str] = list()</code></p>
+<ul>
+<li><em>Components:</em>
+<ul>
+<li><code>list()</code>: The constructor function that creates a new list object.</li>
+<li><code>list[str]</code>: This is the type of <code>empty_list</code>, it is a <code>list</code> that will contain <code>str</code>s (it could also contain other types of data like <code>int</code>s). Always include a type when declaring a new variable!</li>
+<li><code>empty_list</code>: A variable that is assigned the reference to the new list object created by the <code>list()</code> constructor.</li>
+</ul></li>
+<li><em>Using square brackets literal:</em> You can instantiate an empty list using a pair of square brackets <code>[]</code>. This directly creates and instantiates a new empty list object, which you then assign to a variable.</li>
+</ul>
+<p>Example: <code>python      empty_list: list[str] = []</code></p>
+<ul>
+<li><strong>Components:</strong>
+<ul>
+<li><code>[]</code>: This is shorthand syntax for creating and instantiating an empty list object.</li>
+<li><code>list[str]</code>: This is the type of <code>empty_list</code>, it is a <code>list</code> that will contain <code>str</code>s (it could also contain other types of data like <code>int</code>s). Always include a type when declaring a new variable!</li>
+<li><code>empty_list</code>: A variable that is assigned the reference to the newly instantiated empty list.
+</details></li>
+</ul></li>
+</ul></li>
+</ol>
+<h1 id="for-loops"><code>for</code> loops</h1>
+<ol type="1">
+<li><p>Refer to the following code snippet to answer these questions: <code>py         stats: list[int] = [7, 8, 9]         index: int = 0         total: int = 100         while index &lt; len(stats):             total -= stats[index]             index += 1</code></p>
+<p>1.1. Rewrite the following code snippet with same functionality using a <code>for ... in</code> loop.</p>
+<p>1.2. Rewrite the following code snippet with same functionality using a <code>for ... in range(...)</code> loop.</p></li>
+<li><p>(Challenge Question) Can you iterate through an object using a <code>for</code> loop while also modifying it (removing or adding elements)?</p></li>
+</ol>
+<details>
+<p><summary>SHOW SOLUTIONS</summary></p>
+<ol type="1">
+<li><p>Original code copied for reference: <code>py         stats: list[int] = [7, 8, 9]         index: int = 0         total: int = 100         while index &lt; len(stats):             total -= stats[index]             index += 1</code> 1.1.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a>    stats: <span class="bu">list</span>[<span class="bu">int</span>] <span class="op">=</span> [<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>]</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a>    total: <span class="bu">int</span> <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a>    <span class="cf">for</span> elem <span class="kw">in</span> stats:</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a>        total <span class="op">-=</span> elem</span></code></pre></div>
+<p>1.2</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a>    stats: <span class="bu">list</span>[<span class="bu">int</span>] <span class="op">=</span> [<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>]</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a>    total: <span class="bu">int</span> <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a>    <span class="cf">for</span> index <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(stats)):</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a>        total <span class="op">-=</span> stats[index]</span></code></pre></div></li>
+<li><p>No, generally you cannot safely iterate through an object (like a list or dictionary) while simultaneously modifying it by adding or removing elements during the iteration. Doing so can lead to unexpected behavior or errors like the <code>RuntimeError: dictionary changed size during iteration</code>. When you iterate over an object, Python keeps track of the size and structure of that object. If you modify it (e.g., by adding or removing elements), this can disrupt the iteration process because the underlying data structure changes during traversal.</p>
+<p>Removing elements: Can cause the iteration to skip items or crash because the index or key you’re iterating over might no longer exist. Adding elements: Can lead to the same type of issue, as the size of the object changes unexpectedly, leading to errors.</p>
+<p>Take for example this code:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a>    <span class="kw">def</span> add_task(todo_list, task):</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a>        task_found: <span class="bu">bool</span> <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true"></a>        <span class="cf">for</span> existing_task <span class="kw">in</span> todo_list:</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true"></a>            <span class="cf">if</span> existing_task <span class="op">==</span> task:</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true"></a>                task_found <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true"></a>            <span class="cf">if</span> <span class="kw">not</span> task_found:</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true"></a>                todo_list[task] <span class="op">=</span> <span class="st">&#39;not done&#39;</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true"></a>    <span class="kw">def</span> mark_done(todo_list, task):</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true"></a>        <span class="cf">for</span> existing_task <span class="kw">in</span> todo_list:</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true"></a>            <span class="cf">if</span> existing_task <span class="op">==</span> task:</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true"></a>                todo_list[existing_task] <span class="op">=</span> <span class="st">&#39;done&#39;</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true"></a></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true"></a>    <span class="kw">def</span> main():</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true"></a>        todo_list: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">str</span>] <span class="op">=</span> {<span class="st">&#39;Buy groceries&#39;</span>: <span class="st">&#39;not done&#39;</span>, <span class="st">&#39;Read a book&#39;</span>: <span class="st">&#39;done&#39;</span>, <span class="st">&#39;Write report&#39;</span>: <span class="st">&#39;not done&#39;</span>, <span class="st">&#39;Call mom&#39;</span>: <span class="st">&#39;done&#39;</span>}</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true"></a></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true"></a>        add_task(todo_list, <span class="st">&#39;Finish homework&#39;</span>)</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true"></a></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true"></a>        mark_done(todo_list, <span class="st">&#39;Write report&#39;</span>)</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true"></a></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true"></a>        <span class="bu">print</span>(<span class="st">&quot;Current to-do list:&quot;</span>, todo_list)</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true"></a></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true"></a>    <span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true"></a>        main()</span></code></pre></div></li>
+</ol>
+</details>
+<h1 id="sets-and-dictionaries">Sets and Dictionaries</h1>
+<h3 id="sets-conceptual-questions">Sets Conceptual Questions</h3>
+<ol type="1">
+<li><p>Sets in Python are ordered collections of data with values that aren’t necessarily unique (T/F).</p></li>
+<li><p>Testing if a value is <code>in</code> a set takes the same number of operations as it would in a list, no matter the size (T/F).</p></li>
+<li><p>Syntax Practice: How would you declare a set named <code>classes</code> of the strings <code>"110"</code>, <code>"210"</code>, and <code>"311"</code>? After this line, add two lines that add makes the condition <code>classes == {"110", "311", "455"}</code> be <code>True</code>.</p></li>
+</ol>
+<details>
+<p><summary>SHOW SOLUTIONS</summary></p>
+<ol type="1">
+<li><p>False, sets in Python are unordered and have to be unique.</p></li>
+<li><p>False, in a set it takes only one “operation”, regardless of size but for a list it depends on the size.</p></li>
+<li></li>
+</ol>
+<div class="sourceCode" id="cb10"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a>    classes: <span class="bu">set</span>[<span class="bu">str</span>] <span class="op">=</span> {<span class="st">&quot;110&quot;</span>, <span class="st">&quot;210&quot;</span>, <span class="st">&quot;311&quot;</span>}</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true"></a>    classes.add(<span class="st">&quot;455&quot;</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true"></a>    classes.remove(<span class="st">&quot;210&quot;</span>)</span></code></pre></div>
+</details>
+<h3 id="dictionaries-conceptual-questions">Dictionaries Conceptual Questions</h3>
+<p>For the following, make sure that for each question you could justify or provide an example of your answer using either memory diagrams or code in VS code.</p>
+<ol type="1">
+<li>Dictionaries in Python can have duplicate keys. (T/F)</li>
+<li>Dictionaries in Python can be nested, meaning a dictionary can contain another dictionary as a value. (T/F)</li>
+<li>Can you remove only a key without removing a value (or vice versa)?</li>
+<li>What act as your indices in a dict?</li>
+<li>Explain in words how you modify elements in a dict? How would you do this in python? Give an example.</li>
+<li>How do you remove elements in a dict? What does this actually remove?</li>
+<li>How do you modify a key in a dict?</li>
+<li>Write the general formula of how you remove a key-value pair to a dictionary object using the following. You might not need to use all and can use any multiple times: <code>pop</code>, <code>append</code>, <code>()</code>, <code>&lt;object_variable&gt;</code>, <code>.</code> , <code>&lt;key&gt;</code>, <code>&lt;value&gt;</code>, and <code>[]</code>. Give examples.</li>
+<li>Write the general formula of how you remove a key-value pair to a dictionary object using the following. You might not need to use all and can use any multiple times: <code>pop</code>, <code>append</code>, <code>()</code>, <code>&lt;object_variable&gt;</code>, <code>.</code> , <code>&lt;key&gt;</code>, <code>&lt;value&gt;</code>, and <code>[]</code>. Give examples.</li>
+</ol>
+<details>
+<p><summary>SHOW SOLUTIONS</summary></p>
+<ol type="1">
+<li><p>False. Python dictionaries cannot have duplicate keys. Each key in a dictionary must be unique. If you attempt to create a dictionary with duplicate keys, the latest key-value pair will overwrite the previous one. For example:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true"></a>    my_dict <span class="op">=</span> {<span class="st">&quot;a&quot;</span>: <span class="dv">1</span>, <span class="st">&quot;a&quot;</span>: <span class="dv">2</span>}</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true"></a>    <span class="bu">print</span>(my_dict)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true"></a>    <span class="co"># Output: {&#39;a&#39;: 2}</span></span></code></pre></div></li>
+<li><p>True, Python dictionaries can be nested. This means that a dictionary can hold another dictionary as a value. You can use this feature to create more complex data structures. For example:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true"></a>    nested_dict <span class="op">=</span> {</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true"></a>        <span class="st">&quot;key1&quot;</span>: {<span class="st">&quot;nested_key1&quot;</span>: <span class="dv">1</span>, <span class="st">&quot;nested_key2&quot;</span>: <span class="dv">2</span>},</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true"></a>        <span class="st">&quot;key2&quot;</span>: {<span class="st">&quot;nested_key3&quot;</span>: <span class="dv">3</span>, <span class="st">&quot;nested_key4&quot;</span>: <span class="dv">4</span>}</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true"></a>    }</span></code></pre></div></li>
+<li><p>False. No, you cannot remove just a key or just a value in a dictionary. A key-value pair is considered a single entity in a dictionary. If you remove the key, the corresponding value is also removed.</p></li>
+<li><p>In a Python dictionary, the keys act as the “indices.” Unlike lists, where numerical indices are used to access elements, dictionaries use keys to access values and these keys can be of any type. Each key must be unique, and it serves as the identifier for accessing the corresponding value. For example:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true"></a>    my_dict <span class="op">=</span> {<span class="st">&quot;name&quot;</span>: <span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;age&quot;</span>: <span class="dv">25</span>}</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true"></a>    <span class="bu">print</span>(my_dict[<span class="st">&quot;name&quot;</span>])  <span class="co"># Output: Alice</span></span></code></pre></div></li>
+<li><p>To modify an element in a Python dictionary, you use the key associated with the value you want to change. You can access the value using the key, and then assign a new value to it. In order to access the value, we use subscription notation, <code>[]</code>, on the object that we want to access the value at. This replaces the old value with the new one.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true"></a>    my_dict <span class="op">=</span> {<span class="st">&quot;name&quot;</span>: <span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;age&quot;</span>: <span class="dv">25</span>}</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true"></a>    my_dict[<span class="st">&quot;age&quot;</span>] <span class="op">=</span> <span class="dv">26</span>  <span class="co"># Modifying the value associated with the key &quot;age&quot;</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true"></a>    <span class="bu">print</span>(my_dict)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true"></a>    <span class="co"># Output: {&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 26}</span></span></code></pre></div></li>
+<li><p>To remove elements from a dictionary, we use the the <code>pop()</code> method. This method will remove the key and its corresponding value (key-value pair). The <code>pop()</code> method allows you to retrieve the value that was removed (not discussed in lecture but a very cool fact).</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true"></a>    my_dict <span class="op">=</span> {<span class="st">&quot;name&quot;</span>: <span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;age&quot;</span>: <span class="dv">25</span>}</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true"></a>    removed_value <span class="op">=</span> my_dict.pop(<span class="st">&quot;age&quot;</span>)  <span class="co"># Removes the key &quot;age&quot; and returns the value</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true"></a>    <span class="bu">print</span>(my_dict)  <span class="co"># Output: {&quot;name&quot;: &quot;Alice&quot;}</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true"></a>    <span class="bu">print</span>(removed_value)  <span class="co"># Output: 25</span></span></code></pre></div></li>
+<li><p>To modify a key in a Python dictionary, we can follow these steps:</p>
+<ol type="1">
+<li>Add a new key with the same value as the old key.</li>
+<li>Use pop() to remove the old key-value pair.</li>
+</ol>
+<div class="sourceCode" id="cb16"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true"></a>    my_dict <span class="op">=</span> {<span class="st">&quot;name&quot;</span>: <span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;age&quot;</span>: <span class="dv">25</span>}</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true"></a>    <span class="co"># Step 1: Create a new key-value pair using the value from the old key</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true"></a>    my_dict[<span class="st">&quot;years_old&quot;</span>] <span class="op">=</span> my_dict.pop(<span class="st">&quot;age&quot;</span>)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true"></a></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true"></a>    <span class="bu">print</span>(my_dict)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true"></a>    <span class="co"># Output: {&quot;name&quot;: &quot;Alice&quot;, &quot;years_old&quot;: 25}</span></span></code></pre></div></li>
+<li><p><code>&lt;object_variable&gt;.pop(&lt;key&gt;)</code></p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true"></a>    my_dict <span class="op">=</span> {<span class="st">&quot;name&quot;</span>: <span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;age&quot;</span>: <span class="dv">25</span>}</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true"></a>    removed_value <span class="op">=</span> my_dict.pop(<span class="st">&quot;name&quot;</span>)  <span class="co"># Removes the key &quot;name&quot; and returns its value</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true"></a>    <span class="bu">print</span>(my_dict)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true"></a>    <span class="co"># Output: {&quot;age&quot;: 25}</span></span></code></pre></div></li>
+<li><p><code>&lt;object_variable&gt;[&lt;key&gt;] = &lt;value&gt;</code></p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true"></a>    my_dict <span class="op">=</span> {<span class="st">&quot;name&quot;</span>: <span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;age&quot;</span>: <span class="dv">25</span>}</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true"></a>    my_dict[<span class="st">&quot;location&quot;</span>] <span class="op">=</span> <span class="st">&quot;New York&quot;</span>  <span class="co"># Adds a new key-value pair to the dictionary</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true"></a>    <span class="bu">print</span>(my_dict)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true"></a>    <span class="co"># Output: {&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 25, &quot;location&quot;: &quot;New York&quot;}</span></span></code></pre></div></li>
+</ol>
+</details>
+<h3 id="dictionaries-practice-questions">Dictionaries Practice Questions</h3>
+<ol type="1">
+<li><p>Create a new dictionary called <code>my_dictionary</code> with <code>str</code> keys and <code>float</code> values and initialize it as an empty dictionary.</p></li>
+<li><p>Using the following dictionary, <code>msg: dict[str, int] = {"Hello": 1, "Yall": 2}</code>, access the <em>value</em> stored under key “Yall”.</p></li>
+<li><p>Using the following dictionary, <code>msg: dict[str, int] = {"Hello": 1, "Yall": 2}</code>, increase the <em>value</em> stored under key “Yall” by 3.</p></li>
+<li><p>Using the following dictionary, <code>ids: dict[int, str] = {100: "Alyssa", 200: "Carmine"}</code>, remove the value “Alyssa”, stored at key 100.</p></li>
+<li><p>Using the following dictionary, <code>ids: dict[int, str] = {100: "Alyssa", 200: "Carmine"}</code>, write a line of code to get the number of key/value pairs in the dictionary.</p></li>
+<li><p>Using the following dictionary, <code>inventory: dict[str, int] = {"pens": 10, "notebooks": 5, "erasers": 8}</code>, add a new key-value pair <code>"markers": 15</code>.</p></li>
+<li><p>Using the following dictionary, <code>prices: dict[str, float] = {"bread": 2.99, "milk": 1.99, "eggs": 3.49}</code>, update the value of <code>"milk"</code> to <code>2.50</code>.</p></li>
+<li><p>Using the dictionary <code>scores: dict[str, int] = {"Alice": 85, "Bob": 90, "Charlie": 88}</code>, print out all the keys in the dictionary.</p></li>
+<li><p>Using the dictionary <code>scores: dict[str, int] = {"Alice": 85, "Bob": 90, "Charlie": 88}</code>, write a line of code that returns the sum of all the values (scores) in the dictionary. Assume that we have a written a <code>sum</code> function that will do this for us when passing in a <code>dict</code>. Store this value in a variable <code>total_score</code>.</p>
+<p>9.1. Write the same line of code except using key-word arguments assuming that the only parameter in <code>sum</code> is called <code>inp_dict</code>.</p></li>
+<li><p>Using the dictionary <code>fruit_count: dict[str, int] = {"apples": 5, "bananas": 8}</code>, iterate over the key-value pairs and print them in the format “key: value”.</p></li>
+<li><p>Create a new dictionary by combining the two dictionaries. Store this new object by assiging it’s reference to a variable called <code>combo_dict</code>:</p></li>
+</ol>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true"></a>    first_dict: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">int</span>] <span class="op">=</span> {<span class="st">&quot;a&quot;</span>: <span class="dv">1</span>, <span class="st">&quot;b&quot;</span>: <span class="dv">2</span>}</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true"></a>    second_dict: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">int</span>] <span class="op">=</span> {<span class="st">&quot;c&quot;</span>: <span class="dv">3</span>, <span class="st">&quot;d&quot;</span>: <span class="dv">4</span>}</span></code></pre></div>
+<details>
+<p><summary>SHOW SOLUTIONS</summary></p>
+<ol type="1">
+<li><p><code>my_dictionary: dict[str, float] = {}</code> or <code>my_dictionary: dict[str, float] = dict()</code></p></li>
+<li><p><code>msg["Yall"]</code></p></li>
+<li><p><code>msg["Yall"] += 3</code> or <code>msg["Yall"] = 5</code></p></li>
+<li><p><code>ids.pop(100)</code></p></li>
+<li><p><code>len(ids)</code></p></li>
+<li><p><code>inventory["markers"] = 15</code></p></li>
+<li><p><code>prices["milk"] = 2.50</code></p></li>
+<li><p>Code below:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true"></a>    <span class="cf">for</span> x <span class="kw">in</span> scores:</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true"></a>        <span class="bu">print</span>(x)</span></code></pre></div></li>
+<li><p><code>total_score = sum(scores)</code></p>
+<p>9.1. <code>total_score = sum(inp_dict=scores)</code></p></li>
+<li><p>Code below:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true"></a>    <span class="cf">for</span> boo <span class="kw">in</span> fruit_count:</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true"></a>        ghost <span class="op">=</span> fruit_count[boo]</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true"></a>        <span class="bu">print</span>(<span class="ss">f&quot;</span><span class="sc">{</span>boo<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>ghost<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div></li>
+<li><p><code>combo_dict: dict[str, int] = {"a": 1, "b": 2, "c": 3, "d": 4}</code></p></li>
+</ol>
+</details>
+<h1 id="extra-practice-lists-dictionaries-for-loops">Extra Practice (Lists, Dictionaries, <code>for</code> loops)</h1>
+<ol type="1">
+<li><p>The following questions will refer to the list below: <code>python         my_list: list[int] = list()</code> 1.1. Write line(s) of code that would add the number <code>8</code>, <code>0</code>, <code>3</code>, and <code>-1</code> to the list.</p>
+<p>1.2. Write line(s) of code that removes <code>3</code> from the list.</p>
+<p>1.3. Write line(s) of code that assigns the variable <code>dog</code> to the element at the second index.</p>
+<p>1.4. Write line(s) of code that prints the amount of items in the list.</p>
+<p>1.5. Change the value <code>8</code> to <code>0</code>.</p>
+<p>1.6. We now have a function, <code>sum</code> that adds the elements of my_list and returns this amount. Write a line of code that instantiates a <code>list[int]</code> with the first value returned from calling <code>sum</code> on <code>my_list</code>.</p></li>
+<li><p>The following questions will refer to the dictionary below:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true"></a>    my_dict: <span class="bu">dict</span>[<span class="bu">int</span>, <span class="bu">str</span>] <span class="op">=</span> {}</span></code></pre></div>
+<p>2.1. Write line(s) of code that would add the following key-value pairs to the dictionary:</p>
+<ul>
+<li><code>8: 'eight'</code></li>
+<li><code>0: 'zero'</code></li>
+<li><code>3: 'three'</code></li>
+<li><code>-1: 'negative one'</code></li>
+</ul>
+<p>2.2. Write line(s) of code that removes value <code>three</code>.</p>
+<p>2.3. Write line(s) of code that assign the value associated with the key <code>0</code> in <code>my_dict</code> to a variable called <code>cat</code>.</p>
+<p>2.4. Write line(s) of code that print the number of keys in <code>my_dict</code>.</p>
+<p>2.5. Write line(s) of code that print the number of values in <code>my_dict</code>.</p>
+<p>2.6. Change the value associated with the key <code>8</code> to <code>'zero'</code>.</p>
+<p>2.7. Suppose we have a function <code>sum_dict_keys</code> that sums the keys of <code>my_dict</code> and returns this amount. Write a line of code that instantiates a <code>dict[str, int]</code> containing a single value, which is the result of calling <code>sum_dict_keys(my_dict)</code> and a key of “returned_amount”.</p></li>
+<li><p>The following questions will refer to the dictionary below:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true"></a>    my_dict: <span class="bu">dict</span>[<span class="bu">int</span>, <span class="bu">str</span>] <span class="op">=</span> {<span class="dv">0</span>: <span class="st">&quot;dog&quot;</span>, <span class="dv">1</span>: <span class="st">&quot;cat&quot;</span>, <span class="dv">2</span>: <span class="st">&quot;mouse&quot;</span>, <span class="dv">3</span>: <span class="st">&quot;bird&quot;</span>, <span class="dv">4</span>: <span class="st">&quot;whale&quot;</span>}</span></code></pre></div>
+<p>3.1. What will print from the following code: <code>python      for x in range(0, len(my_dict)):           print(my_dict[x])</code></p>
+<ol type="a">
+<li><p><code>dog, cat, mouse, bird, whale</code></p></li>
+<li><p><code>dog, cat, mouse, bird</code></p></li>
+<li><p><code>IndexOutOfRange</code></p></li>
+<li><p><code>0, 1, 2, 3, 4</code></p></li>
+</ol>
+<p>3.2. What will print from the following code: <code>python      for x in range(0, len(my_dict)):           print(x)</code></p>
+<ol type="a">
+<li><p><code>0, 1, 2, 3, 4</code></p></li>
+<li><p><code>dog, cat, mouse, bird, whale</code></p></li>
+<li><p><code>IndexOutOfRange</code></p></li>
+<li><p><code>1, 2, 3, 4</code></p></li>
+</ol>
+<p>3.2. What will print from the following code: <code>python      for x in my_dict:           print(my_dict[x])</code></p>
+<ol type="a">
+<li><p><code>dog, cat, mouse, bird, whale</code></p></li>
+<li><p><code>dog, cat, mouse, bird</code></p></li>
+<li><p><code>IndexOutOfRange</code></p></li>
+<li><p><code>0, 1, 2, 3, 4</code></p></li>
+</ol>
+<p>3.3. What will print from the following code: <code>python      for x in my_dict:           print(x)</code></p>
+<ol type="a">
+<li><p><code>0, 1, 2, 3, 4</code></p></li>
+<li><p><code>dog, cat, mouse, bird, whale</code></p></li>
+<li><p><code>IndexOutOfRange</code></p></li>
+<li><p><code>1, 2, 3, 4</code></p></li>
+</ol>
+<p>3.4. What will print from the following code: <code>python      x: int = 0      while x &lt; len(my_dict):           print(x)          x += 1</code></p>
+<ol type="a">
+<li><p><code>0, 1, 2, 3, 4</code></p></li>
+<li><p><code>dog, cat, mouse, bird, whale</code></p></li>
+<li><p><code>IndexOutOfRange</code></p></li>
+<li><p><code>1, 2, 3, 4, 5</code></p></li>
+</ol>
+<p>3.5. What will print from the following code: <code>python      x: int = 0      while x &lt; len(my_dict):           print(my_dict[x])          x += 1</code></p>
+<ol type="a">
+<li><p><code>dog, cat, mouse, bird, whale</code></p></li>
+<li><p><code>dog, cat, mouse, bird</code></p></li>
+<li><p><code>IndexOutOfRange</code></p></li>
+<li><p><code>0, 1, 2, 3, 4</code></p></li>
+</ol></li>
+<li><p>The following questions will refer to the dictionary below:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true"></a>my_dict: <span class="bu">dict</span>[<span class="bu">int</span>, <span class="bu">str</span>] <span class="op">=</span> {<span class="dv">8</span>: <span class="st">&quot;dog&quot;</span>, <span class="dv">1</span>: <span class="st">&quot;cat&quot;</span>, <span class="dv">10</span>: <span class="st">&quot;mouse&quot;</span>, <span class="dv">15</span>: <span class="st">&quot;bird&quot;</span>, <span class="dv">0</span>: <span class="st">&quot;whale&quot;</span>}</span></code></pre></div>
+<p>4.1. What will print from the following code: <code>python      for x in range(0, len(my_dict)):           print(my_dict[x])</code></p>
+<ol type="a">
+<li><p><code>whale, cat, KeyError</code></p></li>
+<li><p><code>IndexOutOfRange</code></p></li>
+<li><p><code>dog, cat, mouse</code></p></li>
+<li><p><code>bird, whale</code></p></li>
+</ol>
+<p>4.2. What will print from the following code: <code>python      for x in range(0, len(my_dict)):           print(x)</code></p>
+<ol type="a">
+<li><p><code>0, 1, 2, 3, 4</code></p></li>
+<li><p><code>0, 1, 2</code></p></li>
+<li><p><code>IndexOutOfRange</code></p></li>
+<li><p><code>1, 2, 3, 4</code></p></li>
+</ol>
+<p>4.3. What will print from the following code: <code>python      for x in my_dict:           print(my_dict[x])</code></p>
+<ol type="a">
+<li><p><code>dog, cat, mouse, bird, whale</code></p></li>
+<li><p><code>whale, cat, mouse, bird, dog</code></p></li>
+<li><p><code>IndexOutOfRange</code></p></li>
+<li><p><code>0, 1, 2, 3, 4</code></p></li>
+</ol>
+<p>4.4. What will print from the following code: <code>python      for x in my_dict:           print(x)</code></p>
+<ol type="a">
+<li><p><code>8, 1, 10, 15, 0</code></p></li>
+<li><p><code>dog, cat, mouse, bird, whale</code></p></li>
+<li><p><code>IndexOutOfRange</code></p></li>
+<li><p><code>0, 1, 2, 3, 4</code></p></li>
+</ol>
+<p>4.5. What will print from the following code: <code>python      x: int = 0      while x &lt; len(my_dict):           print(x)          x += 1</code></p>
+<ol type="a">
+<li><p><code>0, 1, 2, 3, 4</code></p></li>
+<li><p><code>1, 2, 3, 4</code></p></li>
+<li><p><code>IndexOutOfRange</code></p></li>
+<li><p><code>0, 1, 2</code></p></li>
+</ol>
+<p>4.6. What will print from the following code: <code>python      x: int = 0      while x &lt; len(my_dict):           print(my_dict[x])          x += 1</code></p>
+<ol type="a">
+<li><p><code>whale, cat, KeyError</code></p></li>
+<li><p><code>IndexOutOfRange</code></p></li>
+<li><p><code>dog, cat, mouse</code></p></li>
+<li><p><code>bird, whale</code></p></li>
+</ol></li>
+<li><p>The following questions will refer to the dictionary below:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true"></a>my_dict: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">str</span>] <span class="op">=</span> {<span class="st">&quot;cat&quot;</span>: <span class="st">&quot;dog&quot;</span>, <span class="st">&quot;dog&quot;</span>: <span class="st">&quot;cat&quot;</span>, <span class="st">&quot;bird&quot;</span>: <span class="st">&quot;mouse&quot;</span>, <span class="st">&quot;mouse&quot;</span>: <span class="st">&quot;bird&quot;</span>, <span class="st">&quot;while&quot;</span>: <span class="st">&quot;whale&quot;</span>}</span></code></pre></div>
+<p>5.1. What will print from the following code: <code>python      for x in range(0, len(my_dict)):           print(my_dict[x])</code></p>
+<ol type="a">
+<li><p><code>IndexOutOfRange</code></p></li>
+<li><p><code>dog, cat, mouse</code></p></li>
+<li><p><code>KeyError</code></p></li>
+<li><p><code>bird, whale</code></p></li>
+</ol>
+<p>5.2. What will print from the following code: <code>python      for x in range(0, len(my_dict)):           print(x)</code></p>
+<ol type="a">
+<li><p><code>0, 1, 2, 3, 4</code></p></li>
+<li><p><code>1, 2, 3, 4</code></p></li>
+<li><p><code>IndexOutOfRange</code></p></li>
+<li><p><code>0, 1, 2</code></p></li>
+</ol>
+<p>5.3. What will print from the following code: <code>python      for x in my_dict:           print(my_dict[x])</code></p>
+<ol type="a">
+<li><p><code>dog, cat, mouse, bird, whale</code></p></li>
+<li><p><code>dog, cat, mouse, bird</code></p></li>
+<li><p><code>IndexOutOfRange</code></p></li>
+<li><p><code>cat, dog, bird</code></p></li>
+</ol>
+<p>5.4. What will print from the following code: <code>python      for x in my_dict:           print(x)</code></p>
+<ol type="a">
+<li><p><code>cat, dog, bird, mouse, while</code></p></li>
+<li><p><code>dog, cat, mouse, bird</code></p></li>
+<li><p><code>IndexOutOfRange</code></p></li>
+<li><p><code>0, 1, 2, 3, 4</code></p></li>
+</ol>
+<p>5.5. What will print from the following code: <code>python      x: int = 0      while x &lt; len(my_dict):           print(x)          x += 1</code></p>
+<ol type="a">
+<li><p><code>0, 1, 2, 3, 4</code></p></li>
+<li><p><code>dog, cat, mouse, bird, whale</code></p></li>
+<li><p><code>IndexOutOfRange</code></p></li>
+<li><p><code>1, 2, 3, 4</code></p></li>
+</ol>
+<p>5.6. What will print from the following code: <code>python      x: int = 0      while x &lt; len(my_dict):           print(my_dict[x])          x += 1</code></p>
+<ol type="a">
+<li><p><code>IndexOutOfRange</code></p></li>
+<li><p><code>dog, cat, mouse</code></p></li>
+<li><p><code>KeyError</code></p></li>
+<li><p><code>bird, whale</code></p></li>
+</ol></li>
+</ol>
+<details>
+<p><summary>SHOW SOLUTIONS</summary></p>
+<ol type="1">
+<li>List Manipulations</li>
+</ol>
+<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true"></a>my_list: <span class="bu">list</span>[<span class="bu">int</span>] <span class="op">=</span> <span class="bu">list</span>()</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true"></a></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true"></a><span class="co"># 1.1. Add the numbers 8, 0, 3, and -1 to the list.</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true"></a>my_list.append(<span class="dv">8</span>)</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true"></a>my_list.append(<span class="dv">0</span>)</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true"></a>my_list.append(<span class="dv">3</span>)</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true"></a>my_list.append(<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true"></a></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true"></a><span class="co"># 1.2. Remove the number 3 from the list.</span></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true"></a>my_list.pop(<span class="dv">2</span>)</span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true"></a></span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true"></a><span class="co"># 1.3. Assign the element at the second index to a variable named &#39;dog&#39;.</span></span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true"></a>dog <span class="op">=</span> my_list[<span class="dv">2</span>]</span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true"></a></span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true"></a><span class="co"># 1.4. Print the number of items in the list.</span></span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true"></a><span class="bu">print</span>(<span class="bu">len</span>(my_list))</span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true"></a></span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true"></a><span class="co"># 1.5. Change the value 8 to 0.</span></span>
+<span id="cb26-19"><a href="#cb26-19" aria-hidden="true"></a>my_list[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb26-20"><a href="#cb26-20" aria-hidden="true"></a></span>
+<span id="cb26-21"><a href="#cb26-21" aria-hidden="true"></a><span class="co"># 1.6. Instantiate a list[int] with the first value returned from calling sum on my_list.</span></span>
+<span id="cb26-22"><a href="#cb26-22" aria-hidden="true"></a>summed_list <span class="op">=</span> [<span class="bu">sum</span>(my_list)]</span></code></pre></div>
+<ol start="2" type="1">
+<li>Dictionary Manipulations</li>
+</ol>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true"></a>my_dict: <span class="bu">dict</span>[<span class="bu">int</span>, <span class="bu">str</span>] <span class="op">=</span> {}</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true"></a><span class="co"># 2.1. Add key-value pairs to the dictionary.</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true"></a>my_dict[<span class="dv">8</span>] <span class="op">=</span> <span class="st">&#39;eight&#39;</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true"></a>my_dict[<span class="dv">0</span>] <span class="op">=</span> <span class="st">&#39;zero&#39;</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true"></a>my_dict[<span class="dv">3</span>] <span class="op">=</span> <span class="st">&#39;three&#39;</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true"></a>my_dict[<span class="op">-</span><span class="dv">1</span>] <span class="op">=</span> <span class="st">&#39;negative one&#39;</span></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true"></a></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true"></a><span class="co"># 2.2. Remove the key-value pair where the value is &#39;three&#39;.</span></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true"></a>my_dict.pop(<span class="dv">3</span>) <span class="co"># recall that pop takes an index and in the case of dictionaries or indicies are essentially our keys</span></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true"></a></span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true"></a><span class="co"># 2.3. Assign the value associated with the key 0 to a variable called &#39;cat&#39;.</span></span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true"></a>cat <span class="op">=</span> my_dict[<span class="dv">0</span>]</span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true"></a></span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true"></a><span class="co"># 2.4. Print the number of keys in the dictionary.</span></span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true"></a><span class="bu">print</span>(<span class="bu">len</span>(my_dict))</span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true"></a></span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true"></a><span class="co"># 2.5. Print the number of values in the dictionary.</span></span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true"></a><span class="bu">print</span>(<span class="bu">len</span>(my_dict))</span>
+<span id="cb27-20"><a href="#cb27-20" aria-hidden="true"></a></span>
+<span id="cb27-21"><a href="#cb27-21" aria-hidden="true"></a><span class="co"># 2.6. Change the value associated with the key 8 to &#39;zero&#39;.</span></span>
+<span id="cb27-22"><a href="#cb27-22" aria-hidden="true"></a>my_dict[<span class="dv">8</span>] <span class="op">=</span> <span class="st">&#39;zero&#39;</span></span>
+<span id="cb27-23"><a href="#cb27-23" aria-hidden="true"></a></span>
+<span id="cb27-24"><a href="#cb27-24" aria-hidden="true"></a><span class="co"># 2.7. Instantiate a dict[str, int] with the key &#39;returned_amount&#39; and the value from sum_dict_keys(my_dict).</span></span>
+<span id="cb27-25"><a href="#cb27-25" aria-hidden="true"></a>result_dict <span class="op">=</span> {<span class="st">&#39;returned_amount&#39;</span>: sum_dict_keys(my_dict)}</span></code></pre></div>
+<ol start="3" type="1">
+<li>Dictionary Looping and Output</li>
+</ol>
+<ul>
+<li>3.1: Output = (a) dog, cat, mouse, bird, whale</li>
+<li>3.2: Output = (a) 0, 1, 2, 3, 4</li>
+<li>3.3: Output = (a) dog, cat, mouse, bird, whale</li>
+<li>3.4: Output = (a) 0, 1, 2, 3, 4</li>
+<li>3.5: Output = (a) 0, 1, 2, 3, 4</li>
+<li>3.6: Output = (a) dog, cat, mouse, bird, whale</li>
+</ul>
+<ol start="4" type="1">
+<li>Looping with Different Key Values</li>
+</ol>
+<ul>
+<li>4.1: Output = (a) whale, cat, KeyError</li>
+<li>4.2: Output = (a) 0, 1, 2, 3, 4</li>
+<li>4.3: Output = (a) dog, cat, mouse, bird, whale</li>
+<li>4.4: Output = (a) 0, 1, 8, 10, 15</li>
+<li>4.5: Output = (a) 0, 1, 2, 3, 4</li>
+<li>4.6: Output = (a) whale, cat, KeyError</li>
+</ul>
+<ol start="5" type="1">
+<li>Dictionary with String Keys</li>
+</ol>
+<ul>
+<li>5.1: Output = (c) KeyError</li>
+<li>5.2: Output = (a) 0, 1, 2, 3, 4</li>
+<li>5.3: Output = (a) dog, cat, mouse, bird, whale</li>
+<li>5.4: Output = (a) cat, dog, bird, mouse, while</li>
+<li>5.5: Output = (a) 0, 1, 2, 3, 4</li>
+<li>5.6: Output = (c) KeyError</li>
+</ul>
+</details>
+</div>
+
+       
+
+    </div> 
+    </div>
+    </div>
+    <div class="authors-box bg-dark mt-4 py-3 ps-4">
+      <span> Contributor(s):        Alyssa Lytle,        Megan Zhang,        David Karash,        Viktorya Hunanyan,        Carmine Anderson-Falconi, Benjamin Eldridge</span>
+    </div>
+
+  </div>
+  <div class='link-page mt-3 container'>
+    <footer>
+      <h3 class="text-center align-middle footer-text">&copy; 2025 <a href="https://krisjordan.com">Kris Jordan</a>
+        - <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSenaJ2uZ_n2FfAb2PWL6YPG4AUT-G2-xVJP6HIwMr6cd6nSYA/viewform?usp=sf_link">Feedback
+          Form</a>
+        - Made with 💛 in <a href="https://cs.unc.edu/">Chapel Hill</a></h3>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <!-- Code Block Formatting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  
+</body>
+
+</html>

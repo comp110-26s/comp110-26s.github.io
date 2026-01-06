@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Quiz 02 Memory Diagram Practice Problems - COMP110 - 25F</title>
+  <link rel="icon" type="image/png" href="/static/s25_brand.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/static/styles.css?v=1767731939.9850492">
+</head>
+
+
+<body id="body" class="absolute-page">
+    <script>
+        document.body.classList.remove('light-mode');
+        document.body.classList.remove('dark-mode');
+        document.body.classList.add(localStorage.getItem('mode'));
+    </script>
+  <script src="/static/scripts/nav-menu-esc.js"></script> 
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark py-1 fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/s25_brand.png"
+        alt="COMP110 - Spring - 2025"><img class="darkmode-element-only img-fluid logo" src="/static/s25_brand.png"
+        alt="COMP110 - Spring - 2025"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" onclick="esc_key()" data-bs-target="#navmenu" aria-label="Main Menu" aria-controls="#navmenu" role="navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link " href="/">agenda</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources" class="nav-link">resources</a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="/support" class="nav-link">support</a>
+          </li>
+         
+          <li class="nav-item">
+            <a href="/resources/syllabus.html" class="nav-link">syllabus</a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="/resources/team.html" class="nav-link">team110</a>
+          </li>
+         
+        </ul>
+      </div>
+      <div id='mode-switch' class="ms-auto form-check form-switch mode switches">
+              <div class="switches">
+                  <input type="checkbox" id="1" onclick="
+                      if (localStorage.getItem('mode') === 'dark-mode') {
+                          localStorage.setItem('userPref', 'light-mode');
+                          localStorage.setItem('mode', 'light-mode');
+                      } else {
+                          localStorage.setItem('userPref', 'dark-mode');
+                          localStorage.setItem('mode', 'dark-mode');
+                      }
+                      location.reload();">
+                  <label for="1">
+                      <span id="mode-label">Dark Mode</span>
+                      <span></span>
+                  </label>
+                  <script>if(localStorage.getItem('mode') === 'dark-mode'){document.getElementById("1").checked = true}</script>
+                  <script>if(localStorage.getItem('userPref') === null) {setTimeout(function(){location.reload();}, (timer * 3600000));}</script>
+              </div>
+          </div>
+    </div>
+  </nav>
+
+  <div class="cloud-container">
+    <div id="cloud-intro">
+  <div id="lessons-page" class="container">
+    <div class="row pt-4">
+      <div class="col-12">
+        <h1 id="page-title">Quiz 02 Memory Diagram Practice Problems</h1>
+      </div>
+    </div>
+    
+
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            <div>
+                <div id="menu-overview" class="link-page-overview horizon-box">
+                    <button id="overview-button" class="btn btn-ov" onclick="hideshow()" >Overview  <img id="button-img" alt="Overview" class="filter-icon" src="/static/components/Itinerary/arrow-up.svg" style="height:15px; padding-left: 4px;"></button>
+                    <div id="overview-links">
+                        <div id="TOC" role="doc-toc">
+                            <ul class="overview-item"><ul>
+<li><a href="#lists">Lists</a></li>
+<li><a href="#dictionaries">Dictionaries</a></li>
+</ul>
+</</ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="lists">Lists</h1>
+<ol type="1">
+<li>Create a memory diagram for the following code listing.</li>
+</ol>
+<div class="sourceCode" id="cb1" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="dv">1</span>     <span class="st">&quot;&quot;&quot;Practice diagram.&quot;&quot;&quot;</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="dv">2</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="dv">3</span>     <span class="kw">def</span> check_quiz(responses: <span class="bu">list</span>[<span class="bu">bool</span>]) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="dv">4</span>         answer_key: <span class="bu">list</span>[<span class="bu">bool</span>] <span class="op">=</span> [<span class="va">True</span>, <span class="va">True</span>, <span class="va">False</span>]</span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="dv">5</span>         correct: <span class="bu">int</span> <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="dv">6</span>         idx: <span class="bu">int</span> <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="dv">7</span>         <span class="cf">while</span> idx <span class="op">&lt;</span> <span class="bu">len</span>(responses):</span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="dv">8</span>             <span class="cf">if</span> responses[idx] <span class="op">==</span> answer_key[idx]:</span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="dv">9</span>                 correct <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="dv">10</span>                idx <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="dv">11</span>            <span class="cf">else</span>:</span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="dv">12</span>                idx <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a><span class="dv">13</span>        <span class="cf">return</span> correct</span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="dv">14</span></span>
+<span id="cb1-15"><a href="#cb1-15"></a><span class="dv">15</span>    <span class="kw">def</span> main() <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb1-16"><a href="#cb1-16"></a><span class="dv">16</span>        my_quiz: <span class="bu">list</span>[<span class="bu">bool</span>] <span class="op">=</span> [<span class="va">True</span>, <span class="va">True</span>, <span class="va">True</span>]</span>
+<span id="cb1-17"><a href="#cb1-17"></a><span class="dv">17</span>        grade: <span class="bu">int</span> <span class="op">=</span> check_quiz(my_quiz)</span>
+<span id="cb1-18"><a href="#cb1-18"></a><span class="dv">18</span>        <span class="bu">print</span>(<span class="ss">f&quot;</span><span class="sc">{</span>grade<span class="sc">}</span><span class="ss"> out of 3 questions correct.&quot;</span>)</span>
+<span id="cb1-19"><a href="#cb1-19"></a><span class="dv">19</span></span>
+<span id="cb1-20"><a href="#cb1-20"></a><span class="dv">20</span></span>
+<span id="cb1-21"><a href="#cb1-21"></a><span class="dv">21</span>    main()</span></code></pre></div>
+<ol start="2" type="1">
+<li>Create a memory diagram for the following code listing.</li>
+</ol>
+<div class="sourceCode" id="cb2" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="dv">1</span>     <span class="st">&quot;&quot;&quot;Practice diagram.&quot;&quot;&quot;</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="dv">2</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="dv">3</span>     <span class="kw">def</span> create() <span class="op">-&gt;</span> <span class="bu">list</span>[<span class="bu">int</span>]:</span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="dv">4</span>         <span class="st">&quot;&quot;&quot;An obnoxious way to make a list.&quot;&quot;&quot;</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="dv">5</span>         list_1: <span class="bu">list</span>[<span class="bu">int</span>] <span class="op">=</span> []</span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="dv">6</span>         i: <span class="bu">int</span> <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a><span class="dv">7</span>         <span class="cf">while</span> i <span class="op">&lt;</span> <span class="dv">3</span>:</span>
+<span id="cb2-8"><a href="#cb2-8"></a><span class="dv">8</span>             list_1.append(i)</span>
+<span id="cb2-9"><a href="#cb2-9"></a><span class="dv">9</span>             i <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb2-10"><a href="#cb2-10"></a><span class="dv">10</span>        <span class="cf">return</span> list_1</span>
+<span id="cb2-11"><a href="#cb2-11"></a><span class="dv">11</span></span>
+<span id="cb2-12"><a href="#cb2-12"></a><span class="dv">12</span></span>
+<span id="cb2-13"><a href="#cb2-13"></a><span class="dv">13</span>    <span class="kw">def</span> increase(a_list: <span class="bu">list</span>[<span class="bu">int</span>], x: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb2-14"><a href="#cb2-14"></a><span class="dv">14</span>        <span class="st">&quot;&quot;&quot;Lets pump it up!&quot;&quot;&quot;</span></span>
+<span id="cb2-15"><a href="#cb2-15"></a><span class="dv">15</span>        i: <span class="bu">int</span> <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb2-16"><a href="#cb2-16"></a><span class="dv">16</span>        <span class="cf">while</span> i <span class="op">&lt;</span> <span class="bu">len</span>(a_list):</span>
+<span id="cb2-17"><a href="#cb2-17"></a><span class="dv">17</span>            a_list[i] <span class="op">+=</span> x</span>
+<span id="cb2-18"><a href="#cb2-18"></a><span class="dv">18</span>            i <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb2-19"><a href="#cb2-19"></a><span class="dv">19</span>        <span class="cf">return</span> <span class="va">None</span></span>
+<span id="cb2-20"><a href="#cb2-20"></a><span class="dv">20</span></span>
+<span id="cb2-21"><a href="#cb2-21"></a><span class="dv">21</span></span>
+<span id="cb2-22"><a href="#cb2-22"></a><span class="dv">22</span>    <span class="kw">def</span> main() <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb2-23"><a href="#cb2-23"></a><span class="dv">23</span>        <span class="st">&quot;&quot;&quot;Entrypoint of the program.&quot;&quot;&quot;</span></span>
+<span id="cb2-24"><a href="#cb2-24"></a><span class="dv">24</span>        list_1: <span class="bu">list</span>[<span class="bu">int</span>] <span class="op">=</span> create()</span>
+<span id="cb2-25"><a href="#cb2-25"></a><span class="dv">25</span>        list_2: <span class="bu">list</span>[<span class="bu">int</span>] <span class="op">=</span> list_1</span>
+<span id="cb2-26"><a href="#cb2-26"></a><span class="dv">26</span>        list_1 <span class="op">=</span> create()</span>
+<span id="cb2-27"><a href="#cb2-27"></a><span class="dv">27</span>        increase(list_1, <span class="dv">2</span>)</span>
+<span id="cb2-28"><a href="#cb2-28"></a><span class="dv">28</span>        <span class="bu">print</span>(list_1)</span>
+<span id="cb2-29"><a href="#cb2-29"></a><span class="dv">29</span>        <span class="bu">print</span>(list_2)</span>
+<span id="cb2-30"><a href="#cb2-30"></a><span class="dv">30</span></span>
+<span id="cb2-31"><a href="#cb2-31"></a><span class="dv">31</span></span>
+<span id="cb2-32"><a href="#cb2-32"></a><span class="dv">32</span>    main()</span></code></pre></div>
+<ol start="3" type="1">
+<li>Create a memory diagram for the following code listing.</li>
+</ol>
+<div class="sourceCode" id="cb3" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="dv">1</span>     <span class="st">&quot;&quot;&quot;Practice diagram.&quot;&quot;&quot;</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="dv">2</span> </span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="dv">3</span>     <span class="kw">def</span> f(x: <span class="bu">list</span>[<span class="bu">str</span>]) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="dv">4</span>         <span class="cf">for</span> y <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="bu">len</span>(x)):</span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="dv">5</span>             x[y] <span class="op">+=</span> <span class="st">&quot;x&quot;</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="dv">6</span>         <span class="cf">return</span> x[y]</span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="dv">7</span> </span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="dv">8</span>     <span class="kw">def</span> g(x: <span class="bu">list</span>[<span class="bu">str</span>]) <span class="op">-&gt;</span> <span class="bu">list</span>[<span class="bu">str</span>]:</span>
+<span id="cb3-9"><a href="#cb3-9"></a><span class="dv">9</span>         new_list: <span class="bu">list</span>[<span class="bu">str</span>] <span class="op">=</span> []</span>
+<span id="cb3-10"><a href="#cb3-10"></a><span class="dv">10</span>        <span class="cf">for</span> z <span class="kw">in</span> x:</span>
+<span id="cb3-11"><a href="#cb3-11"></a><span class="dv">11</span>            new_list.append(<span class="bu">str</span>(z))</span>
+<span id="cb3-12"><a href="#cb3-12"></a><span class="dv">12</span>        <span class="cf">return</span> new_list</span>
+<span id="cb3-13"><a href="#cb3-13"></a><span class="dv">13</span></span>
+<span id="cb3-14"><a href="#cb3-14"></a><span class="dv">14</span>    record: <span class="bu">list</span>[<span class="bu">str</span>] <span class="op">=</span> [<span class="st">&quot;x&quot;</span>, <span class="st">&quot;y&quot;</span>]</span>
+<span id="cb3-15"><a href="#cb3-15"></a><span class="dv">15</span>    <span class="bu">print</span>(f(record))</span>
+<span id="cb3-16"><a href="#cb3-16"></a><span class="dv">16</span>    <span class="bu">print</span>(g(record))</span></code></pre></div>
+<ol start="4" type="1">
+<li>Create a memory diagram for the following code listing.</li>
+</ol>
+<div class="sourceCode" id="cb4" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="dv">1</span>     <span class="st">&quot;&quot;&quot;Practice diagram.&quot;&quot;&quot;</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="dv">2</span> </span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="dv">3</span>     <span class="kw">def</span> change_and_check(x: <span class="bu">int</span>, nums: <span class="bu">list</span>[<span class="bu">int</span>]) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="dv">4</span>         <span class="st">&quot;&quot;&quot;Let&#39;s see what happens!&quot;&quot;&quot;</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="dv">5</span>         <span class="cf">if</span> x <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="dv">6</span>             <span class="cf">return</span> <span class="dv">0</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="dv">7</span>         i: <span class="bu">int</span> <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="dv">8</span>         <span class="cf">while</span> i <span class="op">&lt;</span> <span class="bu">len</span>(nums):</span>
+<span id="cb4-9"><a href="#cb4-9"></a><span class="dv">9</span>             nums[i] <span class="op">+=</span> x</span>
+<span id="cb4-10"><a href="#cb4-10"></a><span class="dv">10</span>            i <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb4-11"><a href="#cb4-11"></a><span class="dv">11</span>        i <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb4-12"><a href="#cb4-12"></a><span class="dv">12</span>        <span class="cf">while</span> i <span class="op">&lt;</span> <span class="bu">len</span>(nums):</span>
+<span id="cb4-13"><a href="#cb4-13"></a><span class="dv">13</span>            <span class="cf">if</span> nums[i] <span class="op">==</span> x:</span>
+<span id="cb4-14"><a href="#cb4-14"></a><span class="dv">14</span>                <span class="cf">return</span> <span class="dv">0</span></span>
+<span id="cb4-15"><a href="#cb4-15"></a><span class="dv">15</span>            i <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb4-16"><a href="#cb4-16"></a><span class="dv">16</span>        <span class="cf">return</span> x <span class="op">-</span> <span class="dv">1</span></span>
+<span id="cb4-17"><a href="#cb4-17"></a><span class="dv">17</span></span>
+<span id="cb4-18"><a href="#cb4-18"></a><span class="dv">18</span></span>
+<span id="cb4-19"><a href="#cb4-19"></a><span class="dv">19</span>    <span class="kw">def</span> main() <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb4-20"><a href="#cb4-20"></a><span class="dv">20</span>        <span class="st">&quot;&quot;&quot;The entrypoint of this program.&quot;&quot;&quot;</span></span>
+<span id="cb4-21"><a href="#cb4-21"></a><span class="dv">21</span>        num_1: <span class="bu">int</span> <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb4-22"><a href="#cb4-22"></a><span class="dv">22</span>        list_1: <span class="bu">list</span>[<span class="bu">int</span>] <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, num_1]</span>
+<span id="cb4-23"><a href="#cb4-23"></a><span class="dv">23</span>        list_1.append(change_and_check(<span class="dv">2</span>, list_1))</span>
+<span id="cb4-24"><a href="#cb4-24"></a><span class="dv">24</span>        list_1.append(change_and_check(<span class="dv">3</span>, list_1))</span>
+<span id="cb4-25"><a href="#cb4-25"></a><span class="dv">25</span></span>
+<span id="cb4-26"><a href="#cb4-26"></a><span class="dv">26</span>    main()</span></code></pre></div>
+<ol start="5" type="1">
+<li>Create a memory diagram for the following code listing.</li>
+</ol>
+<div class="sourceCode" id="cb5" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="dv">1</span>     <span class="st">&quot;&quot;&quot;Practice diagram.&quot;&quot;&quot;</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="dv">2</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="dv">3</span>     <span class="kw">def</span> apply_discounts(order_amounts: <span class="bu">list</span>[<span class="bu">float</span>]) <span class="op">-&gt;</span> <span class="bu">list</span>[<span class="bu">float</span>]:</span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="dv">4</span>         index: <span class="bu">int</span> <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="dv">5</span>         counter: <span class="bu">int</span> <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a><span class="dv">6</span>         discounted_amounts: <span class="bu">list</span>[<span class="bu">float</span>] <span class="op">=</span> []</span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="dv">7</span> </span>
+<span id="cb5-8"><a href="#cb5-8"></a><span class="dv">8</span>         <span class="cf">while</span> index <span class="op">&lt;</span> <span class="bu">len</span>(order_amounts):</span>
+<span id="cb5-9"><a href="#cb5-9"></a><span class="dv">9</span>             amount: <span class="bu">float</span> <span class="op">=</span> order_amounts[index]</span>
+<span id="cb5-10"><a href="#cb5-10"></a><span class="dv">10</span></span>
+<span id="cb5-11"><a href="#cb5-11"></a><span class="dv">11</span>            <span class="cf">if</span> amount <span class="op">&gt;</span> <span class="dv">50</span>:</span>
+<span id="cb5-12"><a href="#cb5-12"></a><span class="dv">12</span>                discount <span class="op">=</span> <span class="fl">0.10</span></span>
+<span id="cb5-13"><a href="#cb5-13"></a><span class="dv">13</span>            <span class="cf">else</span>:</span>
+<span id="cb5-14"><a href="#cb5-14"></a><span class="dv">14</span>                discount <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb5-15"><a href="#cb5-15"></a><span class="dv">15</span></span>
+<span id="cb5-16"><a href="#cb5-16"></a><span class="dv">16</span>            discounted_amount <span class="op">=</span> amount <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> discount)</span>
+<span id="cb5-17"><a href="#cb5-17"></a><span class="dv">17</span>            discounted_amounts.append(discounted_amount)</span>
+<span id="cb5-18"><a href="#cb5-18"></a><span class="dv">18</span></span>
+<span id="cb5-19"><a href="#cb5-19"></a><span class="dv">19</span>            counter <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb5-20"><a href="#cb5-20"></a><span class="dv">20</span>            index <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb5-21"><a href="#cb5-21"></a><span class="dv">21</span></span>
+<span id="cb5-22"><a href="#cb5-22"></a><span class="dv">22</span>        <span class="bu">print</span>(<span class="ss">f&quot;Total orders processed: </span><span class="sc">{</span>counter<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb5-23"><a href="#cb5-23"></a><span class="dv">23</span>        <span class="cf">return</span> discounted_amounts</span>
+<span id="cb5-24"><a href="#cb5-24"></a><span class="dv">24</span></span>
+<span id="cb5-25"><a href="#cb5-25"></a><span class="dv">25</span>    <span class="kw">def</span> main() <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb5-26"><a href="#cb5-26"></a><span class="dv">26</span>        order_amounts: <span class="bu">list</span>[<span class="bu">float</span>] <span class="op">=</span> [<span class="fl">45.0</span>, <span class="fl">75.0</span>, <span class="fl">150.0</span>, <span class="fl">30.0</span>]</span>
+<span id="cb5-27"><a href="#cb5-27"></a><span class="dv">27</span>        discounted_amounts: <span class="bu">list</span>[<span class="bu">float</span>] <span class="op">=</span> apply_discounts(order_amounts)</span>
+<span id="cb5-28"><a href="#cb5-28"></a><span class="dv">28</span>        <span class="bu">print</span>(discounted_amounts)</span>
+<span id="cb5-29"><a href="#cb5-29"></a><span class="dv">29</span></span>
+<span id="cb5-30"><a href="#cb5-30"></a><span class="dv">30</span>    <span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb5-31"><a href="#cb5-31"></a><span class="dv">31</span>        main()</span></code></pre></div>
+<details>
+<p><summary>SHOW SOLUTIONS</summary></p>
+<ol type="1">
+<li><p><a href="https://youtu.be/ZAH1mpf6GKc?si=8BgFglBAlJ4QJJQS">Video</a></p>
+<p><img class="img-fluid" src="/static/practice/qz02_practice/lists-01-sol.jpg" alt=""/></p>
+<p><em>Image Description</em></p>
+<p>The Memory Diagram includes one box titled Output and below that box two columns, the left one titled Stack and the right one titled Heap.</p>
+<p>The Stack includes 3 frames in the following order from top to bottom including Globals, main, and check_quiz.</p>
+<p>The Globals frame has 2 variables including check_quiz and main.</p>
+<ul>
+<li>check_quiz has id 0, it is a function on the Heap (lines 1-11).</li>
+<li>main points id 1, it is a function on the Heap (lines 14-17).</li>
+</ul>
+<p>The main frame has 4 items including the RA and RV, and variables named my_quiz and grade.</p>
+<ul>
+<li>The RA is defined at line 19.</li>
+<li>The RV is None.</li>
+<li>my_quiz has id 2, it is a list[bool] on the Heap.
+<ul>
+<li>Indexes 0, 1, 2 and values True, True, True respectively.</li>
+</ul></li>
+<li>grade is 2.</li>
+</ul>
+<p>The check_quiz frame has 6 items including the RA and RV, and variables named responses, answer_key, correct, and idx.</p>
+<ul>
+<li>The RA is defined at line 15.</li>
+<li>The RV is 2.</li>
+<li>responses has id 2.</li>
+<li>answer_key has id 3, it is a list[bool] on the Heap.
+<ul>
+<li>Indexes 0, 1, 2 and values True, True, False respectively.</li>
+</ul></li>
+<li>correct is 2.
+<ul>
+<li>Previous values of correct include 0 and 1, which are now crossed out.</li>
+</ul></li>
+<li>idx is 3.
+<ul>
+<li>Previous values of idx include 0, 1, and 2, which are now crossed out.</li>
+</ul></li>
+</ul>
+<p>The Heap includes 2 function objects, and 2 list[bool] objects.</p>
+<p>Output includes the phrase: “2 out of 3 questions correct.”</p></li>
+<li><p><a href="https://youtu.be/WxRQAmKlESU?si=G-i5_TWdt_Uc9n9n">Video</a></p>
+<p><img class="img-fluid" src="/static/practice/qz02_practice/refs.png" alt=""/></p></li>
+<li><p><img class="img-fluid" src="/static/practice/qz02_practice/lists-02-sol.jpg" alt=""/></p>
+<p><!-- * Note that for this solution, we did not represent the `range()` function on the heap! We instead just represented `y` as a variable on the stack that gets updated. If you chose to include a "range" object to the heap, we wouldn't take points off, but we are really just looking for the value of `y`!
+
+ <img class="img-fluid" src="/static/assets/f23/lists00-sol.png" alt=""  /> ---></p>
+<p><em>Image Descriptions:</em> Under Globals:</p>
+<ul>
+<li>Variable f has id 0, it is a function labeled Fn [1-4] on the Heap.</li>
+<li>Variable g id 1, it is a function labeled Fn [1-6] on the Heap.</li>
+<li>Variable record id 2, it is a list object on the Heap with the type list[str].</li>
+</ul>
+<p>The f function frame has:</p>
+<ul>
+<li>Return Address (RA) pointing to line 13.</li>
+<li>Variables x and y, where x has id 2, and y with a value of 1 and a crossed-out value of 0.</li>
+<li>Return Value (RV) with a value of “yx”.</li>
+</ul>
+<p>The g function frame has:</p>
+<ul>
+<li>Return Address (RA) pointing to line 14.</li>
+<li>Variables x has id 2, new_list has id 3 which is list object on the Heap with type list[str].</li>
+<li>Variable z has the crossed-out string “xx”, with a final value of “yx”.</li>
+<li>Return Value (RV) has id 3.</li>
+</ul>
+<p>The Heap section shows two list objects and two string objects:</p>
+<ul>
+<li>The first list on the heap has two values. The first value is “xx” with a crossed-out value of “x”. The second value is “yx” with a crossed-out value of “y”.</li>
+<li>The second list on the heap has two values. The first value is “xx” and the second value is “yx”.</li>
+</ul>
+<p>The Output section at the top first prints “yx”, then the list [“xx”,”yx”].</p></li>
+<li><p><img class="img-fluid" src="/static/practice/qz02_practice/change-and-check.png" alt="Image Description Here"  /></p></li>
+<li><p><img class="img-fluid" src="/static/practice/qz02_practice/discount-soln.jpg" alt="Image Description Here"  /></p></li>
+</ol>
+</details>
+<h1 id="dictionaries">Dictionaries</h1>
+<ol type="1">
+<li>Create a memory diagram for the following code listing.</li>
+</ol>
+<div class="sourceCode" id="cb6" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="dv">1</span>     <span class="st">&quot;&quot;&quot;Practice diagram.&quot;&quot;&quot;</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="dv">2</span> </span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="dv">3</span>     <span class="kw">def</span> count(xs: <span class="bu">list</span>[<span class="bu">int</span>]) <span class="op">-&gt;</span> <span class="bu">dict</span>[<span class="bu">int</span>, <span class="bu">int</span>]:</span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="dv">4</span>         counts: <span class="bu">dict</span>[<span class="bu">int</span>, <span class="bu">int</span>] <span class="op">=</span> {}</span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="dv">5</span>         <span class="cf">for</span> x <span class="kw">in</span> xs:</span>
+<span id="cb6-6"><a href="#cb6-6"></a><span class="dv">6</span>             <span class="cf">if</span> x <span class="kw">in</span> counts:</span>
+<span id="cb6-7"><a href="#cb6-7"></a><span class="dv">7</span>                 counts[x] <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a><span class="dv">8</span>             <span class="cf">else</span>:</span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="dv">9</span>                 counts[x] <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb6-10"><a href="#cb6-10"></a><span class="dv">10</span>        <span class="cf">return</span> counts</span>
+<span id="cb6-11"><a href="#cb6-11"></a><span class="dv">11</span></span>
+<span id="cb6-12"><a href="#cb6-12"></a><span class="dv">12</span></span>
+<span id="cb6-13"><a href="#cb6-13"></a><span class="dv">13</span>    numbers: <span class="bu">list</span>[<span class="bu">int</span>] <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>]</span>
+<span id="cb6-14"><a href="#cb6-14"></a><span class="dv">14</span>    <span class="bu">print</span>(count(numbers))</span></code></pre></div>
+<ol start="2" type="1">
+<li>Create a memory diagram for the following code listing.</li>
+</ol>
+<div class="sourceCode" id="cb7" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="dv">1</span>     <span class="st">&quot;&quot;&quot;Practice diagram.&quot;&quot;&quot;</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="dv">2</span> </span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="dv">3</span>     <span class="kw">def</span> artist_counts(playlist: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">str</span>]) <span class="op">-&gt;</span> <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">int</span>]:</span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="dv">4</span>         artists: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">int</span>] <span class="op">=</span> <span class="bu">dict</span>()</span>
+<span id="cb7-5"><a href="#cb7-5"></a><span class="dv">5</span>         <span class="cf">for</span> track <span class="kw">in</span> playlist:</span>
+<span id="cb7-6"><a href="#cb7-6"></a><span class="dv">6</span>             art: <span class="bu">str</span> <span class="op">=</span> playlist[track]</span>
+<span id="cb7-7"><a href="#cb7-7"></a><span class="dv">7</span>             <span class="cf">if</span> playlist[track] <span class="kw">not</span> <span class="kw">in</span> artists:</span>
+<span id="cb7-8"><a href="#cb7-8"></a><span class="dv">8</span>                 artists[art] <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb7-9"><a href="#cb7-9"></a><span class="dv">9</span>             <span class="cf">else</span>:</span>
+<span id="cb7-10"><a href="#cb7-10"></a><span class="dv">10</span>                artists[art] <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb7-11"><a href="#cb7-11"></a><span class="dv">11</span>        <span class="cf">return</span> artists</span>
+<span id="cb7-12"><a href="#cb7-12"></a><span class="dv">12</span></span>
+<span id="cb7-13"><a href="#cb7-13"></a><span class="dv">13</span>    songs: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">str</span>] <span class="op">=</span> {</span>
+<span id="cb7-14"><a href="#cb7-14"></a><span class="dv">14</span>        <span class="st">&quot;B2b&quot;</span>: <span class="st">&quot;Charli&quot;</span>,</span>
+<span id="cb7-15"><a href="#cb7-15"></a><span class="dv">15</span>        <span class="st">&quot;Hello&quot;</span>: <span class="st">&quot;Erykah&quot;</span>,</span>
+<span id="cb7-16"><a href="#cb7-16"></a><span class="dv">16</span>        <span class="st">&quot;Fiat&quot;</span>: <span class="st">&quot;Butcher&quot;</span>,</span>
+<span id="cb7-17"><a href="#cb7-17"></a><span class="dv">17</span>        <span class="st">&quot;Woo&quot;</span>: <span class="st">&quot;Erykah&quot;</span></span>
+<span id="cb7-18"><a href="#cb7-18"></a><span class="dv">18</span>    }</span>
+<span id="cb7-19"><a href="#cb7-19"></a><span class="dv">19</span></span>
+<span id="cb7-20"><a href="#cb7-20"></a><span class="dv">20</span>    <span class="bu">print</span>(artist_counts(songs))</span></code></pre></div>
+<ol start="3" type="1">
+<li>Create a memory diagram for the following code listing.</li>
+</ol>
+<div class="sourceCode" id="cb8" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="dv">1</span>     <span class="st">&quot;&quot;&quot;Practice diagram.&quot;&quot;&quot;</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="dv">2</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="dv">3</span>     <span class="kw">def</span> f(x: <span class="bu">dict</span>[<span class="bu">str</span>,<span class="bu">int</span>]) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="dv">4</span>         <span class="cf">for</span> y <span class="kw">in</span> x:</span>
+<span id="cb8-5"><a href="#cb8-5"></a><span class="dv">5</span>             x[y] <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a><span class="dv">6</span>         <span class="cf">return</span> x[y]</span>
+<span id="cb8-7"><a href="#cb8-7"></a><span class="dv">7</span> </span>
+<span id="cb8-8"><a href="#cb8-8"></a><span class="dv">8</span>     <span class="kw">def</span> g(x: <span class="bu">dict</span>[<span class="bu">str</span>,<span class="bu">int</span>]) <span class="op">-&gt;</span> <span class="bu">dict</span>[<span class="bu">str</span>,<span class="bu">str</span>]:</span>
+<span id="cb8-9"><a href="#cb8-9"></a><span class="dv">9</span>         new_dict: <span class="bu">dict</span>[<span class="bu">str</span>,<span class="bu">str</span>] <span class="op">=</span> {}</span>
+<span id="cb8-10"><a href="#cb8-10"></a><span class="dv">10</span>        <span class="cf">for</span> z <span class="kw">in</span> x:</span>
+<span id="cb8-11"><a href="#cb8-11"></a><span class="dv">11</span>            new_dict[z] <span class="op">=</span> <span class="bu">str</span>(z)</span>
+<span id="cb8-12"><a href="#cb8-12"></a><span class="dv">12</span>        <span class="cf">return</span> new_dict</span>
+<span id="cb8-13"><a href="#cb8-13"></a><span class="dv">13</span></span>
+<span id="cb8-14"><a href="#cb8-14"></a><span class="dv">14</span>    record: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">int</span>] <span class="op">=</span> {<span class="st">&quot;x&quot;</span>: <span class="dv">20</span>, <span class="st">&quot;y&quot;</span>: <span class="dv">40</span>}</span>
+<span id="cb8-15"><a href="#cb8-15"></a><span class="dv">15</span>    <span class="bu">print</span>(f(record))</span>
+<span id="cb8-16"><a href="#cb8-16"></a><span class="dv">16</span>    <span class="bu">print</span>(g(record))</span></code></pre></div>
+<ol start="4" type="1">
+<li>Create a memory diagram for the following code listing.</li>
+</ol>
+<div class="sourceCode" id="cb9" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="dv">1</span>     <span class="st">&quot;&quot;&quot;Practice diagram.&quot;&quot;&quot;</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="dv">2</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a><span class="dv">3</span>     <span class="kw">def</span> mystery(x: <span class="bu">dict</span>[<span class="bu">str</span>,<span class="bu">float</span>], y: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="dv">4</span>         <span class="cf">if</span> y <span class="kw">in</span> x:</span>
+<span id="cb9-5"><a href="#cb9-5"></a><span class="dv">5</span>             <span class="cf">return</span> <span class="bu">str</span>(x[y])</span>
+<span id="cb9-6"><a href="#cb9-6"></a><span class="dv">6</span>         <span class="cf">else</span>:</span>
+<span id="cb9-7"><a href="#cb9-7"></a><span class="dv">7</span>             <span class="cf">return</span> <span class="st">&quot;not in dictionary&quot;</span></span>
+<span id="cb9-8"><a href="#cb9-8"></a><span class="dv">8</span></span>
+<span id="cb9-9"><a href="#cb9-9"></a><span class="dv">9</span>     x <span class="op">=</span> <span class="st">&quot;y&quot;</span></span>
+<span id="cb9-10"><a href="#cb9-10"></a><span class="dv">10</span>    y <span class="op">=</span> <span class="st">&quot;z&quot;</span></span>
+<span id="cb9-11"><a href="#cb9-11"></a><span class="dv">11</span>    test: <span class="bu">dict</span>[<span class="bu">str</span>,<span class="bu">float</span>] <span class="op">=</span> {<span class="st">&quot;z&quot;</span>: <span class="fl">3.14</span>}</span>
+<span id="cb9-12"><a href="#cb9-12"></a><span class="dv">12</span>    <span class="bu">print</span>(mystery(test, y))</span></code></pre></div>
+<ol start="5" type="1">
+<li>Create a memory diagram for the following code listing.</li>
+</ol>
+<div class="sourceCode" id="cb10" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="dv">1</span>     <span class="st">&quot;&quot;&quot;Practice diagram.&quot;&quot;&quot;</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="dv">2</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a><span class="dv">3</span>     starting <span class="op">=</span> <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">list</span>[<span class="bu">str</span>]] <span class="op">=</span> {}</span>
+<span id="cb10-4"><a href="#cb10-4"></a><span class="dv">4</span>     starting[<span class="st">&quot;2017&quot;</span>] <span class="op">=</span> [<span class="st">&quot;Berry&quot;</span>, <span class="st">&quot;Meeks&quot;</span>, <span class="st">&quot;Jackson&quot;</span>]</span>
+<span id="cb10-5"><a href="#cb10-5"></a><span class="dv">5</span>     starting[<span class="st">&quot;2023&quot;</span>] <span class="op">=</span> [<span class="st">&quot;Love&quot;</span>, <span class="st">&quot;Bacot&quot;</span>, <span class="st">&quot;Black&quot;</span>]</span>
+<span id="cb10-6"><a href="#cb10-6"></a><span class="dv">6</span></span>
+<span id="cb10-7"><a href="#cb10-7"></a><span class="dv">7</span>     <span class="bu">print</span>(starting[<span class="st">&quot;2017&quot;</span>][<span class="dv">2</span>])</span>
+<span id="cb10-8"><a href="#cb10-8"></a><span class="dv">8</span>     <span class="bu">print</span>(starting[<span class="st">&quot;2023&quot;</span>])</span>
+<span id="cb10-9"><a href="#cb10-9"></a><span class="dv">9</span>     starting[<span class="st">&quot;2023&quot;</span>][<span class="dv">2</span>] <span class="op">=</span> <span class="st">&quot;Johnson&quot;</span></span>
+<span id="cb10-10"><a href="#cb10-10"></a><span class="dv">10</span>    <span class="bu">print</span>(starting[<span class="st">&quot;2023&quot;</span>])</span></code></pre></div>
+<ol start="6" type="1">
+<li>Create a memory diagram for the following code listing.</li>
+</ol>
+<div class="sourceCode" id="cb11" data-startFrom="1"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="dv">1</span>     <span class="st">&quot;&quot;&quot;Practice diagram.&quot;&quot;&quot;</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="dv">2</span> </span>
+<span id="cb11-3"><a href="#cb11-3"></a><span class="dv">3</span>     <span class="kw">def</span> add_item(inventory, item, quantity) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb11-4"><a href="#cb11-4"></a><span class="dv">4</span>         item_found <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a><span class="dv">5</span>         <span class="cf">for</span> key <span class="kw">in</span> inventory:</span>
+<span id="cb11-6"><a href="#cb11-6"></a><span class="dv">6</span>             <span class="cf">if</span> key <span class="op">==</span> item:</span>
+<span id="cb11-7"><a href="#cb11-7"></a><span class="dv">7</span>                 inventory[key] <span class="op">+=</span> quantity</span>
+<span id="cb11-8"><a href="#cb11-8"></a><span class="dv">8</span>                 item_found <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb11-9"><a href="#cb11-9"></a><span class="dv">9</span> </span>
+<span id="cb11-10"><a href="#cb11-10"></a><span class="dv">10</span>        <span class="cf">if</span> <span class="kw">not</span> item_found:</span>
+<span id="cb11-11"><a href="#cb11-11"></a><span class="dv">11</span>            inventory[item] <span class="op">=</span> quantity</span>
+<span id="cb11-12"><a href="#cb11-12"></a><span class="dv">12</span></span>
+<span id="cb11-13"><a href="#cb11-13"></a><span class="dv">13</span>    <span class="kw">def</span> remove_item(inventory, item, quantity) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb11-14"><a href="#cb11-14"></a><span class="dv">14</span>        item_found <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb11-15"><a href="#cb11-15"></a><span class="dv">15</span>        <span class="cf">for</span> key <span class="kw">in</span> inventory:</span>
+<span id="cb11-16"><a href="#cb11-16"></a><span class="dv">16</span>            <span class="cf">if</span> key <span class="op">==</span> item:</span>
+<span id="cb11-17"><a href="#cb11-17"></a><span class="dv">17</span>                inventory[key] <span class="op">-=</span> quantity</span>
+<span id="cb11-18"><a href="#cb11-18"></a><span class="dv">18</span>                <span class="cf">if</span> inventory[key] <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb11-19"><a href="#cb11-19"></a><span class="dv">19</span>                    inventory[key] <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb11-20"><a href="#cb11-20"></a><span class="dv">20</span>                item_found <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb11-21"><a href="#cb11-21"></a><span class="dv">21</span></span>
+<span id="cb11-22"><a href="#cb11-22"></a><span class="dv">22</span>    <span class="kw">def</span> main():</span>
+<span id="cb11-23"><a href="#cb11-23"></a><span class="dv">23</span>        inventory <span class="op">=</span> {</span>
+<span id="cb11-24"><a href="#cb11-24"></a><span class="dv">24</span>            <span class="st">&#39;Apples&#39;</span>: <span class="dv">30</span>,</span>
+<span id="cb11-25"><a href="#cb11-25"></a><span class="dv">25</span>            <span class="st">&#39;Oranges&#39;</span>: <span class="dv">15</span>,</span>
+<span id="cb11-26"><a href="#cb11-26"></a><span class="dv">26</span>            <span class="st">&#39;Bananas&#39;</span>: <span class="dv">20</span></span>
+<span id="cb11-27"><a href="#cb11-27"></a><span class="dv">27</span>        }</span>
+<span id="cb11-28"><a href="#cb11-28"></a><span class="dv">28</span></span>
+<span id="cb11-29"><a href="#cb11-29"></a><span class="dv">29</span>        add_item(inventory, <span class="st">&#39;Apples&#39;</span>, <span class="dv">10</span>)</span>
+<span id="cb11-30"><a href="#cb11-30"></a><span class="dv">30</span>        remove_item(inventory, <span class="st">&#39;Bananas&#39;</span>, <span class="dv">25</span>)</span>
+<span id="cb11-31"><a href="#cb11-31"></a><span class="dv">31</span></span>
+<span id="cb11-32"><a href="#cb11-32"></a><span class="dv">32</span>        <span class="bu">print</span>(<span class="st">&quot;Current inventory:&quot;</span>, inventory)</span>
+<span id="cb11-33"><a href="#cb11-33"></a><span class="dv">33</span></span>
+<span id="cb11-34"><a href="#cb11-34"></a><span class="dv">34</span>    <span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb11-35"><a href="#cb11-35"></a><span class="dv">35</span>        main()</span></code></pre></div>
+<details>
+<p><summary>SHOW SOLUTIONS</summary></p>
+<ol type="1">
+<li><p><img class="img-fluid" src="/static/practice/qz02_practice/count_memdiag.png" alt="Memory diagram of code listing with count function"  /></p></li>
+<li><p><img class="img-fluid" src="/static/practice/qz02_practice/artistcounts_memdiag.png" alt="Memory diagram of code listing with artist_counts function"  /></p></li>
+<li><p><a href="https://youtu.be/pyl28ClXwfY?si=QwIDQdlgjupNA1R3">Video</a></p>
+<p><img class="img-fluid" src="/static/practice/qz02_practice/record-sol.png" alt=""  /></p>
+<p><em>Image Description:</em> The memory diagram is divided into three segments: Output, Stack, and Heap.</p>
+<p>Under the stack, the Globals frame contains references to three objects:</p>
+<ul>
+<li>Function f points to a function on the Heap defined from lines 1 to 4.</li>
+<li>Function g points to a function on the Heap defined from lines 6 to 10.</li>
+<li>The variable record points to a dictionary object on the Heap with string keys and integer values.</li>
+</ul>
+<p>The F frame has:</p>
+<ul>
+<li>Return Address (RA) at line 13.</li>
+<li>Return Value (RV) is the integer 41.</li>
+<li>Variable x points to a the same dictionary object on the heap as record.</li>
+<li>Variable y with a crossed-out value of “x” and updated to “y”.</li>
+</ul>
+<p>The G frame has:</p>
+<ul>
+<li>Return Address (RA) at line 14.</li>
+<li>Variable x points to the same dictionary object as record.</li>
+<li>Variable new_dict to a second dictionary object on the Heap.</li>
+<li>Variable z with a crossed-out value of “x” updated to “y”.</li>
+</ul>
+<p>The heap has two dictionary objects:</p>
+<ul>
+<li>The first dictionary object is associated with the variable record in Globals frame and the variable x in the F and G frames. It contains two string keys, ‘x’ with the integer value 20 crossed out and updated to 21, and ‘y’ with the integer value 40 crossed out and updated to 41.</li>
+<li>The second dictionary object is associated with the variable new_dict in the G frame, with string keys ‘x’ and ‘y’ and string values ‘x’ and ‘y’ respectively.</li>
+</ul>
+<p>Output: The output displays the integer 41 and a dictionary object with keys ‘x’ and ‘y’, each paired with their respective values ‘x’ and ‘y’ as strings.</p></li>
+<li><p><a href="https://youtu.be/SZrv9TT84Iw">Video</a></p>
+<p><img class="img-fluid" src="/static/practice/qz02_practice/mystery-dict-sol.png" alt=""  /></p>
+<p><em>Image Description:</em> The memory diagram provided displays elements in the Output, Stack, and Heap sections.</p>
+<p>Stack:</p>
+<p>The Globals frame contains three variables and a function:</p>
+<ul>
+<li>Function mystery points to a function definition on the Heap spanning lines 1 to 5.</li>
+<li>Variable x with the string value “y”.</li>
+<li>Variable y with the string value “z”.</li>
+<li>Variable test points to a dictionary on the Heap.</li>
+</ul>
+<p>The mystery frame has:</p>
+<ul>
+<li>Return Address (RA) at line 10.</li>
+<li>Return Value (RV) is the string “3.14”.</li>
+<li>Variable x points to the same dictionary object as test</li>
+<li>Variable y has a value of “z”.</li>
+</ul>
+<p>Heap:</p>
+<ul>
+<li>A dictionary object with string keys and a floating-point value is present. It contains a single entry where the key is the string “z” and the value is the floating-point number 3.14.</li>
+</ul>
+<p>Output: The output section shows the floating-point number 3.14.</p></li>
+<li><p><a href="https://youtu.be/KcP6rkkHrEs">Video</a></p></li>
+</ol>
+<p><img class="img-fluid" src="/static/practice/qz02_practice/lineup-sol.png" alt="Image Description Here"  /></p>
+<p><em>Image Description:</em> The memory diagram provided contains three main components: Stack, Heap, and Output.</p>
+<p>Stack: * The Stack section contains a single frame labeled “Globals.” * Inside Globals, there is a variable named starting pointing to a list on the Heap.</p>
+<p>Heap: * The first part is a dictionary object with string keys and lists of strings for values. There are two keys: “2017” and “2023.” Each key points to a different list. * The second part consists of two lists of strings. Each list contains five elements with indices from 0 to 4. * The first list contains the following strings: “Berry”, “Meeks”, “Jackson”, “Pinson”, and “Hicks”. * The second list contains the strings: “Love”, “Bacot”, “Black”, “Johnson” (with “Nance” crossed-out), and “Davis”.</p>
+<p>The output section has three outputs: * The string “Jackson” * The list [“Love”, “Bacot”, “Black”, “Nance”, “Davis”] * The list [“Love”, “Bacot”, “Black”, “Johnson”, “Davis”]</p>
+<ol start="6" type="1">
+<li><img class="img-fluid" src="/static/practice/qz02_practice/inventory-nested.jpg" alt="Image Description Here"  /></li>
+</ol>
+</details>
+</div>
+
+       
+
+    </div> 
+    </div>
+    </div>
+    <div class="authors-box bg-dark mt-4 py-3 ps-4">
+      <span> Contributor(s):        Alyssa Lytle,        Kris Jordan,        Navya Katraju,        Olivia Xiao,        Viktorya Hunanyan,        Coralee Rogers, Benjamin Eldridge</span>
+    </div>
+
+  </div>
+  <div class='link-page mt-3 container'>
+    <footer>
+      <h3 class="text-center align-middle footer-text">&copy; 2025 <a href="https://krisjordan.com">Kris Jordan</a>
+        - <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSenaJ2uZ_n2FfAb2PWL6YPG4AUT-G2-xVJP6HIwMr6cd6nSYA/viewform?usp=sf_link">Feedback
+          Form</a>
+        - Made with 💛 in <a href="https://cs.unc.edu/">Chapel Hill</a></h3>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <!-- Code Block Formatting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  
+</body>
+
+</html>

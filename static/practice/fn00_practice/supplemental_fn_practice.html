@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Supplementary Final Exam Practice Questions - COMP110 - 25F</title>
+  <link rel="icon" type="image/png" href="/static/s25_brand.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/static/styles.css?v=1767731937.1055255">
+</head>
+
+
+<body id="body" class="absolute-page">
+    <script>
+        document.body.classList.remove('light-mode');
+        document.body.classList.remove('dark-mode');
+        document.body.classList.add(localStorage.getItem('mode'));
+    </script>
+  <script src="/static/scripts/nav-menu-esc.js"></script> 
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark py-1 fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/s25_brand.png"
+        alt="COMP110 - Spring - 2025"><img class="darkmode-element-only img-fluid logo" src="/static/s25_brand.png"
+        alt="COMP110 - Spring - 2025"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" onclick="esc_key()" data-bs-target="#navmenu" aria-label="Main Menu" aria-controls="#navmenu" role="navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link " href="/">agenda</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources" class="nav-link">resources</a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="/support" class="nav-link">support</a>
+          </li>
+         
+          <li class="nav-item">
+            <a href="/resources/syllabus.html" class="nav-link">syllabus</a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="/resources/team.html" class="nav-link">team110</a>
+          </li>
+         
+        </ul>
+      </div>
+      <div id='mode-switch' class="ms-auto form-check form-switch mode switches">
+              <div class="switches">
+                  <input type="checkbox" id="1" onclick="
+                      if (localStorage.getItem('mode') === 'dark-mode') {
+                          localStorage.setItem('userPref', 'light-mode');
+                          localStorage.setItem('mode', 'light-mode');
+                      } else {
+                          localStorage.setItem('userPref', 'dark-mode');
+                          localStorage.setItem('mode', 'dark-mode');
+                      }
+                      location.reload();">
+                  <label for="1">
+                      <span id="mode-label">Dark Mode</span>
+                      <span></span>
+                  </label>
+                  <script>if(localStorage.getItem('mode') === 'dark-mode'){document.getElementById("1").checked = true}</script>
+                  <script>if(localStorage.getItem('userPref') === null) {setTimeout(function(){location.reload();}, (timer * 3600000));}</script>
+              </div>
+          </div>
+    </div>
+  </nav>
+
+  <div class="cloud-container">
+    <div id="cloud-intro">
+  <div id="lessons-page" class="container">
+    <div class="row pt-4">
+      <div class="col-12">
+        <h1 id="page-title">Supplementary Final Exam Practice Questions</h1>
+      </div>
+    </div>
+    
+
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            <div>
+                <div id="menu-overview" class="link-page-overview horizon-box">
+                    <button id="overview-button" class="btn btn-ov" onclick="hideshow()" >Overview  <img id="button-img" alt="Overview" class="filter-icon" src="/static/components/Itinerary/arrow-up.svg" style="height:15px; padding-left: 4px;"></button>
+                    <div id="overview-links">
+                        <div id="TOC" role="doc-toc">
+                            <ul class="overview-item"><ul>
+<li><a href="#multiple-choice-with-code-snippets">Multiple Choice with Code Snippets</a></li>
+<li><a href="#looping-questions">Looping Questions</a></li>
+<li><a href="#recursion-memory-diagram">Recursion Memory Diagram</a></li>
+<li><a href="#oop-class-writing-and-memory-diagram">OOP Class-Writing and Memory Diagram</a>
+<ul>
+<li><a href="#see-one-solution-below">(See <em>one</em> solution below)</a></li>
+</ul></li>
+</ul>
+</</ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><p>Please note that these final exam practice questions are intended to <em>supplement</em> the Quiz 00-04 practice questions, your previous quizzes, LS/CQ/EX assignments, and lecture content as study materials. The final exam covers content from every unit/quiz, not solely the concepts covered in these questions.</p>
+<h1 id="multiple-choice-with-code-snippets">Multiple Choice with Code Snippets</h1>
+<ol type="1">
+<li><p>What does the following expression evaluate to?</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="dv">13</span> <span class="op">%</span> <span class="dv">4</span></span></code></pre></div>
+<ol type="a">
+<li><p><code>0</code></p></li>
+<li><p><code>1</code></p></li>
+<li><p><code>3</code></p></li>
+<li><p><code>4</code></p></li>
+<li><p><code>9</code></p></li>
+</ol></li>
+<li><p>What is the output for the following code?</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a>x: <span class="bu">int</span> <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>y: <span class="bu">int</span> <span class="op">=</span> x</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>x <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a><span class="bu">print</span>(y)</span></code></pre></div>
+<ol type="a">
+<li><p><code>y</code></p></li>
+<li><p><code>5</code></p></li>
+<li><p><code>4</code></p></li>
+<li><p><code>x</code></p></li>
+<li><p><code>1</code></p></li>
+</ol></li>
+<li><p>Consider the following code snippet:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a>leaf: <span class="bu">list</span>[<span class="bu">int</span>] <span class="op">=</span> [<span class="dv">3</span>]</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>flower: <span class="bu">list</span>[<span class="bu">int</span>] <span class="op">=</span> leaf</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>flower.append(<span class="dv">2</span>)</span></code></pre></div>
+<p>What would <code>print(flower)</code> output after the code snippet was executed?</p>
+<ol type="a">
+<li><p><code>[3]</code></p></li>
+<li><p><code>[3, 2]</code></p></li>
+<li><p><code>[5]</code></p></li>
+<li><p><code>[2]</code></p></li>
+<li><p><code>Error</code></p></li>
+</ol></li>
+<li><p>Consider the following code snippet (same as question 3):</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a>leaf: <span class="bu">list</span>[<span class="bu">int</span>] <span class="op">=</span> [<span class="dv">3</span>]</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>flower: <span class="bu">list</span>[<span class="bu">int</span>] <span class="op">=</span> leaf</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>flower.append(<span class="dv">2</span>)</span></code></pre></div>
+<p>What would <code>print(leaf)</code> output after the code snippet was executed?</p>
+<ol type="a">
+<li><p><code>[3]</code></p></li>
+<li><p><code>[3, 2]</code></p></li>
+<li><p><code>[5]</code></p></li>
+<li><p><code>[2]</code></p></li>
+<li><p><code>Error</code></p></li>
+</ol></li>
+<li><p>What is the printed output of the following code snippet? If there is an Error, select Error.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a>a: <span class="bu">str</span> <span class="op">=</span> <span class="st">&quot;swamp&quot;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a>b: <span class="bu">int</span> <span class="op">=</span> <span class="dv">110</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a><span class="bu">print</span>(a <span class="op">+</span> b)</span></code></pre></div>
+<ol type="a">
+<li><p><code>swamp110</code></p></li>
+<li><p><code>swamp + 110</code></p></li>
+<li><p><code>swamp</code></p></li>
+<li><p><code>Error</code></p></li>
+</ol></li>
+<li><p>What does the following expression evluate to? What is its data type?</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="co">&quot;293874&quot;</span>[<span class="bu">int</span>(<span class="st">&quot;73198&quot;</span>[<span class="dv">2</span>])]</span></code></pre></div>
+<ol type="a">
+<li><p><code>1</code>, int</p></li>
+<li><p><code>1</code>, str</p></li>
+<li><p><code>2</code>, int</p></li>
+<li><p><code>2</code>, str</p></li>
+<li><p><code>3</code>, int</p></li>
+<li><p><code>3</code>, str</p></li>
+<li><p><code>9</code>, int</p></li>
+<li><p><code>9</code>, str</p></li>
+<li><p><code>Error</code></p></li>
+</ol></li>
+</ol>
+<details>
+<p><summary>SOLUTIONS</summary></p>
+<ol type="1">
+<li><ol start="2" type="a">
+<li><code>1</code>. Remember, the % (modulo) operator finds the remainder!</li>
+</ol></li>
+<li><ol start="3" type="a">
+<li><code>4</code>. <code>y</code> was initialized to be <code>x</code>’s literal value at the time the second line was exected. Since integers are <em>primitive types</em>, x and y are not “linked” or referring to the same location in memory.</li>
+</ol></li>
+<li><ol start="2" type="a">
+<li><code>[3, 2]</code>.</li>
+</ol></li>
+<li><ol start="2" type="a">
+<li><code>[3, 2]</code>. Because lists are <em>reference types</em>, the line, <code>flower: list[int] = leaf</code>, caused <code>flower</code> to refer to the same exact <code>list[int]</code> stored in memory as <code>leaf</code>. If we did a memory diagram of this code listing, they would refer to the same ID in the heap! When a value was appended to <code>flower</code>, it inherently was appended to <code>leaf</code>’s list, too (because they refer to the <em>same</em> list).</li>
+</ol></li>
+<li><ol start="4" type="a">
+<li><code>Error</code>. This code snippet would lead to a TypeError; a string and an integer cannot be concatenated together.</li>
+</ol></li>
+<li><ol start="8" type="a">
+<li><code>9</code>, str. We would start with the inner-most parentheses for this question: <code>"73198"[2]</code>. Index 2 of the string has the character <code>"1"</code>. So, we can plug <code>"1"</code> in in place of that portion of the expression, giving us: <code>"293874"[int("1")]</code>. Now, the next step is to cast the string <code>"1"</code> to an int. After doing so, we have: <code>"293874"[1]</code>. Index 1 of the string has the character <code>"9"</code> (a str).</li>
+</ol></li>
+</ol>
+</details>
+<p> </p>
+<h1 id="looping-questions">Looping Questions</h1>
+<p>Use the following list and dictionary in the questions below.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a>acro: <span class="bu">list</span>[<span class="bu">str</span>] <span class="op">=</span> [<span class="st">&quot;n&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;s&quot;</span>, <span class="st">&quot;a&quot;</span>]</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a>missions: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">int</span>] <span class="op">=</span> {<span class="st">&quot;Apollo&quot;</span>: <span class="dv">11</span>, <span class="st">&quot;Voyager&quot;</span>: <span class="dv">1</span>, <span class="st">&quot;Artemis&quot;</span>: <span class="dv">2</span>}</span></code></pre></div>
+<ol type="1">
+<li><p>What will be printed? If it will result in an Error, write “Error.”</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(acro)):</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a>    <span class="bu">print</span>(x)</span></code></pre></div></li>
+<li><p>What will be printed? If it will result in an Error, write “Error.”</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a><span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(acro)):</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a>    <span class="bu">print</span>(acro[x])</span></code></pre></div></li>
+<li><p>What will be printed? If it will result in an Error, write “Error.”</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a><span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">len</span>(missions)):</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true"></a>    <span class="bu">print</span>(x)</span></code></pre></div></li>
+<li><p>What will be printed? If it will result in an Error, write “Error.”</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true"></a><span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(missions)):</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true"></a>    <span class="bu">print</span>(missions[x])</span></code></pre></div></li>
+<li><p>What will be printed? If it will result in an Error, write “Error.”</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true"></a><span class="cf">for</span> a <span class="kw">in</span> acro:</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true"></a>    <span class="bu">print</span>(a)</span></code></pre></div></li>
+<li><p>What will be printed? If it will result in an Error, write “Error.”</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true"></a><span class="cf">for</span> a <span class="kw">in</span> acro:</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true"></a>    <span class="bu">print</span>(acro[a])</span></code></pre></div></li>
+<li><p>What will be printed? If it will result in an Error, write “Error.”</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true"></a><span class="cf">for</span> m <span class="kw">in</span> missions:</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true"></a>    <span class="bu">print</span>(m)</span></code></pre></div></li>
+<li><p>What will be printed? If it will result in an Error, write “Error.”</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true"></a><span class="cf">for</span> m <span class="kw">in</span> missions:</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true"></a>    <span class="bu">print</span>(missions[m])</span></code></pre></div></li>
+<li><p>What will be printed? If it will result in an Error, write “Error.”</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true"></a><span class="cf">if</span> <span class="st">&quot;COMP110&quot;</span> <span class="kw">in</span> missions:</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true"></a>    <span class="bu">print</span>(<span class="st">&quot;Found!&quot;</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true"></a><span class="cf">else</span>:</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true"></a>    <span class="bu">print</span>(<span class="st">&quot;Not yet...&quot;</span>)</span></code></pre></div></li>
+<li><p>What will be printed? If it will result in an Error, write “Error.”</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true"></a><span class="kw">def</span> go(m: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">int</span>]) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true"></a>    <span class="cf">for</span> thing <span class="kw">in</span> m:</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true"></a>        <span class="cf">return</span> thing</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true"></a>    <span class="cf">return</span> <span class="st">&quot;Other&quot;</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true"></a></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true"></a><span class="bu">print</span>(go(m<span class="op">=</span>missions))</span></code></pre></div></li>
+</ol>
+<details>
+<p><summary>SOLUTIONS</summary></p>
+<ol type="1">
+<li><div class="sourceCode" id="cb18"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true"></a><span class="dv">0</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true"></a><span class="dv">1</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true"></a><span class="dv">2</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true"></a><span class="dv">3</span></span></code></pre></div></li>
+<li><div class="sourceCode" id="cb19"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true"></a>n</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true"></a>a</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true"></a>s</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true"></a>a</span></code></pre></div></li>
+<li><div class="sourceCode" id="cb20"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true"></a><span class="dv">1</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true"></a><span class="dv">2</span></span></code></pre></div></li>
+<li><p><code>Error</code></p></li>
+<li><div class="sourceCode" id="cb21"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true"></a>n</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true"></a>a</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true"></a>s</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true"></a>a</span></code></pre></div></li>
+<li><p><code>Error</code></p></li>
+<li><div class="sourceCode" id="cb22"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true"></a>Apollo</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true"></a>Voyager</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true"></a>Artemis</span></code></pre></div></li>
+<li><div class="sourceCode" id="cb23"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true"></a><span class="dv">11</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true"></a><span class="dv">1</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true"></a><span class="dv">2</span></span></code></pre></div></li>
+<li><div class="sourceCode" id="cb24"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true"></a>Not yet...</span></code></pre></div></li>
+<li><p>In a function body, as soon as we reach a return statement and evaluate the expression to the right of <code>return</code>, we are exiting the function and returning the return value back to the line where the function was called (the return address)! This is why the repeat block of this for loop was only executed <em>once</em>.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true"></a>Apollo</span></code></pre></div></li>
+</ol>
+</details>
+<p> </p>
+<h1 id="recursion-memory-diagram">Recursion Memory Diagram</h1>
+<ol type="1">
+<li><p>Complete a memory diagram for the following code:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true"></a><span class="dv">1</span>   <span class="kw">def</span> woo(n: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true"></a><span class="dv">2</span>       <span class="cf">if</span> n <span class="op">==</span> <span class="dv">1</span> <span class="kw">or</span> n <span class="op">==</span> <span class="dv">2</span>:</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true"></a><span class="dv">3</span>           <span class="cf">return</span> <span class="dv">1</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true"></a><span class="dv">4</span>       <span class="cf">else</span>:</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true"></a><span class="dv">5</span>           <span class="cf">return</span> n <span class="op">+</span> woo(n <span class="op">-</span> <span class="dv">1</span>) <span class="op">*</span> woo(n <span class="op">-</span> <span class="dv">2</span>)</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true"></a><span class="dv">6</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true"></a><span class="dv">7</span> </span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true"></a><span class="dv">8</span>    <span class="bu">print</span>(woo(<span class="dv">4</span>))</span></code></pre></div></li>
+</ol>
+<p>Please view the final exam review session recording for a walkthrough of the solution.</p>
+<!-- # Solution
+
+<img class="img-fluid" src="/static/practice-mem-diagrams/basic-loop.png" alt="recursion example"  />
+ -->
+<h1 id="oop-class-writing-and-memory-diagram">OOP Class-Writing and Memory Diagram</h1>
+<ol type="1">
+<li><p>Consider the following class:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true"></a><span class="kw">class</span> Athlete:</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true"></a>    name: <span class="bu">str</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true"></a>    number: <span class="bu">int</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true"></a></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name: <span class="bu">str</span>, num: <span class="bu">int</span>):</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true"></a>        <span class="va">self</span>.number <span class="op">=</span> num</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true"></a></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true"></a>        <span class="cf">return</span> <span class="ss">f&quot;Athlete: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> (#</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>number<span class="sc">}</span><span class="ss">)&quot;</span></span></code></pre></div>
+<p>Write a class named <code>Team</code> with the following specifications:</p>
+<ul>
+<li>The class has two attributes:
+<ul>
+<li><code>team_name</code> (a <code>str</code>)</li>
+<li><code>roster</code> (a <code>dict</code>, where the keys are <code>int</code>s, and the values are <code>Athlete</code> objects)</li>
+</ul></li>
+<li>The constructor takes in <code>self</code> and <code>name</code> (a <code>str</code>). The <code>self</code> object’s <code>team_name</code> attribute will be initialized to the <code>name</code> parameter’s literal value, and the <code>roster</code> attribute will be initialized to an empty dictionary.</li>
+<li>The class has a method named <code>add</code> that takes in <code>self</code>, <code>name</code> (a <code>str</code>), and <code>desired_num</code> (an <code>int</code>), and returns an <code>Athlete</code> object. The purpose of the method will be to add an <code>Athlete</code> object to a <code>Team</code> object’s <code>roster</code>. If the athlete’s desired number is not already taken, they will be assigned that desired number! If it’s already taken, the athlete will be assigned the number <code>0</code>. To code this behavior, your method should do the following:
+<ul>
+<li>The method will check if <code>desired_num</code> is already a key in the <code>self</code> object’s <code>roster</code> dictionary.
+<ul>
+<li>If it is NOT already a key, declare and initialize a new <code>Athlete</code> variable with the athlete’s <code>name</code> and <code>desired_num</code> as its attribute values. Add that <code>desired_num</code> and new <code>Athlete</code> object as a new key-value pair in <code>self</code>’s <code>roster</code>.</li>
+<li>If it IS already a key (representing someone on the team already having that number), declare and initialize a new <code>Athlete</code> variable with the athlete’s <code>name</code> and <code>0</code> as its attribute values. Add that <code>0</code> and the new <code>Athlete</code> object as a new key-value pair in <code>self</code>’s <code>roster</code>.</li>
+</ul></li>
+<li>The method should return the new <code>Athlete</code> object you created.</li>
+</ul></li>
+</ul></li>
+</ol>
+<h2 id="see-one-solution-below">(See <em>one</em> solution below)</h2>
+<ol start="2" type="1">
+<li><p>Complete a memory diagram for the code listing that includes the Athlete class and the Team class you just wrote:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true"></a><span class="dv">1</span>   <span class="kw">class</span> Athlete:</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true"></a><span class="dv">2</span>       name: <span class="bu">str</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true"></a><span class="dv">3</span>       number: <span class="bu">int</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true"></a><span class="dv">4</span> </span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true"></a><span class="dv">5</span>       <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name: <span class="bu">str</span>, num: <span class="bu">int</span>):</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true"></a><span class="dv">6</span>           <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true"></a><span class="dv">7</span>           <span class="va">self</span>.number <span class="op">=</span> num</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true"></a><span class="dv">8</span></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true"></a><span class="dv">9</span>       <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true"></a><span class="dv">10</span>          <span class="cf">return</span> <span class="ss">f&quot;Athlete: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> (#</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>number<span class="sc">}</span><span class="ss">)&quot;</span></span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true"></a><span class="dv">11</span> </span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true"></a><span class="dv">12</span> </span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true"></a><span class="dv">13</span>   <span class="kw">class</span> Team:</span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true"></a><span class="dv">14</span>      team_name: <span class="bu">str</span></span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true"></a><span class="dv">15</span>      roster: <span class="bu">dict</span>[<span class="bu">int</span>, Athlete]</span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true"></a><span class="dv">16</span> </span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true"></a><span class="dv">17</span>      <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name: <span class="bu">str</span>):</span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true"></a><span class="dv">18</span>          <span class="va">self</span>.team_name <span class="op">=</span> name</span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true"></a><span class="dv">19</span>          <span class="va">self</span>.roster <span class="op">=</span> <span class="bu">dict</span>()</span>
+<span id="cb28-20"><a href="#cb28-20" aria-hidden="true"></a><span class="dv">20</span></span>
+<span id="cb28-21"><a href="#cb28-21" aria-hidden="true"></a><span class="dv">21</span>      <span class="kw">def</span> add(<span class="va">self</span>, name: <span class="bu">str</span>, desired_num: <span class="bu">int</span>) <span class="op">-&gt;</span> Athlete:</span>
+<span id="cb28-22"><a href="#cb28-22" aria-hidden="true"></a><span class="dv">22</span>          new_athlete: Athlete</span>
+<span id="cb28-23"><a href="#cb28-23" aria-hidden="true"></a><span class="dv">23</span>          <span class="cf">if</span> desired_num <span class="kw">not</span> <span class="kw">in</span> <span class="va">self</span>.roster:</span>
+<span id="cb28-24"><a href="#cb28-24" aria-hidden="true"></a><span class="dv">24</span>              new_athlete <span class="op">=</span> Athlete(name, desired_num)</span>
+<span id="cb28-25"><a href="#cb28-25" aria-hidden="true"></a><span class="dv">25</span>              <span class="va">self</span>.roster[desired_num] <span class="op">=</span> new_athlete</span>
+<span id="cb28-26"><a href="#cb28-26" aria-hidden="true"></a><span class="dv">26</span>          <span class="cf">else</span>:</span>
+<span id="cb28-27"><a href="#cb28-27" aria-hidden="true"></a><span class="dv">27</span>              new_athlete <span class="op">=</span> Athlete(name, <span class="dv">0</span>)</span>
+<span id="cb28-28"><a href="#cb28-28" aria-hidden="true"></a><span class="dv">28</span>              <span class="va">self</span>.roster[<span class="dv">0</span>] <span class="op">=</span> new_athlete</span>
+<span id="cb28-29"><a href="#cb28-29" aria-hidden="true"></a><span class="dv">29</span>          <span class="cf">return</span> new_athlete</span>
+<span id="cb28-30"><a href="#cb28-30" aria-hidden="true"></a><span class="dv">30</span></span>
+<span id="cb28-31"><a href="#cb28-31" aria-hidden="true"></a><span class="dv">31</span></span>
+<span id="cb28-32"><a href="#cb28-32" aria-hidden="true"></a><span class="dv">32</span>  unc: Team <span class="op">=</span> Team(name<span class="op">=</span><span class="st">&quot;UNC Women&#39;s BB&quot;</span>)</span>
+<span id="cb28-33"><a href="#cb28-33" aria-hidden="true"></a><span class="dv">33</span>  kate <span class="op">=</span> unc.add(<span class="st">&quot;Kate&quot;</span>, <span class="dv">15</span>)</span>
+<span id="cb28-34"><a href="#cb28-34" aria-hidden="true"></a><span class="dv">24</span>  <span class="bu">print</span>(kate)</span></code></pre></div></li>
+</ol>
+<p>Please view the final exam review session recording for a walkthrough of the solution.</p>
+</div>
+
+       
+
+    </div> 
+    </div>
+    </div>
+    <div class="authors-box bg-dark mt-4 py-3 ps-4">
+      <span> Contributor(s):        Izzi Hinks, Alyssa Lytle</span>
+    </div>
+
+  </div>
+  <div class='link-page mt-3 container'>
+    <footer>
+      <h3 class="text-center align-middle footer-text">&copy; 2025 <a href="https://krisjordan.com">Kris Jordan</a>
+        - <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSenaJ2uZ_n2FfAb2PWL6YPG4AUT-G2-xVJP6HIwMr6cd6nSYA/viewform?usp=sf_link">Feedback
+          Form</a>
+        - Made with 💛 in <a href="https://cs.unc.edu/">Chapel Hill</a></h3>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <!-- Code Block Formatting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  
+</body>
+
+</html>

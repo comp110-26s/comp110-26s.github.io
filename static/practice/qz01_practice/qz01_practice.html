@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Quiz 01 Practice Problems - COMP110 - 25F</title>
+  <link rel="icon" type="image/png" href="/static/s25_brand.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/static/styles.css?v=1767731938.444986">
+</head>
+
+
+<body id="body" class="absolute-page">
+    <script>
+        document.body.classList.remove('light-mode');
+        document.body.classList.remove('dark-mode');
+        document.body.classList.add(localStorage.getItem('mode'));
+    </script>
+  <script src="/static/scripts/nav-menu-esc.js"></script> 
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark py-1 fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/s25_brand.png"
+        alt="COMP110 - Spring - 2025"><img class="darkmode-element-only img-fluid logo" src="/static/s25_brand.png"
+        alt="COMP110 - Spring - 2025"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" onclick="esc_key()" data-bs-target="#navmenu" aria-label="Main Menu" aria-controls="#navmenu" role="navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link " href="/">agenda</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources" class="nav-link">resources</a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="/support" class="nav-link">support</a>
+          </li>
+         
+          <li class="nav-item">
+            <a href="/resources/syllabus.html" class="nav-link">syllabus</a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="/resources/team.html" class="nav-link">team110</a>
+          </li>
+         
+        </ul>
+      </div>
+      <div id='mode-switch' class="ms-auto form-check form-switch mode switches">
+              <div class="switches">
+                  <input type="checkbox" id="1" onclick="
+                      if (localStorage.getItem('mode') === 'dark-mode') {
+                          localStorage.setItem('userPref', 'light-mode');
+                          localStorage.setItem('mode', 'light-mode');
+                      } else {
+                          localStorage.setItem('userPref', 'dark-mode');
+                          localStorage.setItem('mode', 'dark-mode');
+                      }
+                      location.reload();">
+                  <label for="1">
+                      <span id="mode-label">Dark Mode</span>
+                      <span></span>
+                  </label>
+                  <script>if(localStorage.getItem('mode') === 'dark-mode'){document.getElementById("1").checked = true}</script>
+                  <script>if(localStorage.getItem('userPref') === null) {setTimeout(function(){location.reload();}, (timer * 3600000));}</script>
+              </div>
+          </div>
+    </div>
+  </nav>
+
+  <div class="cloud-container">
+    <div id="cloud-intro">
+  <div id="lessons-page" class="container">
+    <div class="row pt-4">
+      <div class="col-12">
+        <h1 id="page-title">Quiz 01 Practice Problems</h1>
+      </div>
+    </div>
+    
+
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            <div>
+                <div id="menu-overview" class="link-page-overview horizon-box">
+                    <button id="overview-button" class="btn btn-ov" onclick="hideshow()" >Overview  <img id="button-img" alt="Overview" class="filter-icon" src="/static/components/Itinerary/arrow-up.svg" style="height:15px; padding-left: 4px;"></button>
+                    <div id="overview-links">
+                        <div id="TOC" role="doc-toc">
+                            <ul class="overview-item"><ul>
+<li><a href="#quiz-01-practice">Quiz 01 Practice</a>
+<ul>
+<li><a href="#boolean-expressions">Boolean Expressions</a></li>
+<li><a href="#conditionals">Conditionals</a>
+<ul>
+<li><a href="#truefalse">True/False</a></li>
+<li><a href="#conceptual">Conceptual</a></li>
+<li><a href="#code-snippet">Code Snippet</a></li>
+</ul></li>
+<li><a href="#recursion">Recursion</a>
+<ul>
+<li><a href="#conceptual-1">Conceptual</a></li>
+<li><a href="#memory-diagram">Memory Diagram</a></li>
+<li><a href="#code-writing">Code Writing</a></li>
+</ul></li>
+<li><a href="#f-strings">f-strings</a></li>
+<li><a href="#local-variables">Local Variables</a></li>
+<li><a href="#while-loops">While Loops</a>
+<ul>
+<li><a href="#conceptual-2">Conceptual</a></li>
+<li><a href="#memory-diagram-1">Memory Diagram</a></li>
+<li><a href="#code-writing-1">Code Writing</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</</ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="quiz-01-practice">Quiz 01 Practice</h1>
+<h2 id="boolean-expressions">Boolean Expressions</h2>
+<ol type="1">
+<li><p>What are the results of the following boolean expressions?</p>
+<p>1.1 <code>((not False) and True) == True</code></p>
+<p>1.2 <code>(not False) or (True and False)</code></p>
+<p>1.3 <code>True and (7 &lt; 3 * 4 / 6)</code></p>
+<p>1.4 <code>(not False) != True</code></p>
+<p>1.5 <code>not (True and False) and (False or not False)</code></p>
+<p>1.6. <code>"XYz" == "XYZ" or "B" == "C"</code></p>
+<p>1.7. <code>5 ** 2 &gt;= 5 * 5 and 110 % 10 == 0</code></p></li>
+</ol>
+<details>
+<p><summary>SHOW SOLUTIONS</summary></p>
+<p>1.1. <code>True</code></p>
+<p>1.2. <code>True</code></p>
+<p>1.3. <code>False</code></p>
+<p>1.4. <code>False</code></p>
+<p>1.5. <code>True</code></p>
+<p>1.6. <code>False</code></p>
+<p>1.7. <code>True</code></p>
+</details>
+<p> </p>
+<h2 id="conditionals">Conditionals</h2>
+<h3 id="truefalse">True/False</h3>
+<ol type="1">
+<li><p>Every <code>if</code> statement must be followed by a paired <code>else</code> branch. (T/F)</p></li>
+<li><p>Lines contained in an <code>else</code> branch in Python do not have to be indented. (T/F)</p></li>
+<li><p>You can name a variable <code>else</code> in your program without Python confusing your variable’s name and the <code>else</code> keyword. (If you are unsure, this is a good one to try yourself!) (T/F)</p></li>
+</ol>
+<details>
+<p><summary>SHOW SOLUTIONS</summary></p>
+<ol type="1">
+<li><p><code>False</code></p></li>
+<li><p><code>False</code></p></li>
+<li><p><code>False</code></p></li>
+</ol>
+</details>
+<p> </p>
+<h3 id="conceptual">Conceptual</h3>
+<ol type="1">
+<li><p>What does the condition of a conditional have to evaluate to in order to enter its then block?</p></li>
+<li><p>What does the condition of a conditional have to evaluate to in order to enter its <code>else</code> block?</p></li>
+<li><p>What happens when a return statement is encountered?</p></li>
+</ol>
+<details>
+<p><summary>SHOW SOLUTIONS</summary></p>
+<ol type="1">
+<li><p>The condition must evaluate to <code>True</code>.</p></li>
+<li><p>The condition must evaluate to <code>False</code>.</p></li>
+<li><p>The return value is recorded in memory and the function is immediately exited.</p></li>
+</ol>
+</details>
+<p> </p>
+<h3 id="code-snippet">Code Snippet</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="dv">1</span>    <span class="kw">def</span> main() <span class="op">-&gt;</span> <span class="va">None</span>: </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="dv">2</span>       x: <span class="bu">str</span> <span class="op">=</span> <span class="st">&quot;x&quot;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="dv">3</span>       y: <span class="bu">str</span> <span class="op">=</span> <span class="st">&quot;y&quot;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="dv">4</span>       z: <span class="bu">str</span> <span class="op">=</span> x</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="dv">5</span>       y <span class="op">=</span> x</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a><span class="dv">6</span>       x <span class="op">=</span> <span class="st">&quot;y&quot;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a><span class="dv">7</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a><span class="dv">8</span>       <span class="cf">if</span> <span class="kw">not</span>(x <span class="op">!=</span> y <span class="kw">and</span> x <span class="op">!=</span> <span class="st">&quot;y&quot;</span>):</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a><span class="dv">9</span>           <span class="bu">print</span>(<span class="ss">f&quot;x: </span><span class="sc">{x}</span><span class="ss">&quot;</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a><span class="dv">10</span>      <span class="cf">else</span>:</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a><span class="dv">11</span>          <span class="bu">print</span>(<span class="st">&quot;&#39;if&#39; condition not met.&quot;</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a><span class="dv">12</span> </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a><span class="dv">13</span>   main()</span></code></pre></div>
+<ol type="1">
+<li><p>What is the condition in this code?</p></li>
+<li><p>What does the condition evaluate to? (Don’t do it in your head, draw a memory diagram!)</p></li>
+<li><p>What values should <code>x</code>, <code>y</code>, and/or <code>z</code> have to be assigned to in order for the <code>else</code> block to run?</p></li>
+<li><p>What other values can <code>x</code>, <code>y</code>, and/or <code>z</code> be assigned in order for the <code>if</code> block to run?</p></li>
+</ol>
+<details>
+<p><summary>SHOW SOLUTIONS</summary></p>
+<ol type="1">
+<li><p><code>not(x != y and x != "y")</code></p></li>
+<li><p>The condition evaluates to <code>True</code>.</p></li>
+<li><p>To ensure the else block runs in the given code, the condition <code>x != y and x != "y"</code> must be true. This means <code>x</code> should be different from <code>y</code> and <code>x</code> should also be different from the string <code>"y"</code>. For example, setting <code>x = "a" and y = "b"</code> will satisfy this condition, making the else block execute.</p></li>
+<li><p>To make the <code>if</code> block run, the condition <code>not(x != y and x != "y")</code> must be true, which happens when <code>x</code> is either the same as <code>y</code> or the same as <code>"y"</code>, or both. In the original code where <code>x = "y"</code>, <code>y = "x"</code>, and <code>z = "x"</code>, the <code>if</code> block runs as <code>not(x != y and x != "y")</code> evaluates to <code>True</code>.</p></li>
+</ol>
+</details>
+<p> </p>
+<h2 id="recursion">Recursion</h2>
+<h3 id="conceptual-1">Conceptual</h3>
+<ol type="1">
+<li><p>Which of the following are required in a recursive function that does not infinitely recur?</p>
+<ol type="a">
+<li><p>A base case without a recursive function call</p></li>
+<li><p>Recursive case that progresses toward the base case</p></li>
+<li><p>Arguments changing in the recursive case</p></li>
+<li><p>All of the above</p></li>
+</ol></li>
+</ol>
+<details>
+<p><summary>SHOW SOLUTIONS</summary></p>
+<ol type="1">
+<li><ol start="4" type="a">
+<li>All of the above</li>
+</ol></li>
+</ol>
+</details>
+<p> </p>
+<h3 id="memory-diagram">Memory Diagram</h3>
+<ol type="1">
+<li>Create a memory diagram for the following code snippet. Additionally, identify the lines where the edge case, base case, and recursive case occur (this will generally consist of a conditional statement, a return statement, and possibly more lines of code in between).</li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="dv">1</span>     <span class="st">&quot;&quot;&quot;Recursion practice!&quot;&quot;&quot;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a><span class="dv">2</span> </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a><span class="dv">3</span>     <span class="kw">def</span> factorial(num: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a><span class="dv">4</span>         <span class="st">&quot;&quot;&quot;Calculate the factorial of num.&quot;&quot;&quot;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a><span class="dv">5</span>         <span class="cf">if</span> num <span class="op">&lt;=</span> <span class="dv">0</span>:</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a><span class="dv">6</span>             <span class="cf">return</span> <span class="dv">1</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a><span class="dv">7</span>         <span class="cf">elif</span> num <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true"></a><span class="dv">8</span>             <span class="cf">return</span> <span class="dv">1</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true"></a><span class="dv">9</span>         <span class="cf">else</span>:</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true"></a><span class="dv">10</span>            <span class="cf">return</span> num <span class="op">*</span> factorial(num<span class="op">=</span>num <span class="op">-</span> <span class="dv">1</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true"></a><span class="dv">11</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true"></a><span class="dv">12</span>    <span class="kw">def</span> main() <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true"></a><span class="dv">13</span>        <span class="st">&quot;&quot;&quot;The main function.&quot;&quot;&quot;</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true"></a><span class="dv">14</span>        <span class="bu">print</span>(factorial(num<span class="op">=</span><span class="dv">3</span>))</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true"></a><span class="dv">15</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true"></a><span class="dv">16</span>    main()</span></code></pre></div>
+<ol start="2" type="1">
+<li>Challenge Question: Create a memory diagram for the following code snippet. Identify which lines that base case(s) or recursive case(s) occur on.</li>
+</ol>
+<div class="sourceCode" id="cb3"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="co">&quot;&quot;&quot;Recursion practice with palindromes.&quot;&quot;&quot;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a><span class="kw">def</span> is_palindrome(word: <span class="bu">str</span>, index: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>    <span class="co">&quot;&quot;&quot;Returns True if word is a palindrome and False otherwise.&quot;&quot;&quot;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>    <span class="cf">if</span> index <span class="op">&gt;=</span> <span class="bu">int</span>(<span class="bu">len</span>(word) <span class="op">/</span> <span class="dv">2</span>):</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a>        <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a>    <span class="cf">elif</span> word[index] <span class="op">==</span> word[<span class="bu">len</span>(word) <span class="op">-</span> (index <span class="op">+</span> <span class="dv">1</span>)]:</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a>        <span class="cf">return</span> is_palindrome(word<span class="op">=</span>word, index<span class="op">=</span>index <span class="op">+</span> <span class="dv">1</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true"></a>    <span class="cf">else</span>:</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true"></a>        <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true"></a><span class="kw">def</span> main() <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true"></a>    <span class="co">&quot;&quot;&quot;The main function.&quot;&quot;&quot;</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true"></a>    <span class="bu">print</span>(is_palindrome(word<span class="op">=</span><span class="st">&quot;noon&quot;</span>, index<span class="op">=</span><span class="dv">0</span>))</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true"></a>    <span class="bu">print</span>(is_palindrome(word<span class="op">=</span><span class="st">&quot;110&quot;</span>, index<span class="op">=</span><span class="dv">0</span>))</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true"></a>main()</span></code></pre></div>
+<details>
+<p><summary>SHOW SOLUTIONS</summary></p>
+<ol type="1">
+<li>The edge case occurs on lines 5-6, the base case occurs on lines 7-8, and the recursive case on lines 9-10.</li>
+</ol>
+<p><img class="img-fluid" src="/static/practice/qz01_practice/factorial.png" alt="Memory diagram of code listing with factorial and main functions"  /></p>
+<ol start="2" type="1">
+<li>The base cases occur on lines 5-6 and 9-10. If you reach the base case on lines 5-6 that means you made it through the whole <code>word</code> without finding any differences between letters that should be the same, so you can return <code>True</code> as the final result. If you make it to lines 9-10, that means a difference was found between letters that should be the same, so <code>word</code> is not a palindrome. The recursive case is on lines 7-8.</li>
+</ol>
+<p><img class="img-fluid" src="/static/practice/qz01_practice/palindrome.png" alt="Memory diagram of code listing with palindrome function"  /></p>
+</details>
+<p> </p>
+<h3 id="code-writing">Code Writing</h3>
+<ol type="1">
+<li>Write a recursive function named <code>sum</code> that has an <code>int</code> parameter <code>number</code> and returns an <code>int</code> that is the sum of all nonnegative integers up to and <em>including</em> <code>number</code> (<code>1 + 2 + ... + number</code>). For example, <code>sum(number=4)</code> should evaluate to <code>1 + 2 + 3 + 4 = 10</code>. If a negative argument for <code>number</code> is given, just return <code>-1</code> (What case is this?). It may help to come up with your base case and recursive case before beginning to write any code.</li>
+</ol>
+<details>
+<p><summary>SHOW SOLUTIONS</summary> 1. The negative argument case is an edge case. Note: There are many equivalent ways this function could be written.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="dv">1</span>    <span class="kw">def</span> <span class="bu">sum</span>(number: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a><span class="dv">2</span>        <span class="st">&quot;&quot;&quot;Sum of all nonnegative integers up to and including number.&quot;&quot;&quot;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a><span class="dv">3</span>        <span class="cf">if</span> number <span class="op">&lt;</span> <span class="dv">0</span>: <span class="co"># Edge case</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a><span class="dv">4</span>            <span class="cf">return</span> <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a><span class="dv">5</span>        <span class="cf">elif</span> number <span class="op">&gt;</span> <span class="dv">0</span>: <span class="co"># Recursive case</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a><span class="dv">6</span>            <span class="cf">return</span> number <span class="op">+</span> <span class="bu">sum</span>(number<span class="op">=</span>number <span class="op">-</span> <span class="dv">1</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a><span class="dv">7</span>        <span class="cf">else</span>: <span class="co"># Base case</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true"></a><span class="dv">8</span>            <span class="cf">return</span> <span class="dv">0</span></span></code></pre></div>
+</details>
+<p> </p>
+<h2 id="f-strings">f-strings</h2>
+<ol type="1">
+<li><p>What are the printed outputs for the following <code>print</code> function calls?</p>
+<p>1.1. <code>print(f"{1 + 1}")</code></p>
+<p>1.2. <code>print(f"C{'OM'}P {100 + 10}")</code></p>
+<p>1.3. <code>print(f"This statement is {not (True or False)}!")</code></p>
+<p>1.4. <code>print(f"Question: Is {55} even? Answer: {55 % 2 == 0}")</code></p></li>
+</ol>
+<details>
+<p><summary>SHOW SOLUTIONS</summary></p>
+<p>1.1. 2</p>
+<p>1.2. COMP 110</p>
+<p>1.3. This statement is False!</p>
+<p>1.4. Question: Is 55 even? Answer: False</p>
+</details>
+<p> </p>
+<h2 id="local-variables">Local Variables</h2>
+<ol type="1">
+<li><p>Which of the following properly <em>declares</em> a variable?</p>
+<ol type="a">
+<li><p><code>"Michael Jordan" = name</code></p></li>
+<li><p><code>large_number = 2 ** 2025</code></p></li>
+<li><p><code>name: str = "Michael Jordan"</code></p></li>
+<li><p><code>int: large_number = 2 ** 2025</code></p></li>
+</ol></li>
+<li><p>Which of the following properly <em>updates</em> or <em>assigns</em> a value to a variable (if it has already been declared)?</p>
+<ol type="a">
+<li><p><code>"Michael Jordan" = name</code></p></li>
+<li><p><code>large_number = 2 ** 2025</code></p></li>
+<li><p><code>name: str = "Michael Jordan"</code></p></li>
+<li><p><code>int: large_number = 2 ** 2025</code></p></li>
+</ol></li>
+<li><p>Refer to the following code snippet to answer this question. Describe what will happen if we run this code. Feel free to create a memory diagram to assist you.</p></li>
+</ol>
+<div class="sourceCode" id="cb5"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="dv">1</span>     <span class="kw">def</span> foo(num: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a><span class="dv">2</span>         <span class="st">&quot;&quot;&quot;Fooey.&quot;&quot;&quot;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a><span class="dv">3</span>         x: <span class="bu">int</span> <span class="op">=</span> num <span class="op">*</span> <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a><span class="dv">4</span>         <span class="bu">print</span>(x)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a><span class="dv">5</span> </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a><span class="dv">6</span>     <span class="kw">def</span> main() <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true"></a><span class="dv">7</span>         <span class="st">&quot;&quot;&quot;The main function.&quot;&quot;&quot;</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true"></a><span class="dv">8</span>         foo(<span class="dv">4</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true"></a><span class="dv">9</span>         <span class="bu">print</span>(x)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true"></a><span class="dv">10</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true"></a><span class="dv">11</span>    main()</span></code></pre></div>
+<details>
+<p><summary>SHOW SOLUTIONS</summary></p>
+<ol type="1">
+<li><p>c: <code>name: str = "Michael Jordan"</code> The important part to notice is that we are giving it a type, which we only do during declaration.</p></li>
+<li><ol start="2" type="a">
+<li><code>large_number = 2 ** 2025</code> Updating or assigning a value to a variable that has already been declared just uses the equal sign with the variable name on the left and the value on the right, and does not redeclare the type.</li>
+</ol></li>
+<li><p>When this code is run, you will first enter the <code>main</code> function since it is called on line 11, then you will enter the <code>foo</code> function when it is called on line 8. Then the <code>foo</code> function will declare a local variable <code>x</code> and print it, outputting <code>-4</code>. Then we will return to line 8, then move on to line 9 where we attempt to print <code>x</code>. However, <code>x</code> was a local variable only in the <code>foo</code> frame, not in the <code>main</code> frame, so we will get a <code>NameError</code>.</p></li>
+</ol>
+</details>
+<p> </p>
+<h2 id="while-loops">While Loops</h2>
+<h3 id="conceptual-2">Conceptual</h3>
+<ol type="1">
+<li><p>What happens if the condition of a while loop is initially <code>False</code>?</p>
+<ol type="a">
+<li><p>The loop will run once.</p></li>
+<li><p>The loop will not run at all.</p></li>
+<li><p>The loop will run infinitely.</p></li>
+<li><p>The loop will throw an error.</p></li>
+</ol></li>
+<li><p>If a <code>while</code> loop statement starts with, <code>while condition:</code>, what must <code>condition</code> evaluate to for the following <code>while</code> loop to execute at least once? What type is <code>condition</code>?</p></li>
+</ol>
+<details>
+<p><summary>SHOW SOLUTIONS</summary></p>
+<ol type="1">
+<li>B: The loop will not run at all.</li>
+<li><code>condition</code> must be <code>True</code> to enter the loop. Its type is a <code>bool</code>.</li>
+</ol>
+</details>
+<p> </p>
+<h3 id="memory-diagram-1">Memory Diagram</h3>
+<ol type="1">
+<li><p>Produce a memory diagram for the following code snippet, being sure to include its stack and output.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="dv">1</span>     <span class="kw">def</span> main() <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a><span class="dv">2</span>         <span class="st">&quot;&quot;&quot;Main Function&quot;&quot;&quot;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a><span class="dv">3</span>         y: <span class="bu">int</span> <span class="op">=</span> g(<span class="dv">1</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a><span class="dv">4</span>         f(y)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a><span class="dv">5</span>         <span class="bu">print</span>(g(f(<span class="dv">3</span>)))</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a><span class="dv">6</span>         </span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true"></a><span class="dv">7</span>     <span class="kw">def</span> f(x: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true"></a><span class="dv">8</span>         <span class="st">&quot;&quot;&quot;Function 0&quot;&quot;&quot;</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true"></a><span class="dv">9</span>         <span class="cf">if</span> x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true"></a><span class="dv">10</span>            <span class="bu">print</span>(<span class="bu">str</span>(x) <span class="op">+</span> <span class="st">&quot; is even&quot;</span>)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true"></a><span class="dv">11</span>        <span class="cf">else</span>:</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true"></a><span class="dv">12</span>            x <span class="op">=</span> x <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true"></a><span class="dv">13</span>        <span class="cf">return</span> x</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true"></a><span class="dv">14</span>        </span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true"></a><span class="dv">15</span>    <span class="kw">def</span> g(x: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true"></a><span class="dv">16</span>        <span class="st">&quot;&quot;&quot;Function 1&quot;&quot;&quot;</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true"></a><span class="dv">17</span>        <span class="cf">while</span> x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true"></a><span class="dv">18</span>            x <span class="op">=</span> x <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true"></a><span class="dv">19</span>        <span class="cf">return</span> x</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true"></a><span class="dv">20</span> </span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true"></a><span class="dv">21</span>    main()</span></code></pre></div>
+<p>1.1. Why is it that <code>main()</code> is defined above <code>f()</code> and <code>g()</code>, but we are able to call <code>f()</code> and <code>g()</code> inside <code>main()</code> without errors?</p>
+<p>1.2. On line 5, when <code>print(g(f(3)))</code> is called, is the code block inside of the <code>while</code> loop ever entered? Why or why not?</p>
+<p>1.3. What would happen if a line was added to the end of the snippet that said <code>print(x)</code>. Why?</p></li>
+</ol>
+<details>
+<p><summary>SHOW SOLUTIONS</summary></p>
+<!-- 1.  -->
+<!-- ![While Loop Memory Diagram](https://25f-comp110.github.io/static/practice-mem-diagrams/Qz2-md.png) -->
+<p><img class="img-fluid" src="/static/practice/qz01_practice/mem_diag.png" alt="Memory diagram of functions main, f, and g"  /></p>
+<pre><code>1.1 Even though main is defined before f and g, it isn&#39;t called until after f and g are defined.
+
+1.2 No because x = 4, so x % 2 == 1 is False, and therefore the code block inside is never run.
+
+1.3 There would be an error because x is a local variable inside both f and g. Therefore, the program does not recognize that x exists in this context.</code></pre>
+</details>
+<p> </p>
+<h3 id="code-writing-1">Code Writing</h3>
+<ol type="1">
+<li><p>Write a function named <code>sum_or_factorial</code> using <code>while</code> loops that has an <code>int</code> parameter <code>number</code> and behaves in the following way:</p>
+<p>If <code>number</code> is negative, return <code>-1</code>.</p>
+<p>If <code>number</code> is even, return the sum of all positive integers up to and <em>including</em> <code>number</code>.</p>
+<p>If <code>number</code> is odd, return the product of all positive integers up to and <em>including</em> <code>number</code> (the factorial of <code>number</code>).</p></li>
+</ol>
+<details>
+<p><summary>SHOW SOLUTIONS</summary></p>
+<p>Note: There are many ways you could write this function.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="dv">1</span>     <span class="kw">def</span> sum_or_factorial(number: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a><span class="dv">2</span>         <span class="st">&quot;&quot;&quot;Returns the sum up to number if even or the factorial of number if odd.&quot;&quot;&quot;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a><span class="dv">3</span>         result: <span class="bu">int</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a><span class="dv">4</span>         <span class="cf">if</span> number <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true"></a><span class="dv">5</span>             <span class="cf">return</span> <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true"></a><span class="dv">6</span>         <span class="cf">elif</span> number <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true"></a><span class="dv">7</span>             result <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true"></a><span class="dv">8</span>             idx: <span class="bu">int</span> <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true"></a><span class="dv">9</span>             <span class="cf">while</span> idx <span class="op">&lt;=</span> number:</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true"></a><span class="dv">10</span>                result <span class="op">=</span> result <span class="op">+</span> idx</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true"></a><span class="dv">11</span>                idx <span class="op">=</span> idx <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true"></a><span class="dv">12</span>        <span class="cf">else</span>:</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true"></a><span class="dv">13</span>            result <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true"></a><span class="dv">14</span>            idx: <span class="bu">int</span> <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true"></a><span class="dv">15</span>            <span class="cf">while</span> idx <span class="op">&lt;=</span> number:</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true"></a><span class="dv">16</span>                result <span class="op">=</span> result <span class="op">*</span> idx</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true"></a><span class="dv">17</span>                idx <span class="op">=</span> idx <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true"></a><span class="dv">18</span>        <span class="cf">return</span> result</span></code></pre></div>
+</details>
+<p> </p>
+</div>
+
+       
+
+    </div> 
+    </div>
+    </div>
+    <div class="authors-box bg-dark mt-4 py-3 ps-4">
+      <span> Contributor(s):        Alyssa Lytle,        Izzi Hinks,        Megan Zhang,        David Karash,        Viktorya Hunanyan, Benjamin Eldridge</span>
+    </div>
+
+  </div>
+  <div class='link-page mt-3 container'>
+    <footer>
+      <h3 class="text-center align-middle footer-text">&copy; 2025 <a href="https://krisjordan.com">Kris Jordan</a>
+        - <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSenaJ2uZ_n2FfAb2PWL6YPG4AUT-G2-xVJP6HIwMr6cd6nSYA/viewform?usp=sf_link">Feedback
+          Form</a>
+        - Made with 💛 in <a href="https://cs.unc.edu/">Chapel Hill</a></h3>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <!-- Code Block Formatting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  
+</body>
+
+</html>
