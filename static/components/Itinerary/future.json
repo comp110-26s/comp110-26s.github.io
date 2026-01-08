@@ -1,29 +1,18 @@
 {
-    "2026-01-07": [
+    "2026-01-08": [],
+    "2026-01-09": [
         {
             "kind": "CL",
-            "n": 0,
-            "title": "Welcome to COMP110!",
-            "date": "2026-01-07",
-            "deadline": "2026-01-07",
+            "n": 1,
+            "title": "Objects and Data Types",
+            "date": "2026-01-09",
+            "deadline": "2026-01-09",
             "links": {
-                "Slides": "/static/slides/cl00.pdf"
-            }
-        },
-        {
-            "kind": "LS",
-            "n": 0,
-            "title": "Syllabus Familiarity (Due Thursday 1/8)",
-            "date": "2026-01-07",
-            "deadline": "2026-01-08",
-            "links": {
-                "1. Read the Syllabus": "/resources/syllabus.html",
-                "2. Complete Lesson 00 Responses on Gradescope": "https://www.gradescope.com/"
+                "Slides": "/",
+                "Optional Reading": "/lessons/objects-data-types.html"
             }
         }
     ],
-    "2026-01-08": [],
-    "2026-01-09": [],
     "2026-01-10": [],
     "2026-01-11": [],
     "2026-01-12": [],

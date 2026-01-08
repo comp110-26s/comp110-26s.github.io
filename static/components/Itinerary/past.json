@@ -1,1 +1,25 @@
-{}
+{
+    "2026-01-07": [
+        {
+            "kind": "CL",
+            "n": 0,
+            "title": "Welcome to COMP110!",
+            "date": "2026-01-07",
+            "deadline": "2026-01-07",
+            "links": {
+                "Slides": "/static/slides/cl00.pdf"
+            }
+        },
+        {
+            "kind": "LS",
+            "n": 0,
+            "title": "Syllabus Familiarity (Due Thursday 1/8)",
+            "date": "2026-01-07",
+            "deadline": "2026-01-08",
+            "links": {
+                "1. Read the Syllabus": "/resources/syllabus.html",
+                "2. Complete Lesson 00 Responses on Gradescope": "https://www.gradescope.com/"
+            }
+        }
+    ]
+}

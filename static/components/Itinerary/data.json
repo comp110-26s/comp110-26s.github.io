@@ -23,7 +23,19 @@
         }
     ],
     "2026-01-08": [],
-    "2026-01-09": [],
+    "2026-01-09": [
+        {
+            "kind": "CL",
+            "n": 1,
+            "title": "Objects and Data Types",
+            "date": "2026-01-09",
+            "deadline": "2026-01-09",
+            "links": {
+                "Slides": "/",
+                "Optional Reading": "/lessons/objects-data-types.html"
+            }
+        }
+    ],
     "2026-01-10": [],
     "2026-01-11": [],
     "2026-01-12": [],
