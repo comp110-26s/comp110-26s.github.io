@@ -1,53 +1,27 @@
 {
-    "2026-01-09": [
+    "2026-01-12": [
         {
             "kind": "CL",
-            "n": 1,
-            "title": "Objects and Data Types",
-            "date": "2026-01-09",
-            "deadline": "2026-01-09",
-            "links": {
-                "Slides": "/static/slides/cl01.pdf",
-                "Optional Reading": "/lessons/objects-data-types.html"
-            }
-        },
-        {
-            "kind": "LS",
-            "n": 1,
-            "title": "Software Setup",
-            "date": "2026-01-09",
-            "deadline": "2026-01-09",
-            "links": {
-                "1. OS Update": "/resources/setup/os-update.html",
-                "2. Docker, git, VS Code": "/resources/setup/software.html",
-                "3. COMP110 Workspace": "/resources/setup/workspace.html",
-                "4. Complete the LS01 Responses on Gradescope": "https://www.gradescope.com/"
-            }
-        },
-        {
-            "kind": "LS",
             "n": 2,
-            "title": "Objects and Data Types",
-            "date": "2026-01-09",
-            "deadline": "2026-01-09",
+            "title": "Expressions",
+            "date": "2026-01-12",
+            "deadline": "2026-01-12",
             "links": {
-                "Complete Lesson 02 Responses on Gradescope": "https://www.gradescope.com/"
+                "Slides": "/static/slides/cl02.pdf",
+                "Optional Reading": "/lessons/expressions.html"
             }
         },
         {
-            "kind": "EX",
-            "n": 0,
-            "title": "Hello, World! (Due Thursday 1/15)",
-            "date": "2026-01-09",
-            "deadline": "2026-01-15",
+            "kind": "LS",
+            "n": 3,
+            "title": "Expressions",
+            "date": "2026-01-12",
+            "deadline": "2026-01-12",
             "links": {
-                "": "/exercises/ex00_hello_world.html"
+                "Complete Lesson 03 Responses on Gradescope": "https://www.gradescope.com/"
             }
         }
     ],
-    "2026-01-10": [],
-    "2026-01-11": [],
-    "2026-01-12": [],
     "2026-01-13": [],
     "2026-01-14": [],
     "2026-01-15": [],

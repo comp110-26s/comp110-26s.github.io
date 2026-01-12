@@ -71,7 +71,29 @@
     ],
     "2026-01-10": [],
     "2026-01-11": [],
-    "2026-01-12": [],
+    "2026-01-12": [
+        {
+            "kind": "CL",
+            "n": 2,
+            "title": "Expressions",
+            "date": "2026-01-12",
+            "deadline": "2026-01-12",
+            "links": {
+                "Slides": "/static/slides/cl02.pdf",
+                "Optional Reading": "/lessons/expressions.html"
+            }
+        },
+        {
+            "kind": "LS",
+            "n": 3,
+            "title": "Expressions",
+            "date": "2026-01-12",
+            "deadline": "2026-01-12",
+            "links": {
+                "Complete Lesson 03 Responses on Gradescope": "https://www.gradescope.com/"
+            }
+        }
+    ],
     "2026-01-13": [],
     "2026-01-14": [],
     "2026-01-15": [],
