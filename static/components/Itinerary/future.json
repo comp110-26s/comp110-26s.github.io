@@ -1,29 +1,26 @@
 {
-    "2026-01-12": [
+    "2026-01-14": [
         {
             "kind": "CL",
-            "n": 2,
-            "title": "Expressions",
-            "date": "2026-01-12",
-            "deadline": "2026-01-12",
+            "n": 3,
+            "title": "Intro to Functions",
+            "date": "2026-01-14",
+            "deadline": "2026-01-14",
             "links": {
-                "Slides": "/static/slides/cl02.pdf",
-                "Optional Reading": "/lessons/expressions.html"
+                "Slides": "/static/slides/cl03.pdf"
             }
         },
         {
             "kind": "LS",
-            "n": 3,
-            "title": "Expressions",
-            "date": "2026-01-12",
-            "deadline": "2026-01-12",
+            "n": 4,
+            "title": "Introducing Functions and Function Syntax",
+            "date": "2026-01-14",
+            "deadline": "2026-01-14",
             "links": {
-                "Complete Lesson 03 Responses on Gradescope": "https://www.gradescope.com/"
+                "Complete Lesson 04 Responses on Gradescope": "https://www.gradescope.com/"
             }
         }
     ],
-    "2026-01-13": [],
-    "2026-01-14": [],
     "2026-01-15": [],
     "2026-01-16": [],
     "2026-01-17": [],
