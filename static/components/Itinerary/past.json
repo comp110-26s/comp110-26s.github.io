@@ -94,5 +94,28 @@
             }
         }
     ],
-    "2026-01-13": []
+    "2026-01-13": [],
+    "2026-01-14": [
+        {
+            "kind": "CL",
+            "n": 3,
+            "title": "Intro to Functions",
+            "date": "2026-01-14",
+            "deadline": "2026-01-14",
+            "links": {
+                "Slides": "/static/slides/cl03.pdf"
+            }
+        },
+        {
+            "kind": "LS",
+            "n": 4,
+            "title": "Introducing Functions and Function Syntax",
+            "date": "2026-01-14",
+            "deadline": "2026-01-14",
+            "links": {
+                "Complete Lesson 04 Responses on Gradescope": "https://www.gradescope.com/"
+            }
+        }
+    ],
+    "2026-01-15": []
 }
