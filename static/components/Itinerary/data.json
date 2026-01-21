@@ -145,7 +145,29 @@
     "2026-01-18": [],
     "2026-01-19": [],
     "2026-01-20": [],
-    "2026-01-21": [],
+    "2026-01-21": [
+        {
+            "kind": "CL",
+            "n": 5,
+            "title": "Memory Diagram Practice and Quiz Review",
+            "date": "2026-01-21",
+            "deadline": "2026-01-21",
+            "links": {
+                "Slides": "/static/slides/cl05.pdf",
+                "Memory Diagram Rules": "/static/slides/memory_diagrams_v0.pdf"
+            }
+        },
+        {
+            "kind": "CQ",
+            "n": 0,
+            "title": "Memory Diagram",
+            "date": "2026-01-21",
+            "deadline": "2026-01-21",
+            "links": {
+                "": "https://www.gradescope.com"
+            }
+        }
+    ],
     "2026-01-22": [],
     "2026-01-23": [
         {
@@ -156,8 +178,8 @@
             "deadline": "2026-01-23",
             "links": {
                 "Read Quiz Expectations": "/resources/quiz-expectations.html",
-                "General Practice": "/resources/practice/sp26/qz00/qz00_practice.html",
-                "Memory Diagram Practice": "/resources/practice/sp26/qz00/qz00_memory_diagrams.html",
+                "Quiz General Practice": "/resources/practice/sp26/qz00/qz00_practice.html",
+                "Quiz Memory Diagram Practice": "/resources/practice/sp26/qz00/qz00_memory_diagrams.html",
                 "Review Session in Sitterson Hall (SN) room 014 on Wed. Jan 21 from 6-7pm": "/"
             }
         }
