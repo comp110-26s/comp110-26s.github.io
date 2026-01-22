@@ -79,7 +79,8 @@
             "date": "2026-01-12",
             "deadline": "2026-01-12",
             "links": {
-                "Slides": "/static/slides/cl02.pdf",
+                "Blank Slides": "/static/slides/cl02.pdf",
+                "Annotated Slides": "/static/slides/cl02_annotated.pdf",
                 "Optional Reading": "/lessons/expressions.html"
             }
         },
@@ -126,7 +127,8 @@
             "date": "2026-01-16",
             "deadline": "2026-01-16",
             "links": {
-                "Slides": "/static/slides/cl04.pdf",
+                "Blank Slides": "/static/slides/cl04.pdf",
+                "Annotated Slides": "/static/slides/cl04_annotated.pdf",
                 "Memory Diagram Rules": "/static/slides/memory_diagrams_v0.pdf"
             }
         },
