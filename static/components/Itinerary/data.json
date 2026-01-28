@@ -188,9 +188,51 @@
     ],
     "2026-01-24": [],
     "2026-01-25": [],
-    "2026-01-26": [],
+    "2026-01-26": [
+        {
+            "kind": "CL",
+            "n": 6,
+            "title": "Condition 2 (No class)",
+            "date": "2026-01-26",
+            "deadline": "2026-01-26",
+            "links": {
+                "No slides": "/"
+            }
+        }
+    ],
     "2026-01-27": [],
-    "2026-01-28": [],
+    "2026-01-28": [
+        {
+            "kind": "CL",
+            "n": 7,
+            "title": "Boolean Operators and Conditional Control Flow",
+            "date": "2026-01-28",
+            "deadline": "2026-01-28",
+            "links": {
+                "Slides": "/static/slides/cl06.pdf"
+            }
+        },
+        {
+            "kind": "LS",
+            "n": 5,
+            "title": "Boolean Operators",
+            "date": "2026-01-28",
+            "deadline": "2026-01-28",
+            "links": {
+                "Complete Lesson 05 Responses on Gradescope": "https://www.gradescope.com/"
+            }
+        },
+        {
+            "kind": "LS",
+            "n": 6,
+            "title": "Conditionals",
+            "date": "2026-01-28",
+            "deadline": "2026-01-28",
+            "links": {
+                "Complete Lesson 06 Responses on Gradescope": "https://www.gradescope.com/"
+            }
+        }
+    ],
     "2026-01-29": [],
     "2026-01-30": [],
     "2026-01-31": [],
