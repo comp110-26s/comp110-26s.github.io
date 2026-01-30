@@ -234,7 +234,28 @@
         }
     ],
     "2026-01-29": [],
-    "2026-01-30": [],
+    "2026-01-30": [
+        {
+            "kind": "CL",
+            "n": 8,
+            "title": "Practice with Conditional Control Flow",
+            "date": "2026-01-30",
+            "deadline": "2026-01-30",
+            "links": {
+                "Slides": "/static/slides/cl07.pdf"
+            }
+        },
+        {
+            "kind": "EX",
+            "n": 2,
+            "title": "Chardle (writeup available after lectures today) (Due Sunday 2/8)",
+            "date": "2026-01-30",
+            "deadline": "2026-02-08",
+            "links": {
+                "": "/"
+            }
+        }
+    ],
     "2026-01-31": [],
     "2026-02-01": [],
     "2026-02-02": [],

@@ -1,38 +1,26 @@
 {
-    "2026-01-28": [
+    "2026-01-30": [
         {
             "kind": "CL",
-            "n": 7,
-            "title": "Boolean Operators and Conditional Control Flow",
-            "date": "2026-01-28",
-            "deadline": "2026-01-28",
+            "n": 8,
+            "title": "Practice with Conditional Control Flow",
+            "date": "2026-01-30",
+            "deadline": "2026-01-30",
             "links": {
-                "Slides": "/static/slides/cl06.pdf"
+                "Slides": "/static/slides/cl07.pdf"
             }
         },
         {
-            "kind": "LS",
-            "n": 5,
-            "title": "Boolean Operators",
-            "date": "2026-01-28",
-            "deadline": "2026-01-28",
+            "kind": "EX",
+            "n": 2,
+            "title": "Chardle (writeup available after lectures today) (Due Sunday 2/8)",
+            "date": "2026-01-30",
+            "deadline": "2026-02-08",
             "links": {
-                "Complete Lesson 05 Responses on Gradescope": "https://www.gradescope.com/"
-            }
-        },
-        {
-            "kind": "LS",
-            "n": 6,
-            "title": "Conditionals",
-            "date": "2026-01-28",
-            "deadline": "2026-01-28",
-            "links": {
-                "Complete Lesson 06 Responses on Gradescope": "https://www.gradescope.com/"
+                "": "/"
             }
         }
     ],
-    "2026-01-29": [],
-    "2026-01-30": [],
     "2026-01-31": [],
     "2026-02-01": [],
     "2026-02-02": [],
