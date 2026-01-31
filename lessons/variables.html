@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1769781372.813423">
+  <link rel="stylesheet" href="/static/styles.css?v=1769841372.2247112">
 </head>
 
 
@@ -140,7 +140,7 @@
 <span id="cb4-2"><a href="#cb4-2"></a>   <span class="co">&quot;&quot;&quot;A silly function that doubles its argument.&quot;&quot;&quot;</span></span>
 <span id="cb4-3"><a href="#cb4-3"></a>   y: <span class="bu">int</span></span>
 <span id="cb4-4"><a href="#cb4-4"></a>   y <span class="op">=</span> x <span class="op">*</span> <span class="dv">2</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a>   <span class="bu">print</span>(<span class="ss">f&quot;double(</span><span class="sc">{x}</span><span class="ss">) is </span><span class="sc">{y}</span><span class="ss">&quot;</span>)</span>
+<span id="cb4-5"><a href="#cb4-5"></a>   <span class="bu">print</span>(<span class="st">&quot;double(&quot;</span> <span class="op">+</span> <span class="bu">str</span>(x) <span class="op">+</span> <span class="st">&quot;) is &quot;</span> <span class="op">+</span> <span class="bu">str</span>(y))</span>
 <span id="cb4-6"><a href="#cb4-6"></a>   <span class="cf">return</span> y</span>
 <span id="cb4-7"><a href="#cb4-7"></a></span>
 <span id="cb4-8"><a href="#cb4-8"></a><span class="bu">print</span>(double(x<span class="op">=</span><span class="dv">3</span> <span class="op">*</span> <span class="dv">2</span>))</span></code></pre></div>
@@ -157,7 +157,7 @@
 <div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="kw">def</span> double(x: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a>   <span class="co">&quot;&quot;&quot;A silly function that doubles its argument.&quot;&quot;&quot;</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a>   y: <span class="bu">int</span> <span class="op">=</span> x <span class="op">*</span> <span class="dv">2</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a>   <span class="bu">print</span>(<span class="ss">f&quot;double(</span><span class="sc">{x}</span><span class="ss">) is </span><span class="sc">{y}</span><span class="ss">&quot;</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a>   <span class="bu">print</span>(<span class="st">&quot;double(&quot;</span> <span class="op">+</span> <span class="bu">str</span>(x) <span class="op">+</span> <span class="st">&quot;) is &quot;</span> <span class="op">+</span> <span class="bu">str</span>(y))</span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a>   <span class="cf">return</span> y</span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a></span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true"></a><span class="bu">print</span>(double(x<span class="op">=</span><span class="dv">3</span> <span class="op">*</span> <span class="dv">2</span>))</span></code></pre></div>
@@ -203,9 +203,9 @@
 <pre class=".python"><code>def main() -&gt; None:
    an_int: int = int(input(&quot;Provide a number: &quot;))
 
-   print(f&quot;{an_int} ** 2 is {an_int ** 2}&quot;)
-   print(f&quot;{an_int} % 2 is {an_int % 2}&quot;)
-   print(f&quot;{an_int} == 0 is {an_int == 0}&quot;)
+   print(str(an_int) + &quot; ** 2 is &quot; + str(an_int ** 2))
+   print(str(an_int) + &quot; % 2 is &quot; + str(an_int % 2))
+   print(str(an_int) + &quot; == 0 is &quot; + str(an_int == 0))
 
 
 if __name__ == &quot;__main__&quot;:
@@ -218,7 +218,7 @@ if __name__ == &quot;__main__&quot;:
 <div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true"></a><span class="kw">def</span> increment(x: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true"></a>   y: <span class="bu">int</span> <span class="op">=</span> x</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true"></a>   y <span class="op">=</span> y <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true"></a>   <span class="bu">print</span>(<span class="ss">f&quot;x: </span><span class="sc">{x}</span><span class="ss">, y: </span><span class="sc">{y}</span><span class="ss">&quot;</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true"></a>   <span class="bu">print</span>(<span class="st">&quot;x: &quot;</span> <span class="op">+</span> x <span class="op">+</span> <span class="st">&quot;, y: &quot;</span> <span class="op">+</span> y)</span>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true"></a>   <span class="cf">return</span> y</span>
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true"></a></span>
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true"></a><span class="bu">print</span>(increment(x<span class="op">=</span><span class="dv">1</span>))</span></code></pre></div>
@@ -244,7 +244,7 @@ if __name__ == &quot;__main__&quot;:
     </div>
     </div>
     <div class="authors-box bg-dark mt-4 py-3 ps-4">
-      <span> Contributor(s): Kris Jordan</span>
+      <span> Contributor(s):        Kris Jordan, Izzi Hinks</span>
     </div>
 
   </div>

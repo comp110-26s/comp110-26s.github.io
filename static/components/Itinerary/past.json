@@ -209,7 +209,8 @@
             "date": "2026-01-28",
             "deadline": "2026-01-28",
             "links": {
-                "Slides": "/static/slides/cl06.pdf"
+                "Slides": "/static/slides/cl06.pdf",
+                "Recording": "https://unc.zoom.us/rec/share/TuXS3T1izaMo5wJKjRI9Av_-IT1c8J1HVQXjMSb9PF1-uRLUoALgdav_n0HKMYSp.pTV1IVJCcy8NidFc?startTime=1769616767000"
             }
         },
         {
@@ -233,5 +234,28 @@
             }
         }
     ],
-    "2026-01-29": []
+    "2026-01-29": [],
+    "2026-01-30": [
+        {
+            "kind": "CL",
+            "n": 8,
+            "title": "Practice with Conditional Control Flow",
+            "date": "2026-01-30",
+            "deadline": "2026-01-30",
+            "links": {
+                "Slides": "/static/slides/cl07.pdf"
+            }
+        },
+        {
+            "kind": "EX",
+            "n": 2,
+            "title": "Chardle (Due Sunday 2/8)",
+            "date": "2026-01-30",
+            "deadline": "2026-02-08",
+            "links": {
+                "Read a lesson on variables": "/lessons/variables.html",
+                "Instructions": "/exercises/wordle_pt1.html"
+            }
+        }
+    ]
 }
