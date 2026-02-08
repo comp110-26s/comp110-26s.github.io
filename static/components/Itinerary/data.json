@@ -334,7 +334,11 @@
             "title": "Quiz 1",
             "date": "2026-02-13",
             "deadline": "2026-02-13",
-            "links": {}
+            "links": {
+                "Read Quiz Expectations": "/resources/quiz-expectations.html",
+                "General Practice": "/resources/practice/sp26/qz01/qz01_practice.html",
+                "Memory Diagrams": "/resources/practice/sp26/qz01/qz01_memory_diagrams.html"
+            }
         }
     ],
     "2026-02-14": [],

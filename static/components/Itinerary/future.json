@@ -1,28 +1,4 @@
 {
-    "2026-02-06": [
-        {
-            "kind": "CL",
-            "n": 11,
-            "title": "Intro to Recursion and f-Strings",
-            "date": "2026-02-06",
-            "deadline": "2026-02-06",
-            "links": {
-                "Slides": "/static/slides/cl11.pdf",
-                "Optional Reading about Unicode and f-Strings": "/lessons/strings.html",
-                "Optional Reading about Recursion": "/lessons/recursion.html"
-            }
-        },
-        {
-            "kind": "LS",
-            "n": 8,
-            "title": "Intro to Recursion",
-            "date": "2026-02-06",
-            "deadline": "2026-02-06",
-            "links": {
-                "Complete Lesson 08 Responses on Gradescope": "https://www.gradescope.com/"
-            }
-        }
-    ],
     "2026-02-07": [],
     "2026-02-08": [],
     "2026-02-09": [],
@@ -36,7 +12,11 @@
             "title": "Quiz 1",
             "date": "2026-02-13",
             "deadline": "2026-02-13",
-            "links": {}
+            "links": {
+                "Read Quiz Expectations": "/resources/quiz-expectations.html",
+                "General Practice": "/resources/practice/sp26/qz01/qz01_practice.html",
+                "Memory Diagrams": "/resources/practice/sp26/qz01/qz01_memory_diagrams.html"
+            }
         }
     ],
     "2026-02-14": [],
