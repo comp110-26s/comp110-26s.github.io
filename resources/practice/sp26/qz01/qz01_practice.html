@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1770689826.5964267">
+  <link rel="stylesheet" href="/static/styles.css?v=1770691134.1595218">
 </head>
 
 
@@ -109,8 +109,8 @@
 <li><a href="#recursion">Recursion</a>
 <ul>
 <li><a href="#conceptual-1">Conceptual</a></li>
-<li><a href="#code-writing">Code Writing</a></li>
 </ul></li>
+<li><a href="#code-writing">Code-Writing</a></li>
 </ul></li>
 </ul>
 </</ul>
@@ -335,14 +335,12 @@
 </ol>
 </details>
 <p> </p>
-<h3 id="code-writing">Code Writing</h3>
+<h2 id="code-writing">Code-Writing</h2>
 <ol type="1">
 <li><p>Write a function named <code>goldilocks</code> that determines whether a bowl of porridge is at the right temperature. The function should have 3 parameters: <code>porridge_temp</code> (an <code>int</code>), <code>low</code> (an <code>int</code> representing the lower bound of an acceptable temperature), and <code>high</code> (an <code>int</code> representing the upper bound). If <code>porridge_temp</code> is lower than the lower bound, the function should return, “too cold!”. If <code>porridge_temp</code> is higher than the upper bound, the function should return, “too hot!”. If <code>porridge_temp</code> is between the lower and upper bounds, the function should return “just right!”.</p></li>
 <li><p>Write a function named <code>initials</code> that returns a person’s initials based on their first, middle, and last names. The function should have 3 parameters: <code>first</code>, <code>middle</code>, and <code>last</code>, which will all expect <code>str</code> arguments. Many people do not have a middle name, so the middle parameter may store an empty string (""). Your function should include logic to handle this case correctly. If the <code>middle</code> parameter is storing an empty string, your function should return the first character of <code>first</code> and the first character of <code>last</code>, concatenated together into one string. If the <code>middle</code> parameter is not empty, the function should return the first characters of all 3 parameters, concatenated together. For instance the function call expression, <code>initials(first="Ada", middle="", last="Lovelace")</code>, should return <code>"AL"</code>. The function call expression <code>initials("Frederick", "Phillips", "Brooks")</code> should return <code>"FPB"</code>.</p></li>
-<li><p>Write a function named <code>shipping_cost</code> that determines the cost to ship a package based on its weight, label, and destination. The function should have 3 parameters: <code>weight</code> (a <code>float</code>), <code>has_label</code> (a <code>bool</code> representing whether or not the package has a valid shipping label), and <code>international</code> (a <code>bool</code> representing whether the package will be shipped to another country).</p></li>
+<li><p>Write a function named <code>shipping_cost</code> that determines the cost to ship a package based on its weight, label, and destination. The function should have 3 parameters: <code>weight</code> (a <code>float</code>), <code>has_label</code> (a <code>bool</code> representing whether or not the package has a valid shipping label), and <code>international</code> (a <code>bool</code> representing whether the package will be shipped to another country). If <code>has_label</code> is False, the package cannot be shipped, and the function should return 0.0 (no matter the package’s weight or destination). Otherwise, determine the base shipping cost based on the package’s weight. If the <code>weight</code> is at most 1, the base cost is 5.0 (representing $5.00); if the <code>weight</code> is greater than 1 and at most 5, the base cost is 10.0; if the <code>weight</code> is over 5, the base cost is 20.0. If <code>international</code> is True (representing international shipping), add 10.0 to the base cost. The function should return the total cost to ship the package. The following function calls in the REPL exemplify the function’s expected behavior and return values.</p></li>
 </ol>
-<p>If <code>has_label</code> is False, the package cannot be shipped, and the function should return 0.0 (no matter the package’s weight or destination). Otherwise, determine the base shipping cost based on the package’s weight. If the <code>weight</code> is at most 1, the base cost is 5.0 (representing $5.00); if the <code>weight</code> is greater than 1 and at most 5, the base cost is 10.0; if the <code>weight</code> is over 5, the base cost is 20.0. If <code>international</code> is True (representing international shipping), add 10.0 to the base cost. The function should return the total cost to ship the package.</p>
-<p>The following function calls in the REPL exemplify the function’s expected behavior and return values.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a>    <span class="op">&gt;&gt;&gt;</span> shipping_cost(weight<span class="op">=</span><span class="fl">0.5</span>, has_label<span class="op">=</span><span class="va">True</span>, international<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a>    <span class="fl">5.0</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a></span>
@@ -366,11 +364,11 @@
 <div class="sourceCode" id="cb7"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a>    <span class="kw">def</span> goldilocks(porridge_temp: <span class="bu">int</span>, low: <span class="bu">int</span>, high: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a>        <span class="co">&quot;&quot;&quot;Determine if the porridge temperature is between the lower and upper bounds.&quot;&quot;&quot;</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a>        <span class="cf">if</span> porridge_temp <span class="op">&lt;</span> low:</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a>            <span class="cf">return</span> <span class="st">&quot;too cold&quot;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a>            <span class="cf">return</span> <span class="st">&quot;too cold!&quot;</span></span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a>        <span class="cf">elif</span> porridge_temp <span class="op">&gt;</span> high:</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true"></a>            <span class="cf">return</span> <span class="st">&quot;too hot&quot;</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true"></a>            <span class="cf">return</span> <span class="st">&quot;too hot!&quot;</span></span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true"></a>        <span class="cf">else</span>:</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true"></a>            <span class="cf">return</span> <span class="st">&quot;just right&quot;</span></span></code></pre></div>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true"></a>            <span class="cf">return</span> <span class="st">&quot;just right!&quot;</span></span></code></pre></div>
 <ol start="2" type="1">
 <li>Note that there are multiple ways this function could be written that would achieve the desired behavior.</li>
 </ol>
