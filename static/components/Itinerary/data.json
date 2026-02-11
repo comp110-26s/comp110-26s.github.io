@@ -336,16 +336,6 @@
                 "Slides": "/static/slides/cl12.pdf",
                 "Optional Reading": "/lessons/recursion.html"
             }
-        },
-        {
-            "kind": "CQ",
-            "n": 1,
-            "title": "Recursive Memory Diagram",
-            "date": "2026-02-11",
-            "deadline": "2026-02-11",
-            "links": {
-                "": "https://www.gradescope.com"
-            }
         }
     ],
     "2026-02-12": [],
