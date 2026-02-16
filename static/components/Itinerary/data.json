@@ -352,13 +352,17 @@
                 "Memory Diagrams": "/resources/practice/sp26/qz01/qz01_memory_diagrams.html",
                 "Review Session Recording": "https://youtu.be/jp1uWArLD6M"
             }
-        },
+        }
+    ],
+    "2026-02-14": [],
+    "2026-02-15": [],
+    "2026-02-16": [
         {
             "kind": "CL",
             "n": 13,
             "title": "while Loops and relative reassignment operators",
-            "date": "2026-02-13",
-            "deadline": "2026-02-13",
+            "date": "2026-02-16",
+            "deadline": "2026-02-16",
             "links": {
                 "Slides": "/static/slides/cl13.pdf",
                 "Optional Reading about while Loops": "/lessons/while_loops.html"
@@ -368,16 +372,13 @@
             "kind": "LS",
             "n": 9,
             "title": "while Loops",
-            "date": "2026-02-13",
-            "deadline": "2026-02-13",
+            "date": "2026-02-16",
+            "deadline": "2026-02-16",
             "links": {
                 "Complete Lesson 09 Responses on Gradescope": "https://www.gradescope.com/"
             }
         }
     ],
-    "2026-02-14": [],
-    "2026-02-15": [],
-    "2026-02-16": [],
     "2026-02-17": [],
     "2026-02-18": [],
     "2026-02-19": [],
