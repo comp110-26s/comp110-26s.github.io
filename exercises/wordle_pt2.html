@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> EX03 - Structured Wordle - COMP110 - 26S</title>
+  <link rel="icon" type="image/png" href="/static/s25_brand.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/static/styles.css?v=1771423047.7270174">
+</head>
+
+
+<body id="body" class="absolute-page">
+    <script>
+        document.body.classList.remove('light-mode');
+        document.body.classList.remove('dark-mode');
+        document.body.classList.add(localStorage.getItem('mode'));
+    </script>
+  <script src="/static/scripts/nav-menu-esc.js"></script> 
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark py-1 fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/s25_brand.png"
+        alt="COMP110 - Spring - 2025"><img class="darkmode-element-only img-fluid logo" src="/static/s25_brand.png"
+        alt="COMP110 - Spring - 2025"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" onclick="esc_key()" data-bs-target="#navmenu" aria-label="Main Menu" aria-controls="#navmenu" role="navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link " href="/">agenda</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources" class="nav-link">resources</a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="/support" class="nav-link">support</a>
+          </li>
+         
+          <li class="nav-item">
+            <a href="/resources/syllabus.html" class="nav-link">syllabus</a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="/resources/team.html" class="nav-link">team110</a>
+          </li>
+         
+        </ul>
+      </div>
+      <div id='mode-switch' class="ms-auto form-check form-switch mode switches">
+              <div class="switches">
+                  <input type="checkbox" id="1" onclick="
+                      if (localStorage.getItem('mode') === 'dark-mode') {
+                          localStorage.setItem('userPref', 'light-mode');
+                          localStorage.setItem('mode', 'light-mode');
+                      } else {
+                          localStorage.setItem('userPref', 'dark-mode');
+                          localStorage.setItem('mode', 'dark-mode');
+                      }
+                      location.reload();">
+                  <label for="1">
+                      <span id="mode-label">Dark Mode</span>
+                      <span></span>
+                  </label>
+                  <script>if(localStorage.getItem('mode') === 'dark-mode'){document.getElementById("1").checked = true}</script>
+                  <script>if(localStorage.getItem('userPref') === null) {setTimeout(function(){location.reload();}, (timer * 3600000));}</script>
+              </div>
+          </div>
+    </div>
+  </nav>
+
+  <div class="cloud-container">
+    <div id="cloud-intro">
+  <div id="exercises-page" class="container">
+    <div class="row pt-4">
+      <div class="col-12">
+        <h1 id="page-title">EX03 - Structured Wordle</h1>
+      </div>
+    </div>
+    
+
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            <div>
+                <div id="menu-overview" class="link-page-overview horizon-box">
+                    <button id="overview-button" class="btn btn-ov" onclick="hideshow()" >Overview  <img id="button-img" alt="Overview" class="filter-icon" src="/static/components/Itinerary/arrow-up.svg" style="height:15px; padding-left: 4px;"></button>
+                    <div id="overview-links">
+                        <div id="TOC" role="doc-toc">
+                            <ul class="overview-item"><ul>
+<li><a href="#background-lesson-advanced-string-concepts">Background Lesson: Advanced String Concepts</a></li>
+<li><a href="#permitted-constructs">Permitted Constructs</a></li>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#part-0.-setting-up-the-python-program">Part 0. Setting up the Python Program</a></li>
+<li><a href="#part-1.-input_guess">Part 1. <code>input_guess</code></a></li>
+<li><a href="#part-2.-contains_char">Part 2. <code>contains_char</code></a></li>
+<li><a href="#part-3.-emojified">Part 3. <code>emojified</code></a></li>
+<li><a href="#part-4.-main">Part 4. <code>main</code></a></li>
+<li><a href="#part-5.-style-and-documentation-requirements">Part 5. Style and Documentation Requirements</a></li>
+<li><a href="#part-6.-type-safety-and-linting">Part 6. Type Safety and Linting</a></li>
+<li><a href="#make-a-backup-checkpoint-commit">Make a Backup Checkpoint “Commit”</a></li>
+<li><a href="#submit-to-gradescope-for-grading">Submit to Gradescope for Grading</a></li>
+</ul>
+</</ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><p>In this exercise, you will use the concept of <em>loops</em>, as well as the concepts from previous units. Please complete all lessons before beginning this exercise.</p>
+<p>The next step in our journey to implementing <a href="https://www.powerlanguage.co.uk/wordle/">Wordle</a> is to create a program that allows the player to make six guesses at your program’s secret word and provides an emoji representation of the accuracy of each guess, just like in the real game.</p>
+<p>In this exercise, you will prompt the user for a word that matches the length of your secret word. We’ll use <code>"codes"</code> for the purposes of our examples and autograding. Just like in the previous exercise, your program should work with a secret word of any length! After submitting to autograding for full credit, you should change your word and let your friends play your new and improved game.</p>
+<p>Follow the steps below to implement the program, one function at a time. To get a sense of where you are headed, here are two examples of the final game:</p>
+<pre>
+<div class="terminal">
+    $ python -m exercises.ex03_wordle
+    === Turn 1/6 ===
+    Enter a 5 character word: dukes
+    🟨⬜⬜🟩🟩
+    === Turn 2/6 ===
+    Enter a 5 character word: gonna
+    ⬜🟩⬜⬜⬜
+    === Turn 3/6 ===
+    Enter a 5 character word: lose
+    That wasn't 5 chars! Try again: loser
+    ⬜🟩🟨🟩⬜
+    === Turn 4/6 ===
+    Enter a 5 character word: tounc
+    ⬜🟩⬜⬜🟨
+    === Turn 5/6 ===
+    Enter a 5 character word: saturday
+    That wasn't 5 chars! Try again: sat 
+    That wasn't 5 chars! Try again: stday
+    🟨⬜🟩⬜⬜
+    === Turn 6/6 ===
+    Enter a 5 character word: biscuits
+    That wasn't 5 chars! Try again: bscts
+    ⬜🟨🟨⬜🟩
+    X/6 - Sorry, try again tomorrow!
+
+    $ python -m exercises.ex03_wordle
+    === Turn 1/6 ===
+    Enter a 5 character word: ideas
+    ⬜🟨🟨⬜🟩
+    === Turn 2/6 ===
+    Enter a 5 character word: doges
+    🟨🟩⬜🟩🟩
+    === Turn 3/6 ===
+    Enter a 5 character word: codes
+    🟩🟩🟩🟩🟩
+    You won in 3/6 turns!
+</div>
+</pre>
+<h2 id="background-lesson-advanced-string-concepts">Background Lesson: Advanced String Concepts</h2>
+<p>In this exercise you will need to make use of a few advanced string concepts:</p>
+<ol type="1">
+<li>Emoji! 🤠</li>
+<li>Formatted Strings (f-Strings)</li>
+</ol>
+<p>Before beginning work on this exercise, read the following lesson: <a href="/lessons/strings.html">Unicode, Emoji, Escape Sequences, and f-Strings</a></p>
+<h2 id="permitted-constructs">Permitted Constructs</h2>
+<p>We expect you to implement this exercise using only the concepts covered in COMP110. If you have prior programming experience, restrict your implementation to only the concepts covered. While there are many ways to implement this program with additional concepts beyond those we have covered, you should not attempt to do so until after submitting this exercise for full credit once the autograder is posted. Gaining additional practice with the fundamentals may feel clunky, but will help ensure you have full command over the concepts we expect you to know. Additionally, it is good practice for working in other programming environments which are more constrained and require creativity to overcome restrictions. For this exercise, you will be penalized for using any kind of loop construct other than a <code>while</code> loop. Additionally, the <code>in</code> operator, the <code>break</code> operator, and string methods (such as <code>.count</code> and <code>.format</code>) are not permitted.</p>
+<h2 id="overview">Overview</h2>
+<p>In this program you will implement a <code>main</code> function that contains Wordle’s “game loop”. The game loop is what controls the overall game logic:</p>
+<p>The <code>main</code> flow of the game works as follows:</p>
+<ol type="1">
+<li>You have up to six turns</li>
+<li>Each turn, the player gets to <code>input_guess</code> of the same length of the secret word
+<ol type="1">
+<li>If the guess is a different length than the secret word, you get to make additional guesses</li>
+</ol></li>
+<li>The guess is compared with the secret and <code>emojified</code> / “codified” boxes are output
+<ol type="1">
+<li>White for letters that don’t exist in the secret</li>
+<li>Green for letters that match the secret at the same position</li>
+<li>Yellow for each guessed letter the secret <code>contains_char</code>, but at a different position</li>
+</ol></li>
+<li>If the guess was correct, the game is over and the player wins</li>
+<li>If the guess was incorrect, the game loops back to step 2 and continues with the next turn</li>
+</ol>
+<p>Each of the four <code>monospace font-face</code> words above (<code>main</code>, <code>input_guess</code>, <code>emojified</code>, and <code>contains_char</code>) will be implemented as a <em>function</em> definition to more logically structure the process of your program into simpler abstractions that can be reused.</p>
+<p>Along the way, you will be refining the same algorithmic ideas you implemented in EX02, but in a more versatile and structured program.</p>
+<p><strong>Important:</strong> As you progress through the exercise, comment your code! As a general rule, if 2 or more minutes are spent thinking about how to write a particular line or block of code, it’s a good idea to add a comment. Commenting is mandatory as it should be an integral part of the problem-solving process. More information on how commenting will be graded can be found in part 5.</p>
+<h2 id="part-0.-setting-up-the-python-program">Part 0. Setting up the Python Program</h2>
+<p>In Visual Studio Code, be sure your workspace is open. (Reminder: File &gt; Open Recent &gt; comp110-YYS-workspace is a quick way to reopen it! Where YY is the current year and S is the semeseter: S for Spring, F for Fall.)</p>
+<p>Open the Explorer pane (click the icon with two sheets of paper or to to <em>View</em> &gt; <em>Explorer</em>) and expand the <em>Workspace</em> directory.</p>
+<p>Right click on the <code>exercises</code> directory and select “New File”. Enter the following filename, being careful to match capitalization and punctuation:</p>
+<ul>
+<li><code>ex03_wordle.py</code></li>
+</ul>
+<p>Before beginning work on the program, you should add a <em>docstring</em> to the top of your Python <em>module</em> just as you have previously. Then, you should add a line with the special variable named <code>__author__</code> assigned to a <strong>string</strong> containing your 9-digit student PID.</p>
+<h2 id="part-1.-input_guess">Part 1. <code>input_guess</code></h2>
+<p>Declare a function named <code>input_guess</code>. This function will prompt the user to enter a guess and continue prompting them until they provide a guess of the <em>correct length</em>, specified by the function’s parameter. (Hint: this is the perfect scenario to use a loop.) The parameter is an <code>int</code> that holds the value of the number of characters the guess should contain, which corresponds to the length of the secret word. Once the user inputs a guess of the correct length, it should <code>return</code> the guessed word.</p>
+<p>In the previous exercise, EX02, we prompted the user for a secret word using the <code>input_word</code> function and then prompted the user for a character guess through the <code>input_letter</code> function. In both cases, we checked the validity of the length of the input. This time, since we are replicating the game Wordle, the guess word must be the same length as the secret word. Therefore, we only need one function to ensure the guess matches the length of the secret word. Everything in this game is relative to the secret word!</p>
+<p>Once you have implemented this function, you can import it for use in the REPL just like the examples above. Be sure to save your work before restarting the <code>python</code> REPL, then try the following:</p>
+<pre>
+<div class="terminal">
+    $ python
+    Python 3.10.2 (v3.10.2:a58ebcc701, Jan 13 2022, 14:50:16) [Clang 13.0.0 (clang-1300.0.29.30)] on darwin
+    Type "help", "copyright", "credits" or "license" for more information.
+    >>> from exercises.ex03_wordle import input_guess
+    >>> print(input_guess(secret_word_len=5))
+    Enter a 5 character word: gthd
+    That wasn't 5 chars! Try again: gdtbath
+    That wasn't 5 chars! Try again: gounc
+    gounc
+    >>> print(input_guess(secret_word_len=6))
+    Enter a 6 character word: gthd
+    That wasn't 6 chars! Try again: gdtbath
+    That wasn't 6 chars! Try again: goheel
+    goheel
+    >>> print(input_guess(secret_word_len=7))
+    Enter a 7 character word: goheels
+    goheels
+    >>> quit()
+</div>
+</pre>
+<p>As seen in the example usage, if the user provides a guess with an incorrect length, the function will <em>loop</em>, prompting them to try again until they provide a word of the correct length.</p>
+<p>Notice that as the function receives new inputs, the string outputs adjust accordingly. Be sure to use <code>f-string</code> templates for this output, as introduced in the background lesson, rather than using string concatenation.</p>
+<h2 id="part-2.-contains_char">Part 2. <code>contains_char</code></h2>
+<p>In EX02, we defined a function <code>contains_char</code>. This function was designed to check whether a specific character (provided as a single-character string) was present at any index within a given word (provided as a string). The function manually checked each index of the word (using multiple <code>if</code> statements), assuming a fixed length of 5 for the word. If the character was found, it printed a message indicating the index or indices where the match occurred.</p>
+<p>Now, we will be defining a similar function with some modifications. Instead of printing the indices where the character is found, this new function will test each index of the first parameter string to see if it matches the second parameter. If a match is found, the function should return <code>True</code>. If the character is not found after checking all indices, the function should return <code>False</code>. Additionally, this function will be versatile, meaning it should work with words of any length, not just those of a fixed length.</p>
+<p>Declare a function named <code>contains_char</code> with the following specifications:</p>
+<ol type="1">
+<li>It has two parameters (name them descriptively)
+<ol type="1">
+<li>A string that is being searched through for occurences of the second parameter.</li>
+<li>A string that is expected to be a single character in length and is the character being searched for</li>
+</ol></li>
+<li>A boolean return type</li>
+<li>A docstring describing the purpose of the function in your own words</li>
+</ol>
+<p>Since the caller of this function can be expected to provide the correct arguments, specifically a second argument whose length is one, we will “assert” this assumption in our code such that an error is raised if it is not found to be true. As the first line of code in your function’s body, add the following assert statement and fill in the blank (<code>_____</code>) with your second parameter’s name:</p>
+<p><code>assert len(_______) == 1</code></p>
+<p>Once you have your best first attempt to implement this function, you can import it for use in the REPL to test it out. Save your work and then run the following commands:</p>
+<pre>
+<div class="terminal">
+    $ python                         
+    Python 3.10.2 (v3.10.2:a58ebcc701, Jan 13 2022, 14:50:16) [Clang 13.0.0 (clang-1300.0.29.30)] on darwin
+    Type "help", "copyright", "credits" or "license" for more information.
+
+    >>> from exercises.ex03_wordle import contains_char
+    >>> print(contains_char(secret_word="abc", char_guess="b"))
+    True
+    >>> print(contains_char(secret_word="abc", char_guess="c"))
+    True
+    >>> print(contains_char(secret_word="abc", char_guess="a"))
+    True
+    >>> print(contains_char(secret_word="abc", char_guess="z"))
+    False
+    >>> print(contains_char(secret_word="abc", char_guess="zz"))
+    Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+    File "......../exercises/ex03_wordle.py", line 48, in contains_char
+        assert len(char_guess) == 1
+    AssertionError
+    >>> quit()
+</div>
+</pre>
+<p>Notice, in the REPL, the line <code>from exercises.ex03_wordle import contains_char</code> will <code>import</code> your function definition <code>from</code> your <code>exercises.ex03_wordle</code> so that you can make use of your function in the REPL. You can then type out example <em>function calls</em> to test your implementation and be sure your function definition is returning the correct and expected values, as shown above. Your results must match exactly (except for the ellipses File details near the AssertionError).</p>
+<h2 id="part-3.-emojified">Part 3. <code>emojified</code></h2>
+<p>For this next part, we will use emojis to visually represent the accuracy of a guess in relation to a secret word. The function will use colored emojis to indicate whether a character in the guess is in the correct position (green), present but in the wrong position (yellow), or not present at all (white). Unlike the previous functions, this concept introduces a new way to visualize the results using emojis!</p>
+<p>Declare a function named <code>emojified</code>. Its purpose is to compare two strings of equal length—-the first being the user’s guess and the second being the secret word. The function will return a string composed of emojis. Go ahead and add a docstring describing what the function will do (you can do this at the end once you get a better idea of how the function works but don’t forget).</p>
+<p>Since you can reasonably expect anyone using this function to provide strings of equal length, you can add the following assertion as the first line of your function implementation following your docstring, replacing the capitalized words with your function’s parameter’s names:</p>
+<p><code>assert len(REPLACE_THIS_WITH_YOUR_GUESS_PARAMETERS_NAME) == len(REPLACE_THIS_WITH_YOUR_SECRET_PARAMETERS_NAME)</code></p>
+<p>For each index you check, you will need to build up a string using concatenation of emojis. You can use the following <em>named constants</em> in your program to simplify your implementation. We will learn more about named constants soon, but for now know they are simply variables whose values you will not change later in your program and make your programs easier to read:</p>
+<pre><code>    WHITE_BOX: str = &quot;\U00002B1C&quot;
+    GREEN_BOX: str = &quot;\U0001F7E9&quot;
+    YELLOW_BOX: str = &quot;\U0001F7E8&quot;</code></pre>
+<p>Your function should use a <code>while</code> loop to test each index of secret words of arbitrary lengths. Additionally, the body of this function must use <code>contains_char</code> to determine whether to use yellow or white box emojis. Consider the following scenarios to guide you toward the correct implementation:</p>
+<ol type="1">
+<li><p><em>If</em> the character at the current index of the guess word matches the character at the same index in the secret word, what should you do?</p></li>
+<li><p><strong>When</strong> the <em>first scenario is not met</em>, you should check if the character of the guess word is present in the secret word. <em>If</em> it is, what should you do? How will you know the character at the current index is present in the secret word?</p></li>
+<li><p><strong>When</strong> <em>neither of the above scenarios are met</em>, this means the character at the current index in the guess word is not present in the secret word at all. In this case, what should you do?</p></li>
+</ol>
+<p>Once you have implemented this function, you can import it for use in the REPL to test it out, just like above. Be sure to save your work each time before restarting the <code>python</code> REPL, then try the following:</p>
+<pre>
+<div class="terminal">
+    $ python
+    Python 3.10.2 (v3.10.2:a58ebcc701, Jan 13 2022, 14:50:16) [Clang 13.0.0 (clang-1300.0.29.30)] on darwin
+    Type "help", "copyright", "credits" or "license" for more information.
+    >>> from exercises.ex03_wordle import emojified
+    >>> print(emojified(guess="hello", secret="world"))
+    ⬜⬜🟨🟩🟨
+    >>> print(emojified(guess="elloh", secret="hello"))
+    🟨🟨🟩🟨🟨
+    >>> print(emojified(guess="python", secret="wohoo"))
+    Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+    File "......../exercises/ex03_wordle.py", line 33, in emojified
+        assert len(guess) == len(secret)
+    AssertionError
+    >>> print(emojified(guess="python", secret="woohoo"))
+    ⬜⬜⬜🟩🟩⬜
+    >>> print(emojified(guess="python", secret="python"))
+    🟩🟩🟩🟩🟩🟩
+    >>> print(emojified(guess="yikyak", secret="tiktok"))
+    ⬜🟩🟩⬜⬜🟩
+    >>> quit()
+</div>
+</pre>
+<p>Now you have a function that, given a guess and a secret of the same length, will Wordle emojify the results of the guess! Notice how your <code>emojified</code> function makes use of the simpler <code>contains_char</code> function to build up more complex behavior. This is the beauty of abstraction!</p>
+<p>Once your <code>emojified</code> function is working correctly, as shown above, continue on.</p>
+<h2 id="part-4.-main">Part 4. <code>main</code></h2>
+<p>Now it’s time to bring together your functions into a <code>main</code> function that handles the high-level logic of the Wordle game loop. The <code>main</code> function will take as input the secret word, track the number of turns the user has taken, determine if the user has won the game, and manage the flow of the game.</p>
+<p>The declaration of your <code>main</code> function is unlike the functions above because it will not have any parameters and it will return <code>None</code>. You can decare your main function as follows:</p>
+<pre><code>    def main(secret: str) -&gt; None:
+        &quot;&quot;&quot;The entrypoint of the program and main game loop.&quot;&quot;&quot;
+        # Your code will go here</code></pre>
+<p>The “state” of a game refers to the variables you need to keep track of in memory in order to run the game. What variables do you need to keep track of? Define those inside of <code>main</code>’s body first.</p>
+<p>Then, begin the game loop <code>while</code> the user still has turns left to play <em>and</em> has not yet won, you will want to do the following:</p>
+<ol type="1">
+<li>Print the current turn number in a format such as <code>=== Turn 1/6 ===</code></li>
+<li>Prompt the user for a guess, relying on your function <code>input_guess</code> to obtain a guess of the correct length.</li>
+<li>Codify the emoji results of the user’s guess versus the secret by making use of your <code>emojified</code> function. Print the resulting codified string.</li>
+<li>If the user’s guess <em>is</em> the secret, the user has won!</li>
+<li>Otherwise, move on to the next turn.</li>
+</ol>
+<p>After the game loop, if the user won, print <code>You won in N/6 turns!</code> where N is replaced with the number of guesses it took to get the word. Otherwise, when the user does not guess the word in 6 or fewer guesses, print the following message: <code>X/6 - Sorry, try again tomorrow!</code> where <code>X</code> is literally the character <code>X</code>.</p>
+<p>As you are working on <code>main</code>, you can save your work and import the <code>main</code> function just like the others to try calling it:</p>
+<pre>
+<div class="terminal">
+    $ python
+    Python 3.10.2 (v3.10.2:a58ebcc701, Jan 13 2022, 14:50:16) [Clang 13.0.0 (clang-1300.0.29.30)] on darwin
+    Type "help", "copyright", "credits" or "license" for more information.
+    >>> from exercises.ex03_wordle import main
+    >>> main(secret="codes")
+    === Turn 1/6 ===
+    Enter a 5 character word: ideas
+    ⬜🟨🟨⬜🟩
+    === Turn 2/6 ===
+    Enter a 5 character word: codes
+    🟩🟩🟩🟩🟩
+    You won in 2/6 turns!
+
+    >>> main(secret="codes")
+    === Turn 1/6 ===
+    Enter a 5 character word: wohoo
+    ⬜🟩⬜🟨🟨
+    === Turn 2/6 ===
+    Enter a 5 character word: wohoo
+    ⬜🟩⬜🟨🟨
+    === Turn 3/6 ===
+    Enter a 5 character word: wohoo
+    ⬜🟩⬜🟨🟨
+    === Turn 4/6 ===
+    Enter a 5 character word: wohoo
+    ⬜🟩⬜🟨🟨
+    === Turn 5/6 ===
+    Enter a 5 character word: wohoo
+    ⬜🟩⬜🟨🟨
+    === Turn 6/6 ===
+    Enter a 5 character word: wohoo
+    ⬜🟩⬜🟨🟨
+    X/6 - Sorry, try again tomorrow!
+
+    >>> main(secret="codess")
+    === Turn 1/6 ===
+    Enter a 6 character word: s
+    That wasn't 6 chars! Try again: horses
+    ⬜🟩⬜🟨🟨🟩
+    === Turn 2/6 ===
+    Enter a 6 character word: meows
+    That wasn't 6 chars! Try again: farther
+    That wasn't 6 chars! Try again: useage
+    ⬜🟨🟨⬜⬜🟨
+    === Turn 3/6 ===
+    Enter a 6 character word: raining
+    That wasn't 6 chars! Try again: rainss
+    ⬜⬜⬜⬜🟩🟩
+    === Turn 4/6 ===
+    Enter a 6 character word: mouths 
+    ⬜🟩⬜⬜⬜🟩
+    === Turn 5/6 ===
+    Enter a 6 character word: umbrells
+    That wasn't 6 chars! Try again: umbrel
+    ⬜⬜⬜⬜🟨⬜
+    === Turn 6/6 ===
+    Enter a 6 character word: peonys
+    ⬜🟨🟨⬜⬜🟩
+    X/6 - Sorry, try again tomorrow!
+    >>> quit()
+</div>
+</pre>
+<p>Once you have your <code>main</code> function and game loop working, there’s only one last part. Just like with EX02, add the following snippet of code as the last 2 lines of your program (notice, there are two underscores <em>on both sides</em> of the words <code>name</code> and <code>main</code>):</p>
+<pre><code>    if __name__ == &quot;__main__&quot;:
+        main(secret=&quot;codes&quot;)</code></pre>
+<p>As mentioned before, we will fully explain what is going on in the following code snippet soon, but for now note that this is an idiom common to Python programs like the one you have written. We will learn it does two things: 1. it makes it possible to run your Python program as a module (if you tried <code>python -m exercises.ex03_wordle</code> right now you would see nothing happens), and 2. it makes it possible for other modules to <em>import</em> your functions and reuse them.</p>
+<p>Now you can try running your game as a module and it should work: <code>python -m exercises.ex03_wordle</code></p>
+<p>Congratulations on writing your first <em>structured</em> program in COMP110!</p>
+<h2 id="part-5.-style-and-documentation-requirements">Part 5. Style and Documentation Requirements</h2>
+<p>We will manually grade your code and are looking for good choices of meaningful variable names. Your variable names should be descriptive of their purposes. (Loop indexing variables can be short, such as <code>i</code>, or <code>idx</code>.) You should also use the Python <code>snake_case</code> convention where variable names are all lowercase and new words are separated by underscores.</p>
+<p>You should add code comments in your own English words to describe what is happening at important stages of your program.</p>
+<p>Your program should work regardless of the secret’s length. Thus, you should not have any hard-coded numbers (such as <code>6</code> for <code>"python"</code>). All numbers that appear in output and the boundaries of loops should be based on the <code>len</code>-gth of your secret word.</p>
+<p>As part of the manual grading, we will be looking to see if you have commented on your code! No comments imply that there were no challenges or moments spent considering how to approach a code. It is quite rare to complete every exercise, challenge question, and practice problem without engaging in some form of problem-solving. Even the most experienced programmers use a piece of paper to map out their approach when working on practice problems, often leading to comments being added to code.</p>
+<p>As a general rule, if 2 or more minutes are spent thinking about how to write a particular line or block of code, it’s a good idea to add a comment. Explain what’s happening on that line, how the solution was reached, the reasoning behind the approach, or provide a note for future reference to recall the problem-solving steps. If you received help from office hours or tutoring, go back to the code you were stuck on and explain it to yourself. If you see that you need a second to understand what is going on, comment!</p>
+<p>Comments don’t need to be extensive, but they should reflect a genuine effort to explain the process in your own words. Commenting should be an integral part of the problem-solving process.</p>
+<h2 id="part-6.-type-safety-and-linting">Part 6. Type Safety and Linting</h2>
+<p>The autograder uses industry standard tools for checking the type safety of your programs (e.g. being sure you’re using variables of the correct data types in valid ways) and linting style rules. If you have point deductions on Type Safety or Linting, read through the feedback the autograder gives and it should direct you to the line number in your program with the issue.</p>
+<h2 id="make-a-backup-checkpoint-commit">Make a Backup Checkpoint “Commit”</h2>
+<p>As you make progress on this exercise, making backups is encouraged.</p>
+<ol type="1">
+<li>Open the Source Control panel (Command Palette: “Show SCM” or click the icon with three circles and lines on the activity panel).</li>
+<li>Notice the files listed under Changes. These are files you’ve made modifications to since your last backup.</li>
+<li>Move your mouse’s cursor over the word <em>Changes</em> and notice the + symbol that appears. Click that plus symbol to add all changes to the next backup. You will now see the files listed under “Staged Changes”.
+<ul>
+<li>If you do not want to backup <em>all</em> changed files, you can select them individually. For this course you’re encouraged to back everything up.</li>
+</ul></li>
+<li>In the Message box, give a brief description of what you’ve changed and are backing up. This will help you find a specific backup (called a “commit”) if needed. In this case a message such as, “Progress on Exercise N” will suffice, where N is the current exercise.</li>
+<li>Press the Check icon to make a <em>Commit</em> (a version) of your work.</li>
+<li>Finally, press the Ellipses icon (…), look for “Pull/Push” submenu, and select “Push to…”, and in the dropdown select your backup repository.</li>
+</ol>
+<h2 id="submit-to-gradescope-for-grading">Submit to Gradescope for Grading</h2>
+<p>All that’s left now is to hand-in your work on Gradescope for grading!</p>
+<p>Login to Gradescope and select the assignment named “EX03 - Structured Wordle”. You’ll see an area to upload a zip file. To produce a zip file for autograding, return back to Visual Studio Code.</p>
+<p>If you <em>do not</em> see a Terminal at the bottom of your screen, open the Command Palette and search for “View: Toggle Integrated Terminal”.</p>
+<p>Type the following command (all on a single line):</p>
+<p><code>python -m tools.submission exercises/ex03_wordle.py</code></p>
+<p>In the file explorer pane, look to find the zip file named “yy.mm.dd-hh.mm-exercises-ex01_chardle.py.zip”. The “yy”, “mm”, “dd”, and so on, are timestamps with the current year, month, day, hour, minute. If you right click on this file and select “Reveal in File Explorer” on Windows or “Reveal in Finder” on Mac, the zip file’s location on your computer will open. Upload this file to Gradescope to submit your work for this exercise.</p>
+<p>Autograding will take a few moments to complete. For this exercise there will be 20 “human graded” points.</p>
+</div>
+
+       
+
+    </div> 
+    </div>
+    </div>
+    <div class="authors-box bg-dark mt-4 py-3 ps-4">
+      <span> Contributor(s):        Kris Jordan,        Alyssa Byrnes,        Viktorya Hunanyan, Izzi Hinks</span>
+    </div>
+
+  </div>
+  <div class='link-page mt-3 container'>
+    <footer>
+      <h3 class="text-center align-middle footer-text">&copy; 2025 <a href="https://krisjordan.com">Kris Jordan</a>
+        - <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSenaJ2uZ_n2FfAb2PWL6YPG4AUT-G2-xVJP6HIwMr6cd6nSYA/viewform?usp=sf_link">Feedback
+          Form</a>
+        - Made with 💛 in <a href="https://cs.unc.edu/">Chapel Hill</a></h3>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <!-- Code Block Formatting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <script>hljs.initLineNumbersOnLoad();</script>
+  <script>hljs.highlightAll();</script>
+  
+</body>
+
+</html>

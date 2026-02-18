@@ -1,29 +1,36 @@
 {
-    "2026-02-16": [
+    "2026-02-18": [
         {
             "kind": "CL",
-            "n": 13,
-            "title": "while Loops and relative reassignment operators",
-            "date": "2026-02-16",
-            "deadline": "2026-02-16",
+            "n": 14,
+            "title": "Intro to Lists",
+            "date": "2026-02-18",
+            "deadline": "2026-02-18",
             "links": {
-                "Slides": "/static/slides/cl13.pdf",
-                "Optional Reading about while Loops": "/lessons/while_loops.html"
+                "Slides": "/static/slides/cl14.pdf"
             }
         },
         {
             "kind": "LS",
-            "n": 9,
-            "title": "while Loops",
-            "date": "2026-02-16",
-            "deadline": "2026-02-16",
+            "n": 10,
+            "title": "Lists",
+            "date": "2026-02-18",
+            "deadline": "2026-02-18",
             "links": {
-                "Complete Lesson 09 Responses on Gradescope": "https://www.gradescope.com/"
+                "Complete Lesson 10 Responses on Gradescope": "https://www.gradescope.com/"
+            }
+        },
+        {
+            "kind": "EX",
+            "n": 3,
+            "title": "Wordle (Due Monday 2/23)",
+            "date": "2026-02-18",
+            "deadline": "2026-02-23",
+            "links": {
+                "": "/exercises/wordle_pt2.html"
             }
         }
     ],
-    "2026-02-17": [],
-    "2026-02-18": [],
     "2026-02-19": [],
     "2026-02-20": [],
     "2026-02-21": [],
