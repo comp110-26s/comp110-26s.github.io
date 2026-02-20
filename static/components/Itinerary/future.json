@@ -1,38 +1,16 @@
 {
-    "2026-02-18": [
+    "2026-02-20": [
         {
             "kind": "CL",
-            "n": 14,
-            "title": "Intro to Lists",
-            "date": "2026-02-18",
-            "deadline": "2026-02-18",
+            "n": 15,
+            "title": "Reference Types and Practice with Lists",
+            "date": "2026-02-20",
+            "deadline": "2026-02-20",
             "links": {
-                "Slides": "/static/slides/cl14.pdf"
-            }
-        },
-        {
-            "kind": "LS",
-            "n": 10,
-            "title": "Lists",
-            "date": "2026-02-18",
-            "deadline": "2026-02-18",
-            "links": {
-                "Complete Lesson 10 Responses on Gradescope": "https://www.gradescope.com/"
-            }
-        },
-        {
-            "kind": "EX",
-            "n": 3,
-            "title": "Wordle (Due Monday 2/23)",
-            "date": "2026-02-18",
-            "deadline": "2026-02-23",
-            "links": {
-                "": "/exercises/wordle_pt2.html"
+                "Slides": "/static/slides/cl15.pdf"
             }
         }
     ],
-    "2026-02-19": [],
-    "2026-02-20": [],
     "2026-02-21": [],
     "2026-02-22": [],
     "2026-02-23": [],

@@ -379,5 +379,38 @@
             }
         }
     ],
-    "2026-02-17": []
+    "2026-02-17": [],
+    "2026-02-18": [
+        {
+            "kind": "CL",
+            "n": 14,
+            "title": "Intro to Lists",
+            "date": "2026-02-18",
+            "deadline": "2026-02-18",
+            "links": {
+                "Slides": "/static/slides/cl14.pdf"
+            }
+        },
+        {
+            "kind": "LS",
+            "n": 10,
+            "title": "Lists",
+            "date": "2026-02-18",
+            "deadline": "2026-02-18",
+            "links": {
+                "Complete Lesson 10 Responses on Gradescope": "https://www.gradescope.com/"
+            }
+        },
+        {
+            "kind": "EX",
+            "n": 3,
+            "title": "Wordle (Due Monday 2/23)",
+            "date": "2026-02-18",
+            "deadline": "2026-02-23",
+            "links": {
+                "": "/exercises/wordle_pt2.html"
+            }
+        }
+    ],
+    "2026-02-19": []
 }
