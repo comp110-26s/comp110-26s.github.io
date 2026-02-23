@@ -412,5 +412,19 @@
             }
         }
     ],
-    "2026-02-19": []
+    "2026-02-19": [],
+    "2026-02-20": [
+        {
+            "kind": "CL",
+            "n": 15,
+            "title": "Reference Types and Practice with Lists",
+            "date": "2026-02-20",
+            "deadline": "2026-02-20",
+            "links": {
+                "Slides": "/static/slides/cl15.pdf"
+            }
+        }
+    ],
+    "2026-02-21": [],
+    "2026-02-22": []
 }

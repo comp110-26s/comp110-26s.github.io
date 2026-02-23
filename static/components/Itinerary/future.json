@@ -1,19 +1,16 @@
 {
-    "2026-02-20": [
+    "2026-02-23": [
         {
             "kind": "CL",
-            "n": 15,
-            "title": "Reference Types and Practice with Lists",
-            "date": "2026-02-20",
-            "deadline": "2026-02-20",
+            "n": 16,
+            "title": "Practice with Lists and while Loops",
+            "date": "2026-02-23",
+            "deadline": "2026-02-23",
             "links": {
-                "Slides": "/static/slides/cl15.pdf"
+                "Slides": "/static/slides/cl16.pdf"
             }
         }
     ],
-    "2026-02-21": [],
-    "2026-02-22": [],
-    "2026-02-23": [],
     "2026-02-24": [],
     "2026-02-25": [],
     "2026-02-26": [],
