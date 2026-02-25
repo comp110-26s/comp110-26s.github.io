@@ -426,5 +426,18 @@
         }
     ],
     "2026-02-21": [],
-    "2026-02-22": []
+    "2026-02-22": [],
+    "2026-02-23": [
+        {
+            "kind": "CL",
+            "n": 16,
+            "title": "Practice with Lists and while Loops",
+            "date": "2026-02-23",
+            "deadline": "2026-02-23",
+            "links": {
+                "Slides": "/static/slides/cl16_blank.pdf"
+            }
+        }
+    ],
+    "2026-02-24": []
 }
