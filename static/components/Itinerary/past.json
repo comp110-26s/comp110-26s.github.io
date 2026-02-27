@@ -439,5 +439,28 @@
             }
         }
     ],
-    "2026-02-24": []
+    "2026-02-24": [],
+    "2026-02-25": [
+        {
+            "kind": "CL",
+            "n": 17,
+            "title": "Intro to Sets and Dictionaries",
+            "date": "2026-02-25",
+            "deadline": "2026-02-25",
+            "links": {
+                "Slides": "/static/slides/cl17.pdf"
+            }
+        },
+        {
+            "kind": "EX",
+            "n": 4,
+            "title": "List Utils (Due Tuesday 3/3)",
+            "date": "2026-02-25",
+            "deadline": "2026-03-03",
+            "links": {
+                "": "/exercises/ex04_list_utils.html"
+            }
+        }
+    ],
+    "2026-02-26": []
 }
