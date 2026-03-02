@@ -462,5 +462,29 @@
             }
         }
     ],
-    "2026-02-26": []
+    "2026-02-26": [],
+    "2026-02-27": [
+        {
+            "kind": "CL",
+            "n": 18,
+            "title": "More on Sets and Dictionaries",
+            "date": "2026-02-27",
+            "deadline": "2026-02-27",
+            "links": {
+                "Slides": "/static/slides/cl18.pdf"
+            }
+        },
+        {
+            "kind": "LS",
+            "n": 11,
+            "title": "Dictionaries",
+            "date": "2026-02-27",
+            "deadline": "2026-02-27",
+            "links": {
+                "Complete Lesson 11 Responses on Gradescope": "https://www.gradescope.com/"
+            }
+        }
+    ],
+    "2026-02-28": [],
+    "2026-03-01": []
 }
