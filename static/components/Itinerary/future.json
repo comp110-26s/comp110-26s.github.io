@@ -1,28 +1,16 @@
 {
-    "2026-03-02": [
+    "2026-03-04": [
         {
             "kind": "CL",
-            "n": 19,
-            "title": "Sets, Dictionaries, and Intro to for Loops",
-            "date": "2026-03-02",
-            "deadline": "2026-03-02",
+            "n": 20,
+            "title": "range() and List and Dictionary Practice",
+            "date": "2026-03-04",
+            "deadline": "2026-03-04",
             "links": {
-                "Slides": "/static/slides/cl19.pdf"
-            }
-        },
-        {
-            "kind": "CQ",
-            "n": 1,
-            "title": "Looping Practice",
-            "date": "2026-03-02",
-            "deadline": "2026-03-02",
-            "links": {
-                "": "https://www.gradescope.com"
+                "Slides": "/static/slides/cl20.pdf"
             }
         }
     ],
-    "2026-03-03": [],
-    "2026-03-04": [],
     "2026-03-05": [],
     "2026-03-06": [],
     "2026-03-07": [],
