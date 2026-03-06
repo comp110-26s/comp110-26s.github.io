@@ -541,7 +541,8 @@
             "date": "2026-03-06",
             "deadline": "2026-03-06",
             "links": {
-                "Slides": "/static/slides/cl21.pdf"
+                "Blank Slides": "/static/slides/cl21.pdf",
+                "Annotated Slides": "/static/slides/cl21_annotated.pdf"
             }
         }
     ],
