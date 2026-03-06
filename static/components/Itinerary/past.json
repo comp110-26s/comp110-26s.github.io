@@ -509,5 +509,28 @@
             }
         }
     ],
-    "2026-03-03": []
+    "2026-03-03": [],
+    "2026-03-04": [
+        {
+            "kind": "CL",
+            "n": 20,
+            "title": "range() and List and Dictionary Practice",
+            "date": "2026-03-04",
+            "deadline": "2026-03-04",
+            "links": {
+                "Slides": "/static/slides/cl20.pdf"
+            }
+        },
+        {
+            "kind": "EX",
+            "n": 5,
+            "title": "Dictionary Utility Functions (Due Monday 3/9)",
+            "date": "2026-03-04",
+            "deadline": "2026-03-09",
+            "links": {
+                "": "/exercises/ex05_dict_utils.html"
+            }
+        }
+    ],
+    "2026-03-05": []
 }
