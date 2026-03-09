@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1773077049.146053">
+  <link rel="stylesheet" href="/static/styles.css?v=1773077381.7690394">
 </head>
 
 
@@ -340,8 +340,8 @@
 <li><p>The following questions will refer to the dictionary below:</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true"></a>tarheels_numbers: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">int</span>] <span class="op">=</span> {<span class="st">&quot;Wilson&quot;</span>: <span class="dv">8</span>, <span class="st">&quot;Trimble&quot;</span>: <span class="dv">7</span>, <span class="st">&quot;Veesaar&quot;</span>: <span class="dv">13</span>, <span class="st">&quot;Evans&quot;</span>: <span class="dv">0</span>, <span class="st">&quot;Bogavac&quot;</span>: <span class="dv">44</span>}</span></code></pre></div>
 <p>7.1. What will print from the following code:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true"></a>    <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(my_dict)): </span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true"></a>        <span class="bu">print</span>(my_dict[x])</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true"></a>    <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(tarheels_numbers)): </span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true"></a>        <span class="bu">print</span>(tarheels_numbers[x])</span></code></pre></div>
 <ol type="a">
 <li><p><code>0, 1, 2, 3, 4</code></p></li>
 <li><p><code>Wilson, Trimble, Veesaar, Evans, Bogavac</code></p></li>
@@ -349,7 +349,7 @@
 <li><p>An error will occur when this code is run.</p></li>
 </ol>
 <p>7.2. What will print from the following code:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true"></a>    <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(my_dict)): </span>
+<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true"></a>    <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(tarheels_numbers)): </span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true"></a>        <span class="bu">print</span>(x)</span></code></pre></div>
 <ol type="a">
 <li><p><code>0, 1, 2, 3, 4</code></p></li>
@@ -358,8 +358,8 @@
 <li><p>An error will occur when this code is run.</p></li>
 </ol>
 <p>7.3. What will print from the following code:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true"></a>    <span class="cf">for</span> x <span class="kw">in</span> my_dict: </span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true"></a>        <span class="bu">print</span>(my_dict[x])</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true"></a>    <span class="cf">for</span> x <span class="kw">in</span> tarheels_numbers: </span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true"></a>        <span class="bu">print</span>(tarheels_numbers[x])</span></code></pre></div>
 <ol type="a">
 <li><p><code>0, 1, 2, 3, 4</code></p></li>
 <li><p><code>Wilson, Trimble, Veesaar, Evans, Bogavac</code></p></li>
@@ -367,7 +367,7 @@
 <li><p>An error will occur when this code is run.</p></li>
 </ol>
 <p>7.4. What will print from the following code:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true"></a>    <span class="cf">for</span> x <span class="kw">in</span> my_dict: </span>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true"></a>    <span class="cf">for</span> x <span class="kw">in</span> tarheels_numbers: </span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true"></a>        <span class="bu">print</span>(x)</span></code></pre></div>
 <ol type="a">
 <li><p><code>0, 1, 2, 3, 4</code></p></li>
@@ -377,7 +377,7 @@
 </ol>
 <p>7.5. What will print from the following code:</p>
 <div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true"></a>    x: <span class="bu">int</span> <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true"></a>    <span class="cf">while</span> x <span class="op">&lt;</span> <span class="bu">int</span>(<span class="bu">len</span>(my_dict) <span class="op">/</span> <span class="dv">2</span>): </span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true"></a>    <span class="cf">while</span> x <span class="op">&lt;</span> <span class="bu">int</span>(<span class="bu">len</span>(tarheels_numbers) <span class="op">/</span> <span class="dv">2</span>): </span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true"></a>        <span class="bu">print</span>(x)</span>
 <span id="cb28-4"><a href="#cb28-4" aria-hidden="true"></a>        x <span class="op">+=</span> <span class="dv">1</span></span></code></pre></div>
 <ol type="a">
