@@ -532,5 +532,20 @@
             }
         }
     ],
-    "2026-03-05": []
+    "2026-03-05": [],
+    "2026-03-06": [
+        {
+            "kind": "CL",
+            "n": 21,
+            "title": "Brief Intro to Time Complexity",
+            "date": "2026-03-06",
+            "deadline": "2026-03-06",
+            "links": {
+                "Blank Slides": "/static/slides/cl21.pdf",
+                "Annotated Slides": "/static/slides/cl21_annotated.pdf"
+            }
+        }
+    ],
+    "2026-03-07": [],
+    "2026-03-08": []
 }

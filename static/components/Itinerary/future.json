@@ -1,20 +1,16 @@
 {
-    "2026-03-06": [
+    "2026-03-09": [
         {
             "kind": "CL",
-            "n": 21,
-            "title": "Brief Intro to Time Complexity",
-            "date": "2026-03-06",
-            "deadline": "2026-03-06",
+            "n": 22,
+            "title": "Importing and Writing Automated Tests for Functions",
+            "date": "2026-03-09",
+            "deadline": "2026-03-09",
             "links": {
-                "Blank Slides": "/static/slides/cl21.pdf",
-                "Annotated Slides": "/static/slides/cl21_annotated.pdf"
+                "Slides": "/static/slides/cl22.pdf"
             }
         }
     ],
-    "2026-03-07": [],
-    "2026-03-08": [],
-    "2026-03-09": [],
     "2026-03-10": [],
     "2026-03-11": [],
     "2026-03-12": [],
