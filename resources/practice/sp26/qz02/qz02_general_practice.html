@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1773077381.7690394">
+  <link rel="stylesheet" href="/static/styles.css?v=1773170909.524266">
 </head>
 
 
@@ -459,7 +459,11 @@
 <p>6.1. (a) <code>dog, cat, mouse, bird, whale</code> 6.2. (c) <code>10, 20, 100, 50, 5</code></p></li>
 <li><p>The following answers refer to the dictionary below:</p>
 <div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true"></a>    tarheels_numbers: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">int</span>] <span class="op">=</span> {<span class="st">&quot;Wilson&quot;</span>: <span class="dv">8</span>, <span class="st">&quot;Trimble&quot;</span>: <span class="dv">7</span>, <span class="st">&quot;Veesaar&quot;</span>: <span class="dv">13</span>, <span class="st">&quot;Evans&quot;</span>: <span class="dv">0</span>, <span class="st">&quot;Bogavac&quot;</span>: <span class="dv">44</span>}</span></code></pre></div>
-<p>7.1. (d) An error will occur when this code is run. (<code>range</code> and <code>while</code> loops are generally incompatible with dictionaries as unlike lists, they are not indexed by sequential integers beginning at 0. In this case <code>range</code> produces invalid keys since our keys are of type <code>str</code>.) 7.2. (a) <code>0, 1, 2, 3, 4</code> 7.3. (b) <code>Wilson, Trimble, Veesaar, Evans, Bogavac</code> 7.4. (c) <code>8, 7, 13, 0, 44</code> 7.5. (d) An error will occur when this code is run. (<code>range</code> and <code>while</code> loops are generally incompatible with dictionaries as unlike lists, they are not indexed by sequential integers beginning at 0. In this case a <code>while</code> loop that increments an indexing variable <code>x</code> produces invalid keys since our keys are of type <code>str</code>.)</p></li>
+<p>7.1. (d) An error will occur when this code is run. (<code>range</code> and <code>while</code> loops are generally incompatible with dictionaries as unlike lists, they are not indexed by sequential integers beginning at 0. In this case <code>range</code> produces invalid keys since our keys are of type <code>str</code>.)</p>
+<p>7.2. (a) <code>0, 1, 2, 3, 4</code></p>
+<p>7.3. (c) <code>8, 7, 13, 0, 44</code></p>
+<p>7.4. (b) <code>Wilson, Trimble, Veesaar, Evans, Bogavac</code></p>
+<p>7.5. (d) An error will occur when this code is run. (<code>range</code> and <code>while</code> loops are generally incompatible with dictionaries as unlike lists, they are not indexed by sequential integers beginning at 0. In this case a <code>while</code> loop that increments an indexing variable <code>x</code> produces invalid keys since our keys are of type <code>str</code>.)</p></li>
 <li><p><code>my_dictionary: dict[str, float] = {}</code> or <code>my_dictionary: dict[str, float] = dict()</code></p></li>
 <li><p><code>msg["Yall"]</code></p></li>
 <li><p><code>msg["Yall"] += 3</code> or <code>msg["Yall"] = 5</code></p></li>
@@ -512,7 +516,51 @@
     ``` -->
 </details>
 <h1 id="unit-tests-conceptual-practice-only">Unit Tests (Conceptual Practice Only)</h1>
-<p><em>Coming soon!</em></p>
+<ol type="1">
+<li><p>Testing Syntax:</p>
+<p>1.1. What key word do we use within a test function to ensure that a boolean expression is true?</p>
+<p>1.2. What does each test function’s name have to begin with?</p>
+<p>1.3. What does each test file’s name have to end with?</p></li>
+<li><p>If a function passes all of its associated unit tests, then the function is implemented correctly for all possible inputs (True/False).</p></li>
+<li><p>What is the difference between testing a use case versus an edge case of a function in general?</p>
+<ol type="a">
+<li><p>Testing an edge case is testing a function when it is given expected or normal inputs, while testing a use case is testing a function when it is given unexpected or incorrect inputs to a function, very often an “empty” input.</p></li>
+<li><p>Testing an edge case is testing a function when it is given unexpected or incorrect inputs to a function, very often an “empty” input, while testing a use case is testing a function when it is given expected or normal inputs.</p></li>
+<li><p>Testing an edge case is when you test what happens when a function is given an empty input, while testing a use case is when you test what happens when a function is given nonempty input.</p></li>
+<li><p>None of the above.</p></li>
+</ol></li>
+<li><p>Consider the following code snippet:</p></li>
+</ol>
+<div class="sourceCode" id="cb40"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true"></a><span class="kw">def</span> fill_list(num: <span class="bu">int</span>, length: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">list</span>[<span class="bu">int</span>]:</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true"></a>    <span class="co">&quot;&quot;&quot;Fill a list with a single value.&quot;&quot;&quot;</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true"></a>    result: <span class="bu">list</span>[<span class="bu">int</span>] <span class="op">=</span> []</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true"></a></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true"></a>    i: <span class="bu">int</span> <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true"></a>    <span class="cf">while</span> i <span class="op">&lt;</span> length:</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true"></a>        result.append[num]</span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true"></a>        i <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true"></a></span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true"></a>    <span class="cf">return</span> result</span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true"></a></span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true"></a>list_A: <span class="bu">list</span>[<span class="bu">int</span>] <span class="op">=</span> fill_list(<span class="dv">4</span>, <span class="dv">19</span>) </span>
+<span id="cb40-13"><a href="#cb40-13" aria-hidden="true"></a>list_B: <span class="bu">list</span>[<span class="bu">int</span>] <span class="op">=</span> fill_list(<span class="dv">55</span>, <span class="op">-</span><span class="dv">2</span>)</span>
+<span id="cb40-14"><a href="#cb40-14" aria-hidden="true"></a>list_C: <span class="bu">list</span>[<span class="bu">int</span>] <span class="op">=</span> fill_list(<span class="dv">1</span>, <span class="dv">110</span>)</span></code></pre></div>
+<p>Which function calls would be considered a use case of this function (list the associated variable name e.g. <code>list_A</code>)? Which would be considered edge cases? If there are any edge cases, what result would you get in the associated variable(s)?</p>
+<details>
+<p><summary>SOLUTIONS</summary></p>
+<ol type="1">
+<li><p>Question 1 Answers:</p>
+<p>1.1. <code>assert</code></p>
+<p>1.2. <code>test_</code></p>
+<p>1.3. <code>_test.py</code></p></li>
+<li><p>This is False, as unit tests themselves can be incorrect so all tests passing is no guarantee of correctness even for the inputs the unit tests are testing for. Even if the unit tests are correct, there can still be certain inputs that they do not test for and therefore the unit tests cannot assure you that a function will always work properly. Unit tests are a helpful tool that can work well when implemented over a wide range of test inputs, but they must be accompanied by thoughtful implementation of the original function.</p></li>
+<li><ol start="2" type="a">
+<li>Testing an edge case is testing a function when it is given unexpected or incorrect inputs to a function, very often an “empty” input, while testing a use case is testing a function when it is given expected or normal inputs.</li>
+</ol>
+<p>The reason it is not answer choice c is because while empty vs nonempty inputs is often a distinction between edge cases and use cases, this is not true in all cases (some functions could expect empty inputs, for example).</p></li>
+<li><p><code>list_A</code> and <code>list_C</code> would be use cases since this is how we would expect this function to be used and <code>list_B</code> would be an edge case as this is essentially attempting to make a function call that would construct a list of negative length since our <code>length</code> argument is -2. In this edge case the result would be an empty list since we would never enter the <code>while</code> loop. It is possible that this is the intended behavior, or that maybe the original programmer never thought anyone would give a negative argument for <code>length</code>.</p></li>
+</ol>
+</details>
 </div>
 
        
