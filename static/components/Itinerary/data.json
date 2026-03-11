@@ -569,7 +569,17 @@
             "date": "2026-03-11",
             "deadline": "2026-03-11",
             "links": {
-                "Slides": "/"
+                "Slides": "/static/slides/cl23.pdf"
+            }
+        },
+        {
+            "kind": "LS",
+            "n": 12,
+            "title": "Unit Tests",
+            "date": "2026-03-11",
+            "deadline": "2026-03-11",
+            "links": {
+                "Complete Lesson 12 Responses on Gradescope": "https://www.gradescope.com/"
             }
         }
     ],
@@ -586,7 +596,7 @@
                 "General Practice": "/resources/practice/sp26/qz02/qz02_general_practice.html",
                 "Memory Diagram Practice": "/resources/practice/sp26/qz02/qz02_memory_diagrams.html",
                 "Function Writing Practice": "/resources/practice/sp26/qz02/qz02_function_practice.html",
-                "Hybrid Review Session at 6pm on Wed, March 11 in SN014 and online (Passcode: 110110)": "https://unc.zoom.us/j/92903380303?pwd=kPSixUoA9CI4vazM1oHWFIp7BJ9Ara.1"
+                "Hybrid Review Session from 6-7pm on Wed, March 11 in SN014 and online (Passcode: 110110)": "https://unc.zoom.us/j/92903380303?pwd=kPSixUoA9CI4vazM1oHWFIp7BJ9Ara.1"
             }
         }
     ],
