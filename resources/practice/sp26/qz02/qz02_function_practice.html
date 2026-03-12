@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1773258251.7959743">
+  <link rel="stylesheet" href="/static/styles.css?v=1773280571.861159">
 </head>
 
 
@@ -243,25 +243,25 @@ Your function, `process_and_reverse_list`, should follow a structured approach t
 <p><a href="#value_exists-solution">Solution</a></p>
 <h2 id="plus_or_minus_n"><code>plus_or_minus_n</code></h2>
 <ul>
-<li>The function name is <code>plus_or_minus_n</code> and is called with <code>inp: dict[str,int]</code> and <code>n: int</code> as an argument.</li>
-<li>The function should return <code>None</code>. It instead <em>mutates</em> the input dictionary <code>inp</code>.</li>
-<li>The function should check if each <em>value</em> in <code>inp</code> is even or odd. If it is even, add <code>n</code> to that value. If it is odd, subtract <code>n</code>.</li>
-<li>Explicitly type variables, parameters, and return types.</li>
-<li>The following REPL examples demonstrate expected functionality of your function:</li>
+<li><p>The function name is <code>plus_or_minus_n</code> and is called with <code>inp: dict[str,int]</code> and <code>n: int</code> as an argument.</p></li>
+<li><p>The function should return <code>None</code>. It instead <em>mutates</em> the input dictionary <code>inp</code>.</p></li>
+<li><p>The function should check if each <em>value</em> in <code>inp</code> is even or odd. If it is even, add <code>n</code> to that value. If it is odd, subtract <code>n</code>.</p></li>
+<li><p>Explicitly type variables, parameters, and return types.</p></li>
+<li><p>The following REPL examples demonstrate expected functionality of your function:</p>
+<pre>
+  <div class="terminal">
+  >>> test_dict: dict[str,int] = {"a": 2, "b": 4, "c": 7, "d": 1}
+  >>> test_val: int = 4
+  >>> plus_or_minus_n(test_dict, test_val)
+  >>> test_dict
+  {"a": 6, "b": 8, "c": 3, "d": -3}
+  </div>
+  </pre></li>
 </ul>
 <p><a href="#plus_or_minus_n-solution">Solution</a></p>
 <h2 id="free_biscuits"><code>free_biscuits</code></h2>
-Write a function called <code>free_biscuits</code>. Given a dictionary with <code>str</code> keys (representing basketball games) and <code>list[int]</code> values (representing points scored by players), <code>free_biscuits</code> should return a new dictionary of type <code>dict[str, bool]</code> that maps each game to a boolean value for free biscuits. (<code>True</code> if the points add up to 100+, <code>False</code> if otherwise)<br />
-Example: <code>free_biscuits({ “UNCvsDuke”: [38, 20, 42] , “UNCvsState”: [9, 51, 16, 23] })</code> should return <code>{ “UNCvsDuke”: True, “UNCvsState”: False }</code>.
-<pre>
-    <div class="terminal">
-    >>> test_dict: dict[str,int] = {"a": 2, "b": 4, "c": 7, "d": 1}
-    >>> test_val: int = 4
-    >>> plus_or_minus_n(test_dict, test_val)
-    >>> test_dict
-    {"a": 6, "b": 8, "c": 3, "d": -3}
-    </div>
-    </pre>
+<p>Write a function called <code>free_biscuits</code>. Given a dictionary with <code>str</code> keys (representing basketball games) and <code>list[int]</code> values (representing points scored by players), <code>free_biscuits</code> should return a new dictionary of type <code>dict[str, bool]</code> that maps each game to a boolean value for free biscuits. (<code>True</code> if the points add up to 100+, <code>False</code> if otherwise)<br />
+Example: <code>free_biscuits({ “UNCvsDuke”: [38, 20, 42] , “UNCvsState”: [9, 51, 16, 23] })</code> should return <code>{ “UNCvsDuke”: True, “UNCvsState”: False }</code>.</p>
 <p><a href="#free_biscuits-solution">Solution</a></p>
 <!-- ## `max_key`
 
