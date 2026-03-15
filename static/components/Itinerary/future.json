@@ -1,44 +1,4 @@
 {
-    "2026-03-11": [
-        {
-            "kind": "CL",
-            "n": 23,
-            "title": "More on Automated Tests for Functions",
-            "date": "2026-03-11",
-            "deadline": "2026-03-11",
-            "links": {
-                "Slides": "/static/slides/cl23.pdf"
-            }
-        },
-        {
-            "kind": "LS",
-            "n": 12,
-            "title": "Unit Tests",
-            "date": "2026-03-11",
-            "deadline": "2026-03-11",
-            "links": {
-                "Complete Lesson 12 Responses on Gradescope": "https://www.gradescope.com/"
-            }
-        }
-    ],
-    "2026-03-12": [],
-    "2026-03-13": [
-        {
-            "kind": "QZ",
-            "n": 2,
-            "title": "Quiz 2",
-            "date": "2026-03-13",
-            "deadline": "2026-03-13",
-            "links": {
-                "Read Quiz Expectations": "/resources/quiz-expectations.html",
-                "General Practice": "/resources/practice/sp26/qz02/qz02_general_practice.html",
-                "Memory Diagram Practice": "/resources/practice/sp26/qz02/qz02_memory_diagrams.html",
-                "Function Writing Practice": "/resources/practice/sp26/qz02/qz02_function_practice.html",
-                "Review Session Recording": "https://uncch.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=fd806ce6-e76f-4833-8d7b-b40a018204c2"
-            }
-        }
-    ],
-    "2026-03-14": [],
     "2026-03-15": [],
     "2026-03-16": [],
     "2026-03-17": [],
