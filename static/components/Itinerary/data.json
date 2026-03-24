@@ -617,7 +617,8 @@
             "date": "2026-03-23",
             "deadline": "2026-03-23",
             "links": {
-                "Slides": "/static/slides/cl24.pdf"
+                "Slides": "/static/slides/cl24.pdf",
+                "Lecture Recording": "https://uncch.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=c798c73b-dd03-4839-b379-b41601181593"
             }
         }
     ],
