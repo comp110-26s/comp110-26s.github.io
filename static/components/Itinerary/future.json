@@ -1,6 +1,26 @@
 {
-    "2026-03-24": [],
-    "2026-03-25": [],
+    "2026-03-25": [
+        {
+            "kind": "CL",
+            "n": 25,
+            "title": "OOP Part 2: Classes and Methods",
+            "date": "2026-03-25",
+            "deadline": "2026-03-25",
+            "links": {
+                "Slides": "/static/slides/cl25.pdf"
+            }
+        },
+        {
+            "kind": "LS",
+            "n": 13,
+            "title": "Intro to Object-Oriented Programming",
+            "date": "2026-03-25",
+            "deadline": "2026-03-25",
+            "links": {
+                "Complete Lesson 13 Responses on Gradescope": "https://www.gradescope.com/"
+            }
+        }
+    ],
     "2026-03-26": [],
     "2026-03-27": [],
     "2026-03-28": [],
