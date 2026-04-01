@@ -1,18 +1,46 @@
 {
-    "2026-03-30": [
+    "2026-04-01": [
         {
             "kind": "CL",
-            "n": 27,
-            "title": "Intro to Magic Methods",
-            "date": "2026-03-30",
-            "deadline": "2026-03-30",
+            "n": 28,
+            "title": "Magic Methods and Operator Overloads",
+            "date": "2026-04-01",
+            "deadline": "2026-04-01",
             "links": {
-                "Slides": "/static/slides/cl27.pdf"
+                "Slides": "/static/slides/cl28.pdf"
+            }
+        },
+        {
+            "kind": "LS",
+            "n": 14,
+            "title": "Magic Methods and Operator Overloads",
+            "date": "2026-04-01",
+            "deadline": "2026-04-01",
+            "links": {
+                "Complete Lesson 14 Responses on Gradescope": "https://www.gradescope.com/"
+            }
+        },
+        {
+            "kind": "LS",
+            "n": 15,
+            "title": "Class Survey (Due Tuesday 4/7)",
+            "date": "2026-04-01",
+            "deadline": "2026-04-07",
+            "links": {
+                "Complete Lesson 15 Responses on Gradescope": "https://www.gradescope.com/"
+            }
+        },
+        {
+            "kind": "EX",
+            "n": 7,
+            "title": "River Simulation (Due Thursday 4/9)",
+            "date": "2026-04-01",
+            "deadline": "2026-04-09",
+            "links": {
+                "": "/exercises/ex07_riversim_mm.html"
             }
         }
     ],
-    "2026-03-31": [],
-    "2026-04-01": [],
     "2026-04-02": [],
     "2026-04-03": [],
     "2026-04-04": [],
