@@ -753,7 +753,29 @@
         }
     ],
     "2026-04-07": [],
-    "2026-04-08": [],
+    "2026-04-08": [
+        {
+            "kind": "CL",
+            "n": 30,
+            "title": "Practice with Recursive Structures and Processes",
+            "date": "2026-04-08",
+            "deadline": "2026-04-08",
+            "links": {
+                "Slides": "/static/slides/cl30.pdf",
+                "Optional Reading to Review Recursion": "/lessons/recursion.html"
+            }
+        },
+        {
+            "kind": "LS",
+            "n": 16,
+            "title": "Recursive Structures",
+            "date": "2026-04-08",
+            "deadline": "2026-04-08",
+            "links": {
+                "Complete Lesson 16 Responses on Gradescope": "https://www.gradescope.com/"
+            }
+        }
+    ],
     "2026-04-09": [],
     "2026-04-10": [],
     "2026-04-11": [],
