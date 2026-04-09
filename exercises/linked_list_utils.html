@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1775652938.185615">
+  <link rel="stylesheet" href="/static/styles.css?v=1775735320.7224743">
 </head>
 
 
@@ -110,7 +110,7 @@
         </div>
         <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h2 id="overview">Overview</h2>
 <p>In these exercises you will implement a few algorithms to process a singly-linked list data structure.</p>
-<p>In the last few lectures, we have been writing methods and functions for the <code>Node</code> class. In this exercise, you will be creating functions that take in and/or return <code>Node</code> objects. Create a new folder in your <code>exercises</code> folder called <code>ex07</code>, and then create a new file in the <code>ex07</code> folder called <code>linked_list.py</code>. Then, copy your code of the <code>Node</code> class we’ve been using in lectures and paste it into your <code>linked_list.py</code> file. You must use <strong>recursive function calls</strong> to implement the functions below. If you use loops, your work for that function will be disqualified.</p>
+<p>In the last few lectures, we have been writing methods and functions for the <code>Node</code> class. In this exercise, you will be creating functions that take in and/or return <code>Node</code> objects. Create a new folder in your <code>exercises</code> folder called <code>ex08</code>, and then create a new file in the <code>ex08</code> folder called <code>linked_list.py</code>. Then, copy your code of the <code>Node</code> class we’ve been using in lectures and paste it into your <code>linked_list.py</code> file. You must use <strong>recursive function calls</strong> to implement the functions below. If you use loops, your work for that function will be disqualified.</p>
 <p><strong>Please note that in this exercise, you should limit yourself to make use of only the concepts and constructs we have covered in lecture. We will penalize the usage of deprecated constructs (often suggested by generative AI models) and concepts we have not covered. Limiting yourself to only what we have covered is good practice. Anything we have discussed in lecture is permitted.</strong></p>
 <h2 id="value_at"><code>value_at</code></h2>
 <p>Given a <code>head</code> <code>Node | None</code> and an <code>index</code> <code>int</code> as inputs, return the <em>value</em> of the Node stored at the given index, or raise an <code>IndexError</code> if the <code>index</code> does not exist.</p>
@@ -123,7 +123,7 @@
 <p>Example usage:</p>
 <pre>
 <div class="terminal">
->>> from exercises.ex07.linked_list import Node, value_at
+>>> from exercises.ex08.linked_list import Node, value_at
 >>> value_at(Node(10, Node(20, Node(30, None))), 0)
 10
 >>> value_at(Node(10, Node(20, Node(30, None))), 1)
@@ -141,7 +141,7 @@ IndexError: Index is out of bounds on the list.
         raise ValueError(&quot;Cannot call max with None&quot;)</code></pre>
 <pre>
 <div class="terminal">
->>> from exercises.ex07.linked_list import Node, max
+>>> from exercises.ex08.linked_list import Node, max
 >>> max(Node(10, Node(20, Node(30, None))))
 30
 >>> max(Node(10, Node(30, Node(20, None))))
@@ -175,7 +175,7 @@ ValueError: Cannot call max with None.
 <p>Example usage:</p>
 <pre>
 <div class="terminal">
->>> from exercises.ex07.linked_list import linkify
+>>> from exercises.ex08.linked_list import linkify
 >>> linkify([1, 2, 3])
 1 -> 2 -> 3 -> None
 </div>
@@ -189,7 +189,7 @@ ValueError: Cannot call max with None.
 <p>Example usage:</p>
 <pre>
 <div class="terminal">
->>> from exercises.ex07.linked_list import scale, linkify
+>>> from exercises.ex08.linked_list import scale, linkify
 >>> scale(linkify([1, 2, 3]), 2)
 2 -> 4 -> 6 -> None
 </div>
@@ -201,7 +201,7 @@ ValueError: Cannot call max with None.
 
 Remember: Focus on what you need to do with only the head node and then leave the rest of the problem working through the rest of the list to the recursive function call. -->
 <p>When you are ready to submit for grading, run the following command:</p>
-<p><code>python -m tools.submission exercises/ex07</code></p>
+<p><code>python -m tools.submission exercises/ex08</code></p>
 </div>
 
        
