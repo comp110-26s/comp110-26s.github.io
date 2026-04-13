@@ -7,7 +7,17 @@
             "date": "2026-04-13",
             "deadline": "2026-04-13",
             "links": {
-                "Slides": "/"
+                "Slides": "/static/slides/cl32.pdf"
+            }
+        },
+        {
+            "kind": "CQ",
+            "n": 3,
+            "title": "Linked List Traversal Questions",
+            "date": "2026-04-13",
+            "deadline": "2026-04-13",
+            "links": {
+                "": "https://www.gradescope.com"
             }
         }
     ],
