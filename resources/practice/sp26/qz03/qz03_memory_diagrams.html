@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Quiz 03 Memory Diagram Practice - COMP110 - 26S</title>
+  <link rel="icon" type="image/png" href="/static/s25_brand.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/static/styles.css?v=1776079321.8468654">
+</head>
+
+
+<body id="body" class="absolute-page">
+    <script>
+        document.body.classList.remove('light-mode');
+        document.body.classList.remove('dark-mode');
+        document.body.classList.add(localStorage.getItem('mode'));
+    </script>
+  <script src="/static/scripts/nav-menu-esc.js"></script> 
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark py-1 fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/s25_brand.png"
+        alt="COMP110 - Spring - 2025"><img class="darkmode-element-only img-fluid logo" src="/static/s25_brand.png"
+        alt="COMP110 - Spring - 2025"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" onclick="esc_key()" data-bs-target="#navmenu" aria-label="Main Menu" aria-controls="#navmenu" role="navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link " href="/">agenda</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources" class="nav-link">resources</a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="/support" class="nav-link">support</a>
+          </li>
+         
+          <li class="nav-item">
+            <a href="/resources/syllabus.html" class="nav-link">syllabus</a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="/resources/team.html" class="nav-link">team110</a>
+          </li>
+         
+        </ul>
+      </div>
+      <div id='mode-switch' class="ms-auto form-check form-switch mode switches">
+              <div class="switches">
+                  <input type="checkbox" id="1" onclick="
+                      if (localStorage.getItem('mode') === 'dark-mode') {
+                          localStorage.setItem('userPref', 'light-mode');
+                          localStorage.setItem('mode', 'light-mode');
+                      } else {
+                          localStorage.setItem('userPref', 'dark-mode');
+                          localStorage.setItem('mode', 'dark-mode');
+                      }
+                      location.reload();">
+                  <label for="1">
+                      <span id="mode-label">Dark Mode</span>
+                      <span></span>
+                  </label>
+                  <script>if(localStorage.getItem('mode') === 'dark-mode'){document.getElementById("1").checked = true}</script>
+                  <script>if(localStorage.getItem('userPref') === null) {setTimeout(function(){location.reload();}, (timer * 3600000));}</script>
+              </div>
+          </div>
+    </div>
+  </nav>
+
+  <div class="cloud-container">
+    <div id="cloud-intro">
+  <div id="lessons-page" class="container">
+    <div class="row pt-4">
+      <div class="col-12">
+        <h1 id="page-title">Quiz 03 Memory Diagram Practice</h1>
+      </div>
+    </div>
+    
+
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            <div>
+                <div id="menu-overview" class="link-page-overview horizon-box">
+                    <button id="overview-button" class="btn btn-ov" onclick="hideshow()" >Overview  <img id="button-img" alt="Overview" class="filter-icon" src="/static/components/Itinerary/arrow-up.svg" style="height:15px; padding-left: 4px;"></button>
+                    <div id="overview-links">
+                        <div id="TOC" role="doc-toc">
+                            <ul class="overview-item"><ul>
+<li><a href="#object-oriented-programming">Object-Oriented Programming</a></li>
+<li><a href="#magic-methods">Magic Methods</a></li>
+<li><a href="#recursive-structures">Recursive Structures</a></li>
+</ul>
+</</ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="object-oriented-programming">Object-Oriented Programming</h1>
+<ol type="1">
+<li>Complete a memory diagram for the following code listing.</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="dv">1</span> <span class="kw">class</span> Dog:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="dv">2</span>     name: <span class="bu">str</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="dv">3</span>     age: <span class="bu">int</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="dv">4</span>     </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="dv">5</span>     <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, n: <span class="bu">str</span>, a:<span class="bu">int</span>):</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a><span class="dv">6</span>         <span class="va">self</span>.name <span class="op">=</span> n</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a><span class="dv">7</span>         <span class="va">self</span>.age <span class="op">=</span> a</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a><span class="dv">8</span>         </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a><span class="dv">9</span>     <span class="kw">def</span> speak(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="va">None</span>: </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a><span class="dv">10</span>        <span class="bu">print</span>(<span class="va">self</span>.name <span class="op">+</span> <span class="st">&quot; says woof!&quot;</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a><span class="dv">11</span>        </span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a><span class="dv">12</span>    <span class="kw">def</span> birthday(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a><span class="dv">13</span>        <span class="va">self</span>.age <span class="op">+=</span> <span class="dv">1</span> </span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true"></a><span class="dv">14</span>        <span class="cf">return</span> <span class="va">self</span>.age</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true"></a><span class="dv">15</span>        </span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true"></a><span class="dv">16</span> <span class="kw">class</span> Cat:</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true"></a><span class="dv">17</span>    name: <span class="bu">str</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true"></a><span class="dv">18</span>    age: <span class="bu">int</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true"></a><span class="dv">19</span>    </span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true"></a><span class="dv">20</span>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, n: <span class="bu">str</span>, a:<span class="bu">int</span>):</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true"></a><span class="dv">21</span>        <span class="va">self</span>.name <span class="op">=</span> n</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true"></a><span class="dv">22</span>        <span class="va">self</span>.age <span class="op">=</span> a</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true"></a><span class="dv">23</span>        </span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true"></a><span class="dv">24</span>    <span class="kw">def</span> speak(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="va">None</span>: </span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true"></a><span class="dv">25</span>        <span class="bu">print</span>(<span class="va">self</span>.name <span class="op">+</span> <span class="st">&quot; says meow!&quot;</span>)</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true"></a><span class="dv">26</span>        </span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true"></a><span class="dv">27</span>    <span class="kw">def</span> birthday(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true"></a><span class="dv">28</span>        <span class="va">self</span>.age <span class="op">+=</span> <span class="dv">1</span> </span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true"></a><span class="dv">29</span>        <span class="cf">return</span> <span class="va">self</span>.age</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true"></a><span class="dv">30</span>    </span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true"></a><span class="dv">31</span> rory: Dog <span class="op">=</span> Dog(n <span class="op">=</span> <span class="st">&quot;Rory&quot;</span>, a <span class="op">=</span> <span class="dv">4</span>)</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true"></a><span class="dv">32</span> <span class="bu">print</span>(rory.birthday())</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true"></a><span class="dv">33</span> miso: Cat <span class="op">=</span> Cat(<span class="st">&quot;Miso&quot;</span>, <span class="dv">2</span>)</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true"></a><span class="dv">34</span> miso.speak()</span></code></pre></div>
+<ol start="2" type="1">
+<li>Complete a memory diagram for the following code listing.</li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="dv">1</span>  <span class="kw">class</span> Concert:</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a><span class="dv">2</span>      artist: <span class="bu">str</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a><span class="dv">3</span>      seats: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">bool</span>]</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a><span class="dv">4</span>  </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a><span class="dv">5</span>      <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, a: <span class="bu">str</span>, s: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">bool</span>]):</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a><span class="dv">6</span>          <span class="va">self</span>.artist <span class="op">=</span> a</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a><span class="dv">7</span>          <span class="va">self</span>.seats <span class="op">=</span> s</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true"></a><span class="dv">8</span>  </span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true"></a><span class="dv">9</span>      <span class="kw">def</span> assign_seats(<span class="va">self</span>, wanted_seats: <span class="bu">list</span>[<span class="bu">str</span>], name: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true"></a><span class="dv">10</span>         <span class="cf">for</span> seat <span class="kw">in</span> wanted_seats:</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true"></a><span class="dv">11</span>             <span class="cf">if</span> seat <span class="kw">in</span> <span class="va">self</span>.seats:</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true"></a><span class="dv">12</span>                 available: <span class="bu">bool</span> <span class="op">=</span> <span class="va">self</span>.seats[seat]</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true"></a><span class="dv">13</span>                 <span class="cf">if</span> available:</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true"></a><span class="dv">14</span>                     <span class="bu">print</span>(<span class="ss">f&quot;</span><span class="sc">{</span>name<span class="sc">}</span><span class="ss"> bought seat </span><span class="sc">{</span>seat<span class="sc">}</span><span class="ss"> to see </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>artist<span class="sc">}</span><span class="ss">!&quot;</span>)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true"></a><span class="dv">15</span>                     <span class="va">self</span>.seats[seat] <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true"></a><span class="dv">16</span>                 <span class="cf">else</span>: </span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true"></a><span class="dv">17</span>                    <span class="bu">print</span>(<span class="ss">f&quot;Seat </span><span class="sc">{</span>seat<span class="sc">}</span><span class="ss"> is unavailable :(&quot;</span>)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true"></a><span class="dv">18</span> </span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true"></a><span class="dv">19</span> lenovo_seats: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">bool</span>] <span class="op">=</span> {<span class="st">&quot;K1&quot;</span>: <span class="va">True</span>, <span class="st">&quot;K2&quot;</span>: <span class="va">True</span>, <span class="st">&quot;K3&quot;</span>: <span class="va">False</span>}</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true"></a><span class="dv">20</span> show: Concert <span class="op">=</span> Concert(a <span class="op">=</span> <span class="st">&quot;Travisty&quot;</span>, s <span class="op">=</span> lenovo_seats)</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true"></a><span class="dv">21</span> show.assign_seats(wanted_seats <span class="op">=</span> [<span class="st">&quot;K2&quot;</span>, <span class="st">&quot;K3&quot;</span>], name <span class="op">=</span> <span class="st">&quot;Kay&quot;</span>)</span></code></pre></div>
+<details>
+<p><summary>SOLUTIONS</summary></p>
+<ol type="1">
+<li>Dog and Cat memory diagram solution (see the solution video <a href="https://youtu.be/_S1ISCVHdic">here</a>!).</li>
+</ol>
+<p><img class="img-fluid" src="/static/practice/qz03_practice/dog_cat.png" alt="Memory diagram of code listing with Dog and Cat classes."  /></p>
+<ol start="2" type="1">
+<li>Concert memory diagram solution (see the solution video <a href="https://youtu.be/Fr0lF3o9u5o">here</a>!).</li>
+</ol>
+<p><img class="img-fluid" src="/static/practice/qz03_practice/concert.png" alt="Memory diagram of code listing with Concert classes."  /></p>
+</details>
+<h1 id="magic-methods">Magic Methods</h1>
+<ol type="1">
+<li>Diagram the following code snippet:</li>
+</ol>
+<div class="sourceCode" id="cb3"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="dv">1</span>     <span class="kw">class</span> Knight:</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a><span class="dv">2</span>         <span class="st">&quot;&quot;&quot;A medieval Knight.&quot;&quot;&quot;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a><span class="dv">3</span>         name: <span class="bu">str</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a><span class="dv">4</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a><span class="dv">5</span>         <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name: <span class="bu">str</span>):</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a><span class="dv">6</span>             <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a><span class="dv">7</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a><span class="dv">8</span>         <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true"></a><span class="dv">9</span>             <span class="cf">return</span> <span class="ss">f&quot;Sir </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss">&quot;</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true"></a><span class="dv">10</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true"></a><span class="dv">11</span>    <span class="kw">class</span> Castle:</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true"></a><span class="dv">12</span>        <span class="st">&quot;&quot;&quot;A medieval castle with a drawbridge for crossing a surrounding moat and a guarding knight.&quot;&quot;&quot;</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true"></a><span class="dv">13</span>        guard: Knight</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true"></a><span class="dv">14</span>        drawbridge_up: <span class="bu">bool</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true"></a><span class="dv">15</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true"></a><span class="dv">16</span>        <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, guard: Knight, bridge_up: <span class="bu">bool</span>):</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true"></a><span class="dv">17</span>            <span class="va">self</span>.guard <span class="op">=</span> guard</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true"></a><span class="dv">18</span>            <span class="va">self</span>.drawbridge_up <span class="op">=</span> bridge_up</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true"></a><span class="dv">19</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true"></a><span class="dv">20</span>        <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true"></a><span class="dv">21</span>            <span class="cf">if</span> <span class="va">self</span>.drawbridge_up:</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true"></a><span class="dv">22</span>                <span class="cf">return</span> <span class="ss">f&quot;Guarded by </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>guard<span class="sc">}</span><span class="ss"> and closed to outsiders!&quot;</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true"></a><span class="dv">23</span>            <span class="cf">else</span>:</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true"></a><span class="dv">24</span>                <span class="cf">return</span> <span class="ss">f&quot;Guarded by </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>guard<span class="sc">}</span><span class="ss"> but open to all!&quot;</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true"></a><span class="dv">25</span>            </span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true"></a><span class="dv">26</span>        <span class="kw">def</span> <span class="bu">open</span>(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true"></a><span class="dv">27</span>            <span class="cf">if</span> <span class="va">self</span>.drawbridge_up:</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true"></a><span class="dv">28</span>                <span class="bu">print</span>(<span class="st">&quot;Let down the bridge!&quot;</span>)</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true"></a><span class="dv">29</span>                <span class="va">self</span>.drawbridge_up <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true"></a><span class="dv">30</span>            <span class="cf">else</span>:</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true"></a><span class="dv">31</span>                <span class="bu">print</span>(<span class="st">&quot;Already open!&quot;</span>)</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true"></a><span class="dv">32</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true"></a><span class="dv">33</span>        <span class="kw">def</span> close(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true"></a><span class="dv">34</span>            <span class="cf">if</span> <span class="kw">not</span> <span class="va">self</span>.drawbridge_up:</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true"></a><span class="dv">35</span>                <span class="bu">print</span>(<span class="st">&quot;Pull up the bridge!&quot;</span>)</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true"></a><span class="dv">36</span>                <span class="va">self</span>.drawbridge_up <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true"></a><span class="dv">37</span>            <span class="cf">else</span>:</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true"></a><span class="dv">38</span>                <span class="bu">print</span>(<span class="st">&quot;Already closed!&quot;</span>)</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true"></a><span class="dv">39</span></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true"></a><span class="dv">40</span></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true"></a><span class="dv">41</span>    lancelot: Knight <span class="op">=</span> Knight(<span class="st">&quot;Lancelot&quot;</span>)</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true"></a><span class="dv">42</span>    my_castle: Castle <span class="op">=</span> Castle(lancelot, <span class="va">False</span>)</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true"></a><span class="dv">43</span>    <span class="bu">print</span>(my_castle)</span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true"></a><span class="dv">44</span>    my_castle.close()</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true"></a><span class="dv">45</span>    <span class="bu">print</span>(my_castle)</span></code></pre></div>
+<details>
+<p><summary>SOLUTION</summary></p>
+<p><img class="img-fluid" src="/static/practice/qz04_practice/castle_soln.png" alt="Memory diagram of code listing with Guard and Castle classes."  /></p>
+</details>
+<h1 id="recursive-structures">Recursive Structures</h1>
+<ol type="1">
+<li><p>Create a memory diagram of the following code snippet:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="dv">1</span>     <span class="st">&quot;&quot;&quot;A messy linked list...&quot;&quot;&quot;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a><span class="dv">2</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a><span class="dv">3</span>     <span class="im">from</span> __future__ <span class="im">import</span> annotations</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a><span class="dv">4</span> </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a><span class="dv">5</span>     <span class="co"># Node class definition included for reference!</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a><span class="dv">6</span>     <span class="kw">class</span> Node:</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a><span class="dv">7</span>         value: <span class="bu">int</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true"></a><span class="dv">8</span>         <span class="bu">next</span>: Node <span class="op">|</span> <span class="va">None</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true"></a><span class="dv">9</span> </span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true"></a><span class="dv">10</span>        <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, val: <span class="bu">int</span>, <span class="bu">next</span>: Node <span class="op">|</span> <span class="va">None</span>):</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true"></a><span class="dv">11</span>            <span class="va">self</span>.value <span class="op">=</span> val</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true"></a><span class="dv">12</span>            <span class="va">self</span>.<span class="bu">next</span> <span class="op">=</span> <span class="bu">next</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true"></a><span class="dv">13</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true"></a><span class="dv">14</span>        <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true"></a><span class="dv">15</span>            rest: <span class="bu">str</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true"></a><span class="dv">16</span>            <span class="cf">if</span> <span class="va">self</span>.<span class="bu">next</span> <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true"></a><span class="dv">17</span>                rest <span class="op">=</span> <span class="st">&quot;None&quot;</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true"></a><span class="dv">18</span>            <span class="cf">else</span>:</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true"></a><span class="dv">19</span>                rest <span class="op">=</span> <span class="bu">str</span>(<span class="va">self</span>.<span class="bu">next</span>)</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true"></a><span class="dv">20</span>            <span class="cf">return</span> <span class="ss">f&quot;</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>value<span class="sc">}</span><span class="ss"> -&gt; </span><span class="sc">{</span>rest<span class="sc">}</span><span class="ss">&quot;</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true"></a><span class="dv">21</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true"></a><span class="dv">22</span>    knight: Node <span class="op">=</span> Node(<span class="dv">3</span>, <span class="va">None</span>)</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true"></a><span class="dv">23</span>    bishop: Node <span class="op">=</span> Node(<span class="dv">2</span>, knight)</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true"></a><span class="dv">24</span>    rook: Node <span class="op">=</span> Node(<span class="dv">1</span>, bishop)</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true"></a><span class="dv">25</span>    <span class="bu">print</span>(rook)</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true"></a><span class="dv">26</span>    castle: Node <span class="op">=</span> Node(<span class="dv">0</span>, bishop)</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true"></a><span class="dv">27</span>    <span class="bu">print</span>(castle)</span></code></pre></div></li>
+</ol>
+<details>
+<p><summary>SOLUTION</summary></p>
+<p><img class="img-fluid" src="/static/practice/qz04_practice/linked_list_soln.png" alt="Memory diagram of code listing of linked list."  /></p>
+</details>
+</div>
+
+       
+
+    </div> 
+    </div>
+    </div>
+    <div class="authors-box bg-dark mt-4 py-3 ps-4">
+      <span> Contributor(s):        Alyssa Lytle,        Kris Jordan,        Benjamin Eldridge,        Jack Coury, Izzi Hinks</span>
+    </div>
+
+  </div>
+  <div class='link-page mt-3 container'>
+    <footer>
+      <h3 class="text-center align-middle footer-text">&copy; 2025 <a href="https://krisjordan.com">Kris Jordan</a>
+        - <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSenaJ2uZ_n2FfAb2PWL6YPG4AUT-G2-xVJP6HIwMr6cd6nSYA/viewform?usp=sf_link">Feedback
+          Form</a>
+        - Made with 💛 in <a href="https://cs.unc.edu/">Chapel Hill</a></h3>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <!-- Code Block Formatting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <script>hljs.initLineNumbersOnLoad();</script>
+  <script>hljs.highlightAll();</script>
+  
+</body>
+
+</html>

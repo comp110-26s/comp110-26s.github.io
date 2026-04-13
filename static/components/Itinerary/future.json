@@ -1,29 +1,16 @@
 {
-    "2026-04-10": [
+    "2026-04-13": [
         {
             "kind": "CL",
-            "n": 31,
-            "title": "Magic Method and Building Linked Lists with Recursive Algorithms",
-            "date": "2026-04-10",
-            "deadline": "2026-04-10",
+            "n": 32,
+            "title": "Building Linked Lists with Recursive Algorithms (Part 2)",
+            "date": "2026-04-13",
+            "deadline": "2026-04-13",
             "links": {
-                "Slides": "/static/slides/cl31.pdf"
-            }
-        },
-        {
-            "kind": "EX",
-            "n": 8,
-            "title": "Linked List Utility Functions (Due Wednesday 4/15)",
-            "date": "2026-04-10",
-            "deadline": "2026-04-15",
-            "links": {
-                "": "/exercises/linked_list_utils.html"
+                "Slides": "/"
             }
         }
     ],
-    "2026-04-11": [],
-    "2026-04-12": [],
-    "2026-04-13": [],
     "2026-04-14": [],
     "2026-04-15": [],
     "2026-04-16": [],
@@ -34,7 +21,11 @@
             "title": "Quiz 3",
             "date": "2026-04-17",
             "deadline": "2026-04-17",
-            "links": {}
+            "links": {
+                "Read Quiz Expectations": "/resources/quiz-expectations.html",
+                "General Practice": "/resources/practice/sp26/qz03/qz03_general_practice.html",
+                "Memory Diagram Practice": "/resources/practice/sp26/qz03/qz03_memory_diagrams.html"
+            }
         }
     ],
     "2026-04-18": [],
