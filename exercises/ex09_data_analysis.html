@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> EX09 - Data Analysis for Continuous Improvement - COMP110 - 26S</title>
+  <link rel="icon" type="image/png" href="/static/s25_brand.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/static/styles.css?v=1776097686.3420403">
+</head>
+
+
+<body id="body" class="absolute-page">
+    <script>
+        document.body.classList.remove('light-mode');
+        document.body.classList.remove('dark-mode');
+        document.body.classList.add(localStorage.getItem('mode'));
+    </script>
+  <script src="/static/scripts/nav-menu-esc.js"></script> 
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark py-1 fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/s25_brand.png"
+        alt="COMP110 - Spring - 2025"><img class="darkmode-element-only img-fluid logo" src="/static/s25_brand.png"
+        alt="COMP110 - Spring - 2025"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" onclick="esc_key()" data-bs-target="#navmenu" aria-label="Main Menu" aria-controls="#navmenu" role="navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link " href="/">agenda</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources" class="nav-link">resources</a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="/support" class="nav-link">support</a>
+          </li>
+         
+          <li class="nav-item">
+            <a href="/resources/syllabus.html" class="nav-link">syllabus</a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="/resources/team.html" class="nav-link">team110</a>
+          </li>
+         
+        </ul>
+      </div>
+      <div id='mode-switch' class="ms-auto form-check form-switch mode switches">
+              <div class="switches">
+                  <input type="checkbox" id="1" onclick="
+                      if (localStorage.getItem('mode') === 'dark-mode') {
+                          localStorage.setItem('userPref', 'light-mode');
+                          localStorage.setItem('mode', 'light-mode');
+                      } else {
+                          localStorage.setItem('userPref', 'dark-mode');
+                          localStorage.setItem('mode', 'dark-mode');
+                      }
+                      location.reload();">
+                  <label for="1">
+                      <span id="mode-label">Dark Mode</span>
+                      <span></span>
+                  </label>
+                  <script>if(localStorage.getItem('mode') === 'dark-mode'){document.getElementById("1").checked = true}</script>
+                  <script>if(localStorage.getItem('userPref') === null) {setTimeout(function(){location.reload();}, (timer * 3600000));}</script>
+              </div>
+          </div>
+    </div>
+  </nav>
+
+  <div class="cloud-container">
+    <div id="cloud-intro">
+  <div id="projects-page" class="container">
+    <div class="row pt-4">
+      <div class="col-12">
+        <h1 id="page-title">EX09 - Data Analysis for Continuous Improvement</h1>
+      </div>
+    </div>
+    
+
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            <div>
+                <div id="menu-overview" class="link-page-overview horizon-box">
+                    <button id="overview-button" class="btn btn-ov" onclick="hideshow()" >Overview  <img id="button-img" alt="Overview" class="filter-icon" src="/static/components/Itinerary/arrow-up.svg" style="height:15px; padding-left: 4px;"></button>
+                    <div id="overview-links">
+                        <div id="TOC" role="doc-toc">
+                            <ul class="overview-item"><ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#rubric">Rubric</a></li>
+<li><a href="#getting-started">Getting Started</a>
+<ul>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
+</ul></li>
+<li><a href="#tour-of-the-data">Tour of the Data</a></li>
+<li><a href="#some-notes-before-you-begin">Some notes before you begin</a></li>
+<li><a href="#submission-instructions">Submission Instructions</a></li>
+</ul>
+</</ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h3 id="overview">Overview</h3>
+<p>Courses such as COMP110, just like organizations, services, and products, can be improved through intentional iteration on their design in order to <em>create more value</em> for its stakeholders. This practice is generally known as <em>continuous improvement</em>.</p>
+<p>What is <em>creating value</em>? This idea can manifest in many ways, such as: serving unmet needs, reframing problems as opportunities, identifying authentic demand, testing novel ideas, leveraging underutilized resources, extending existing solutions, and so on.</p>
+<p>In a course, the stakeholders are typically:</p>
+<ol type="1">
+<li>Students Enrolled</li>
+<li>Instructional Staff</li>
+<li>Academic Institution</li>
+<li>Societal Workforce</li>
+</ol>
+<p>In this open-ended exercise, you will explore the data that we have collected via the anonymized course survey submitted by you and your peers earlier in the semester by creating data utility functions that can analyze . Then, you will reflect on your personal experiences and observations in COMP110 and brainstorm modifications to the course that <em>create value</em> beyond its current design.</p>
+<p>From your brainstormed ideas, you will consider them in the context of the anonymized course survey data submitted by you and your peers earlier in the semester. You will identify which one of your ideas <em>does not</em> or is <em>least likely</em> to have data to support or refute your idea and suggest how we might collect that data in the future. Then you will identify which one of your ideas <em>does have</em> data to analyze and carry out an analysis of your most promising idea.</p>
+<p>You will then perform an analysis of the data to explore the degree to which the data supports your idea. It is OK and expected that many ideas will not have conclusive support in the data and may even be rejected by the data. This is OK!</p>
+<p>For this analysis, you will be using a Python package called <code>seaborn</code> to create graphs or visualizations that relate to your analysis. After you have written your analysis and drawn a conclusion based on whether your analysis supported your idea, you will present your analysis, visualizations, and conclusion via a live website!</p>
+<p>Your project will need to satisfy many specifications, so before you begin programming be sure to read this project’s write-up and the provided template notebook in full.</p>
+<h2 id="rubric">Rubric</h2>
+<p>Part 0. Data Utilities (40pts) * <code>head</code> – 10 Points Autograded * <code>select</code> – 10 Points Autograded * <code>concat</code> – 10 Points Autograded * <code>count</code> – 10 Points Autograded</p>
+<p>Part 1. Creative Ideation (15pts)</p>
+<ul>
+<li>Good - 5 pts - One brainstormed idea identifies value created for a specific stakeholder group.</li>
+<li>Better - 10 pts - Three brainstormed ideas which each identify value created for a specific stakeholder group.</li>
+<li>Best - 15 pts - Five brainstormed ideas which each identify value created for a specific stakeholder group.</li>
+</ul>
+<p>Part 1.1. Identifying Missing Data (10pts)</p>
+<ul>
+<li>Good - 5 pts - Identifies an idea that does not have applicable data to support or is unlikely to have enough data to support.</li>
+<li>Better - 10 pts - Additionally is able to suggest a plausible and realistic way to collect data to support the idea in the future.</li>
+</ul>
+<p>Part 1.2. Choosing Your Analysis (10pts)</p>
+<ul>
+<li>Good - 5 pts - Chooses an idea that has data from the survey which could be analyzed in support of it.</li>
+<li>Better - 10 pts - Articulates reason for choosing this idea to analyze over others based on its potential to create value.</li>
+</ul>
+<p>Part 1.3. Analysis (60pts) - Each rubric item is independent of the others.</p>
+<ul>
+<li>5pts - Each code cell in your analysis is preceded by a markdown cell explaining what you are attempting to do. Walk us through your thought process.</li>
+<li>5pts - The code cells are executed and the notebook has saved outputs of code cells submitted.</li>
+<li>5pts - Make use of <code>read_csv_rows</code> function</li>
+<li>5pts - Make use of <code>head</code> function</li>
+<li>5pts - Make use of <code>columnar</code> function</li>
+<li>5pts - Make use of <code>select</code> function</li>
+<li>5pts - Make use of <code>count</code> function</li>
+<li>5pts - Define, import, and use at least one helper function of your own design. One idea is a function that filters some data based on some criteria. For example, all values in a column that are greater than some threshold.</li>
+<li>5pts - Carries out a logical analysis given the stated idea being analyzed.</li>
+<li>15pts - Produce at least three charts or visualizations of the relevant data being analyzed using <code>seaborn</code>, at least one of which is not a <code>scatterplot</code> or <code>lineplot</code>.</li>
+</ul>
+<p>Part 1.4. Conclusion (15pts)</p>
+<ul>
+<li>Good - 5 pts - Summarizes findings of analysis and the degree to which it supports, refutes, or is inconclusive regarding the idea put forth.</li>
+<li>Better - 10 pts - Puts forth potential costs, downsides, or trade-offs of adopting the idea.</li>
+<li>Best - 15 pts - Identifies extensions or refinements to this idea to consider as future work.</li>
+</ul>
+<p>Part 2. Presenting Your Results (30pts)</p>
+<ul>
+<li>10 pts - Your website’s project page includes a summary of the analysis you performed in your notebook.</li>
+<li>10 pts - At least three charts or visualizations are incorporated into the analysis and displayed on your website’s project page</li>
+<li>10 pts - Your website’s project page includes your final conclusions from your notebook.</li>
+</ul>
+<p>These are just the baseline requirements. In order to completely analyze the idea you choose to explore, more intermediate steps may be necessary!</p>
+<h2 id="getting-started">Getting Started</h2>
+<p>You will get the data needed by “pulling” from the course workspace repository. Steps to do this:</p>
+<ol start="0" type="1">
+<li>Be sure you are in your course workspace. Open the file explorer and you should see your work for the course. If you do not, open your course workspace through File &gt; Open Recent.</li>
+<li>Open the <em>Source Control View</em> by clicking the 3-node (circles) graph (connected by lines) icon in your sidebar or opening the command palatte and searching for <em>Source Control</em>.</li>
+<li>Click the Ellipses in the Source Control pane and select “Pull, Push” from the drop-down menu, then select “Pull from…” A box will appear and you should select either “origin” or “upstream”, but not “backup”. This will begin the pulling process from the course repository. It should silently succeed.</li>
+<li>Return to the File Explorer pane and open the <code>data</code> directory. You should see it now contains the csv file with the survey results called <code>survey.csv</code>.</li>
+<li>In your workspace’s <code>exercises</code> directory, you will see a folder named <code>ex09</code>. Inside that folder, there is a file named <code>analysis.ipynb</code> for this assignment.</li>
+<li>Additionally, there will be another file in <code>ex09</code> called <code>data_utils.py</code>. Copy your functions from the lesson on data into this file!</li>
+</ol>
+<p><code>data_utils.py</code> is where you will define the functions you create in part 0, and <code>analysis.ipynb</code> is the notebook file that will contain the majority of the instructions for this assignment and will also be where you write your analysis. Once you are done reading this write-up, go read all of <code>analysis.ipynb</code> <em>before</em> starting to program!</p>
+<h3 id="troubleshooting">Troubleshooting</h3>
+<p>If you’re having trouble pulling:</p>
+<ul>
+<li>Make sure you PUSHED all of your changes to backup first!!!</li>
+<li>In your terminal, type <code>git config pull.rebase false</code></li>
+<li>In your Visual Studio command center, select <code>Pull From...</code> -&gt; <code>Upstream</code> -&gt; <code>Upstream/Head</code>. (If not an option, do <code>Origin</code> -&gt; <code>Main</code>.)</li>
+</ul>
+<p>If you’re still having issues, come to office hours!</p>
+<h2 id="tour-of-the-data">Tour of the Data</h2>
+<p><code>row</code> – Row number. Unique for each row of the CSV.</p>
+<p><code>year</code> – Expected graduation year. Possible values: 26, 27, 28, 29, 30, None (Note: This is clearly a non-exhaustive list. Just simplified for the sake of the project)</p>
+<p><code>unc_status</code> – UNC status. Possible values: Freshman, Sophomore, Junior, Senior, Graduate, None</p>
+<p><code>transfer</code> – Transfer student or not a transfer student. Possible values: Yes, No</p>
+<p><code>comp_major</code> – Intention to major in CS. Possible values: Yes - BS, Yes - BA, Yes - Minor, No</p>
+<p><code>primary_major</code> – Primary Major. Possible values: Advertising and PR, Applied Sciences, Asian Studies, Biology, Biomedical Engineering, Biostatistics, Business, Chemistry, Clinical Lab Science, Communication, Communications, Computer Science, Cultural Anthropology, Data Science, Dramatic Art, Earth Science, Economics, English, Environmental Science/Studies, Environmental Health Sciences, Exercise and Sports Science, Geology, Global Studies, HPM, Human Development and Family Science, Information Science, Interdisciplinary Studies, Linguistics, Management and Society, Mathematics, Media and Journalism, Medical Anthropology, Music Performance, Neuroscience, Nursing, Nutrition, Peace, War, and Defense, Philosophy, Physics, Political Science, Psychology, Public Policy, Radiology, Sociology, Sports Administration, Statistics and Analytics, Studio Art, Undecided</p>
+<p><code>prereqs</code> – Prerequisites satisfied. Possible values are <strong>any combination</strong> of the following: MATH 129P, MATH 130, MATH 152, MATH 210, MATH 231, MATH 232, MATH 233, MATH 347, MATH 381, PHIL 155, PSYC 210, PSYC 215, STOR 112, STOR 113, STOR 120, STOR 151, STOR 155</p>
+<p><code>prior_exp</code> – Prior experience. Possible values: None to less than one month!, 2-6 months, 7-12 months, 1-2 years, Over 2 years</p>
+<p><code>ap_principles</code> – Completed AP Computer Science Principles. Possible values: Yes, No</p>
+<p><code>ap_a</code> – Completed AP Computer Science A. Possible values: Yes, No</p>
+<p><code>other_comp</code> – Completed a different, formal programming class. Possible values: UNC, Another college or community college, High school course (IB or other), On-line course, Other, None</p>
+<p><code>prior_time</code> – Amount of time spent self-directed programming learning. Possible values: None to less than one month!, 1 month or so, 2-6 months, 7-12 months, 1-2 years, &gt; 2 years</p>
+<p><code>languages</code> – Programming languages student can identify by reading w/o reference material. Possible values are <strong>any combination</strong> of the following: Python, Java / C#, C / C++, JavaScript / TypeScript, Go, LISP / Scheme / Racket, Haskell, R / Matlab / SAS, BASIC, HTML / CSS, SQL, Bash, Other</p>
+<p><code>hours_online_social</code> – Number of hours a day spent interacting with digital technology for personal uses (e.g. social media, entertainment, personal communication)? Possible values: None, 0 to 2 hours, 3 to 5 hours, 5 to 10 hours, 10+ hours.</p>
+<p><code>hours_online_work</code> – Number of hours a day spent interacting with digital technology for work/school uses. Possible values: None, 0 to 2 hours, 3 to 5 hours, 5 to 10 hours, 10+ hours.</p>
+<p><code>tech_best_interests</code> – “The technologies I use in my daily life have my personal best interests prioritized first and foremost.” Possible values <em>(1 being Strongly Disagree and 7 being Strongly Agree)</em>: 1, 2, 3, 4, 5, 6, 7</p>
+<p><code>apps_accessible</code> – “The apps and social media platforms I interact with are accessible to everyone.” Possible values <em>(1 being Strongly Disagree and 7 being Strongly Agree)</em>: 1, 2, 3, 4, 5, 6, 7</p>
+<p><code>identity_my_interaction</code> – “My personal identity (race/gender/sexuality/etc) impacts how I interact with technology.” Possible values <em>(1 being Strongly Disagree and 7 being Strongly Agree)</em>: 1, 2, 3, 4, 5, 6, 7</p>
+<p><code>id_interact_with_me</code> – “My personal identity (race/gender/sexuality/etc) impacts how technology interacts with me.” Possible values <em>(1 being Strongly Disagree and 7 being Strongly Agree)</em>: 1, 2, 3, 4, 5, 6, 7</p>
+<p><code>interested_connections</code> – “I am interested in the connections between computer science and other fields.” Possible values <em>(1 being Strongly Disagree and 7 being Strongly Agree)</em>: 1, 2, 3, 4, 5, 6, 7</p>
+<p><code>social_issues</code> – “Social issues are relevant to computer scientists and software engineers.” Possible values <em>(1 being Strongly Disagree and 7 being Strongly Agree)</em>: 1, 2, 3, 4, 5, 6, 7</p>
+<p><code>research_biases</code> – “Scientific research is influenced by individual and/or societal biases.”" Possible values <em>(1 being Strongly Disagree and 7 being Strongly Agree)</em>: 1, 2, 3, 4, 5, 6, 7</p>
+<p><code>researchers_unbiased</code> – “I believe scientific researchers can be unbiased.” Possible values <em>(1 being Strongly Disagree and 7 being Strongly Agree)</em>: 1, 2, 3, 4, 5, 6, 7</p>
+<p><code>empirical_data</code> – “Empirical data can always be trusted.” Possible values <em>(1 being Strongly Disagree and 7 being Strongly Agree)</em>: 1, 2, 3, 4, 5, 6, 7</p>
+<p><code>cs_objective</code> – “Computer science is an objective science.” Possible values <em>(1 being Strongly Disagree and 7 being Strongly Agree)</em>: 1, 2, 3, 4, 5, 6, 7</p>
+<p><code>algorithms_objective</code> – “Computer programs and algorithms are more objective than humans.” Possible values <em>(1 being Strongly Disagree and 7 being Strongly Agree)</em>: 1, 2, 3, 4, 5, 6, 7</p>
+<p><code>tech_impact</code> – “Computing technologies positively impact our society.” Possible values <em>(1 being Strongly Disagree and 7 being Strongly Agree)</em>: 1, 2, 3, 4, 5, 6, 7</p>
+<p><code>pre_lecture_videos</code> – Student believes that optional pre-lecture videos that prepare students for the content of each lecture would be helpful for their learning. Possible values <em>(1 being Strongly Disagree and 7 being Strongly Agree)</em>: 1, 2, 3, 4, 5, 6, 7</p>
+<p><code>add_livestream</code> – Moving forward in the semester, student believes in-person lectures should be live streamed so that not everyone is required to attend in-person. Possible values <em>(1 being Strongly Disagree and 7 being Strongly Agree)</em>: 1, 2, 3, 4, 5, 6, 7</p>
+<p><code>own_notes</code> – Student keeps own notes for topics covered in lecture. Possible values <em>(1 being Never and 7 being Always)</em>: 1, 2, 3, 4, 5, 6, 7</p>
+<p><code>own_examples</code> – When uncertain of how a concept works, student tries to come up with own examples in code. Possible values <em>(1 being Never and 7 being Always)</em>: 1, 2, 3, 4, 5, 6, 7</p>
+<p><code>oh_visits</code> – On average, for a single programming exercise or project in this course, student typically needs to seek help in office hours about this many times. Possible values <em>(0 being Zero and 5 being Five or More)</em>: 0, 1, 2, 3, 4, 5</p>
+<p><code>ls_effective</code> – Lesson videos are effective in helping student learn the topics of the course. Possible values <em>(1 being Strongly Disagree and 7 being Strongly Agree)</em>: 1, 2, 3, 4, 5, 6, 7</p>
+<p><code>lsqs_effective</code> – Post-lesson questions on Gradescope are effective in helping student learn the topics of the course. Possible values <em>(1 being Strongly Disagree and 7 being Strongly Agree)</em>: 1, 2, 3, 4, 5, 6, 7</p>
+<p><code>programming_effective</code> – Programming assignments are effective in helping student learn the topics of the course. Possible values <em>(1 being Strongly Disagree and 7 being Strongly Agree)</em>: 1, 2, 3, 4, 5, 6, 7</p>
+<p><code>qz_effective</code> – Preparing for quizzes is effective in helping student learn the topics of the course. Possible values <em>(1 being Strongly Disagree and 7 being Strongly Agree)</em>: 1, 2, 3, 4, 5, 6, 7</p>
+<p><code>oh_effective</code> – Office hours 1:1 appointments are effective in helping student learn the topics of the course. Possible values <em>(1 being Strongly Disagree and 7 being Strongly Agree, Empty string if student has not attended OH)</em>: 1, 2, 3, 4, 5, 6, 7, ""</p>
+<p><code>tutoring_effective</code> – Tutoring is effective in helping student learn the topics of the course. Possible values <em>(1 being Strongly Disagree and 7 being Strongly Agree, Empty string if student has not attended tutoring)</em>: 1, 2, 3, 4, 5, 6, 7, ""</p>
+<p><code>pace</code> – Student finds the pace of COMP110 to be moving… Possible values <em>(1 being Very Slowly and 7 being Very Quickly)</em>: 1, 2, 3, 4, 5, 6, 7</p>
+<p><code>difficulty</code> – Student is finding COMP110 to be… Possible values <em>(1 being Very Easy and 7 being Very Difficult)</em>: 1, 2, 3, 4, 5, 6, 7</p>
+<p><code>understanding</code> – So far, student is feeling like they typically… Possible values <em>(1 being Are Lost and 7 being Understand Everything)</em>: 1, 2, 3, 4, 5, 6, 7</p>
+<p><code>interesting</code> – Student believes the topics they are learning in this course are intellectually interesting. Possible values <em>(1 being Strongly Disagree and 7 being Strongly Agree)</em>: 1, 2, 3, 4, 5, 6, 7</p>
+<p><code>valuable</code> – Student believes the skills they are learning in this course will be valuable to them in the future. Possible values <em>(1 being Strongly Disagree and 7 being Strongly Agree)</em>: 1, 2, 3, 4, 5, 6, 7</p>
+<p><code>would_recommend</code> – Student would recommend this course to other students in the Fall. Possible values <em>(1 being Strongly Disagree and 7 being Strongly Agree)</em>: 1, 2, 3, 4, 5, 6, 7</p>
+<h2 id="some-notes-before-you-begin">Some notes before you begin</h2>
+<ul>
+<li>Some of the survey questions were optional, so there will not be a data value for every column in every row. This is expected. Instead the value will just be the empty <code>str</code> or <code>""</code>.</li>
+<li>When you read in the CSV as a <code>list[dict[str, str]]</code> with your <code>read_csv_rows</code> function, every value is interpreted as a <code>str</code>, including numerical ones! Analysis on columns that include Likert data (ratings 1-7), for example, will need to be converted to a numeric type for numeric analysis.</li>
+</ul>
+<h2 id="submission-instructions">Submission Instructions</h2>
+<p>Save your notebook!</p>
+<p>Login to Gradescope and select the assignment named “EX09 - Data Project”. You’ll see an area to upload a zip file. To produce a zip file for autograding, return back to Visual Studio Code.</p>
+<p>If you <em>do not</em> see a Terminal at the bottom of your screen, open the Command Palette and search for “View: Toggle Integrated Terminal”.</p>
+<p>To produce a zip file for <code>ex09</code>, type the following command (all on a single line):</p>
+<p><code>python -m tools.submission exercises/ex09</code></p>
+<!-- If you right click on this file and select "Reveal in File Explorer" on Windows or "Reveal in Finder" on Mac, the zip file's location on your computer will open. Upload this file to Gradescope to submit your work for this exercise. -->
+<p>In the file explorer pane, look to find the zip file named “yy.mm.dd-hh.mm-exercises-ex07.zip”. The “mm”, “dd”, and so on, are timestamps with the current year, month, day, hour, minute.</p>
+<p>Don’t forget to backup your work by creating a commit and pushing it to GitHub. For a reminder of this process, see the previous exercises.</p>
+<p>Some of the points for this project will be handgraded, so your autograder score will not be the same as your final score for this exercise. Refer to the rubric above for which parts are autograded and which are handgraded.</p>
+</div>
+
+       
+
+    </div> 
+    </div>
+    </div>
+    <div class="authors-box bg-dark mt-4 py-3 ps-4">
+      <span> Contributor(s):        Kris Jordan,        Kaki Ryan,        Izzy Ford,        Benjamin Eldridge,        Izzi Hinks, Alyssa Lytle</span>
+    </div>
+
+  </div>
+  <div class='link-page mt-3 container'>
+    <footer>
+      <h3 class="text-center align-middle footer-text">&copy; 2025 <a href="https://krisjordan.com">Kris Jordan</a>
+        - <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSenaJ2uZ_n2FfAb2PWL6YPG4AUT-G2-xVJP6HIwMr6cd6nSYA/viewform?usp=sf_link">Feedback
+          Form</a>
+        - Made with 💛 in <a href="https://cs.unc.edu/">Chapel Hill</a></h3>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <!-- Code Block Formatting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <script>hljs.initLineNumbersOnLoad();</script>
+  <script>hljs.highlightAll();</script>
+  
+</body>
+
+</html>
