@@ -800,5 +800,28 @@
         }
     ],
     "2026-04-11": [],
-    "2026-04-12": []
+    "2026-04-12": [],
+    "2026-04-13": [
+        {
+            "kind": "CL",
+            "n": 32,
+            "title": "Building Linked Lists with Recursive Algorithms (Part 2)",
+            "date": "2026-04-13",
+            "deadline": "2026-04-13",
+            "links": {
+                "Slides": "/static/slides/cl32.pdf"
+            }
+        },
+        {
+            "kind": "CQ",
+            "n": 3,
+            "title": "Linked List Traversal Questions",
+            "date": "2026-04-13",
+            "deadline": "2026-04-13",
+            "links": {
+                "": "https://www.gradescope.com"
+            }
+        }
+    ],
+    "2026-04-14": []
 }

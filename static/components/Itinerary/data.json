@@ -824,7 +824,18 @@
         }
     ],
     "2026-04-14": [],
-    "2026-04-15": [],
+    "2026-04-15": [
+        {
+            "kind": "CL",
+            "n": 33,
+            "title": "Analyzing Data from a CSV in a Jupyter Notebook",
+            "date": "2026-04-15",
+            "deadline": "2026-04-15",
+            "links": {
+                "Slides": "/static/slides/cl33.pdf"
+            }
+        }
+    ],
     "2026-04-16": [],
     "2026-04-17": [
         {
@@ -836,7 +847,8 @@
             "links": {
                 "Read Quiz Expectations": "/resources/quiz-expectations.html",
                 "General Practice": "/resources/practice/sp26/qz03/qz03_general_practice.html",
-                "Memory Diagram Practice": "/resources/practice/sp26/qz03/qz03_memory_diagrams.html"
+                "Memory Diagram Practice": "/resources/practice/sp26/qz03/qz03_memory_diagrams.html",
+                "Hybrid Review Session from 6:30-7:30pm on Wed, April 15 in FB007 and online (Passcode: 110110)": "/"
             }
         }
     ],
