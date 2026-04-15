@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1776280908.400653">
+  <link rel="stylesheet" href="/static/styles.css?v=1776280884.9282286">
 </head>
 
 
@@ -76,7 +76,7 @@
 
   <div class="cloud-container">
     <div id="cloud-intro">
-  <div id="resources-page" class="container">
+  <div id="exercises-page" class="container">
     <div class="row pt-4">
       <div class="col-12">
         <h1 id="page-title">Setting Up a Personal Website</h1>
@@ -94,11 +94,22 @@
                     <div id="overview-links">
                         <div id="TOC" role="doc-toc">
                             <ul class="overview-item"><ul>
-<li><a href="#create-a-new-jekyll-project">Create a new Jekyll Project</a></li>
-<li><a href="#creating-a-github-repository-for-your-site-named-github-username.github.io">Creating a Github repository for your site named <code>&lt;github-username&gt;.github.io</code></a></li>
-<li><a href="#linking-your-site-to-github">Linking Your Site to Github</a></li>
-<li><a href="#configure-a-publishing-source-for-your-github-pages-site">Configure a publishing source for your GitHub Pages site</a></li>
-<li><a href="#add-content-make-it-pretty">Add Content + Make it Pretty</a></li>
+<li><a href="#instructions">Instructions</a>
+<ul>
+<li><a href="#clone-the-repo">1. Clone the Repo</a></li>
+<li><a href="#create-a-home-github-repository-for-your-site">2. Create a Home Github repository for your site</a></li>
+<li><a href="#create-a-second-github-repository-for-your-project">3. Create a Second Github Repository for your Project</a></li>
+<li><a href="#publish-your-site-to-github">4. Publish Your Site to Github</a>
+<ul>
+<li><a href="#update-your-site-configuration">4.1 Update Your Site Configuration</a></li>
+<li><a href="#link-to-github">4.2 Link to Github</a></li>
+</ul></li>
+<li><a href="#configure-a-publishing-source-for-your-github-pages-site">5. Configure a publishing source for your GitHub Pages site</a></li>
+<li><a href="#add-content-make-it-pretty">6. Add Content + Make it Pretty</a>
+<ul>
+<li><a href="#optional-styling">Optional Styling</a></li>
+</ul></li>
+</ul></li>
 <li><a href="#more-info">More Info</a></li>
 </ul>
 </</ul>
@@ -107,49 +118,67 @@
                 </div>
             </div>
         </div>
-        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="create-a-new-jekyll-project">Create a new Jekyll Project</h1>
-<p>we’re going to set up a new Jekyll project. Jekyll is a static site generator. It helps you build a prettier site and has some really nice features!</p>
-<ol start="0" type="1">
-<li><p>First, make sure you have all of the prerequisites installed by going to <a href="https://jekyllrb.com/docs/installation/">this link</a> and checking under the “Requirements” tab.</p></li>
-<li><p>Open your terminal and use the <code>cd</code> command to navigate to wherever you want to have your site. For example, I’ll want my site file to be stored in documents, so I’ll type <code>cd Documents</code>.</p></li>
-<li><p>Now run the following command to install Jekyll: <code>gem install jekyll bundler</code></p></li>
-<li><p>To create your first Jekyll project, run the following command: <code>jekyll new --skip-bundle &lt;site-name&gt;</code>, where <code>&lt;site-name&gt;</code> is whatever you want to call your site.</p></li>
-<li><p>Now, you’ll have a folder entitled <code>&lt;site-name&gt;</code>! Open Visual Studio and then open the directory site you just created! (If you installed it in your Documents folder, it’ll be inside Documents &gt; <code>&lt;site-name&gt;</code>).</p></li>
-<li><p>You’ll see a file called “Gemfile”. Click to open that file. We are going to modify it!</p></li>
-<li><p>In Gemfile, Add “#” to the beginning of the line that starts with <code>gem "jekyll"</code> to comment out this line.</p></li>
-<li><p>Add the github-pages gem by editing the line starting with <code># gem "github-pages"</code>. Change this line to:</p></li>
+        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="instructions">Instructions</h1>
+<h2 id="clone-the-repo">1. Clone the Repo</h2>
+<p>You are going to create a new repository <em>outside</em> of your Comp110 workspace.</p>
+<ol type="1">
+<li><p>Open a new Visual Studio window by clicking the <em>File</em> menu in the top bar and selecting <em>New Window</em>.</p></li>
+<li><p>Under the <em>Start</em> menu, click <em>Clone Git Repository…</em></p></li>
+<li><p>The command pallette should open at the top prompting you for a URL. Copy/Paste the following URL:</p></li>
 </ol>
-<p><code>gem "github-pages", "~&gt; 228", group: :jekyll_plugins</code></p>
-<p>Then save and close the Gemfile!</p>
-<ol start="8" type="1">
-<li>In your terminal, run <code>bundle install</code></li>
+<p><a href="https://github.com/AlyssaLytle/personal-site.github.io.git">https://github.com/AlyssaLytle/personal-site.github.io.git</a></p>
+<ol start="4" type="1">
+<li>Select a destination to save the new repository and open the repository when prompted.</li>
 </ol>
-<h1 id="creating-a-github-repository-for-your-site-named-github-username.github.io">Creating a Github repository for your site named <code>&lt;github-username&gt;.github.io</code></h1>
-<p>Now you need to connect this directory to Github!</p>
+<h2 id="create-a-home-github-repository-for-your-site">2. Create a Home Github repository for your site</h2>
+<p><!-- named `<github-username>.github.io` --></p>
 <ol type="1">
 <li><p>Navigate to <a href="https://github.com/">https://github.com/</a> and click on the “New” button to create a new repository.</p></li>
-<li><p>Name your repository <code>&lt;github-username&gt;.github.io</code> where <code>&lt;github-username&gt;</code> is your github username and choose whether or not your repo will be Public or Private. (This will not impact who can see your site. It’ll just impact who can see the <em>repository</em> for your site.) It’s probably best to set your visibility to Private. This will give you some permission limitations when pulling/pushing to github though, so you’ll have to <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">set up an SSH key</a> and use it to connect your Github account with your computer.</p></li>
-<li><p>Click “Create Repository”</p></li>
+<li><p>Name your repository <code>&lt;github-username&gt;.github.io</code> where <code>&lt;github-username&gt;</code> is your github username and choose whether or not to set your repo to be Public or Private–it’s your choice!</p></li>
 </ol>
-<h1 id="linking-your-site-to-github">Linking Your Site to Github</h1>
-<p>Now we want to link the site you just made on your computer with Github!</p>
+<p>(This will not impact who can see your site. It’ll just impact who can see the <em>repository</em> for your site.) It’s probably best to set your visibility to Private.)</p>
+<ol start="3" type="1">
+<li>Click “Create Repository”</li>
+</ol>
+<h2 id="create-a-second-github-repository-for-your-project">3. Create a Second Github Repository for your Project</h2>
+<p>Now you want to create a separate repository for your course project. You will have a special url like: <code>&lt;github-username&gt;.github.io/&lt;custom-path&gt;</code>. You get to pick the <code>&lt;custom-path&gt;</code> for your site!</p>
 <ol type="1">
-<li><p>Open Visual Studio and then open the directory site you just created! (If you installed it in your Documents folder, it’ll be inside Documents &gt; <code>&lt;site-name&gt;</code>).</p></li>
-<li><p>Open the command palette, and type <code>Git: Initialize Repository</code> you can select <code>&lt;site-name&gt;</code> as your workspace folder.</p></li>
-<li><p>Open the command palette again and type <code>Git: Add Remote</code> and input the link to your git repo (<code>https://github.com/&lt;github-username&gt;/&lt;github-username&gt;.github.io.git</code>). When prompted, you can name your remote “origin”.</p></li>
-<li><p>Commit your changes and push to origin!</p></li>
+<li><p>Navigate to <a href="https://github.com/">https://github.com/</a> and click on the “New” button to create a new repository.</p></li>
+<li><p>Name your repository <code>&lt;custom-path&gt;</code> where <code>&lt;custom-path&gt;</code> is whatever you choose! Set the repository visibility to Public.</p></li>
 </ol>
-<h1 id="configure-a-publishing-source-for-your-github-pages-site">Configure a publishing source for your GitHub Pages site</h1>
-<p><em>(It is possible that this step will be automated for you! You can check by going to your site URL: <code>&lt;github-username&gt;.github.io</code> and seeing if anything shows up!)</em></p>
+<h2 id="publish-your-site-to-github">4. Publish Your Site to Github</h2>
+<p>Now we want to link the site you just cloned in visual studio in Part 1 to the Github repository you created in Part 4!</p>
+<p>Open Visual Studio and then open the directory that you just cloned.</p>
+<h3 id="update-your-site-configuration">4.1 Update Your Site Configuration</h3>
+<ol type="1">
+<li><p>Open the file <code>_config.yml</code></p></li>
+<li><p>Modify the line <code>baseurl: ""</code> to be <code>baseurl: "/&lt;custom-path&gt;"</code> where <code>&lt;custom-path&gt;</code> is the path you chose before.</p></li>
+<li><p>Modify the line <code>url: ""</code> to be <code>url: "&lt;github-username&gt;.github.io"</code> where <code>&lt;github-username&gt;</code> is your github username.</p></li>
+</ol>
+<h3 id="link-to-github">4.2 Link to Github</h3>
+<ol type="1">
+<li><p>Open the command palette, and type <code>Git: Initialize Repository</code> you can select <code>personal-site.github.io</code> as your workspace folder.</p></li>
+<li><p>Open the command palette again and type <code>Git: Add Remote</code>.</p></li>
+<li><p>In the blank text box that appears, paste in the URL to your new repository that you just created. (<code>https://github.com/&lt;github-username&gt;/&lt;custom-path&gt;</code>) Press enter.</p></li>
+<li><p>When asked for “Remote name” type in: <code>personal</code></p></li>
+<li><p>Open a new terminal tab, from the <em>Command Palette</em> select “Terminal: Create New Terminal”</p></li>
+<li><p>In the terminal that pops up, type: <code>git push --set-upstream personal main</code> then press enter (two dashes in the of <code>--set-upstream</code>). This command backs your work up to your GitHub repository.</p></li>
+</ol>
+<h2 id="configure-a-publishing-source-for-your-github-pages-site">5. Configure a publishing source for your GitHub Pages site</h2>
+<p><em>(It is possible that this step will be automated for you! You can check by going to your site URL: <code>&lt;github-username&gt;.github.io/&lt;custom-path&gt;</code> and seeing if anything shows up! It may take a few minutes.)</em></p>
 <p>Follow steps 1-8 <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#publishing-from-a-branch">here</a>. For step 1, you can choose your “main” branch.</p>
-<p><img class="img-fluid" src="/static/assets/f23/pages-branch.png" alt="Image of Github Pages settings page under the 'branch' header. 'main' is selected as the branch. "  /></p>
-<p>After you do this, your site should be live at <code>https://&lt;github-username&gt;.github.io</code></p>
-<h1 id="add-content-make-it-pretty">Add Content + Make it Pretty</h1>
-<p>You’ll want to start by modifying the <code>_config.yml</code> file to add some info about yourself!</p>
+<!-- 
+
+<img class="img-fluid" src="/static/assets/f23/pages-branch.png" alt="Image of Github Pages settings page under the 'branch' header. 'main' is selected as the branch. "  /> -->
+<p>After you do this, your site should be live at <code>https://&lt;github-username&gt;.github.io/&lt;custom-path&gt;</code></p>
+<h2 id="add-content-make-it-pretty">6. Add Content + Make it Pretty</h2>
+<p>You’ll want to start by further modifying the <code>_config.yml</code> file to add some info about yourself!</p>
+<p>For your actual assignment webpage, you’ll want to edit the <code>index.md</code> file. The language you will be using to write this is called markdown–the same language you used in your Jupyter notebook text cells! There’s some guidance in the file for basic syntax.</p>
+<h3 id="optional-styling">Optional Styling</h3>
 <p>You can also change the Jekyll theme of your site to style it! Here is a list of the currently supported themes: <a href="https://pages.github.com/themes/">https://pages.github.com/themes/</a>. Click on the Theme you want and it’ll give you instructions on how to install it!</p>
-<p><em>(I’ll add more here later.)</em></p>
 <h1 id="more-info">More Info</h1>
 <p>More info for general debugging can be found <a href="https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll?platform=mac">here</a></p>
+<p>For this assignment, you created an empty repository named <code>&lt;github-username&gt;.github.io</code>. If you want to actually populate that repository and host a personal/professional website on Github, you can find instructions to do so <a href="https://alyssalytle.github.io/resources/personal-site.html">here</a>.</p>
 </div>
 
        
