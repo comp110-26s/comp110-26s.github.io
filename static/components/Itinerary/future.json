@@ -1,35 +1,26 @@
 {
-    "2026-04-15": [
+    "2026-04-20": [
         {
             "kind": "CL",
-            "n": 33,
-            "title": "Analyzing Data from a CSV in a Jupyter Notebook",
-            "date": "2026-04-15",
-            "deadline": "2026-04-15",
+            "n": 34,
+            "title": "Analyzing Data from a CSV in a Jupyter Notebook (Part 2)",
+            "date": "2026-04-20",
+            "deadline": "2026-04-20",
             "links": {
-                "Slides": "/static/slides/cl33.pdf"
+                "Slides": "/static/slides/cl34.pdf"
             }
-        }
-    ],
-    "2026-04-16": [],
-    "2026-04-17": [
+        },
         {
-            "kind": "QZ",
-            "n": 3,
-            "title": "Quiz 3",
-            "date": "2026-04-17",
-            "deadline": "2026-04-17",
+            "kind": "EX",
+            "n": 9,
+            "title": "Data Analysis for Continuous Improvement (Due Monday 4/27)",
+            "date": "2026-04-20",
+            "deadline": "2026-04-27",
             "links": {
-                "Read Quiz Expectations": "/resources/quiz-expectations.html",
-                "General Practice": "/resources/practice/sp26/qz03/qz03_general_practice.html",
-                "Memory Diagram Practice": "/resources/practice/sp26/qz03/qz03_memory_diagrams.html",
-                "Review Session Recording": "https://uncch.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=b8d9737d-c2b9-417f-849b-b42e0006cf5d&start=0"
+                "": "/"
             }
         }
     ],
-    "2026-04-18": [],
-    "2026-04-19": [],
-    "2026-04-20": [],
     "2026-04-21": [],
     "2026-04-22": [],
     "2026-04-23": [],
