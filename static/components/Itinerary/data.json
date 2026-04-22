@@ -877,7 +877,18 @@
         }
     ],
     "2026-04-21": [],
-    "2026-04-22": [],
+    "2026-04-22": [
+        {
+            "kind": "CL",
+            "n": 35,
+            "title": "Analyzing Data from a CSV in a Jupyter Notebook (Part 3)",
+            "date": "2026-04-22",
+            "deadline": "2026-04-22",
+            "links": {
+                "Slides": "/static/slides/cl35.pdf"
+            }
+        }
+    ],
     "2026-04-23": [],
     "2026-04-24": [],
     "2026-04-25": [],

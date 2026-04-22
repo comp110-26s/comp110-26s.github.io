@@ -1,28 +1,16 @@
 {
-    "2026-04-20": [
+    "2026-04-22": [
         {
             "kind": "CL",
-            "n": 34,
-            "title": "Analyzing Data from a CSV in a Jupyter Notebook (Part 2)",
-            "date": "2026-04-20",
-            "deadline": "2026-04-20",
+            "n": 35,
+            "title": "Analyzing Data from a CSV in a Jupyter Notebook (Part 3)",
+            "date": "2026-04-22",
+            "deadline": "2026-04-22",
             "links": {
-                "Slides": "/static/slides/cl34.pdf"
-            }
-        },
-        {
-            "kind": "EX",
-            "n": 9,
-            "title": "Data Analysis for Continuous Improvement (Due Monday 4/27)",
-            "date": "2026-04-20",
-            "deadline": "2026-04-27",
-            "links": {
-                "": "/exercises/ex09_data_analysis.html"
+                "Slides": "/static/slides/cl35.pdf"
             }
         }
     ],
-    "2026-04-21": [],
-    "2026-04-22": [],
     "2026-04-23": [],
     "2026-04-24": [],
     "2026-04-25": [],
