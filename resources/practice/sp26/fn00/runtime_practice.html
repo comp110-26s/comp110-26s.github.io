@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Runtime/Algorithmic Complexity Practice Questions - COMP110 - 26S</title>
+  <link rel="icon" type="image/png" href="/static/s25_brand.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/static/styles.css?v=1777248334.7756813">
+</head>
+
+
+<body id="body" class="absolute-page">
+    <script>
+        document.body.classList.remove('light-mode');
+        document.body.classList.remove('dark-mode');
+        document.body.classList.add(localStorage.getItem('mode'));
+    </script>
+  <script src="/static/scripts/nav-menu-esc.js"></script> 
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark py-1 fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/s25_brand.png"
+        alt="COMP110 - Spring - 2025"><img class="darkmode-element-only img-fluid logo" src="/static/s25_brand.png"
+        alt="COMP110 - Spring - 2025"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" onclick="esc_key()" data-bs-target="#navmenu" aria-label="Main Menu" aria-controls="#navmenu" role="navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link " href="/">agenda</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources" class="nav-link">resources</a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="/support" class="nav-link">support</a>
+          </li>
+         
+          <li class="nav-item">
+            <a href="/resources/syllabus.html" class="nav-link">syllabus</a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="/resources/team.html" class="nav-link">team110</a>
+          </li>
+         
+        </ul>
+      </div>
+      <div id='mode-switch' class="ms-auto form-check form-switch mode switches">
+              <div class="switches">
+                  <input type="checkbox" id="1" onclick="
+                      if (localStorage.getItem('mode') === 'dark-mode') {
+                          localStorage.setItem('userPref', 'light-mode');
+                          localStorage.setItem('mode', 'light-mode');
+                      } else {
+                          localStorage.setItem('userPref', 'dark-mode');
+                          localStorage.setItem('mode', 'dark-mode');
+                      }
+                      location.reload();">
+                  <label for="1">
+                      <span id="mode-label">Dark Mode</span>
+                      <span></span>
+                  </label>
+                  <script>if(localStorage.getItem('mode') === 'dark-mode'){document.getElementById("1").checked = true}</script>
+                  <script>if(localStorage.getItem('userPref') === null) {setTimeout(function(){location.reload();}, (timer * 3600000));}</script>
+              </div>
+          </div>
+    </div>
+  </nav>
+
+  <div class="cloud-container">
+    <div id="cloud-intro">
+  <div id="lessons-page" class="container">
+    <div class="row pt-4">
+      <div class="col-12">
+        <h1 id="page-title">Runtime/Algorithmic Complexity Practice Questions</h1>
+      </div>
+    </div>
+    
+
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            <div>
+                <div id="menu-overview" class="link-page-overview horizon-box">
+                    <button id="overview-button" class="btn btn-ov" onclick="hideshow()" >Overview  <img id="button-img" alt="Overview" class="filter-icon" src="/static/components/Itinerary/arrow-up.svg" style="height:15px; padding-left: 4px;"></button>
+                    <div id="overview-links">
+                        <div id="TOC" role="doc-toc">
+                            <ul class="overview-item"><ul>
+<li><a href="#runtimealgorithmic-complexity-practice-questions">Runtime/Algorithmic Complexity Practice Questions</a></li>
+</ul>
+</</ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="runtimealgorithmic-complexity-practice-questions">Runtime/Algorithmic Complexity Practice Questions</h1>
+<ol type="1">
+<li><p>True or False: A function with a big-O notation of <span class="math inline"><em>O</em>(<em>n</em>)</span> will always run faster than a function with a big-O notation of <span class="math inline"><em>O</em>(<em>n</em><sup>2</sup>)</span> for all inputs.</p></li>
+<li><p>What type of input does Big-O notation consider?</p>
+<ol type="a">
+<li><p>Best Case</p></li>
+<li><p>Worst Case</p></li>
+<li><p>Average Case</p></li>
+</ol></li>
+<li><p>True or False: Big-O notation provides a precise measurement of the actual runtime of an algorithm on a specific machine.</p></li>
+<li><p>If an algorithm has a time complexity of <span class="math inline"><em>O</em>(1)</span>, it means its runtime is:</p>
+<ol type="a">
+<li><p>Linear</p></li>
+<li><p>Constant</p></li>
+<li><p>Quadratic</p></li>
+<li><p>Exponential</p></li>
+</ol></li>
+<li><p>If an algorithm has a time complexity of <span class="math inline"><em>O</em>(<em>n</em>)</span>, it means its runtime is:</p>
+<ol type="a">
+<li><p>Linear</p></li>
+<li><p>Constant</p></li>
+<li><p>Quadratic</p></li>
+<li><p>Exponential</p></li>
+</ol></li>
+<li><p>If an algorithm has a time complexity of <span class="math inline"><em>O</em>(<em>n</em><sup>2</sup>)</span>, it means its runtime is:</p>
+<ol type="a">
+<li><p>Linear</p></li>
+<li><p>Constant</p></li>
+<li><p>Quadratic</p></li>
+<li><p>Exponential</p></li>
+</ol></li>
+<li><p>If an algorithm has a time complexity of <span class="math inline"><em>O</em>(2<sup><em>n</em></sup>)</span>, it means its runtime is:</p>
+<ol type="a">
+<li><p>Linear</p></li>
+<li><p>Constant</p></li>
+<li><p>Quadratic</p></li>
+<li><p>Exponential</p></li>
+</ol></li>
+<li><p>Which of the following is true about algorithms?</p>
+<ol type="a">
+<li><p>The result of an algorithm is only affected by its inputs.</p></li>
+<li><p>An algorithm can have side effects which affect its environment.</p></li>
+<li><p>An algorithm can take an infinite number of steps to complete.</p></li>
+<li><p>The only effect that an algorithm can have is on its result.</p></li>
+</ol></li>
+<li><p>A linear search through an unsorted list of length <span class="math inline"><em>n</em></span> has what worst-case runtime?</p>
+<p>a.<span class="math inline"><em>O</em>(1)</span></p>
+<p>b.<span class="math inline"><em>O</em>(log <em>n</em>)</span></p>
+<p>c.<span class="math inline"><em>O</em>(<em>n</em>)</span></p>
+<p>d.<span class="math inline"><em>O</em>(<em>n</em><sup>2</sup>)</span></p></li>
+<li><p>A nested <code>for</code> loop where both loops run <span class="math inline"><em>n</em></span> times yields which runtime?</p>
+<ol type="a">
+<li><p><span class="math inline"><em>O</em>(<em>n</em>)</span></p></li>
+<li><p><span class="math inline"><em>O</em>(<em>n</em>log <em>n</em>)</span></p></li>
+<li><p><span class="math inline"><em>O</em>(<em>n</em><sup>2</sup>)</span></p></li>
+<li><p><span class="math inline"><em>O</em>(2<sup><em>n</em></sup>)</span></p></li>
+</ol></li>
+<li><p>Big-O notation describes how runtime grows as input size <span class="math inline"><em>n</em></span>:</p>
+<p>a.decreases</p>
+<p>b.stays fixed</p>
+<p>c.grows very large</p>
+<p>d.changes by constant factor</p></li>
+<li><p>Consider the following function:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>    <span class="kw">def</span> foo(outer_input: <span class="bu">list</span>[<span class="bu">str</span>], inner_input: <span class="bu">list</span>[<span class="bu">str</span>]) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>        <span class="co">&quot;&quot;&quot;Nested loop!&quot;&quot;&quot;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>        <span class="cf">for</span> x <span class="kw">in</span> outer_input:</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>            <span class="cf">for</span> y <span class="kw">in</span> inner_input:</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>                <span class="bu">print</span>(<span class="ss">f&quot;</span><span class="sc">{x}</span><span class="ss"> and </span><span class="sc">{y}</span><span class="ss">!&quot;</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>        <span class="cf">return</span> <span class="va">None</span></span></code></pre></div>
+<p>12.1. Assuming <code>outer_input</code> and <code>inner_input</code> both have length <span class="math inline"><em>n</em></span>, what is the big-O runtime of the function <code>foo</code>?</p>
+<p>12.2. If <code>outer_input</code> has length <span class="math inline"><em>n</em><sup>2</sup></span> and <code>inner_input</code> has length <span class="math inline"><em>n</em></span>, what would be the big-O runtime of the function <code>foo</code>?</p></li>
+<li><p>Consider the following code snippets:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a>    unc_pid_range: <span class="bu">dict</span>[<span class="bu">int</span>, <span class="bu">bool</span>] <span class="op">=</span> {<span class="dv">730000000</span>: <span class="va">False</span>, <span class="dv">730000001</span>: <span class="va">False</span>, ..., <span class="dv">730999999</span>: <span class="va">False</span>}</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>    prime_numbers: <span class="bu">list</span>[<span class="bu">int</span>] <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, ..., <span class="dv">1000000007</span>]</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a>    <span class="cf">for</span> pid <span class="kw">in</span> unc_pids:</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a>        <span class="cf">if</span> pid <span class="kw">in</span> prime_numbers:</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a>            unc_pid_range[pid] <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a>            <span class="bu">print</span>(<span class="ss">f&quot;Prime PID found: </span><span class="sc">{</span>pid<span class="sc">}</span><span class="ss">!&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a>    unc_pid_range: <span class="bu">list</span>[<span class="bu">int</span>] <span class="op">=</span> [<span class="dv">730000000</span>, <span class="dv">730000001</span>, ..., <span class="dv">730999999</span>]</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>    prime_numbers: <span class="bu">dict</span>[<span class="bu">int</span>, <span class="bu">bool</span>] <span class="op">=</span> {<span class="dv">2</span>: <span class="va">False</span>, <span class="dv">3</span>: <span class="va">False</span>, <span class="dv">5</span>: <span class="va">False</span>, <span class="dv">7</span>: <span class="va">False</span>, ..., <span class="dv">1000000007</span>: <span class="va">False</span>}</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>    <span class="cf">for</span> pid <span class="kw">in</span> unc_pids:</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>        <span class="cf">if</span> pid <span class="kw">in</span> prime_numbers:</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a>            prime_numbers[pid] <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a>            <span class="bu">print</span>(<span class="ss">f&quot;Prime PID found: </span><span class="sc">{</span>pid<span class="sc">}</span><span class="ss">!&quot;</span>)</span></code></pre></div>
+<p>Let <span class="math inline"><em>n</em></span> be the size of the <code>unc_pid_range</code> lists and let <span class="math inline"><em>m</em></span> be the size of both the <code>prime_numbers</code> list and dictionary. What are the runtimes of the two code snippets in big-O notation? Which would you choose to use if you cared the most about speed?</p></li>
+</ol>
+<details>
+<p><summary>SOLUTIONS</summary></p>
+<ol type="1">
+<li><p>This is False. A function with big-O notation of <span class="math inline"><em>O</em>(<em>n</em>)</span> will theoretically run faster than a function with a big-O notation of <span class="math inline"><em>O</em>(<em>n</em><sup>2</sup>)</span> on a <em>worst case</em> input.</p></li>
+<li><p>Worst Case.</p></li>
+<li><p>False.</p></li>
+<li><p>Constant</p></li>
+<li><p>Linear</p></li>
+<li><p>Quadratic</p></li>
+<li><p>Exponential</p></li>
+<li><p>The answer is b, since algorithms are a finite series of steps (eliminating c) and can be affected by and have an effect on their environment (eliminating a and d, and showing that b is true).</p></li>
+<li><p><span class="math inline"><em>O</em>(<em>n</em>)</span></p></li>
+<li><p><span class="math inline"><em>O</em>(<em>n</em><sup>2</sup>)</span></p></li>
+<li><p>grows very large</p></li>
+<li><p>12.1. <span class="math inline"><em>O</em>(<em>n</em><sup>2</sup>)</span></p>
+<p>12.2. <span class="math inline"><em>O</em>(<em>n</em><sup>3</sup>)</span></p></li>
+<li><p>The first code snippet runs in time <span class="math inline"><em>O</em>(<em>m</em> ⋅ <em>n</em>)</span> and the second runs in time <span class="math inline"><em>O</em>(<em>n</em>)</span>. This is because the lookup time (the <code>in</code> operator) takes constant time on a dictionary and linear time on a list, so in the first snippet you do an <span class="math inline"><em>O</em>(<em>m</em>)</span> operation <span class="math inline"><em>n</em></span> times so $O(m n), but in the second you do an <span class="math inline"><em>O</em>(1)</span> operation <span class="math inline"><em>n</em></span> times so <span class="math inline"><em>O</em>(<em>n</em>)</span>. Thus if you care about speed the most you would use the second method.</p></li>
+</ol>
+</details>
+</div>
+
+       
+
+    </div> 
+    </div>
+    </div>
+    <div class="authors-box bg-dark mt-4 py-3 ps-4">
+      <span> Contributor(s):        Alyssa Lytle, Benjamin Eldridge</span>
+    </div>
+
+  </div>
+  <div class='link-page mt-3 container'>
+    <footer>
+      <h3 class="text-center align-middle footer-text">&copy; 2025 <a href="https://krisjordan.com">Kris Jordan</a>
+        - <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSenaJ2uZ_n2FfAb2PWL6YPG4AUT-G2-xVJP6HIwMr6cd6nSYA/viewform?usp=sf_link">Feedback
+          Form</a>
+        - Made with 💛 in <a href="https://cs.unc.edu/">Chapel Hill</a></h3>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <!-- Code Block Formatting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <script>hljs.initLineNumbersOnLoad();</script>
+  <script>hljs.highlightAll();</script>
+  
+</body>
+
+</html>

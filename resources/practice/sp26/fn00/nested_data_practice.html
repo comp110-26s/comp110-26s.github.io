@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Nested Data Structures Practice - COMP110 - 26S</title>
+  <link rel="icon" type="image/png" href="/static/s25_brand.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/static/styles.css?v=1777248335.2449312">
+</head>
+
+
+<body id="body" class="absolute-page">
+    <script>
+        document.body.classList.remove('light-mode');
+        document.body.classList.remove('dark-mode');
+        document.body.classList.add(localStorage.getItem('mode'));
+    </script>
+  <script src="/static/scripts/nav-menu-esc.js"></script> 
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark py-1 fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/"><img class="lightmode-element-only img-fluid logo" src="/static/s25_brand.png"
+        alt="COMP110 - Spring - 2025"><img class="darkmode-element-only img-fluid logo" src="/static/s25_brand.png"
+        alt="COMP110 - Spring - 2025"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" onclick="esc_key()" data-bs-target="#navmenu" aria-label="Main Menu" aria-controls="#navmenu" role="navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link " href="/">agenda</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources" class="nav-link">resources</a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="/support" class="nav-link">support</a>
+          </li>
+         
+          <li class="nav-item">
+            <a href="/resources/syllabus.html" class="nav-link">syllabus</a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="/resources/team.html" class="nav-link">team110</a>
+          </li>
+         
+        </ul>
+      </div>
+      <div id='mode-switch' class="ms-auto form-check form-switch mode switches">
+              <div class="switches">
+                  <input type="checkbox" id="1" onclick="
+                      if (localStorage.getItem('mode') === 'dark-mode') {
+                          localStorage.setItem('userPref', 'light-mode');
+                          localStorage.setItem('mode', 'light-mode');
+                      } else {
+                          localStorage.setItem('userPref', 'dark-mode');
+                          localStorage.setItem('mode', 'dark-mode');
+                      }
+                      location.reload();">
+                  <label for="1">
+                      <span id="mode-label">Dark Mode</span>
+                      <span></span>
+                  </label>
+                  <script>if(localStorage.getItem('mode') === 'dark-mode'){document.getElementById("1").checked = true}</script>
+                  <script>if(localStorage.getItem('userPref') === null) {setTimeout(function(){location.reload();}, (timer * 3600000));}</script>
+              </div>
+          </div>
+    </div>
+  </nav>
+
+  <div class="cloud-container">
+    <div id="cloud-intro">
+  <div id="lessons-page" class="container">
+    <div class="row pt-4">
+      <div class="col-12">
+        <h1 id="page-title">Nested Data Structures Practice</h1>
+      </div>
+    </div>
+    
+
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            <div>
+                <div id="menu-overview" class="link-page-overview horizon-box">
+                    <button id="overview-button" class="btn btn-ov" onclick="hideshow()" >Overview  <img id="button-img" alt="Overview" class="filter-icon" src="/static/components/Itinerary/arrow-up.svg" style="height:15px; padding-left: 4px;"></button>
+                    <div id="overview-links">
+                        <div id="TOC" role="doc-toc">
+                            <ul class="overview-item"><ul>
+<li><a href="#nested-data-structures-practice-problems">Nested Data Structures Practice Problems</a>
+<ul>
+<li><a href="#memory-diagrams">Memory Diagrams</a></li>
+<li><a href="#code-writing">Code Writing</a></li>
+</ul></li>
+</ul>
+</</ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="nested-data-structures-practice-problems">Nested Data Structures Practice Problems</h1>
+<h2 id="memory-diagrams">Memory Diagrams</h2>
+<ol type="1">
+<li><p>Diagram the following code snippet. (Note that this function assumes that the column names are different in each table, which is different from the <code>concat</code> function that you completed in EX09)</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>    <span class="kw">def</span> combine(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>        first_table: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">list</span>[<span class="bu">str</span>]], second_table: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">list</span>[<span class="bu">str</span>]]</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>    ) <span class="op">-&gt;</span> <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">list</span>[<span class="bu">str</span>]]:</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>        <span class="co">&quot;&quot;&quot;Combines two column based tables with no columns in common into one without mutation.&quot;&quot;&quot;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>        result: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">list</span>[<span class="bu">str</span>]] <span class="op">=</span> {}</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>        <span class="cf">for</span> first_columns <span class="kw">in</span> first_table:</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>            result[first_columns] <span class="op">=</span> first_table[first_columns]</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a>        <span class="cf">for</span> second_columns <span class="kw">in</span> second_table:</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a>            result[second_columns] <span class="op">=</span> second_table[second_columns]</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a>        <span class="cf">return</span> result</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true"></a>    some_cols: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">list</span>[<span class="bu">str</span>]] <span class="op">=</span> {<span class="st">&quot;artist&quot;</span>: [<span class="st">&quot;Charli XCX&quot;</span>, <span class="st">&quot;TOTO&quot;</span>], <span class="st">&quot;title&quot;</span>: [<span class="st">&quot;360&quot;</span>, <span class="st">&quot;Africa&quot;</span>]}</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true"></a>    other_cols: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">list</span>[<span class="bu">str</span>]] <span class="op">=</span> {<span class="st">&quot;runtime&quot;</span>: [<span class="st">&quot;2:13&quot;</span>, <span class="st">&quot;4:55&quot;</span>], <span class="st">&quot;streams&quot;</span>: [<span class="st">&quot;504M&quot;</span>, <span class="st">&quot;2.5B&quot;</span>]}</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true"></a>    new_cols: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">list</span>[<span class="bu">str</span>]] <span class="op">=</span> combine(some_cols, other_cols)</span></code></pre></div></li>
+<li><p>Diagram the following code snippet.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a>    <span class="kw">def</span> replace_all_vals(row_table: <span class="bu">list</span>[<span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">str</span>]], old_val: <span class="bu">str</span>, new_val: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>        <span class="co">&quot;&quot;&quot;Mutates an row-based table to change all instances of old_val in the table to be new_val.&quot;&quot;&quot;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>        <span class="cf">for</span> curr_row <span class="kw">in</span> row_table:</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a>            <span class="cf">for</span> curr_col <span class="kw">in</span> curr_row:</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a>                <span class="cf">if</span> curr_row[curr_col] <span class="op">==</span> old_val:</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a>                    curr_row[curr_col] <span class="op">=</span> new_val</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true"></a>    favorites: <span class="bu">list</span>[<span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">str</span>]] <span class="op">=</span> [</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true"></a>        {<span class="st">&quot;name&quot;</span>: <span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;season&quot;</span>: <span class="st">&quot;Fall&quot;</span>, <span class="st">&quot;fruit&quot;</span>: <span class="st">&quot;apple&quot;</span>},</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true"></a>        {<span class="st">&quot;name&quot;</span>: <span class="st">&quot;Bob&quot;</span>, <span class="st">&quot;season&quot;</span>: <span class="st">&quot;Spirng&quot;</span>, <span class="st">&quot;fruit&quot;</span>: <span class="st">&quot;Pear&quot;</span>},</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true"></a>        {<span class="st">&quot;name&quot;</span>: <span class="st">&quot;Eve&quot;</span>, <span class="st">&quot;season&quot;</span>: <span class="st">&quot;Winter&quot;</span>, <span class="st">&quot;fruit&quot;</span>: <span class="st">&quot;apple&quot;</span>}</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true"></a>    ]</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true"></a>    replace_all_vals(favorites, <span class="st">&quot;Spirng&quot;</span>, <span class="st">&quot;Spring&quot;</span>)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true"></a>    replace_all_vals(favorites, <span class="st">&quot;apple&quot;</span>, <span class="st">&quot;Apple&quot;</span>)</span></code></pre></div></li>
+</ol>
+<details>
+<p><summary>SOLUTIONS</summary></p>
+<p>Note that the looping variables (variable between <code>for</code> and <code>in</code>) are diagrammed in the solutions below, but it is not required to do so on an exam.</p>
+<p>Additionally note that the order of the ids on the heap for nested data structures may not be as you expect or were shown in class. The “technically” correct way is to start with the innermost data structures first like in the solutions below, but for the sake of demonstration this rule has not been strictly followed in lecture (where you likely saw the outermost data structure have its id go first). We will not take off points for how you order the inner and outer data structures that make up a nested data structure, so just use whichever method makes more sense to you.</p>
+<ol type="1">
+<li><p><img class="img-fluid" src="/static/practice-mem-diagrams/combine.png"/></p></li>
+<li><p><img class="img-fluid" src="/static/practice-mem-diagrams/replace_all_vals.png"/></p></li>
+</ol>
+</details>
+<h2 id="code-writing">Code Writing</h2>
+<ol type="1">
+<li><p>Write a function named <code>less_than_mask</code> with two parameters of types <code>dict[str, list[int]]</code> (<code>data_table</code>) and <code>int</code> (<code>threshold</code>) that returns a <code>dict[str, list[bool]]</code> with the same keys (column names) as the data table but the values are <code>True</code> if the associated <code>int</code> in the data table is less than the threshold, and <code>False</code> otherwise. Example terminal usage:</p>
+<pre>
+ <div class="terminal">
+ >>> test_table: dict[str, list[int]] = {"hi_temp": [72, 86, 68], "lo_temp": [61, 70, 60]}
+ >>> test_threshold: int = 70
+ >>> mask_table: dict[str, list[int]] = less_than_mask(test_table, test_threshold)
+ >>> mask_table
+ {"hi_temp": [False, False, True], "lo_temp": [True, False, True]}
+ </div>
+ </pre></li>
+<li><p>Write a function called <code>multiply_matrix_rows</code> that has a single parameter <code>list[list[int]]</code> (<code>matrix</code>) where each inner list (a row) is assumed to be the same length and a return type of <code>None</code>. This function will mutate its only parameter to multiply each integer in every row <em>except the last row</em> by the value in the next row in the same position. This is easiest to understand via a a visual example, so one is provided below. The unit test should pass if the function is correctly implemented.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a>    <span class="kw">def</span> multiply_matrix_rows(matrix: <span class="bu">list</span>[<span class="bu">list</span>[<span class="bu">int</span>]]) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>        <span class="co"># You do this part!</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>    <span class="kw">def</span> test_multiply_matrix_rows_4_by_4() <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>        <span class="co">&quot;&quot;&quot;Test multiply_matrix_rows with a 4 by 4 example matrix&quot;&quot;&quot;</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a>        example_matrix: <span class="bu">list</span>[<span class="bu">list</span>[<span class="bu">int</span>]] <span class="op">=</span> [</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a>            [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>],</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true"></a>            [<span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>],</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true"></a>            [<span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">11</span>],</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true"></a>            [<span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">10</span>]</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true"></a>        ]</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true"></a>        multiply_matrix_rows(example_matrix)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true"></a>        expected_matrix: <span class="bu">list</span>[<span class="bu">list</span>[<span class="bu">int</span>]] <span class="op">=</span> [</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true"></a>            [<span class="dv">4</span>, <span class="dv">12</span>, <span class="dv">24</span>, <span class="dv">40</span>],</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true"></a>            [<span class="dv">20</span>, <span class="dv">42</span>, <span class="dv">72</span>, <span class="dv">110</span>],</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true"></a>            [<span class="dv">50</span>, <span class="dv">70</span>, <span class="dv">90</span>, <span class="dv">110</span>],</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true"></a>            [<span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">10</span>]</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true"></a>        ]</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true"></a></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true"></a>        <span class="cf">assert</span> example_matrix <span class="op">==</span> expected_matrix</span></code></pre></div></li>
+</ol>
+<details>
+<p><summary>SOLUTIONS</summary></p>
+<ol type="1">
+<li>There may be multiple ways to implement this function, here is one possible solution:</li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="kw">def</span> less_than_mask(data_table: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">list</span>[<span class="bu">int</span>]], threshold: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">list</span>[<span class="bu">bool</span>]]:</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>    result: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">list</span>[<span class="bu">bool</span>]] <span class="op">=</span> {}</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>    <span class="cf">for</span> column <span class="kw">in</span> data_table:</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a>        mask_col: <span class="bu">list</span>[<span class="bu">bool</span>] <span class="op">=</span> []</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a>        <span class="cf">for</span> value <span class="kw">in</span> data_table[column]:</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a>            mask_col.append(value <span class="op">&lt;</span> threshold)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a>        result[column] <span class="op">=</span> mask_col</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true"></a>    <span class="cf">return</span> result</span></code></pre></div>
+<ol start="2" type="1">
+<li>There may be multiple ways to implement this function, here is one possible solution:</li>
+</ol>
+<div class="sourceCode" id="cb5"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="kw">def</span> multiply_matrix_rows(matrix: <span class="bu">list</span>[<span class="bu">list</span>[<span class="bu">int</span>]]) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a>    <span class="cf">for</span> row_idx <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(matrix) <span class="op">-</span> <span class="dv">1</span>): <span class="co"># Skip the last row</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a>        <span class="cf">for</span> col_idx <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(matrix[row_idx])):</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a>            matrix[row_idx][col_idx] <span class="op">*=</span> matrix[row_idx <span class="op">+</span> <span class="dv">1</span>][col_idx] <span class="co"># Same column, but next row</span></span></code></pre></div>
+</details>
+</div>
+
+       
+
+    </div> 
+    </div>
+    </div>
+    <div class="authors-box bg-dark mt-4 py-3 ps-4">
+      <span> Contributor(s): Benjamin Eldridge</span>
+    </div>
+
+  </div>
+  <div class='link-page mt-3 container'>
+    <footer>
+      <h3 class="text-center align-middle footer-text">&copy; 2025 <a href="https://krisjordan.com">Kris Jordan</a>
+        - <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSenaJ2uZ_n2FfAb2PWL6YPG4AUT-G2-xVJP6HIwMr6cd6nSYA/viewform?usp=sf_link">Feedback
+          Form</a>
+        - Made with 💛 in <a href="https://cs.unc.edu/">Chapel Hill</a></h3>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <!-- Code Block Formatting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <script>hljs.initLineNumbersOnLoad();</script>
+  <script>hljs.highlightAll();</script>
+  
+</body>
+
+</html>
