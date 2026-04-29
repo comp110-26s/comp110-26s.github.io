@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1777302503.0111842">
+  <link rel="stylesheet" href="/static/styles.css?v=1777420750.070916">
 </head>
 
 
@@ -143,32 +143,32 @@ The line that declares a function’s name, parameters, and return type is calle
 <h2 id="scope">Scope</h2>
 A variable defined at the top level of a <code>.py</code> file (outside any function) is said to be in: a) local scope b) global scope c) nested scope d) method scope
 <details>
-<p><summary><b>SHOW SOLUTIONS</b></summary></p>
+<summary><b>SHOW SOLUTIONS</b></summary> b) global scope
 </details>
 Two functions can each define a local variable named <code>x</code> without conflict. a) True b) False
 <details>
-<p><summary><b>SHOW SOLUTIONS</b></summary></p>
+<summary><b>SHOW SOLUTIONS</b></summary> True
 </details>
 <h2 id="conditionals-recursion">Conditionals + Recursion</h2>
 An <code>if</code> statement’s body will execute exactly once if its condition is <code>True</code>. a) True b) False
 <details>
-<p><summary><b>SHOW SOLUTIONS</b></summary></p>
+<summary><b>SHOW SOLUTIONS</b></summary> True
 </details>
 In a recursive function, the <code>________</code> case is the non-recursive stopping condition that halts the recursion. a) terminal b) base c) final d) recursive
 <details>
-<p><summary><b>SHOW SOLUTIONS</b></summary></p>
+<summary><b>SHOW SOLUTIONS</b></summary> b) base
 </details>
 Which of the following is NOT required for a correct recursive function? a) A base case b) A recursive case that makes progress toward the base case c) A <code>while</code> loop inside the function body
 <details>
-<p><summary><b>SHOW SOLUTIONS</b></summary></p>
+<summary><b>SHOW SOLUTIONS</b></summary> c) A <code>while</code> loop inside the function body
 </details>
-A recursive function’s recursive case typically calls: a) A different function b) Itself c) with the same arguments d) Itself e) with arguments that are closer to the base case f) <code>print()</code> and then itself
+A recursive function’s recursive case typically calls: a) A different function b) Itself with the same arguments c) Itself with arguments that are closer to the base case d) <code>print()</code> and then itself
 <details>
-<p><summary><b>SHOW SOLUTIONS</b></summary></p>
+<summary><b>SHOW SOLUTIONS</b></summary> c) Itself with arguments that are closer to the base case
 </details>
 In an <code>if</code>/<code>else</code> block, the <code>else</code> branch runs when the <code>if</code> condition evaluates to: a) <code>True</code> b) <code>False</code> c) <code>None</code> d) Any non-<code>bool</code> value
 <details>
-<p><summary><b>SHOW SOLUTIONS</b></summary></p>
+<summary><b>SHOW SOLUTIONS</b></summary> <code>False</code>
 </details>
 <h2 id="while-loops">While Loops</h2>
 A <code>while</code> loop whose condition is always <code>True</code> and whose body never breaks out will: a) raise a <code>SyntaxError</code> b) run forever (infinite loop) c) run once d) skip its body entirely
@@ -190,15 +190,15 @@ Which of the following is most likely to cause an infinite loop? a) A <code>whil
 <h2 id="lists">Lists</h2>
 Which of the following correctly declares <code>nums</code> as a list of integers? a) <code>nums: list = [1, 2, 3]</code> b) <code>nums: int[list] = [1, 2, 3]</code> c) <code>nums: list[int] = [1, 2, 3]</code> d) <code>nums: [int] = [1, 2, 3]</code>
 <details>
-<p><summary><b>SHOW SOLUTIONS</b></summary></p>
+<summary><b>SHOW SOLUTIONS</b></summary> c) <code>nums: list[int] = [1, 2, 3]</code>
 </details>
 What does <code>my_list.append(x)</code> return? a) the modified list b) the length of the list c) <code>None</code> d) <code>x</code>
 <details>
-<p><summary><b>SHOW SOLUTIONS</b></summary></p>
+<summary><b>SHOW SOLUTIONS</b></summary> <code>None</code>
 </details>
 Two variables assigned to the same list literal (<code>a = [1, 2]</code><code>b = [1, 2]</code>) refer to the same underlying list object in memory. a) True b) False
 <details>
-<p><summary><b>SHOW SOLUTIONS</b></summary></p>
+<summary><b>SHOW SOLUTIONS</b></summary> False
 </details>
 <h2 id="dictionaries">Dictionaries</h2>
 You can use any immutable type (like <code>int</code>, <code>str</code>, or <code>tuple</code>) as a dictionary key. a) True b) False
@@ -215,7 +215,7 @@ You can use <code>list</code>s as a key in a dictionary. a) True b) False
 </details>
 Given <code>d: dict[str, int] = {"a": 1, "b": 2}</code>, what does <code>len(d)</code> return? a) <code>1</code> b) <code>2</code> c) <code>4</code> d) <code>Error</code>
 <details>
-<p><summary><b>SHOW SOLUTIONS</b></summary></p>
+<summary><b>SHOW SOLUTIONS</b></summary> <code>2</code>
 </details>
 The <code>in</code> operator on a dictionary checks for membership of: a) values b) keys c) key-value pairs d) both keys and values
 <details>
@@ -228,7 +228,7 @@ Two different instances of the same class always share the same attribute values
 </details>
 Which keyword is used to define a new class in Python? a) <code>define</code> b) <code>class</code> c) <code>object</code> d) <code>new</code>
 <details>
-<p><summary><b>SHOW SOLUTIONS</b></summary></p>
+<summary><b>SHOW SOLUTIONS</b></summary> <code>class</code>
 </details>
 When you write <code>floof: Cat = Cat("Fluffy")</code>, Python internally calls which method first? a) <code>__str__</code> b) <code>__new__</code> c) <code>__init__</code> d) <code>__class__</code>
 <details>
@@ -236,7 +236,7 @@ When you write <code>floof: Cat = Cat("Fluffy")</code>, Python internally calls 
 </details>
 It is legal to assign a new attribute to an existing instance outside of <code>__init__</code> (e.g., <code>my_cat.color = "black"</code> after construction). a) True b) False
 <details>
-<p><summary><b>SHOW SOLUTIONS</b></summary></p>
+<summary><b>SHOW SOLUTIONS</b></summary> True
 </details>
 Constructors must take at least one parameter other than the self parameter a) True b) False
 <details>
@@ -244,20 +244,20 @@ Constructors must take at least one parameter other than the self parameter a) T
 </details>
 An instance’s <code>__init__</code> method is typically responsible for initializing the instance’s attributes a) True b) False
 <details>
-<p><summary><b>SHOW SOLUTIONS</b></summary></p>
+<summary><b>SHOW SOLUTIONS</b></summary> True
 </details>
 <h2 id="magic-methods">Magic Methods</h2>
 <code>[] == list()</code> evaluates to: a) <code>True</code> b) <code>False</code> c) <code>None</code> d) <code>Error</code>
 <details>
-<p><summary><b>SHOW SOLUTIONS</b></summary></p>
+<summary><b>SHOW SOLUTIONS</b></summary> <code>True</code>
 </details>
 <code>__str__</code> is called implicitly by which built-in functions? a) <code>len</code> b) <code>str</code> c) <code>print</code> d) <code>id</code>
 <details>
-<p><summary><b>SHOW SOLUTIONS</b></summary></p>
+<summary><b>SHOW SOLUTIONS</b></summary> <code>str</code> and <code>print</code>
 </details>
 Magic methods are normally called <em>implicitly</em> by Python in response to syntax like <code>+</code>, <code>==</code>, <code>len(...)</code>, or <code>print(...)</code> rather than by explicit name. a) True b) False
 <details>
-<p><summary><b>SHOW SOLUTIONS</b></summary></p>
+<summary><b>SHOW SOLUTIONS</b></summary> True
 </details>
 <h2 id="runtime">Runtime</h2>
 A linear search through an unsorted list of length <span class="math inline"><em>n</em></span> has what worst-case runtime? a) <span class="math inline"><em>O</em>(1)</span> b) <span class="math inline"><em>O</em>(log <em>n</em>)</span> c) <span class="math inline"><em>O</em>(<em>n</em>)</span> d) <span class="math inline"><em>O</em>(<em>n</em><sup>2</sup>)</span>
