@@ -903,5 +903,17 @@
         }
     ],
     "2026-04-25": [],
-    "2026-04-26": []
+    "2026-04-26": [],
+    "2026-04-27": [
+        {
+            "kind": "CL",
+            "n": 37,
+            "title": "Function-Writing Practice & Algorithmic Complexity",
+            "date": "2026-04-27",
+            "deadline": "2026-04-27",
+            "links": {
+                "Slides": "/static/slides/cl37.pdf"
+            }
+        }
+    ]
 }
